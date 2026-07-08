@@ -1,119 +1,170 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Family Tree</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-      :root {
-        --ledger-ink: #1f2e45;
-        --prairie-wheat: #e8dcc3;
-        --homestead-clay: #a8552e;
-        --prairie-sage: #6b7c5a;
-        --brass: #b08d3f;
-      }
+  <title>Family Tree</title>
 
-      body {
-        margin: 0;
-        background: var(--prairie-wheat);
-        font-family: serif;
-        color: var(--ledger-ink);
-      }
+  <style>
+    :root {
+      --ledger-ink: #1f2e45;
+      --prairie-wheat: #e8dcc3;
+      --homestead-clay: #a8552e;
+      --prairie-sage: #6b7c5a;
+      --brass: #b08d3f;
+    }
 
-      header {
-        padding: 20px;
-        border-bottom: 1px solid var(--brass);
-      }
+    body {
+      margin: 0;
+      background: var(--prairie-wheat);
+      font-family: serif;
+      color: var(--ledger-ink);
+    }
 
-      h1 {
-        margin: 0;
-      }
+    header {
+      padding: 20px;
+      border-bottom: 1px solid var(--brass);
+    }
 
-      #tree {
-        height: 80vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    h1 {
+      margin: 0;
+    }
 
-      .person {
-        border: 1px solid var(--brass);
-        background: white;
-        padding: 20px;
-        min-width: 250px;
-        text-align: center;
-      }
+    #content {
+      display: flex;
+      gap: 40px;
+      padding: 40px;
+      align-items: flex-start;
+    }
 
-      .person h2 {
-        margin-top: 0;
-      }
+    #tree {
+      flex: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-      .mono {
-        font-family: monospace;
-        color: var(--prairie-sage);
-      }
+    .person {
+      width: 260px;
+      min-height: 130px;
+      box-sizing: border-box;
+    }
 
-      #tree {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        padding: 40px;
-        height: auto;
-      }
+    #details {
+      flex: 1;
+      background: white;
+      border: 1px solid var(--brass);
+      padding: 24px;
+      position: sticky;
+      top: 20px;
+      min-height: 180px;
+    }
 
-      .person {
-        width: 260px;
-      }
-    </style>
-  </head>
+    .person {
+      border: 1px solid var(--brass);
+      background: white;
+      padding: 20px;
+      min-width: 250px;
+      width: 260px;
+      text-align: center;
+    }
 
-  <body>
-    <header>
-      <h1>Kallmer Family Tree</h1>
-    </header>
+    .person h2 {
+      margin-top: 0;
+    }
+
+    .mono {
+      font-family: monospace;
+      color: var(--prairie-sage);
+    }
+
+    #tree {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 40px;
+      height: auto;
+    }
+
+
+    .person-card-selected {
+      border: 3px solid var(--homestead-clay);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Kallmer Family Tree</h1>
+  </header>
+
+  <div id="content">
 
     <div id="tree"></div>
 
-    <script>
-      fetch("public-data/family.json")
-        .then((response) => response.json())
-        .then((data) => {
-          const tree = document.getElementById("tree");
+    <div id="details">
 
-          data.people.slice(0, 10).forEach((person) => {
-            const card = document.createElement("div");
+      <h2 id="detail-name">
+        Select a Person
+      </h2>
 
-            card.className = "person";
+      <p class="mono" id="detail-dates"></p>
 
-            card.innerHTML = `
+      <p id="detail-place"></p>
+
+    </div>
+
+  </div>
+  <h2 id="detail-name"></h2>
+
+  <p class="mono" id="detail-dates"></p>
+
+  <p id="detail-place"></p>
+  </div>
+
+  <script>
+    fetch("public-data/family.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const tree = document.getElementById("tree");
+
+        data.people.slice(0, 10).forEach((person) => {
+          const card = document.createElement("div");
+
+          card.className = "person";
+
+          card.innerHTML = `
               <h2>${person.name}</h2>
 
               <p class="mono">
                 ${person.birth}${person.death ? "–" + person.death : "–"}
               </p>
             `;
-            card.style.cursor = "pointer";
+          card.style.cursor = "pointer";
 
-            card.onclick = () => {
-              alert(
-                person.name +
-                  "\n" +
-                  "Born: " +
-                  (person.birth || "Unknown") +
-                  "\n" +
-                  "Died: " +
-                  (person.death || "Living/Unknown") +
-                  "\n" +
-                  (person.place ? "Place: " + person.place : ""),
-              );
-            };
+          card.onclick = () => {
 
-            tree.appendChild(card);
-          });
+            document.querySelectorAll(".person-card-selected")
+              .forEach(el => el.classList.remove("person-card-selected"));
+
+            card.classList.add("person-card-selected");
+            document.getElementById("details").style.display = "block";
+
+            document.getElementById("detail-name").textContent = person.name;
+
+            document.getElementById("detail-dates").textContent =
+              `${person.birth || "?"}${person.death ? "–" + person.death : "–"}`;
+
+            document.getElementById("detail-place").textContent =
+              person.place || "";
+          };
+          tree.appendChild(card);
         });
-    </script>
-  </body>
+      });
+  </script>
+</body>
+
 </html>
