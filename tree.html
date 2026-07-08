@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Family Tree</title>
+
+<style>
+
+:root {
+    --ledger-ink: #1F2E45;
+    --prairie-wheat: #E8DCC3;
+    --homestead-clay: #A8552E;
+    --prairie-sage: #6B7C5A;
+    --brass: #B08D3F;
+}
+
+body {
+    margin:0;
+    background:var(--prairie-wheat);
+    font-family:serif;
+    color:var(--ledger-ink);
+}
+
+header {
+    padding:20px;
+    border-bottom:1px solid var(--brass);
+}
+
+h1 {
+    margin:0;
+}
+
+#tree {
+    height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.person {
+    border:1px solid var(--brass);
+    background:white;
+    padding:20px;
+    min-width:250px;
+    text-align:center;
+}
+
+.person h2 {
+    margin-top:0;
+}
+
+.mono {
+    font-family:monospace;
+    color:var(--prairie-sage);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Kallmer Family Tree</h1>
+</header>
+
+<div id="tree">
+
+    <div class="person">
+        <h2>Tree Viewer Coming Soon</h2>
+
+        <p>
+            Next step: Import GEDCOM data and build
+            the interactive explorer.
+        </p>
+
+        <p class="mono">
+            184 documented individuals
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
