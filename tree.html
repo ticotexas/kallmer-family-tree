@@ -93,6 +93,71 @@
     .person-card-selected {
       border: 3px solid var(--homestead-clay);
     }
+
+    .person-link {
+      border: 0;
+      background: none;
+      padding: 0;
+      color: var(--ledger-ink);
+      font-family: inherit;
+      font-size: inherit;
+      text-align: left;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .person-link:hover {
+      color: var(--homestead-clay);
+    }
+
+    .pedigree-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .generation-row {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .generation-label {
+      width: 100%;
+      text-align: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--prairie-sage);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: -8px;
+    }
+
+    .pedigree-person {
+      border: 1px solid var(--brass);
+      background: #fffaf0;
+      padding: 10px 12px;
+      min-width: 180px;
+      max-width: 220px;
+      cursor: pointer;
+    }
+
+    .pedigree-person:hover {
+      border-color: var(--homestead-clay);
+    }
+
+    .pedigree-person.current {
+      border: 2px solid var(--homestead-clay);
+      background: #fff4df;
+    }
+
+    .pedigree-name {
+      font-weight: 600;
+    }
   </style>
 </head>
 
@@ -140,12 +205,21 @@
           return `${person.birth || "?"}${person.death ? "–" + person.death : "–"}`;
         }
 
+        function personButton(person) {
+          return `
+        <button class="person-link" data-person-id="${person.id}">
+          ${person.name} (${lifeDates(person)})
+        </button>
+      `;
+        }
+
         function namesFromIds(ids) {
           if (!ids || ids.length === 0) return "None listed";
+
           return ids
             .map(id => peopleById[id])
             .filter(Boolean)
-            .map(person => `${person.name} (${lifeDates(person)})`)
+            .map(personButton)
             .join("<br>");
         }
 
@@ -154,16 +228,116 @@
 
           return person.marriages.map(m => {
             const spouse = peopleById[m.spouse];
-            const spouseName = spouse ? `${spouse.name} (${lifeDates(spouse)})` : m.spouse;
+            const spouseName = spouse ? personButton(spouse) : m.spouse;
             const details = [m.date, m.place].filter(Boolean).join(" — ");
-            return details ? `${spouseName}<br><span class="mono">${details}</span>` : spouseName;
+
+            return details
+              ? `${spouseName}<br><span class="mono">${details}</span>`
+              : spouseName;
           }).join("<br><br>");
         }
 
+        function uniquePeople(people) {
+          const seen = new Set();
+          return people.filter(person => {
+            if (!person || seen.has(person.id)) return false;
+            seen.add(person.id);
+            return true;
+          });
+        }
+
+        function getParents(person) {
+          return (person.parents || [])
+            .map(id => peopleById[id])
+            .filter(Boolean);
+        }
+
+        function buildAncestorGenerations(person, depth = 3) {
+          const generations = [];
+          let currentGeneration = [person];
+
+          for (let i = 0; i < depth; i++) {
+            const parents = uniquePeople(
+              currentGeneration.flatMap(p => getParents(p))
+            );
+
+            if (parents.length === 0) break;
+
+            generations.push(parents);
+            currentGeneration = parents;
+          }
+
+          return generations.reverse();
+        }
+
+        function pedigreeCard(person, isCurrent = false) {
+          return `
+    <div class="pedigree-person ${isCurrent ? "current" : ""}" data-person-id="${person.id}">
+      <div class="pedigree-name">${person.name}</div>
+      <div class="mono">${lifeDates(person)}</div>
+    </div>
+  `;
+        }
+
+        function renderPedigree(person) {
+          const ancestorGenerations = buildAncestorGenerations(person, 3);
+
+          const labels = {
+            0: "Parents",
+            1: "Grandparents",
+            2: "Great-grandparents"
+          };
+
+          const rows = ancestorGenerations.map((generation, index) => {
+            const generationsBack = ancestorGenerations.length - index - 1;
+            const label = labels[generationsBack] || `${generationsBack + 1} generations back`;
+
+            return `
+      <div class="generation-row">
+        <div class="generation-label">${label}</div>
+        ${generation.map(p => pedigreeCard(p)).join("")}
+      </div>
+    `;
+          }).join("");
+
+          tree.innerHTML = `
+    <div class="pedigree-chart">
+      ${rows}
+      <div class="generation-row">
+        <div class="generation-label">Current person</div>
+        ${pedigreeCard(person, true)}
+      </div>
+    </div>
+  `;
+
+          document.querySelectorAll(".pedigree-person").forEach(card => {
+            card.onclick = () => {
+              const nextPerson = peopleById[card.dataset.personId];
+              if (nextPerson) {
+                showDetails(nextPerson);
+              }
+            };
+          });
+        }
+
+        function attachPersonLinkHandlers() {
+          document.querySelectorAll(".person-link").forEach(button => {
+            button.onclick = () => {
+              const nextPerson = peopleById[button.dataset.personId];
+              if (nextPerson) {
+                showDetails(nextPerson);
+              }
+            };
+          });
+        }
+
         function showDetails(person) {
+          renderPedigree(person);
+
           document.getElementById("details").style.display = "block";
           document.getElementById("detail-name").textContent = person.name;
           document.getElementById("detail-dates").textContent = lifeDates(person);
+
           document.getElementById("detail-place").innerHTML = `
         ${person.place ? `<p>${person.place}</p>` : ""}
 
@@ -179,30 +353,15 @@
         <h3>Siblings</h3>
         <p>${namesFromIds(person.siblings)}</p>
       `;
+
+          attachPersonLinkHandlers();
         }
 
-        data.people.slice(0, 10).forEach((person) => {
-          const card = document.createElement("div");
-          card.className = "person";
-          card.style.cursor = "pointer";
-
-          card.innerHTML = `
-        <h2>${person.name}</h2>
-        <p class="mono">${lifeDates(person)}</p>
-      `;
-
-          card.onclick = () => {
-            document.querySelectorAll(".person-card-selected")
-              .forEach(el => el.classList.remove("person-card-selected"));
-
-            card.classList.add("person-card-selected");
-            showDetails(person);
-          };
-
-          tree.appendChild(card);
-        });
+        const startPerson = peopleById["I0000"] || data.people[0];
+        showDetails(startPerson);
       });
   </script>
+
 </body>
 
 </html>
