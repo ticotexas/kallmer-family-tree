@@ -1,3 +1,4 @@
 data/*.ged
 *.ged
 data/family.json
+public-data/
