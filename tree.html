@@ -89,11 +89,12 @@
             card.className = "person";
 
             card.innerHTML = `
-    <h2>${person.name}</h2>
-    <p class="mono">
-        ${person.birth}${person.death ? "–" + person.death : "–"}
-    </p>
-`;
+              <h2>${person.name}</h2>
+
+              <p class="mono">
+                ${person.birth}${person.death ? "–" + person.death : "–"}
+              </p>
+            `;
             card.style.cursor = "pointer";
 
             card.onclick = () => {
