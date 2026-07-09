@@ -736,6 +736,17 @@
         }
 
         function showDetails(person) {
+
+          const url = new URL(window.location);
+
+          url.searchParams.set("person", person.id);
+
+          history.replaceState(
+            null,
+            "",
+            url
+          );
+
           renderPedigree(person);
 
           document.getElementById("detail-name").textContent = person.name;
@@ -763,7 +774,14 @@
 
         setupSearch();
 
-        const startPerson = peopleById["I0000"] || data.people[0];
+        const params = new URLSearchParams(window.location.search);
+        const personId = params.get("person");
+
+        const startPerson =
+          (personId && peopleById[personId]) ||
+          peopleById["I0000"] ||
+          data.people[0];
+
         showDetails(startPerson);
       });
   </script>
