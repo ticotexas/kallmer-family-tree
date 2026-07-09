@@ -271,9 +271,15 @@
       box-shadow: 0 1px 0 rgba(31, 46, 69, 0.08);
     }
 
-    .pedigree-couple.placeholder {
-      visibility: hidden;
+    .pedigree-couple.empty-card {
+      background: rgba(255, 250, 240, 0.25);
+      border: 1px dashed rgba(176, 141, 63, 0.45);
+      box-shadow: none;
       pointer-events: none;
+    }
+
+    .ghost-line {
+      visibility: hidden;
     }
 
     .pedigree-couple.current {
@@ -519,6 +525,19 @@
           return person.birth_place || person.birthPlace || person.place || "";
         }
 
+        function displayPlace(place) {
+          if (!place) return "";
+
+          const parts = place.split(",").map(part => part.trim());
+
+          if (parts.length >= 3) {
+            return `${parts[0]}, ${parts[parts.length - 1]}`;
+          }
+
+          return place;
+        }
+
+
         function personButton(person) {
           const dates = lifeDates(person);
           const ageMatch = dates.match(/\(\d+\)$/);
@@ -551,7 +570,7 @@
           return person.marriages.map(m => {
             const spouse = peopleById[m.spouse];
             const spouseName = spouse ? personButton(spouse) : m.spouse;
-            const details = [m.date, m.place].filter(Boolean).join(" — ");
+            const details = [m.date, displayPlace(m.place)].filter(Boolean).join(" — ");
 
             return details
               ? `${spouseName}<br><span class="mono">${details}</span>`
@@ -622,14 +641,13 @@
           const dateOnly = age ? dates.replace(age, "").trim() : dates;
 
           return `
-    <button class="pedigree-person-name" data-person-id="${person.id}">
-      ${person.name}
-    </button>
-    <div class="mono pedigree-dates">${dateOnly}</div>
-    ${age ? `<div class="mono pedigree-age">${age}</div>` : ""}
-  `;
+           <button class="pedigree-person-name" data-person-id="${person.id}">
+             ${person.name}
+            </button>
+           <div class="mono pedigree-dates">${dateOnly}</div>
+            <div class="mono pedigree-age">${age || "&nbsp;"}</div>
+         `;
         }
-
         function pedigreeCoupleCard(couple, isCurrent = false) {
           const personA = couple.personA;
           const personB = couple.personB;
@@ -655,8 +673,17 @@
                     ${branch.greatCouples.map(couple =>
             couple
               ? pedigreeCoupleCard(couple)
-              : `<div class="pedigree-couple placeholder"></div>`
-          ).join("")}
+              : `
+  <div class="pedigree-couple empty-card">
+    <div class="pedigree-person-name ghost-line">Unknown</div>
+    <div class="mono pedigree-dates ghost-line">? – ?</div>
+    <div class="mono pedigree-age ghost-line">&nbsp;</div>
+    <div class="couple-divider ghost-line">and</div>
+    <div class="pedigree-person-name ghost-line">Unknown</div>
+    <div class="mono pedigree-dates ghost-line">? – ?</div>
+    <div class="mono pedigree-age ghost-line">&nbsp;</div>
+  </div>
+`          ).join("")}
                   </div>
                   <div class="branch-label">Grandparents</div>
                   ${pedigreeCoupleCard(branch.grandparentCouple)}
@@ -713,7 +740,7 @@
 
           document.getElementById("detail-name").textContent = person.name;
           document.getElementById("detail-dates").textContent = lifeDates(person);
-          const place = birthPlace(person);
+          const place = displayPlace(birthPlace(person));
 
           document.getElementById("detail-place").innerHTML = `
             ${place ? `<p class="mono">Born: ${place}</p>` : ""}
