@@ -832,6 +832,7 @@
         async function loadStory(person) {
           const storyDiv = document.getElementById("detail-story");
 
+          storyDiv.style.display = "block";
           storyDiv.innerHTML = "";
 
           try {
@@ -907,6 +908,7 @@
             });
 
           } catch {
+            storyDiv.style.display = "none";
             storyDiv.innerHTML = "";
           }
         }
