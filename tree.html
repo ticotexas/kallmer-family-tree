@@ -9,7 +9,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
   <style>
     :root {
@@ -38,6 +40,79 @@
       margin: 0;
       font-family: "Fraunces", serif;
       font-size: 2.4rem;
+    }
+
+
+    #search-area {
+      margin-top: 18px;
+      max-width: 420px;
+      position: relative;
+    }
+
+    #person-search {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 14px;
+      border: 1px solid var(--brass);
+      border-radius: 4px;
+      background: var(--paper);
+      color: var(--ledger-ink);
+      font-family: "Source Serif 4", serif;
+      font-size: 1rem;
+    }
+
+    #person-search:focus {
+      outline: 2px solid var(--homestead-clay);
+      outline-offset: 2px;
+    }
+
+    #search-results {
+      display: none;
+      position: absolute;
+      z-index: 10;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      max-height: 280px;
+      overflow-y: auto;
+      background: var(--paper);
+      border: 1px solid var(--brass);
+      border-radius: 4px;
+      box-shadow: 0 8px 22px rgba(31, 46, 69, 0.18);
+    }
+
+    .search-result {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid rgba(176, 141, 63, 0.35);
+      background: none;
+      padding: 10px 12px;
+      text-align: left;
+      color: var(--ledger-ink);
+      font-family: "Source Serif 4", serif;
+      cursor: pointer;
+    }
+
+    .search-result:hover,
+    .search-result:focus {
+      background: #fff4df;
+      color: var(--homestead-clay);
+      outline: none;
+    }
+
+    .search-result-name {
+      display: block;
+      font-weight: 600;
+    }
+
+    .search-result-dates {
+      display: block;
+      margin-top: 2px;
+    }
+
+    .search-empty {
+      padding: 10px 12px;
     }
 
     #content {
@@ -267,6 +342,10 @@
 <body>
   <header>
     <h1>Kallmer Family Tree</h1>
+    <div id="search-area">
+      <input type="text" id="person-search" placeholder="Search for a person..." autocomplete="off" />
+      <div id="search-results"></div>
+    </div>
   </header>
 
   <div id="content">
@@ -284,11 +363,104 @@
       .then((response) => response.json())
       .then((data) => {
         const tree = document.getElementById("tree");
+        const searchInput = document.getElementById("person-search");
+
+        searchInput.addEventListener("focus", () => {
+          setTimeout(() => searchInput.select(), 0);
+        });
+
+        searchInput.addEventListener("click", () => {
+          searchInput.select();
+        });
+
+        const searchResults = document.getElementById("search-results");
 
         const peopleById = {};
         data.people.forEach(person => {
           peopleById[person.id] = person;
         });
+
+
+        function normalizeText(text) {
+          return (text || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .replace(/ł/g, "l")
+            .replace(/ø/g, "o")
+            .replace(/æ/g, "ae")
+            .replace(/œ/g, "oe")
+            .replace(/ð/g, "d")
+            .replace(/þ/g, "th");
+        }
+
+        const searchablePeople = data.people.map(person => ({
+          person,
+          searchName: normalizeText(person.name)
+        }));
+
+        function hideSearchResults() {
+          searchResults.style.display = "none";
+          searchResults.innerHTML = "";
+        }
+
+        function renderSearchResults(matches) {
+          if (matches.length === 0) {
+            searchResults.innerHTML = `<div class="mono search-empty">No matching people found</div>`;
+            searchResults.style.display = "block";
+            return;
+          }
+
+          searchResults.innerHTML = matches.map(({ person }) => `
+            <button class="search-result" data-person-id="${person.id}">
+              <span class="search-result-name">${person.name}</span>
+              <span class="mono search-result-dates">${lifeDates(person)}</span>
+            </button>
+          `).join("");
+
+          searchResults.style.display = "block";
+
+          searchResults.querySelectorAll(".search-result").forEach(button => {
+            button.onclick = () => {
+              const selectedPerson = peopleById[button.dataset.personId];
+              if (selectedPerson) {
+                showDetails(selectedPerson);
+                searchInput.value = selectedPerson.name;
+                hideSearchResults();
+              }
+            };
+          });
+        }
+
+        function setupSearch() {
+          searchInput.addEventListener("input", () => {
+            const query = normalizeText(searchInput.value.trim());
+
+            if (query.length < 2) {
+              hideSearchResults();
+              return;
+            }
+
+            const matches = searchablePeople
+              .filter(({ searchName }) => searchName.includes(query))
+              .slice(0, 12);
+
+            renderSearchResults(matches);
+          });
+
+          searchInput.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+              hideSearchResults();
+              searchInput.blur();
+            }
+          });
+
+          document.addEventListener("click", event => {
+            if (!event.target.closest("#search-area")) {
+              hideSearchResults();
+            }
+          });
+        }
 
         function ageText(person) {
           if (!person || !person.birth) return "";
@@ -437,10 +609,10 @@
                   <div class="branch-label">Great-grandparents</div>
                   <div class="great-stack">
                     ${branch.greatCouples.map(couple =>
-                      couple
-                        ? pedigreeCoupleCard(couple)
-                        : `<div class="pedigree-couple placeholder"></div>`
-                    ).join("")}
+            couple
+              ? pedigreeCoupleCard(couple)
+              : `<div class="pedigree-couple placeholder"></div>`
+          ).join("")}
                   </div>
                   <div class="branch-label">Grandparents</div>
                   ${pedigreeCoupleCard(branch.grandparentCouple)}
@@ -517,6 +689,8 @@
 
           attachPersonLinkHandlers();
         }
+
+        setupSearch();
 
         const startPerson = peopleById["I0000"] || data.people[0];
         showDetails(startPerson);
