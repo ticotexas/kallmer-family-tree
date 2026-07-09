@@ -4,16 +4,24 @@ import re
 import sys
 from pathlib import Path
 
-if len(sys.argv) != 3:
-    print("Usage: python3 tools/gedcom_to_json.py /path/to/Kallmer.ged data/family.json")
+if len(sys.argv) not in {2, 3}:
+    print("Usage:")
+    print("  python3 tools/gedcom_to_json.py data/Kallmer.ged")
+    print("  python3 tools/gedcom_to_json.py data/Kallmer.ged public-data/family.json  # old single-output mode")
     sys.exit(1)
 
 ged_path = Path(sys.argv[1])
-out_path = Path(sys.argv[2])
 
 if not ged_path.exists():
     print(f"GEDCOM not found: {ged_path}")
     sys.exit(1)
+
+# Default two-output paths, relative to the project root.
+public_out_path = Path("public-data/family.json")
+private_out_path = Path("data/family-private.json")
+
+# Backward-compatible mode: if an output path is supplied, write only public-safe JSON there.
+single_out_path = Path(sys.argv[2]) if len(sys.argv) == 3 else None
 
 def clean_xref(value):
     return value.strip().strip("@")
@@ -21,6 +29,20 @@ def clean_xref(value):
 def year_from_date(date_text):
     match = re.search(r"\b(1[5-9]\d{2}|20\d{2})\b", date_text or "")
     return match.group(1) if match else ""
+
+def sorted_list(value):
+    return sorted(value) if value else []
+
+def write_json(path, people_list, families_list, label):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps({
+            "people": people_list,
+            "families": families_list
+        }, indent=2, ensure_ascii=False),
+        encoding="utf-8"
+    )
+    print(f"Wrote {len(people_list)} {label} people and {len(families_list)} families to {path}")
 
 people = {}
 families = {}
@@ -149,19 +171,17 @@ for family in families.values():
         people[husband]["spouses"].add(wife)
         people[wife]["spouses"].add(husband)
 
-        marriage = {
+        people[husband]["marriages"].append({
             "spouse": wife,
             "date": family["marriage_date"],
             "place": family["marriage_place"]
-        }
-        people[husband]["marriages"].append(marriage)
+        })
 
-        marriage = {
+        people[wife]["marriages"].append({
             "spouse": husband,
             "date": family["marriage_date"],
             "place": family["marriage_place"]
-        }
-        people[wife]["marriages"].append(marriage)
+        })
 
     for child in children:
         if child not in people:
@@ -175,18 +195,22 @@ for family in families.values():
             if sibling != child and sibling in people:
                 people[child]["siblings"].add(sibling)
 
-public_people = []
-
-for person in people.values():
+def is_public_living(person):
     birth_year = int(person["birth_year"]) if person["birth_year"].isdigit() else None
-
     living = person["living"]
 
+    # Safety rule: very old people without death records should not display as living.
     if birth_year and birth_year < 1915:
         living = False
 
+    # Safety rule for older sparse records, while preserving the current known living/root IDs.
     if not birth_year and not person["death_date"] and person["id"] not in {"I0000", "I0001", "I0002"}:
         living = False
+
+    return living
+
+def public_person_record(person):
+    living = is_public_living(person)
 
     if living:
         display_birth = person["birth_year"] or person["birth_date"]
@@ -197,7 +221,7 @@ for person in people.values():
         display_death = person["death_year"] or person["death_date"] or "?"
         display_place = person["death_place"] or person["birth_place"]
 
-    public_people.append({
+    return {
         "id": person["id"],
         "name": person["name"],
         "living": living,
@@ -206,20 +230,43 @@ for person in people.values():
         "place": display_place,
         "birth_place": person["birth_place"],
         "death_place": person["death_place"],
-        "parents": sorted(person["parents"]),
-        "spouses": sorted(person["spouses"]),
-        "children": sorted(person["children"]),
-        "siblings": sorted(person["siblings"]),
+        "parents": sorted_list(person["parents"]),
+        "spouses": sorted_list(person["spouses"]),
+        "children": sorted_list(person["children"]),
+        "siblings": sorted_list(person["siblings"]),
         "marriages": person["marriages"],
-    })
+    }
 
-out_path.parent.mkdir(parents=True, exist_ok=True)
-out_path.write_text(
-    json.dumps({
-        "people": public_people,
-        "families": list(families.values())
-    }, indent=2, ensure_ascii=False),
-    encoding="utf-8"
-)
+def private_person_record(person):
+    # Private version keeps fuller date strings for local/family use.
+    return {
+        "id": person["id"],
+        "name": person["name"],
+        "living": person["living"],
+        "birth": person["birth_date"] or person["birth_year"] or "?",
+        "death": person["death_date"] or person["death_year"] or "",
+        "place": person["death_place"] or person["birth_place"],
+        "birth_date": person["birth_date"],
+        "birth_year": person["birth_year"],
+        "birth_place": person["birth_place"],
+        "death_date": person["death_date"],
+        "death_year": person["death_year"],
+        "death_place": person["death_place"],
+        "parents": sorted_list(person["parents"]),
+        "spouses": sorted_list(person["spouses"]),
+        "children": sorted_list(person["children"]),
+        "siblings": sorted_list(person["siblings"]),
+        "families_as_spouse": sorted_list(person["families_as_spouse"]),
+        "families_as_child": sorted_list(person["families_as_child"]),
+        "marriages": person["marriages"],
+    }
 
-print(f"Wrote {len(public_people)} public-safe people and {len(families)} families to {out_path}")
+public_people = [public_person_record(person) for person in people.values()]
+private_people = [private_person_record(person) for person in people.values()]
+families_list = list(families.values())
+
+if single_out_path:
+    write_json(single_out_path, public_people, families_list, "public-safe")
+else:
+    write_json(public_out_path, public_people, families_list, "public-safe")
+    write_json(private_out_path, private_people, families_list, "private")
