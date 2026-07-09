@@ -30,6 +30,17 @@ def year_from_date(date_text):
     match = re.search(r"\b(1[5-9]\d{2}|20\d{2})\b", date_text or "")
     return match.group(1) if match else ""
 
+def simplify_place(place):
+    if not place:
+        return ""
+
+    parts = [p.strip() for p in place.split(",")]
+
+    if len(parts) >= 3:
+        return f"{parts[0]}, {parts[-1]}"
+
+    return place
+
 def sorted_list(value):
     return sorted(value) if value else []
 
@@ -209,17 +220,50 @@ def is_public_living(person):
 
     return living
 
+def public_marriage_record(person, marriage):
+    spouse = people.get(marriage.get("spouse", ""))
+
+    # If either spouse is living, show only the marriage year in the public file.
+    # If both spouses are deceased, keep the full marriage date and place.
+    if is_public_living(person) or (spouse and is_public_living(spouse)):
+        return {
+            "spouse": marriage.get("spouse", ""),
+            "date": year_from_date(marriage.get("date", "")),
+            "place": simplify_place(marriage.get("place", "")),
+        }
+
+    return marriage
+
+def public_family_record(family):
+    husband = people.get(family.get("husband", ""))
+    wife = people.get(family.get("wife", ""))
+    has_living_spouse = (husband and is_public_living(husband)) or (wife and is_public_living(wife))
+
+    public_family = dict(family)
+
+    # The families array is also in the public JSON, so sanitize it too.
+    if has_living_spouse:
+        public_family["marriage_date"] = year_from_date(family.get("marriage_date", ""))
+
+    return public_family
+
 def public_person_record(person):
     living = is_public_living(person)
 
     if living:
-        display_birth = person["birth_year"] or person["birth_date"]
+        # For living people: keep names, relationships, birth year, and place; hide exact birth date.
+        display_birth = person["birth_year"]
         display_death = ""
-        display_place = person["birth_place"]
+        display_place = simplify_place(person["birth_place"])
+        display_birth_place = person["birth_place"]
+        display_death_place = ""
     else:
-        display_birth = person["birth_year"] or person["birth_date"] or "?"
-        display_death = person["death_year"] or person["death_date"] or "?"
+        # For deceased people: keep fuller public details.
+        display_birth = person["birth_date"] or person["birth_year"] or "?"
+        display_death = person["death_date"] or person["death_year"] or "?"
         display_place = person["death_place"] or person["birth_place"]
+        display_birth_place = person["birth_place"]
+        display_death_place = person["death_place"]
 
     return {
         "id": person["id"],
@@ -228,13 +272,13 @@ def public_person_record(person):
         "birth": display_birth,
         "death": display_death,
         "place": display_place,
-        "birth_place": person["birth_place"],
-        "death_place": person["death_place"],
+        "birth_place": display_birth_place,
+        "death_place": display_death_place,
         "parents": sorted_list(person["parents"]),
         "spouses": sorted_list(person["spouses"]),
         "children": sorted_list(person["children"]),
         "siblings": sorted_list(person["siblings"]),
-        "marriages": person["marriages"],
+        "marriages": [public_marriage_record(person, marriage) for marriage in person["marriages"]],
     }
 
 def private_person_record(person):
@@ -263,10 +307,11 @@ def private_person_record(person):
 
 public_people = [public_person_record(person) for person in people.values()]
 private_people = [private_person_record(person) for person in people.values()]
-families_list = list(families.values())
+public_families_list = [public_family_record(family) for family in families.values()]
+private_families_list = list(families.values())
 
 if single_out_path:
-    write_json(single_out_path, public_people, families_list, "public-safe")
+    write_json(single_out_path, public_people, public_families_list, "public-safe")
 else:
-    write_json(public_out_path, public_people, families_list, "public-safe")
-    write_json(private_out_path, private_people, families_list, "private")
+    write_json(public_out_path, public_people, public_families_list, "public-safe")
+    write_json(private_out_path, private_people, private_families_list, "private")

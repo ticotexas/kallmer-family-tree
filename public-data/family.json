@@ -23,8 +23,8 @@
       "marriages": [
         {
           "spouse": "I0006",
-          "date": "26 OCT 1998",
-          "place": "Maui, Maui, Hawaii"
+          "date": "1998",
+          "place": "Maui, Hawaii"
         }
       ]
     },
@@ -34,7 +34,7 @@
       "living": true,
       "birth": "1942",
       "death": "",
-      "place": "Storm Lake, Buena Vista, Iowa",
+      "place": "Storm Lake, Iowa",
       "birth_place": "Storm Lake, Buena Vista, Iowa",
       "death_place": "",
       "parents": [
@@ -55,8 +55,8 @@
       "marriages": [
         {
           "spouse": "I0002",
-          "date": "6 JUN 1964",
-          "place": "Storm Lake, Buena Vista, Iowa"
+          "date": "1964",
+          "place": "Storm Lake, Iowa"
         }
       ]
     },
@@ -66,7 +66,7 @@
       "living": true,
       "birth": "1943",
       "death": "",
-      "place": "Marshalltown, Marshall, Iowa",
+      "place": "Marshalltown, Iowa",
       "birth_place": "Marshalltown, Marshall, Iowa",
       "death_place": "",
       "parents": [
@@ -86,8 +86,8 @@
       "marriages": [
         {
           "spouse": "I0001",
-          "date": "6 JUN 1964",
-          "place": "Storm Lake, Buena Vista, Iowa"
+          "date": "1964",
+          "place": "Storm Lake, Iowa"
         }
       ]
     },
@@ -168,8 +168,8 @@
       "marriages": [
         {
           "spouse": "I0007",
-          "date": "3 OCT 1998",
-          "place": "Omaha, Douglas, Nebraska"
+          "date": "1998",
+          "place": "Omaha, Nebraska"
         }
       ]
     },
@@ -179,7 +179,7 @@
       "living": true,
       "birth": "1971",
       "death": "",
-      "place": "Omaha, Douglas, Nebraska",
+      "place": "Omaha, Nebraska",
       "birth_place": "Omaha, Douglas, Nebraska",
       "death_place": "",
       "parents": [
@@ -196,8 +196,8 @@
       "marriages": [
         {
           "spouse": "I0000",
-          "date": "26 OCT 1998",
-          "place": "Maui, Maui, Hawaii"
+          "date": "1998",
+          "place": "Maui, Hawaii"
         }
       ]
     },
@@ -207,7 +207,7 @@
       "living": true,
       "birth": "1971",
       "death": "",
-      "place": "Mason City, Cerro Gordo, Iowa",
+      "place": "Mason City, Iowa",
       "birth_place": "Mason City, Cerro Gordo, Iowa",
       "death_place": "",
       "parents": [],
@@ -223,8 +223,8 @@
       "marriages": [
         {
           "spouse": "I0005",
-          "date": "3 OCT 1998",
-          "place": "Omaha, Douglas, Nebraska"
+          "date": "1998",
+          "place": "Omaha, Nebraska"
         }
       ]
     },
@@ -234,7 +234,7 @@
       "living": true,
       "birth": "2008",
       "death": "",
-      "place": "Marietta, Cobb, Georgia",
+      "place": "Marietta, Georgia",
       "birth_place": "Marietta, Cobb, Georgia",
       "death_place": "",
       "parents": [
@@ -255,7 +255,7 @@
       "living": true,
       "birth": "2011",
       "death": "",
-      "place": "Marietta, Cobb, Georgia",
+      "place": "Marietta, Georgia",
       "birth_place": "Marietta, Cobb, Georgia",
       "death_place": "",
       "parents": [
@@ -276,7 +276,7 @@
       "living": true,
       "birth": "2011",
       "death": "",
-      "place": "Marietta, Cobb, Georgia",
+      "place": "Marietta, Georgia",
       "birth_place": "Marietta, Cobb, Georgia",
       "death_place": "",
       "parents": [
@@ -295,8 +295,8 @@
       "id": "I0011",
       "name": "Vernon Levere Huffey",
       "living": false,
-      "birth": "1917",
-      "death": "2006",
+      "birth": "9 SEP 1917",
+      "death": "27 MAR 2006",
       "place": "Storm Lake, Buena Vista, Iowa",
       "birth_place": "Postville, Allamakee, Iowa",
       "death_place": "Storm Lake, Buena Vista, Iowa",
@@ -333,8 +333,8 @@
       "id": "I0012",
       "name": "Marian Elizabeth Lepa",
       "living": false,
-      "birth": "1919",
-      "death": "2004",
+      "birth": "9 DEC 1919",
+      "death": "17 JUN 2004",
       "place": "Newell, Buena Vista, Iowa",
       "birth_place": "Ostrander, Fillmore, Minnesota",
       "death_place": "Newell, Buena Vista, Iowa",
@@ -370,8 +370,8 @@
       "id": "I0013",
       "name": "Floyd Frederick Kallmer",
       "living": false,
-      "birth": "1907",
-      "death": "2001",
+      "birth": "25 JAN 1907",
+      "death": "30 JAN 2001",
       "place": "Storm Lake, Buena Vista, Iowa",
       "birth_place": "Odebolt, Sac, Iowa",
       "death_place": "Storm Lake, Buena Vista, Iowa",
@@ -412,8 +412,8 @@
       "id": "I0014",
       "name": "Edit Linnéa Stål",
       "living": false,
-      "birth": "1908",
-      "death": "1957",
+      "birth": "1 JUN 1908",
+      "death": "11 MAY 1957",
       "place": "Storm Lake, Buena Vista, Iowa",
       "birth_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
       "death_place": "Storm Lake, Buena Vista, Iowa",
@@ -449,8 +449,8 @@
       "id": "I0015",
       "name": "Dorcas McPherrin",
       "living": false,
-      "birth": "1914",
-      "death": "2014",
+      "birth": "19 MAY 1914",
+      "death": "7 MAR 2014",
       "place": "Storm Lake, Buena Vista, Iowa",
       "birth_place": "Oakland, Pottawattamie, Iowa",
       "death_place": "Storm Lake, Buena Vista, Iowa",
@@ -472,8 +472,8 @@
       "id": "I0016",
       "name": "Robert Clyde Kallmer",
       "living": false,
-      "birth": "1939",
-      "death": "2010",
+      "birth": "11 NOV 1939",
+      "death": "16 APR 2010",
       "place": "Bangkok, Thailand",
       "birth_place": "Storm Lake, Buena Vista, Iowa",
       "death_place": "Bangkok, Thailand",
@@ -503,7 +503,7 @@
       "living": true,
       "birth": "1941",
       "death": "",
-      "place": "Storm Lake, Buena Vista, Iowa",
+      "place": "Storm Lake, Iowa",
       "birth_place": "Storm Lake, Buena Vista, Iowa",
       "death_place": "",
       "parents": [
@@ -524,8 +524,8 @@
       "marriages": [
         {
           "spouse": "I0046",
-          "date": "31 DEC 1967",
-          "place": "Storm Lake, Buena Vista, Iowa"
+          "date": "1967",
+          "place": "Storm Lake, Iowa"
         }
       ]
     },
@@ -533,8 +533,8 @@
       "id": "I0018",
       "name": "Walter Angus Huffey",
       "living": false,
-      "birth": "1891",
-      "death": "1975",
+      "birth": "12 SEP 1891",
+      "death": "8 MAY 1975",
       "place": "Caledonia, Houston, Minnesota",
       "birth_place": "Postville, Allamakee, Iowa",
       "death_place": "Caledonia, Houston, Minnesota",
@@ -573,8 +573,8 @@
       "id": "I0019",
       "name": "Tilda Boletta Olson",
       "living": false,
-      "birth": "1891",
-      "death": "1983",
+      "birth": "28 OCT 1891",
+      "death": "30 AUG 1983",
       "place": "Caledonia, Houston, Minnesota",
       "birth_place": "Box Butte Township, Box Butte, Nebraska",
       "death_place": "Caledonia, Houston, Minnesota",
@@ -618,7 +618,7 @@
       "living": true,
       "birth": "1950",
       "death": "",
-      "place": "Storm Lake, Buena Vista, Iowa",
+      "place": "Storm Lake, Iowa",
       "birth_place": "Storm Lake, Buena Vista, Iowa",
       "death_place": "",
       "parents": [
@@ -637,8 +637,8 @@
       "marriages": [
         {
           "spouse": "I0069",
-          "date": "17 NOV 1979",
-          "place": "Santa Cruz, Santa Cruz, California"
+          "date": "1979",
+          "place": "Santa Cruz, California"
         }
       ]
     },
@@ -646,8 +646,8 @@
       "id": "I0021",
       "name": "Andrew Christ Kallmer",
       "living": false,
-      "birth": "1868",
-      "death": "1935",
+      "birth": "19 AUG 1868",
+      "death": "12 OCT 1935",
       "place": "Storm Lake, Buena Vista, Iowa",
       "birth_place": "Schleswig-Holstein, Germany",
       "death_place": "Storm Lake, Buena Vista, Iowa",
@@ -679,8 +679,8 @@
       "id": "I0022",
       "name": "Margaret Mary Dinges",
       "living": false,
-      "birth": "1875",
-      "death": "1908",
+      "birth": "4 APR 1875",
+      "death": "7 MAY 1908",
       "place": "Colorado Springs, El Paso, Colorado",
       "birth_place": "Sublette Township, Lee, Illinois",
       "death_place": "Colorado Springs, El Paso, Colorado",
@@ -928,8 +928,8 @@
       "id": "I0031",
       "name": "Isabell Kallmer",
       "living": false,
-      "birth": "1895",
-      "death": "1987",
+      "birth": "29 DEC 1895",
+      "death": "EST 1987",
       "place": "Storm Lake, Buena Vista, Iowa",
       "birth_place": "",
       "death_place": "Storm Lake, Buena Vista, Iowa",
@@ -962,8 +962,8 @@
       "id": "I0032",
       "name": "Bernice Mae Kallmer",
       "living": false,
-      "birth": "1897",
-      "death": "1984",
+      "birth": "25 SEP 1897",
+      "death": "10 DEC 1984",
       "place": "Gardena, Los Angeles, California",
       "birth_place": "Odebolt, Sac, Iowa",
       "death_place": "Gardena, Los Angeles, California",
@@ -994,8 +994,8 @@
       "id": "I0033",
       "name": "Hazel Lynch",
       "living": false,
-      "birth": "1900",
-      "death": "1983",
+      "birth": "3 APR 1900",
+      "death": "16 AUG 1983",
       "place": "Sioux City, Woodbury, Iowa",
       "birth_place": "Iowa",
       "death_place": "Sioux City, Woodbury, Iowa",
@@ -1050,8 +1050,8 @@
       "id": "I0035",
       "name": "Leslie Jacob Kallmer",
       "living": false,
-      "birth": "1902",
-      "death": "1928",
+      "birth": "11 JUL 1902",
+      "death": "7 AUG 1928",
       "place": "Storm Lake, Buena Vista, Iowa",
       "birth_place": "Odebolt, Sac, Iowa",
       "death_place": "Storm Lake, Buena Vista, Iowa",
@@ -1074,8 +1074,8 @@
       "id": "I0036",
       "name": "Jacobus Kallmer",
       "living": false,
-      "birth": "1834",
-      "death": "1912",
+      "birth": "24 JUL 1834",
+      "death": "25 AUG 1912",
       "place": "Chicago, Cook, Illinois",
       "birth_place": "Germany",
       "death_place": "Chicago, Cook, Illinois",
@@ -1099,8 +1099,8 @@
       "id": "I0037",
       "name": "Marie K Kallmer",
       "living": false,
-      "birth": "1834",
-      "death": "1913",
+      "birth": "27 APR 1834",
+      "death": "22 FEB 1913",
       "place": "Greenwood, Four Corners, Gallatin, Montana",
       "birth_place": "Germany",
       "death_place": "Greenwood, Four Corners, Gallatin, Montana",
@@ -1273,8 +1273,8 @@
       "id": "I0044",
       "name": "Charles Ernst Satterlee",
       "living": false,
-      "birth": "1892",
-      "death": "1980",
+      "birth": "30 DEC 1892",
+      "death": "11 APR 1980",
       "place": "Gardena, Los Angeles, California",
       "birth_place": "Ida Grove, Ida, Iowa",
       "death_place": "Gardena, Los Angeles, California",
@@ -1296,8 +1296,8 @@
       "id": "I0045",
       "name": "Roy Edward Lynch",
       "living": false,
-      "birth": "1901",
-      "death": "1965",
+      "birth": "21 MAR 1901",
+      "death": "22 FEB 1965",
       "place": "Ida Grove, Ida, Iowa",
       "birth_place": "Ida Grove, Ida, Iowa",
       "death_place": "",
@@ -1319,8 +1319,8 @@
       "id": "I0046",
       "name": "Diana Christine Bodaken",
       "living": false,
-      "birth": "1941",
-      "death": "2019",
+      "birth": "4 MAR 1941",
+      "death": "7 FEB 2019",
       "place": "Seattle, Washington",
       "birth_place": "Springfield, Missouri",
       "death_place": "Seattle, Washington",
@@ -1336,8 +1336,8 @@
       "marriages": [
         {
           "spouse": "I0017",
-          "date": "31 DEC 1967",
-          "place": "Storm Lake, Buena Vista, Iowa"
+          "date": "1967",
+          "place": "Storm Lake, Iowa"
         }
       ]
     },
@@ -1345,8 +1345,8 @@
       "id": "I0047",
       "name": "Sven Magni Magnusson Stål",
       "living": false,
-      "birth": "1872",
-      "death": "1948",
+      "birth": "19 FEB 1872",
+      "death": "14 MAR 1948",
       "place": "Stenbrohult, Kronoberg, Sweden",
       "birth_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
       "death_place": "Stenbrohult, Kronoberg, Sweden",
@@ -1384,8 +1384,8 @@
       "id": "I0048",
       "name": "Elin Jonsdotter",
       "living": false,
-      "birth": "1867",
-      "death": "1952",
+      "birth": "EST AUG 1867",
+      "death": "JUL 1952",
       "place": "Alta, Buena Vista, Iowa",
       "birth_place": "Hybugden, Femsjö, Kronoberg, Sweden",
       "death_place": "Alta, Buena Vista, Iowa",
@@ -1418,7 +1418,7 @@
       "id": "I0049",
       "name": "Magnus Håkansson",
       "living": false,
-      "birth": "1829",
+      "birth": "1 APR 1829",
       "death": "?",
       "place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
       "birth_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
@@ -1450,7 +1450,7 @@
       "id": "I0050",
       "name": "Pernilla Svensdotter",
       "living": false,
-      "birth": "1837",
+      "birth": "17 JUL 1837",
       "death": "?",
       "place": "Nilshult, Jämshög, Blekinge, Sweden",
       "birth_place": "Nilshult, Jämshög, Blekinge, Sweden",
@@ -1799,8 +1799,8 @@
       "id": "I0064",
       "name": "Fred Bernhardt",
       "living": false,
-      "birth": "1894",
-      "death": "1976",
+      "birth": "23 FEB 1894",
+      "death": "22 APR 1976",
       "place": "",
       "birth_place": "",
       "death_place": "",
@@ -1932,8 +1932,8 @@
       "marriages": [
         {
           "spouse": "I0020",
-          "date": "17 NOV 1979",
-          "place": "Santa Cruz, Santa Cruz, California"
+          "date": "1979",
+          "place": "Santa Cruz, California"
         }
       ]
     },
@@ -4046,7 +4046,7 @@
       "living": true,
       "birth": "1938",
       "death": "",
-      "place": "Wahoo, Saunders, Nebraska",
+      "place": "Wahoo, Nebraska",
       "birth_place": "Wahoo, Saunders, Nebraska",
       "death_place": "",
       "parents": [
@@ -4073,8 +4073,8 @@
       "id": "I0152",
       "name": "Joanne Hutchins",
       "living": false,
-      "birth": "1945",
-      "death": "2019",
+      "birth": "21 SEP 1945",
+      "death": "16 MAY 2019",
       "place": "Omaha, Douglas, Nebraska",
       "birth_place": "Bloomfield, Essex, New Jersey",
       "death_place": "Omaha, Douglas, Nebraska",
@@ -4102,8 +4102,8 @@
       "id": "I0153",
       "name": "Walter Carl Urban",
       "living": false,
-      "birth": "1901",
-      "death": "1973",
+      "birth": "17 AUG 1901",
+      "death": "10 JUL 1973",
       "place": "Fremont, Dodge, Nebraska",
       "birth_place": "Chalco, Sarpy, Nebraska",
       "death_place": "Fremont, Dodge, Nebraska",
@@ -4139,8 +4139,8 @@
       "id": "I0154",
       "name": "Zella Ullstrom",
       "living": false,
-      "birth": "1902",
-      "death": "1990",
+      "birth": "19 JAN 1902",
+      "death": "28 MAR 1990",
       "place": "Wahoo, Saunders, Nebraska",
       "birth_place": "Memphis, Saunders, Nebraska",
       "death_place": "Wahoo, Saunders, Nebraska",
@@ -4654,7 +4654,7 @@
       "marriages": [
         {
           "spouse": "I0173",
-          "date": "2 JUN 1934",
+          "date": "1934",
           "place": "Lackawanna, Pennsylvania"
         }
       ]
@@ -4665,7 +4665,7 @@
       "living": true,
       "birth": "1916",
       "death": "",
-      "place": "Greentown, Pike, Pennsylvania",
+      "place": "Greentown, Pennsylvania",
       "birth_place": "Greentown, Pike, Pennsylvania",
       "death_place": "",
       "parents": [
@@ -4682,7 +4682,7 @@
       "marriages": [
         {
           "spouse": "I0172",
-          "date": "2 JUN 1934",
+          "date": "1934",
           "place": "Lackawanna, Pennsylvania"
         }
       ]
@@ -4693,7 +4693,7 @@
       "living": true,
       "birth": "1967",
       "death": "",
-      "place": "Omaha, Douglas, Nebraska",
+      "place": "Omaha, Nebraska",
       "birth_place": "Omaha, Douglas, Nebraska",
       "death_place": "",
       "parents": [
@@ -4767,8 +4767,8 @@
       "id": "I0177",
       "name": "Edna A Brown",
       "living": false,
-      "birth": "1886",
-      "death": "1970",
+      "birth": "12 AUG 1886",
+      "death": "DEC 1970",
       "place": "Forest City, Susquehanna, Pennsylvania",
       "birth_place": "Clifford, Susquehanna, Pennsylvania",
       "death_place": "Forest City, Susquehanna, Pennsylvania",
@@ -4845,8 +4845,8 @@
       "id": "I0180",
       "name": "Oney Thomas Rounds",
       "living": false,
-      "birth": "1868",
-      "death": "1918",
+      "birth": "18 JUL 1868",
+      "death": "20 OCT 1918",
       "place": "Union Dale, Susquehanna, Pennsylvania",
       "birth_place": "Clifford, Susquehanna, Pennsylvania",
       "death_place": "Union Dale, Susquehanna, Pennsylvania",
@@ -4870,8 +4870,8 @@
       "id": "I0181",
       "name": "Martha Jane Breese",
       "living": false,
-      "birth": "1866",
-      "death": "1936",
+      "birth": "19 OCT 1866",
+      "death": "12 OCT 1936",
       "place": "Clifford, Susquehanna, Pennsylvania",
       "birth_place": "Herrick Township, Susquehanna, Pennsylvania",
       "death_place": "Clifford, Susquehanna, Pennsylvania",
@@ -4898,8 +4898,8 @@
       "id": "I0182",
       "name": "Isaac J Breese",
       "living": false,
-      "birth": "1819",
-      "death": "1903",
+      "birth": "15 NOV 1819",
+      "death": "27 MAY 1903",
       "place": "Herrick Township, Susquehanna, Pennsylvania",
       "birth_place": "Wales, United Kingdom",
       "death_place": "Herrick Township, Susquehanna, Pennsylvania",
@@ -4923,8 +4923,8 @@
       "id": "I0183",
       "name": "Margaret Owens",
       "living": false,
-      "birth": "1830",
-      "death": "1904",
+      "birth": "17 MAR 1830",
+      "death": "19 FEB 1904",
       "place": "Wales, United Kingdom",
       "birth_place": "Wales, United Kingdom",
       "death_place": "",
@@ -4948,8 +4948,8 @@
       "id": "I0184",
       "name": "Pearl Lucille Lathrop",
       "living": false,
-      "birth": "1898",
-      "death": "1980",
+      "birth": "5 SEP 1898",
+      "death": "15 JAN 1980",
       "place": "Cresco, Howard, Iowa",
       "birth_place": "Ottumwa, Wapello, Iowa",
       "death_place": "Cresco, Howard, Iowa",
@@ -4988,7 +4988,7 @@
       "name": "James David Lepa",
       "living": false,
       "birth": "1884",
-      "death": "1963",
+      "death": "6 MAY 1963",
       "place": "",
       "birth_place": "",
       "death_place": "",
@@ -5076,7 +5076,7 @@
       "name": "John Lawrence Lepa",
       "living": false,
       "birth": "1917",
-      "death": "1969",
+      "death": "11 JAN 1969",
       "place": "",
       "birth_place": "",
       "death_place": "",
@@ -5329,7 +5329,7 @@
         "I0000",
         "I0005"
       ],
-      "marriage_date": "6 JUN 1964",
+      "marriage_date": "1964",
       "marriage_place": "Storm Lake, Buena Vista, Iowa"
     },
     {
@@ -5337,7 +5337,7 @@
       "husband": "I0000",
       "wife": "I0006",
       "children": [],
-      "marriage_date": "26 OCT 1998",
+      "marriage_date": "1998",
       "marriage_place": "Maui, Maui, Hawaii"
     },
     {
@@ -5349,7 +5349,7 @@
         "I0009",
         "I0010"
       ],
-      "marriage_date": "3 OCT 1998",
+      "marriage_date": "1998",
       "marriage_place": "Omaha, Douglas, Nebraska"
     },
     {
@@ -5486,7 +5486,7 @@
         "I0067",
         "I0068"
       ],
-      "marriage_date": "31 DEC 1967",
+      "marriage_date": "1967",
       "marriage_place": "Storm Lake, Buena Vista, Iowa"
     },
     {
@@ -5574,7 +5574,7 @@
       "children": [
         "I0070"
       ],
-      "marriage_date": "17 NOV 1979",
+      "marriage_date": "1979",
       "marriage_place": "Santa Cruz, Santa Cruz, California"
     },
     {
@@ -5968,7 +5968,7 @@
       "children": [
         "I0152"
       ],
-      "marriage_date": "2 JUN 1934",
+      "marriage_date": "1934",
       "marriage_place": "Lackawanna, Pennsylvania"
     },
     {

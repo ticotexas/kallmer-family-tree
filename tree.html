@@ -301,6 +301,10 @@
       text-underline-offset: 3px;
     }
 
+    .pedigree-age {
+      margin-top: 2px;
+    }
+
     .couple-divider {
       font-family: "IBM Plex Mono", monospace;
       color: var(--brass);
@@ -335,6 +339,23 @@
         min-width: 0;
         max-width: 360px;
       }
+    }
+
+    .person-link span {
+      display: block;
+    }
+
+    .link-dates,
+    .link-age {
+      display: block;
+      color: #b7c69f;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.88rem;
+    }
+
+
+    .link-name {
+      color: var(--paper);
     }
   </style>
 </head>
@@ -462,26 +483,34 @@
           });
         }
 
+        function yearFromText(text) {
+          const match = String(text || "").match(/\b(1[5-9]\d{2}|20\d{2})\b/);
+          return match ? parseInt(match[1], 10) : null;
+        }
+
         function ageText(person) {
           if (!person || !person.birth) return "";
 
-          const birthYear = parseInt(person.birth, 10);
-          if (Number.isNaN(birthYear)) return "";
+          const birthYear = yearFromText(person.birth);
+          if (!birthYear) return "";
 
           if (person.death) {
-            const deathYear = parseInt(person.death, 10);
-            if (Number.isNaN(deathYear)) return "";
-            return ` (${deathYear - birthYear})`;
+            const deathYear = yearFromText(person.death);
+            if (!deathYear) return "";
+
+            const age = deathYear - birthYear;
+            return age >= 0 && age < 125 ? ` (${age})` : "";
           }
 
           const currentYear = new Date().getFullYear();
-          return ` (${currentYear - birthYear})`;
+          const age = currentYear - birthYear;
+          return age >= 0 && age < 125 ? ` (${age})` : "";
         }
 
         function lifeDates(person) {
           if (!person) return "";
           const birth = person.birth || "?";
-          const death = person.death ? `–${person.death}` : "–present";
+          const death = person.death ? ` – ${person.death}` : " – present";
           return `${birth}${death}${ageText(person)}`;
         }
 
@@ -491,11 +520,19 @@
         }
 
         function personButton(person) {
+          const dates = lifeDates(person);
+          const ageMatch = dates.match(/\(\d+\)$/);
+
+          const age = ageMatch ? ageMatch[0] : "";
+          const dateOnly = age ? dates.replace(age, "").trim() : dates;
+
           return `
-            <button class="person-link" data-person-id="${person.id}">
-              ${person.name} ${lifeDates(person)}
-            </button>
-          `;
+    <button class="person-link" data-person-id="${person.id}">
+      <span class="link-name">${person.name}</span>
+      <span class="link-dates">${dateOnly}</span>
+      ${age ? `<span class="link-age">${age}</span>` : ""}
+    </button>
+  `;
         }
 
         function namesFromIds(ids) {
@@ -578,12 +615,19 @@
         function pedigreePersonLine(person) {
           if (!person) return `<div class="mono">Unknown</div>`;
 
+          const dates = lifeDates(person);
+          const ageMatch = dates.match(/\(\d+\)$/);
+
+          const age = ageMatch ? ageMatch[0] : "";
+          const dateOnly = age ? dates.replace(age, "").trim() : dates;
+
           return `
-            <button class="pedigree-person-name" data-person-id="${person.id}">
-              ${person.name}
-            </button>
-            <div class="mono pedigree-dates">${lifeDates(person)}</div>
-          `;
+    <button class="pedigree-person-name" data-person-id="${person.id}">
+      ${person.name}
+    </button>
+    <div class="mono pedigree-dates">${dateOnly}</div>
+    ${age ? `<div class="mono pedigree-age">${age}</div>` : ""}
+  `;
         }
 
         function pedigreeCoupleCard(couple, isCurrent = false) {
