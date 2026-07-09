@@ -337,6 +337,82 @@
       border: 1px solid var(--brass);
     }
 
+    #detail-story {
+      margin-top: 28px;
+      border-top: 1px solid var(--brass);
+      padding-top: 22px;
+    }
+
+    #detail-story p {
+      line-height: 1.55;
+    }
+
+    #detail-story .story-title {
+      color: var(--brass);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    #detail-story h3 {
+      color: var(--homestead-clay);
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+
+    .story-link {
+      display: block;
+      width: 100%;
+      text-align: left;
+
+      padding: 10px 0;
+      margin-top: 10px;
+
+      border: none;
+      background: none;
+
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .story-link:hover {
+      color: var(--homestead-clay);
+      text-decoration: underline;
+    }
+
+    .story-link::before {
+      content: "▸ ";
+      color: var(--homestead-clay);
+    }
+
+    .story-link.open::before {
+      content: "▾ ";
+    }
+
+    .story-content {
+      margin: 8px 0 18px 18px;
+      color: #b7c69f;
+    }
+
+    .story-content h4 {
+      color: var(--brass);
+      margin-top: 18px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .story-link {
+      outline: none;
+    }
+
+    .story-link:focus {
+      color: var(--homestead-clay);
+    }
+
     @media (max-width: 900px) {
       #content {
         flex-direction: column;
@@ -398,6 +474,7 @@
       <p class="mono" id="detail-dates"></p>
       <div id="detail-photo"></div>
       <div id="detail-place"></div>
+      <div id="detail-story"></div>
     </div>
   </div>
 
@@ -752,6 +829,88 @@
           });
         }
 
+        async function loadStory(person) {
+          const storyDiv = document.getElementById("detail-story");
+
+          storyDiv.innerHTML = "";
+
+          try {
+            const response = await fetch(
+              `stories/${person.id}/index.json?v=${Date.now()}`
+            );
+
+            if (!response.ok) {
+              throw new Error();
+            }
+
+            const files = await response.json();
+
+            storyDiv.innerHTML = `
+              <div class="story-title">Stories</div>
+              <div id="story-links"></div>
+            `;
+
+            const linksDiv = document.getElementById("story-links");
+
+            files.forEach(filename => {
+              const label = filename
+                .replace(/^\d+-/, "")
+                .replace(/\.md$/, "")
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, c => c.toUpperCase());
+
+              const button = document.createElement("button");
+
+              const contentDiv = document.createElement("div");
+              contentDiv.className = "story-content";
+
+              button.className = "story-link";
+              button.textContent = label;
+
+              button.onclick = async () => {
+
+                if (button.classList.contains("open")) {
+                  button.classList.remove("open");
+                  contentDiv.innerHTML = "";
+                  return;
+                }
+
+                document
+                  .querySelectorAll(".story-link")
+                  .forEach(btn => btn.classList.remove("open"));
+
+                button.classList.add("open");
+
+                const md = await fetch(
+                  `stories/${person.id}/${filename}?v=${Date.now()}`
+                ).then(r => r.text());
+
+                contentDiv.innerHTML =
+                  md
+                    .split("\n\n")
+                    .map(paragraph => {
+                      if (paragraph.startsWith("# ")) {
+                        return `<h3>${paragraph.substring(2)}</h3>`;
+                      }
+
+                      if (paragraph.startsWith("## ")) {
+                        return `<h4>${paragraph.substring(3)}</h4>`;
+                      }
+
+                      return `<p>${paragraph}</p>`;
+                    })
+                    .join("");
+              };
+
+              linksDiv.appendChild(button);
+              linksDiv.appendChild(contentDiv);
+            });
+
+          } catch {
+            storyDiv.innerHTML = "";
+          }
+        }
+
         function showDetails(person) {
 
           const url = new URL(window.location);
@@ -795,6 +954,8 @@
             <h3>Siblings</h3>
             <p>${namesFromIds(person.siblings)}</p>
           `;
+
+          loadStory(person);
 
           attachPersonLinkHandlers();
         }
