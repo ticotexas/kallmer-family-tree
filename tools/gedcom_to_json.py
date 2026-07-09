@@ -189,12 +189,12 @@ for person in people.values():
         living = False
 
     if living:
-        display_birth = person["birth_year"]
-        display_death = ""
-        display_place = ""
-    else:
         display_birth = person["birth_year"] or person["birth_date"]
-        display_death = person["death_year"] or person["death_date"]
+        display_death = ""
+        display_place = person["birth_place"]
+    else:
+        display_birth = person["birth_year"] or person["birth_date"] or "?"
+        display_death = person["death_year"] or person["death_date"] or "?"
         display_place = person["death_place"] or person["birth_place"]
 
     public_people.append({
@@ -204,6 +204,8 @@ for person in people.values():
         "birth": display_birth,
         "death": display_death,
         "place": display_place,
+        "birth_place": person["birth_place"],
+        "death_place": person["death_place"],
         "parents": sorted(person["parents"]),
         "spouses": sorted(person["spouses"]),
         "children": sorted(person["children"]),

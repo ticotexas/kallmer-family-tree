@@ -6,7 +6,9 @@
       "living": true,
       "birth": "1969",
       "death": "",
-      "place": "",
+      "place": "Baltimore, Maryland",
+      "birth_place": "Baltimore, Maryland",
+      "death_place": "",
       "parents": [
         "I0001",
         "I0002"
@@ -32,7 +34,9 @@
       "living": true,
       "birth": "1942",
       "death": "",
-      "place": "",
+      "place": "Storm Lake, Buena Vista, Iowa",
+      "birth_place": "Storm Lake, Buena Vista, Iowa",
+      "death_place": "",
       "parents": [
         "I0013",
         "I0014"
@@ -62,7 +66,9 @@
       "living": true,
       "birth": "1943",
       "death": "",
-      "place": "",
+      "place": "Marshalltown, Marshall, Iowa",
+      "birth_place": "Marshalltown, Marshall, Iowa",
+      "death_place": "",
       "parents": [
         "I0011",
         "I0012"
@@ -89,9 +95,11 @@
       "id": "I0003",
       "name": "Håkan Svensson",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0004"
@@ -112,9 +120,11 @@
       "id": "I0004",
       "name": "Ingeborg Persdotter",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0003"
@@ -137,7 +147,9 @@
       "living": true,
       "birth": "1973",
       "death": "",
-      "place": "",
+      "place": "Baltimore, Maryland",
+      "birth_place": "Baltimore, Maryland",
+      "death_place": "",
       "parents": [
         "I0001",
         "I0002"
@@ -167,7 +179,9 @@
       "living": true,
       "birth": "1971",
       "death": "",
-      "place": "",
+      "place": "Omaha, Douglas, Nebraska",
+      "birth_place": "Omaha, Douglas, Nebraska",
+      "death_place": "",
       "parents": [
         "I0151",
         "I0152"
@@ -193,7 +207,9 @@
       "living": true,
       "birth": "1971",
       "death": "",
-      "place": "",
+      "place": "Mason City, Cerro Gordo, Iowa",
+      "birth_place": "Mason City, Cerro Gordo, Iowa",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0005"
@@ -218,7 +234,9 @@
       "living": true,
       "birth": "2008",
       "death": "",
-      "place": "",
+      "place": "Marietta, Cobb, Georgia",
+      "birth_place": "Marietta, Cobb, Georgia",
+      "death_place": "",
       "parents": [
         "I0005",
         "I0007"
@@ -237,7 +255,9 @@
       "living": true,
       "birth": "2011",
       "death": "",
-      "place": "",
+      "place": "Marietta, Cobb, Georgia",
+      "birth_place": "Marietta, Cobb, Georgia",
+      "death_place": "",
       "parents": [
         "I0005",
         "I0007"
@@ -256,7 +276,9 @@
       "living": true,
       "birth": "2011",
       "death": "",
-      "place": "",
+      "place": "Marietta, Cobb, Georgia",
+      "birth_place": "Marietta, Cobb, Georgia",
+      "death_place": "",
       "parents": [
         "I0005",
         "I0007"
@@ -276,6 +298,8 @@
       "birth": "1917",
       "death": "2006",
       "place": "Storm Lake, Buena Vista, Iowa",
+      "birth_place": "Postville, Allamakee, Iowa",
+      "death_place": "Storm Lake, Buena Vista, Iowa",
       "parents": [
         "I0018",
         "I0019"
@@ -300,8 +324,8 @@
       "marriages": [
         {
           "spouse": "I0012",
-          "date": "",
-          "place": ""
+          "date": "31 MAR 1941",
+          "place": "Decorah Township, Winneshiek, Iowa"
         }
       ]
     },
@@ -311,8 +335,13 @@
       "living": false,
       "birth": "1919",
       "death": "2004",
-      "place": "Storm Lake, Buena Vista, Iowa",
-      "parents": [],
+      "place": "Newell, Buena Vista, Iowa",
+      "birth_place": "Ostrander, Fillmore, Minnesota",
+      "death_place": "Newell, Buena Vista, Iowa",
+      "parents": [
+        "I0184",
+        "I0185"
+      ],
       "spouses": [
         "I0011"
       ],
@@ -320,12 +349,20 @@
         "I0002",
         "I0020"
       ],
-      "siblings": [],
+      "siblings": [
+        "I0188",
+        "I0189",
+        "I0190",
+        "I0191",
+        "I0192",
+        "I0193",
+        "I0197"
+      ],
       "marriages": [
         {
           "spouse": "I0011",
-          "date": "",
-          "place": ""
+          "date": "31 MAR 1941",
+          "place": "Decorah Township, Winneshiek, Iowa"
         }
       ]
     },
@@ -336,6 +373,8 @@
       "birth": "1907",
       "death": "2001",
       "place": "Storm Lake, Buena Vista, Iowa",
+      "birth_place": "Odebolt, Sac, Iowa",
+      "death_place": "Storm Lake, Buena Vista, Iowa",
       "parents": [
         "I0021",
         "I0022"
@@ -376,6 +415,8 @@
       "birth": "1908",
       "death": "1957",
       "place": "Storm Lake, Buena Vista, Iowa",
+      "birth_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+      "death_place": "Storm Lake, Buena Vista, Iowa",
       "parents": [
         "I0047",
         "I0048"
@@ -411,6 +452,8 @@
       "birth": "1914",
       "death": "2014",
       "place": "Storm Lake, Buena Vista, Iowa",
+      "birth_place": "Oakland, Pottawattamie, Iowa",
+      "death_place": "Storm Lake, Buena Vista, Iowa",
       "parents": [],
       "spouses": [
         "I0013"
@@ -432,6 +475,8 @@
       "birth": "1939",
       "death": "2010",
       "place": "Bangkok, Thailand",
+      "birth_place": "Storm Lake, Buena Vista, Iowa",
+      "death_place": "Bangkok, Thailand",
       "parents": [
         "I0013",
         "I0014"
@@ -458,7 +503,9 @@
       "living": true,
       "birth": "1941",
       "death": "",
-      "place": "",
+      "place": "Storm Lake, Buena Vista, Iowa",
+      "birth_place": "Storm Lake, Buena Vista, Iowa",
+      "death_place": "",
       "parents": [
         "I0013",
         "I0014"
@@ -477,7 +524,7 @@
       "marriages": [
         {
           "spouse": "I0046",
-          "date": "30 DEC 1967",
+          "date": "31 DEC 1967",
           "place": "Storm Lake, Buena Vista, Iowa"
         }
       ]
@@ -489,6 +536,8 @@
       "birth": "1891",
       "death": "1975",
       "place": "Caledonia, Houston, Minnesota",
+      "birth_place": "Postville, Allamakee, Iowa",
+      "death_place": "Caledonia, Houston, Minnesota",
       "parents": [
         "I0087",
         "I0088"
@@ -527,6 +576,8 @@
       "birth": "1891",
       "death": "1983",
       "place": "Caledonia, Houston, Minnesota",
+      "birth_place": "Box Butte Township, Box Butte, Nebraska",
+      "death_place": "Caledonia, Houston, Minnesota",
       "parents": [
         "I0079",
         "I0080"
@@ -567,7 +618,9 @@
       "living": true,
       "birth": "1950",
       "death": "",
-      "place": "",
+      "place": "Storm Lake, Buena Vista, Iowa",
+      "birth_place": "Storm Lake, Buena Vista, Iowa",
+      "death_place": "",
       "parents": [
         "I0011",
         "I0012"
@@ -596,6 +649,8 @@
       "birth": "1868",
       "death": "1935",
       "place": "Storm Lake, Buena Vista, Iowa",
+      "birth_place": "Schleswig-Holstein, Germany",
+      "death_place": "Storm Lake, Buena Vista, Iowa",
       "parents": [
         "I0036",
         "I0038"
@@ -627,6 +682,8 @@
       "birth": "1875",
       "death": "1908",
       "place": "Colorado Springs, El Paso, Colorado",
+      "birth_place": "Sublette Township, Lee, Illinois",
+      "death_place": "Colorado Springs, El Paso, Colorado",
       "parents": [
         "I0024",
         "I0039"
@@ -662,9 +719,11 @@
       "id": "I0023",
       "name": "Katherine Dinges",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0024",
         "I0039"
@@ -685,9 +744,11 @@
       "id": "I0024",
       "name": "John W. Dinges Sr.",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0040",
         "I0041"
@@ -717,9 +778,11 @@
       "id": "I0025",
       "name": "Julia Koehler",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0024",
         "I0039"
@@ -740,9 +803,11 @@
       "id": "I0026",
       "name": "Joseph Dinges",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0024",
         "I0039"
@@ -763,9 +828,11 @@
       "id": "I0027",
       "name": "John Dinges Jr.",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0024",
         "I0039"
@@ -786,9 +853,11 @@
       "id": "I0028",
       "name": "Pete Dinges",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0024",
         "I0039"
@@ -809,9 +878,11 @@
       "id": "I0029",
       "name": "Fred Dinges",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0024",
         "I0039"
@@ -832,9 +903,11 @@
       "id": "I0030",
       "name": "Jons Persson",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0063"
@@ -858,6 +931,8 @@
       "birth": "1895",
       "death": "1987",
       "place": "Storm Lake, Buena Vista, Iowa",
+      "birth_place": "",
+      "death_place": "Storm Lake, Buena Vista, Iowa",
       "parents": [
         "I0021",
         "I0022"
@@ -890,6 +965,8 @@
       "birth": "1897",
       "death": "1984",
       "place": "Gardena, Los Angeles, California",
+      "birth_place": "Odebolt, Sac, Iowa",
+      "death_place": "Gardena, Los Angeles, California",
       "parents": [
         "I0021",
         "I0022"
@@ -920,6 +997,8 @@
       "birth": "1900",
       "death": "1983",
       "place": "Sioux City, Woodbury, Iowa",
+      "birth_place": "Iowa",
+      "death_place": "Sioux City, Woodbury, Iowa",
       "parents": [
         "I0021",
         "I0022"
@@ -947,9 +1026,11 @@
       "id": "I0034",
       "name": "Baby Boy Kallmer",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0021",
         "I0022"
@@ -972,6 +1053,8 @@
       "birth": "1902",
       "death": "1928",
       "place": "Storm Lake, Buena Vista, Iowa",
+      "birth_place": "Odebolt, Sac, Iowa",
+      "death_place": "Storm Lake, Buena Vista, Iowa",
       "parents": [
         "I0021",
         "I0022"
@@ -994,6 +1077,8 @@
       "birth": "1834",
       "death": "1912",
       "place": "Chicago, Cook, Illinois",
+      "birth_place": "Germany",
+      "death_place": "Chicago, Cook, Illinois",
       "parents": [],
       "spouses": [
         "I0038"
@@ -1017,6 +1102,8 @@
       "birth": "1834",
       "death": "1913",
       "place": "Greenwood, Four Corners, Gallatin, Montana",
+      "birth_place": "Germany",
+      "death_place": "Greenwood, Four Corners, Gallatin, Montana",
       "parents": [
         "I0042",
         "I0043"
@@ -1031,8 +1118,10 @@
       "name": "Caroline Jacobson",
       "living": false,
       "birth": "1831",
-      "death": "",
+      "death": "?",
       "place": "Odebolt, Sac, Iowa",
+      "birth_place": "Germany",
+      "death_place": "Odebolt, Sac, Iowa",
       "parents": [],
       "spouses": [
         "I0036"
@@ -1053,9 +1142,11 @@
       "id": "I0039",
       "name": "Katherine Dinges",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0024"
@@ -1082,9 +1173,11 @@
       "id": "I0040",
       "name": "John Dinges",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0041"
@@ -1105,9 +1198,11 @@
       "id": "I0041",
       "name": "Christina Port",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0040"
@@ -1128,9 +1223,11 @@
       "id": "I0042",
       "name": "A Albertson",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0043"
@@ -1151,9 +1248,11 @@
       "id": "I0043",
       "name": "H Anderson",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0042"
@@ -1177,6 +1276,8 @@
       "birth": "1892",
       "death": "1980",
       "place": "Gardena, Los Angeles, California",
+      "birth_place": "Ida Grove, Ida, Iowa",
+      "death_place": "Gardena, Los Angeles, California",
       "parents": [],
       "spouses": [
         "I0032"
@@ -1198,6 +1299,8 @@
       "birth": "1901",
       "death": "1965",
       "place": "Ida Grove, Ida, Iowa",
+      "birth_place": "Ida Grove, Ida, Iowa",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0033"
@@ -1219,6 +1322,8 @@
       "birth": "1941",
       "death": "2019",
       "place": "Seattle, Washington",
+      "birth_place": "Springfield, Missouri",
+      "death_place": "Seattle, Washington",
       "parents": [],
       "spouses": [
         "I0017"
@@ -1231,7 +1336,7 @@
       "marriages": [
         {
           "spouse": "I0017",
-          "date": "30 DEC 1967",
+          "date": "31 DEC 1967",
           "place": "Storm Lake, Buena Vista, Iowa"
         }
       ]
@@ -1243,6 +1348,8 @@
       "birth": "1872",
       "death": "1948",
       "place": "Stenbrohult, Kronoberg, Sweden",
+      "birth_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+      "death_place": "Stenbrohult, Kronoberg, Sweden",
       "parents": [
         "I0049",
         "I0050"
@@ -1280,6 +1387,8 @@
       "birth": "1867",
       "death": "1952",
       "place": "Alta, Buena Vista, Iowa",
+      "birth_place": "Hybugden, Femsjö, Kronoberg, Sweden",
+      "death_place": "Alta, Buena Vista, Iowa",
       "parents": [
         "I0030",
         "I0063"
@@ -1310,8 +1419,10 @@
       "name": "Magnus Håkansson",
       "living": false,
       "birth": "1829",
-      "death": "",
+      "death": "?",
       "place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+      "birth_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+      "death_place": "",
       "parents": [
         "I0003",
         "I0004"
@@ -1340,8 +1451,10 @@
       "name": "Pernilla Svensdotter",
       "living": false,
       "birth": "1837",
-      "death": "",
+      "death": "?",
       "place": "Nilshult, Jämshög, Blekinge, Sweden",
+      "birth_place": "Nilshult, Jämshög, Blekinge, Sweden",
+      "death_place": "",
       "parents": [
         "I0051",
         "I0052"
@@ -1369,9 +1482,11 @@
       "id": "I0051",
       "name": "Sven Nilsson",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "Blekinge, Sweden",
+      "birth_place": "Blekinge, Sweden",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0052"
@@ -1392,9 +1507,11 @@
       "id": "I0052",
       "name": "Elna Persdotter",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "Blekinge, Sweden",
+      "birth_place": "Blekinge, Sweden",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0051"
@@ -1416,8 +1533,10 @@
       "name": "Ida Magnusdotter",
       "living": false,
       "birth": "1869",
-      "death": "",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0049",
         "I0050"
@@ -1437,8 +1556,10 @@
       "name": "Peter Johan Magnusson",
       "living": false,
       "birth": "1866",
-      "death": "",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0049",
         "I0050"
@@ -1458,8 +1579,10 @@
       "name": "Emma Christina Magnusdotter",
       "living": false,
       "birth": "1865",
-      "death": "",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0049",
         "I0050"
@@ -1479,8 +1602,10 @@
       "name": "Christina Magnusdotter",
       "living": false,
       "birth": "1859",
-      "death": "",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0049",
         "I0050"
@@ -1500,8 +1625,10 @@
       "name": "Oskar Albin Stål",
       "living": false,
       "birth": "1895",
-      "death": "",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0047",
         "I0048"
@@ -1523,8 +1650,10 @@
       "name": "Helga Elida Stål",
       "living": false,
       "birth": "1898",
-      "death": "",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0047",
         "I0048"
@@ -1546,8 +1675,10 @@
       "name": "Nelly Stål",
       "living": false,
       "birth": "1900",
-      "death": "",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0047",
         "I0048"
@@ -1569,8 +1700,10 @@
       "name": "Alma Idalia Stål",
       "living": false,
       "birth": "1902",
-      "death": "",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0047",
         "I0048"
@@ -1592,8 +1725,10 @@
       "name": "Edvin Julius Stål",
       "living": false,
       "birth": "1906",
-      "death": "",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0047",
         "I0048"
@@ -1615,8 +1750,10 @@
       "name": "Selma Idalia Stål",
       "living": false,
       "birth": "1909",
-      "death": "",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0047",
         "I0048"
@@ -1637,9 +1774,11 @@
       "id": "I0063",
       "name": "Ingrid Aronsdotter",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0030"
@@ -1663,6 +1802,8 @@
       "birth": "1894",
       "death": "1976",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0031"
@@ -1683,9 +1824,11 @@
       "id": "I0065",
       "name": "Arlene Bernhardt",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0031",
         "I0064"
@@ -1699,9 +1842,11 @@
       "id": "I0066",
       "name": "Manilat Ramsin",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "Chiang Khan, Chiang Khan, Loei, Thailand",
+      "birth_place": "Chiang Khan, Chiang Khan, Loei, Thailand",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0016"
@@ -1722,7 +1867,9 @@
       "living": true,
       "birth": "1972",
       "death": "",
-      "place": "",
+      "place": "Seattle, Washington",
+      "birth_place": "Seattle, Washington",
+      "death_place": "",
       "parents": [
         "I0017",
         "I0046"
@@ -1749,9 +1896,11 @@
       "id": "I0068",
       "name": "Brent Kallmer",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0017",
         "I0046"
@@ -1767,9 +1916,11 @@
       "id": "I0069",
       "name": "Kelly Parnum",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0020"
@@ -1793,6 +1944,8 @@
       "birth": "1988",
       "death": "",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0020",
         "I0069"
@@ -1809,6 +1962,8 @@
       "birth": "1913",
       "death": "1987",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0018",
         "I0019"
@@ -1834,6 +1989,8 @@
       "birth": "1916",
       "death": "2008",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0018",
         "I0019"
@@ -1859,6 +2016,8 @@
       "birth": "1919",
       "death": "2010",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0018",
         "I0019"
@@ -1884,6 +2043,8 @@
       "birth": "1921",
       "death": "2003",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0018",
         "I0019"
@@ -1909,6 +2070,8 @@
       "birth": "1922",
       "death": "2014",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0018",
         "I0019"
@@ -1934,6 +2097,8 @@
       "birth": "1924",
       "death": "2016",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0018",
         "I0019"
@@ -1959,6 +2124,8 @@
       "birth": "1927",
       "death": "2020",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0018",
         "I0019"
@@ -1984,6 +2151,8 @@
       "birth": "1931",
       "death": "2024",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0018",
         "I0019"
@@ -2006,9 +2175,11 @@
       "id": "I0079",
       "name": "George Benjamin Olson",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0080"
@@ -2035,9 +2206,11 @@
       "id": "I0080",
       "name": "Inger Johanne Kaasa",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0079"
@@ -2067,6 +2240,8 @@
       "birth": "1889",
       "death": "1974",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0079",
         "I0080"
@@ -2090,6 +2265,8 @@
       "birth": "1898",
       "death": "1975",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0079",
         "I0080"
@@ -2113,6 +2290,8 @@
       "birth": "1900",
       "death": "1986",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0079",
         "I0080"
@@ -2136,6 +2315,8 @@
       "birth": "1902",
       "death": "1975",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0079",
         "I0080"
@@ -2159,6 +2340,8 @@
       "birth": "1904",
       "death": "1980",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0079",
         "I0080"
@@ -2182,6 +2365,8 @@
       "birth": "1906",
       "death": "1995",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0079",
         "I0080"
@@ -2203,8 +2388,10 @@
       "name": "William Angus Huffey",
       "living": false,
       "birth": "1866",
-      "death": "",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0092",
         "I0093"
@@ -2234,6 +2421,8 @@
       "birth": "1864",
       "death": "1964",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0087"
@@ -2260,6 +2449,8 @@
       "birth": "1888",
       "death": "1981",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0087",
         "I0088"
@@ -2280,6 +2471,8 @@
       "birth": "1890",
       "death": "1982",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0087",
         "I0088"
@@ -2300,6 +2493,8 @@
       "birth": "1894",
       "death": "1970",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0087",
         "I0088"
@@ -2320,6 +2515,8 @@
       "birth": "1846",
       "death": "1936",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0093"
@@ -2340,9 +2537,11 @@
       "id": "I0093",
       "name": "Harriet Parker",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0094",
         "I0095"
@@ -2369,6 +2568,8 @@
       "birth": "1831",
       "death": "1898",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0096",
         "I0097"
@@ -2395,6 +2596,8 @@
       "birth": "1831",
       "death": "1903",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0094"
@@ -2418,6 +2621,8 @@
       "birth": "1798",
       "death": "1858",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0097"
@@ -2441,6 +2646,8 @@
       "birth": "1800",
       "death": "1875",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0098",
         "I0099"
@@ -2467,6 +2674,8 @@
       "birth": "1775",
       "death": "1853",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0099"
@@ -2490,6 +2699,8 @@
       "birth": "1773",
       "death": "1841",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0100",
         "I0101"
@@ -2516,6 +2727,8 @@
       "birth": "1759",
       "death": "1794",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0102",
         "I0103"
@@ -2542,6 +2755,8 @@
       "birth": "1763",
       "death": "1806",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0100"
@@ -2565,6 +2780,8 @@
       "birth": "1721",
       "death": "1771",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0103"
@@ -2588,6 +2805,8 @@
       "birth": "1741",
       "death": "1811",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0104",
         "I0105"
@@ -2614,6 +2833,8 @@
       "birth": "1696",
       "death": "1775",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0105"
@@ -2637,6 +2858,8 @@
       "birth": "1699",
       "death": "1786",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0106",
         "I0107"
@@ -2663,6 +2886,8 @@
       "birth": "1664",
       "death": "1746",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0107"
@@ -2686,6 +2911,8 @@
       "birth": "1671",
       "death": "1719",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0108",
         "I0109"
@@ -2712,6 +2939,8 @@
       "birth": "1647",
       "death": "1716",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0109"
@@ -2735,6 +2964,8 @@
       "birth": "1649",
       "death": "1713",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0110",
         "I0111"
@@ -2761,6 +2992,8 @@
       "birth": "1619",
       "death": "1689",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0111"
@@ -2784,6 +3017,8 @@
       "birth": "1625",
       "death": "1680",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0112",
         "I0113"
@@ -2810,6 +3045,8 @@
       "birth": "1590",
       "death": "1659",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0113"
@@ -2833,6 +3070,8 @@
       "birth": "1592",
       "death": "1654",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0114",
         "I0115"
@@ -2859,6 +3098,8 @@
       "birth": "1568",
       "death": "1656",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0116",
         "I0117"
@@ -2885,6 +3126,8 @@
       "birth": "1568",
       "death": "1618",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0114"
@@ -2908,6 +3151,8 @@
       "birth": "1534",
       "death": "1573",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0117"
@@ -2931,6 +3176,8 @@
       "birth": "1535",
       "death": "1574",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0118",
         "I0119"
@@ -2957,6 +3204,8 @@
       "birth": "1508",
       "death": "1567",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0120",
         "I0121"
@@ -2983,6 +3232,8 @@
       "birth": "1518",
       "death": "1583",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0118"
@@ -3006,6 +3257,8 @@
       "birth": "1450",
       "death": "1536",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0121"
@@ -3029,6 +3282,8 @@
       "birth": "1453",
       "death": "1508",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0122",
         "I0123"
@@ -3055,6 +3310,8 @@
       "birth": "1429",
       "death": "1490",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0124",
         "I0125"
@@ -3081,6 +3338,8 @@
       "birth": "1430",
       "death": "1486",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0122"
@@ -3104,6 +3363,8 @@
       "birth": "1389",
       "death": "1455",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0125"
@@ -3127,6 +3388,8 @@
       "birth": "1400",
       "death": "1471",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0126",
         "I0127"
@@ -3153,6 +3416,8 @@
       "birth": "1373",
       "death": "1427",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0127"
@@ -3176,6 +3441,8 @@
       "birth": "1372",
       "death": "1400",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0128",
         "I0129"
@@ -3202,6 +3469,8 @@
       "birth": "1337",
       "death": "1384",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0130",
         "I0131"
@@ -3228,6 +3497,8 @@
       "birth": "1347",
       "death": "1387",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0128"
@@ -3251,6 +3522,8 @@
       "birth": "1300",
       "death": "1351",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0131"
@@ -3274,6 +3547,8 @@
       "birth": "1311",
       "death": "1361",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0132",
         "I0133"
@@ -3300,6 +3575,8 @@
       "birth": "1264",
       "death": "1340",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0133"
@@ -3323,6 +3600,8 @@
       "birth": "1280",
       "death": "1334",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0134",
         "I0135"
@@ -3349,6 +3628,8 @@
       "birth": "1233",
       "death": "1304",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0135"
@@ -3372,6 +3653,8 @@
       "birth": "1263",
       "death": "1309",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0136"
       ],
@@ -3397,6 +3680,8 @@
       "birth": "1225",
       "death": "1280",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0137",
         "I0138"
@@ -3415,6 +3700,8 @@
       "birth": "1194",
       "death": "1247",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0138"
@@ -3438,6 +3725,8 @@
       "birth": "1174",
       "death": "1247",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0139",
         "I0140"
@@ -3464,6 +3753,8 @@
       "birth": "1147",
       "death": "1181",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0141",
         "I0142"
@@ -3490,6 +3781,8 @@
       "birth": "1155",
       "death": "1227",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0139"
@@ -3513,6 +3806,8 @@
       "birth": "1100",
       "death": "1153",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0142"
@@ -3536,6 +3831,8 @@
       "birth": "1120",
       "death": "1189",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0143",
         "I0144"
@@ -3562,6 +3859,8 @@
       "birth": "1090",
       "death": "1147",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0145"
       ],
@@ -3587,6 +3886,8 @@
       "birth": "1100",
       "death": "1157",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0143"
@@ -3610,6 +3911,8 @@
       "birth": "1068",
       "death": "1135",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0146",
         "I0147"
@@ -3628,6 +3931,8 @@
       "birth": "1028",
       "death": "1087",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0147"
@@ -3651,6 +3956,8 @@
       "birth": "1031",
       "death": "1083",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0146"
@@ -3671,9 +3978,11 @@
       "id": "I0148",
       "name": "Dylana Blum",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0067"
@@ -3695,9 +4004,11 @@
       "id": "I0149",
       "name": "Nadia Kallmer",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0067",
         "I0148"
@@ -3713,9 +4024,11 @@
       "id": "I0150",
       "name": "Mira Kallmer",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0067",
         "I0148"
@@ -3733,7 +4046,9 @@
       "living": true,
       "birth": "1938",
       "death": "",
-      "place": "",
+      "place": "Wahoo, Saunders, Nebraska",
+      "birth_place": "Wahoo, Saunders, Nebraska",
+      "death_place": "",
       "parents": [
         "I0153",
         "I0154"
@@ -3761,6 +4076,8 @@
       "birth": "1945",
       "death": "2019",
       "place": "Omaha, Douglas, Nebraska",
+      "birth_place": "Bloomfield, Essex, New Jersey",
+      "death_place": "Omaha, Douglas, Nebraska",
       "parents": [
         "I0172",
         "I0173"
@@ -3788,6 +4105,8 @@
       "birth": "1901",
       "death": "1973",
       "place": "Fremont, Dodge, Nebraska",
+      "birth_place": "Chalco, Sarpy, Nebraska",
+      "death_place": "Fremont, Dodge, Nebraska",
       "parents": [
         "I0155",
         "I0156"
@@ -3823,6 +4142,8 @@
       "birth": "1902",
       "death": "1990",
       "place": "Wahoo, Saunders, Nebraska",
+      "birth_place": "Memphis, Saunders, Nebraska",
+      "death_place": "Wahoo, Saunders, Nebraska",
       "parents": [
         "I0165",
         "I0166"
@@ -3852,9 +4173,11 @@
       "id": "I0155",
       "name": "John Christ Urban",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0156"
@@ -3883,9 +4206,11 @@
       "id": "I0156",
       "name": "Anna Schmidt",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0155"
@@ -3914,9 +4239,11 @@
       "id": "I0157",
       "name": "John Urban",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0155",
         "I0156"
@@ -3939,9 +4266,11 @@
       "id": "I0158",
       "name": "Herman Urban",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0155",
         "I0156"
@@ -3964,9 +4293,11 @@
       "id": "I0159",
       "name": "Chris Urban",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0155",
         "I0156"
@@ -3989,9 +4320,11 @@
       "id": "I0160",
       "name": "Mabel Urban",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0155",
         "I0156"
@@ -4014,9 +4347,11 @@
       "id": "I0161",
       "name": "Helen Urban",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0155",
         "I0156"
@@ -4039,9 +4374,11 @@
       "id": "I0162",
       "name": "Ella Urban",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0155",
         "I0156"
@@ -4064,9 +4401,11 @@
       "id": "I0163",
       "name": "Minna Urban",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0155",
         "I0156"
@@ -4089,9 +4428,11 @@
       "id": "I0164",
       "name": "August Urban",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0155",
         "I0156"
@@ -4114,9 +4455,11 @@
       "id": "I0165",
       "name": "Andrew Ullstrom",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0166"
@@ -4142,9 +4485,11 @@
       "id": "I0166",
       "name": "Ida Lohey",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0165"
@@ -4173,6 +4518,8 @@
       "birth": "1899",
       "death": "1980",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0165",
         "I0166"
@@ -4195,6 +4542,8 @@
       "birth": "1897",
       "death": "1972",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0165",
         "I0166"
@@ -4217,6 +4566,8 @@
       "birth": "1907",
       "death": "1972",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0165",
         "I0166"
@@ -4239,6 +4590,8 @@
       "birth": "1913",
       "death": "1993",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0165",
         "I0166"
@@ -4261,6 +4614,8 @@
       "birth": "1904",
       "death": "1998",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [
         "I0165",
         "I0166"
@@ -4281,8 +4636,10 @@
       "name": "Kenneth E Hutchins",
       "living": false,
       "birth": "1910",
-      "death": "",
+      "death": "?",
       "place": "Clifford, Susquehanna, Pennsylvania",
+      "birth_place": "Clifford, Susquehanna, Pennsylvania",
+      "death_place": "",
       "parents": [
         "I0176",
         "I0177"
@@ -4308,7 +4665,9 @@
       "living": true,
       "birth": "1916",
       "death": "",
-      "place": "",
+      "place": "Greentown, Pike, Pennsylvania",
+      "birth_place": "Greentown, Pike, Pennsylvania",
+      "death_place": "",
       "parents": [
         "I0178",
         "I0179"
@@ -4334,7 +4693,9 @@
       "living": true,
       "birth": "1967",
       "death": "",
-      "place": "",
+      "place": "Omaha, Douglas, Nebraska",
+      "birth_place": "Omaha, Douglas, Nebraska",
+      "death_place": "",
       "parents": [
         "I0151",
         "I0152"
@@ -4358,9 +4719,11 @@
       "id": "I0175",
       "name": "Kurtis J Foster",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0174"
@@ -4379,9 +4742,11 @@
       "id": "I0176",
       "name": "Edward Hutchins",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0177"
@@ -4405,6 +4770,8 @@
       "birth": "1886",
       "death": "1970",
       "place": "Forest City, Susquehanna, Pennsylvania",
+      "birth_place": "Clifford, Susquehanna, Pennsylvania",
+      "death_place": "Forest City, Susquehanna, Pennsylvania",
       "parents": [
         "I0180",
         "I0181"
@@ -4428,9 +4795,11 @@
       "id": "I0178",
       "name": "Pauline Bibla",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0179"
@@ -4451,9 +4820,11 @@
       "id": "I0179",
       "name": "Albert Haser",
       "living": false,
-      "birth": "",
-      "death": "",
+      "birth": "?",
+      "death": "?",
       "place": "",
+      "birth_place": "",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0178"
@@ -4477,6 +4848,8 @@
       "birth": "1868",
       "death": "1918",
       "place": "Union Dale, Susquehanna, Pennsylvania",
+      "birth_place": "Clifford, Susquehanna, Pennsylvania",
+      "death_place": "Union Dale, Susquehanna, Pennsylvania",
       "parents": [],
       "spouses": [
         "I0181"
@@ -4500,6 +4873,8 @@
       "birth": "1866",
       "death": "1936",
       "place": "Clifford, Susquehanna, Pennsylvania",
+      "birth_place": "Herrick Township, Susquehanna, Pennsylvania",
+      "death_place": "Clifford, Susquehanna, Pennsylvania",
       "parents": [
         "I0182",
         "I0183"
@@ -4526,6 +4901,8 @@
       "birth": "1819",
       "death": "1903",
       "place": "Herrick Township, Susquehanna, Pennsylvania",
+      "birth_place": "Wales, United Kingdom",
+      "death_place": "Herrick Township, Susquehanna, Pennsylvania",
       "parents": [],
       "spouses": [
         "I0183"
@@ -4549,6 +4926,8 @@
       "birth": "1830",
       "death": "1904",
       "place": "Wales, United Kingdom",
+      "birth_place": "Wales, United Kingdom",
+      "death_place": "",
       "parents": [],
       "spouses": [
         "I0182"
@@ -4564,6 +4943,381 @@
           "place": "Herrick Township, Susquehanna, Pennsylvania"
         }
       ]
+    },
+    {
+      "id": "I0184",
+      "name": "Pearl Lucille Lathrop",
+      "living": false,
+      "birth": "1898",
+      "death": "1980",
+      "place": "Cresco, Howard, Iowa",
+      "birth_place": "Ottumwa, Wapello, Iowa",
+      "death_place": "Cresco, Howard, Iowa",
+      "parents": [
+        "I0186",
+        "I0187"
+      ],
+      "spouses": [
+        "I0185"
+      ],
+      "children": [
+        "I0012",
+        "I0188",
+        "I0189",
+        "I0190",
+        "I0191",
+        "I0192",
+        "I0193",
+        "I0197"
+      ],
+      "siblings": [
+        "I0194",
+        "I0195",
+        "I0196"
+      ],
+      "marriages": [
+        {
+          "spouse": "I0185",
+          "date": "5 JUL 1915",
+          "place": "Lourdes, Howard, Iowa"
+        }
+      ]
+    },
+    {
+      "id": "I0185",
+      "name": "James David Lepa",
+      "living": false,
+      "birth": "1884",
+      "death": "1963",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0184"
+      ],
+      "children": [
+        "I0012",
+        "I0188",
+        "I0189",
+        "I0190",
+        "I0191",
+        "I0192",
+        "I0193",
+        "I0197"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "spouse": "I0184",
+          "date": "5 JUL 1915",
+          "place": "Lourdes, Howard, Iowa"
+        }
+      ]
+    },
+    {
+      "id": "I0186",
+      "name": "Louis Franklin Lathrop",
+      "living": false,
+      "birth": "1873",
+      "death": "1956",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0187"
+      ],
+      "children": [
+        "I0184",
+        "I0194",
+        "I0195",
+        "I0196"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "spouse": "I0187",
+          "date": "JUN 1895",
+          "place": "Wapello, Louisa, Iowa"
+        }
+      ]
+    },
+    {
+      "id": "I0187",
+      "name": "Nellie Millhouse",
+      "living": false,
+      "birth": "1877",
+      "death": "1908",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0186"
+      ],
+      "children": [
+        "I0184",
+        "I0194",
+        "I0195",
+        "I0196"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "spouse": "I0186",
+          "date": "JUN 1895",
+          "place": "Wapello, Louisa, Iowa"
+        }
+      ]
+    },
+    {
+      "id": "I0188",
+      "name": "John Lawrence Lepa",
+      "living": false,
+      "birth": "1917",
+      "death": "1969",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0184",
+        "I0185"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0012",
+        "I0189",
+        "I0190",
+        "I0191",
+        "I0192",
+        "I0193",
+        "I0197"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0189",
+      "name": "Lawrence James Lepa",
+      "living": false,
+      "birth": "1921",
+      "death": "1992",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0184",
+        "I0185"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0012",
+        "I0188",
+        "I0190",
+        "I0191",
+        "I0192",
+        "I0193",
+        "I0197"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0190",
+      "name": "Lucile Arline Lepa",
+      "living": false,
+      "birth": "1924",
+      "death": "1992",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0184",
+        "I0185"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0012",
+        "I0188",
+        "I0189",
+        "I0191",
+        "I0192",
+        "I0193",
+        "I0197"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0191",
+      "name": "Dorothy Marie Lepa",
+      "living": false,
+      "birth": "1926",
+      "death": "1995",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0184",
+        "I0185"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0012",
+        "I0188",
+        "I0189",
+        "I0190",
+        "I0192",
+        "I0193",
+        "I0197"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0192",
+      "name": "Dale Raymond Lepa",
+      "living": false,
+      "birth": "1929",
+      "death": "1985",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0184",
+        "I0185"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0012",
+        "I0188",
+        "I0189",
+        "I0190",
+        "I0191",
+        "I0193",
+        "I0197"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0193",
+      "name": "James Roger Lepa",
+      "living": false,
+      "birth": "1931",
+      "death": "2018",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0184",
+        "I0185"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0012",
+        "I0188",
+        "I0189",
+        "I0190",
+        "I0191",
+        "I0192",
+        "I0197"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0194",
+      "name": "Olive A Lathrop",
+      "living": false,
+      "birth": "1899",
+      "death": "1940",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0186",
+        "I0187"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0184",
+        "I0195",
+        "I0196"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0195",
+      "name": "Elmer Roy Lathrop",
+      "living": false,
+      "birth": "1901",
+      "death": "1979",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0186",
+        "I0187"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0184",
+        "I0194",
+        "I0196"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0196",
+      "name": "Floyd Lathrop",
+      "living": false,
+      "birth": "1906",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0186",
+        "I0187"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0184",
+        "I0194",
+        "I0195"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0197",
+      "name": "Baby Boy Lepa",
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0184",
+        "I0185"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0012",
+        "I0188",
+        "I0189",
+        "I0190",
+        "I0191",
+        "I0192",
+        "I0193"
+      ],
+      "marriages": []
     }
   ],
   "families": [
@@ -4606,8 +5360,8 @@
         "I0002",
         "I0020"
       ],
-      "marriage_date": "",
-      "marriage_place": ""
+      "marriage_date": "31 MAR 1941",
+      "marriage_place": "Decorah Township, Winneshiek, Iowa"
     },
     {
       "id": "F0004",
@@ -4732,7 +5486,7 @@
         "I0067",
         "I0068"
       ],
-      "marriage_date": "30 DEC 1967",
+      "marriage_date": "31 DEC 1967",
       "marriage_place": "Storm Lake, Buena Vista, Iowa"
     },
     {
@@ -5272,6 +6026,44 @@
       ],
       "marriage_date": "1 SEP 1849",
       "marriage_place": "Herrick Township, Susquehanna, Pennsylvania"
+    },
+    {
+      "id": "F0066",
+      "husband": "I0185",
+      "wife": "I0184",
+      "children": [
+        "I0012",
+        "I0188",
+        "I0189",
+        "I0190",
+        "I0191",
+        "I0192",
+        "I0193",
+        "I0197"
+      ],
+      "marriage_date": "5 JUL 1915",
+      "marriage_place": "Lourdes, Howard, Iowa"
+    },
+    {
+      "id": "F0067",
+      "husband": "",
+      "wife": "I0184",
+      "children": [],
+      "marriage_date": "6 JUL 1915",
+      "marriage_place": "Howard, Iowa"
+    },
+    {
+      "id": "F0068",
+      "husband": "I0186",
+      "wife": "I0187",
+      "children": [
+        "I0184",
+        "I0194",
+        "I0195",
+        "I0196"
+      ],
+      "marriage_date": "JUN 1895",
+      "marriage_place": "Wapello, Louisa, Iowa"
     }
   ]
 }

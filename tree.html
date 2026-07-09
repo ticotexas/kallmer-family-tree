@@ -5,7 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Family Tree</title>
+  <title>Kallmer Family Tree</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -14,22 +18,26 @@
       --homestead-clay: #a8552e;
       --prairie-sage: #6b7c5a;
       --brass: #b08d3f;
+      --paper: #fffaf0;
+      --white: #ffffff;
     }
 
     body {
       margin: 0;
       background: var(--prairie-wheat);
-      font-family: serif;
+      font-family: "Source Serif 4", serif;
       color: var(--ledger-ink);
     }
 
     header {
-      padding: 20px;
+      padding: 22px 40px;
       border-bottom: 1px solid var(--brass);
     }
 
     h1 {
       margin: 0;
+      font-family: "Fraunces", serif;
+      font-size: 2.4rem;
     }
 
     #content {
@@ -42,56 +50,58 @@
     #tree {
       flex: 2;
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .person {
-      width: 260px;
-      min-height: 130px;
-      box-sizing: border-box;
+      justify-content: center;
+      min-width: 0;
     }
 
     #details {
       flex: 1;
-      background: white;
-      border: 1px solid var(--brass);
-      padding: 24px;
+      background: var(--ledger-ink);
+      color: var(--paper);
+      border: 2px solid var(--brass);
+      border-radius: 6px;
+      padding: 28px;
       position: sticky;
       top: 20px;
       min-height: 180px;
+      max-width: 390px;
+      box-sizing: border-box;
+      box-shadow: 0 8px 22px rgba(31, 46, 69, 0.22);
     }
 
-    .person {
-      border: 1px solid var(--brass);
-      background: white;
-      padding: 20px;
-      min-width: 250px;
-      width: 260px;
-      text-align: center;
-    }
-
-    .person h2 {
+    #details h2 {
       margin-top: 0;
+      font-family: "Fraunces", serif;
+      color: var(--homestead-clay);
+      font-size: 1.8rem;
+      line-height: 1.1;
+    }
+
+    #details h3 {
+      margin-top: 28px;
+      color: var(--brass);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    #details .mono {
+      color: #b7c69f;
+    }
+
+    #details .person-link {
+      color: var(--paper);
+    }
+
+    #details .person-link:hover {
+      color: var(--homestead-clay);
     }
 
     .mono {
-      font-family: monospace;
+      font-family: "IBM Plex Mono", monospace;
       color: var(--prairie-sage);
-    }
-
-    #tree {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      padding: 40px;
-      height: auto;
-    }
-
-
-    .person-card-selected {
-      border: 3px solid var(--homestead-clay);
+      font-size: 0.9rem;
     }
 
     .person-link {
@@ -104,6 +114,8 @@
       text-align: left;
       cursor: pointer;
       text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
     }
 
     .person-link:hover {
@@ -113,10 +125,34 @@
     .pedigree-chart {
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 28px;
       width: 100%;
-      max-width: 760px;
+      max-width: 920px;
       margin: 0 auto;
+    }
+
+    .ancestor-branches {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(270px, 1fr));
+      gap: 28px;
+      align-items: start;
+      justify-items: center;
+    }
+
+    .ancestor-branch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .great-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      width: 100%;
     }
 
     .generation-row {
@@ -124,6 +160,16 @@
       justify-content: center;
       gap: 18px;
       flex-wrap: wrap;
+    }
+
+    .branch-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      color: var(--prairie-sage);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+      margin-bottom: -6px;
     }
 
     .generation-label {
@@ -134,29 +180,86 @@
       color: var(--prairie-sage);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: -8px;
+      margin-bottom: -10px;
     }
 
-    .pedigree-person {
+    .pedigree-couple {
       border: 1px solid var(--brass);
-      background: #fffaf0;
-      padding: 10px 12px;
-      min-width: 180px;
-      max-width: 220px;
-      cursor: pointer;
+      background: var(--paper);
+      padding: 13px 15px;
+      width: 270px;
+      min-height: 118px;
+      min-width: 270px;
+      max-width: 270px;
+      box-sizing: border-box;
+      text-align: center;
+      box-shadow: 0 1px 0 rgba(31, 46, 69, 0.08);
     }
 
-    .pedigree-person:hover {
-      border-color: var(--homestead-clay);
+    .pedigree-couple.placeholder {
+      visibility: hidden;
+      pointer-events: none;
     }
 
-    .pedigree-person.current {
+    .pedigree-couple.current {
       border: 2px solid var(--homestead-clay);
       background: #fff4df;
     }
 
-    .pedigree-name {
+    .pedigree-person-name {
+      display: block;
+      width: 100%;
+      border: 0;
+      background: none;
+      padding: 0;
+      color: var(--ledger-ink);
+      font-family: "Source Serif 4", serif;
+      font-size: 1rem;
       font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .pedigree-person-name:hover {
+      color: var(--homestead-clay);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .couple-divider {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--brass);
+      font-size: 0.75rem;
+      margin: 4px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .pedigree-dates {
+      margin-top: 4px;
+    }
+
+    @media (max-width: 900px) {
+      #content {
+        flex-direction: column;
+        padding: 24px;
+      }
+
+      #details {
+        position: static;
+        max-width: none;
+        width: 100%;
+      }
+
+      .ancestor-branches {
+        grid-template-columns: 1fr;
+      }
+
+      .pedigree-couple {
+        width: 100%;
+        min-width: 0;
+        max-width: 360px;
+      }
     }
   </style>
 </head>
@@ -167,31 +270,17 @@
   </header>
 
   <div id="content">
-
     <div id="tree"></div>
 
     <div id="details">
-
-      <h2 id="detail-name">
-        Select a Person
-      </h2>
-
+      <h2 id="detail-name">Select a Person</h2>
       <p class="mono" id="detail-dates"></p>
-
-      <p id="detail-place"></p>
-
+      <div id="detail-place"></div>
     </div>
-
-  </div>
-  <h2 id="detail-name"></h2>
-
-  <p class="mono" id="detail-dates"></p>
-
-  <p id="detail-place"></p>
   </div>
 
   <script>
-    fetch("public-data/family.json")
+    fetch("public-data/family.json?v=" + Date.now())
       .then((response) => response.json())
       .then((data) => {
         const tree = document.getElementById("tree");
@@ -201,16 +290,40 @@
           peopleById[person.id] = person;
         });
 
+        function ageText(person) {
+          if (!person || !person.birth) return "";
+
+          const birthYear = parseInt(person.birth, 10);
+          if (Number.isNaN(birthYear)) return "";
+
+          if (person.death) {
+            const deathYear = parseInt(person.death, 10);
+            if (Number.isNaN(deathYear)) return "";
+            return ` (${deathYear - birthYear})`;
+          }
+
+          const currentYear = new Date().getFullYear();
+          return ` (${currentYear - birthYear})`;
+        }
+
         function lifeDates(person) {
-          return `${person.birth || "?"}${person.death ? "–" + person.death : "–"}`;
+          if (!person) return "";
+          const birth = person.birth || "?";
+          const death = person.death ? `–${person.death}` : "–present";
+          return `${birth}${death}${ageText(person)}`;
+        }
+
+        function birthPlace(person) {
+          if (!person) return "";
+          return person.birth_place || person.birthPlace || person.place || "";
         }
 
         function personButton(person) {
           return `
-        <button class="person-link" data-person-id="${person.id}">
-          ${person.name} (${lifeDates(person)})
-        </button>
-      `;
+            <button class="person-link" data-person-id="${person.id}">
+              ${person.name} ${lifeDates(person)}
+            </button>
+          `;
         }
 
         function namesFromIds(ids) {
@@ -237,6 +350,24 @@
           }).join("<br><br>");
         }
 
+        function getParents(person) {
+          return (person.parents || [])
+            .map(id => peopleById[id])
+            .filter(Boolean);
+        }
+
+        function getPrimarySpouse(person) {
+          if (!person || !person.spouses || person.spouses.length === 0) return null;
+          return peopleById[person.spouses[0]] || null;
+        }
+
+        function coupleKey(personA, personB) {
+          const ids = [personA && personA.id, personB && personB.id]
+            .filter(Boolean)
+            .sort();
+          return ids.join("+");
+        }
+
         function uniquePeople(people) {
           const seen = new Set();
           return people.filter(person => {
@@ -246,73 +377,103 @@
           });
         }
 
-        function getParents(person) {
-          return (person.parents || [])
-            .map(id => peopleById[id])
-            .filter(Boolean);
+        function parentCoupleFor(child) {
+          const parents = getParents(child);
+          if (parents.length === 0) return null;
+          return { personA: parents[0] || null, personB: parents[1] || null };
         }
 
-        function buildAncestorGenerations(person, depth = 3) {
-          const generations = [];
-          let currentGeneration = [person];
+        function buildGrandparentBranches(person) {
+          const parents = getParents(person);
 
-          for (let i = 0; i < depth; i++) {
-            const parents = uniquePeople(
-              currentGeneration.flatMap(p => getParents(p))
-            );
+          return parents.map(parent => {
+            const grandparentCouple = parentCoupleFor(parent);
+            if (!grandparentCouple) return null;
 
-            if (parents.length === 0) break;
+            const greatCouples = [
+              grandparentCouple.personA ? parentCoupleFor(grandparentCouple.personA) : null,
+              grandparentCouple.personB ? parentCoupleFor(grandparentCouple.personB) : null
+            ];
 
-            generations.push(parents);
-            currentGeneration = parents;
-          }
-
-          return generations.reverse();
+            return {
+              parent,
+              grandparentCouple,
+              greatCouples
+            };
+          }).filter(Boolean);
         }
 
-        function pedigreeCard(person, isCurrent = false) {
+        function pedigreePersonLine(person) {
+          if (!person) return `<div class="mono">Unknown</div>`;
+
           return `
-    <div class="pedigree-person ${isCurrent ? "current" : ""}" data-person-id="${person.id}">
-      <div class="pedigree-name">${person.name}</div>
-      <div class="mono">${lifeDates(person)}</div>
-    </div>
-  `;
+            <button class="pedigree-person-name" data-person-id="${person.id}">
+              ${person.name}
+            </button>
+            <div class="mono pedigree-dates">${lifeDates(person)}</div>
+          `;
+        }
+
+        function pedigreeCoupleCard(couple, isCurrent = false) {
+          const personA = couple.personA;
+          const personB = couple.personB;
+
+          return `
+            <div class="pedigree-couple ${isCurrent ? "current" : ""}">
+              ${pedigreePersonLine(personA)}
+              ${personB ? `<div class="couple-divider">and</div>${pedigreePersonLine(personB)}` : ""}
+            </div>
+          `;
         }
 
         function renderPedigree(person) {
-          const ancestorGenerations = buildAncestorGenerations(person, 3);
+          const branches = buildGrandparentBranches(person);
+          const parentCouple = parentCoupleFor(person);
 
-          const labels = {
-            0: "Parents",
-            1: "Grandparents",
-            2: "Great-grandparents"
-          };
-
-          const rows = ancestorGenerations.map((generation, index) => {
-            const generationsBack = ancestorGenerations.length - index - 1;
-            const label = labels[generationsBack] || `${generationsBack + 1} generations back`;
-
-            return `
-      <div class="generation-row">
-        <div class="generation-label">${label}</div>
-        ${generation.map(p => pedigreeCard(p)).join("")}
-      </div>
-    `;
-          }).join("");
+          const branchMarkup = branches.length ? `
+            <div class="ancestor-branches">
+              ${branches.map(branch => `
+                <div class="ancestor-branch">
+                  <div class="branch-label">Great-grandparents</div>
+                  <div class="great-stack">
+                    ${branch.greatCouples.map(couple =>
+                      couple
+                        ? pedigreeCoupleCard(couple)
+                        : `<div class="pedigree-couple placeholder"></div>`
+                    ).join("")}
+                  </div>
+                  <div class="branch-label">Grandparents</div>
+                  ${pedigreeCoupleCard(branch.grandparentCouple)}
+                </div>
+              `).join("")}
+            </div>
+          ` : "";
 
           tree.innerHTML = `
-    <div class="pedigree-chart">
-      ${rows}
-      <div class="generation-row">
-        <div class="generation-label">Current person</div>
-        ${pedigreeCard(person, true)}
-      </div>
-    </div>
-  `;
+            <div class="pedigree-chart">
+              ${branchMarkup}
 
-          document.querySelectorAll(".pedigree-person").forEach(card => {
-            card.onclick = () => {
-              const nextPerson = peopleById[card.dataset.personId];
+              ${parentCouple ? `
+                <div class="generation-row">
+                  <div class="generation-label">Parents</div>
+                  ${pedigreeCoupleCard(parentCouple)}
+                </div>
+              ` : ""}
+
+              <div class="generation-row">
+                <div class="generation-label">Current family</div>
+                ${pedigreeCoupleCard({ personA: person, personB: getPrimarySpouse(person) }, true)}
+              </div>
+            </div>
+          `;
+
+          attachPedigreeHandlers();
+        }
+
+        function attachPedigreeHandlers() {
+          document.querySelectorAll(".pedigree-person-name").forEach(button => {
+            button.onclick = () => {
+              const nextPerson = peopleById[button.dataset.personId];
               if (nextPerson) {
                 showDetails(nextPerson);
               }
@@ -334,25 +495,25 @@
         function showDetails(person) {
           renderPedigree(person);
 
-          document.getElementById("details").style.display = "block";
           document.getElementById("detail-name").textContent = person.name;
           document.getElementById("detail-dates").textContent = lifeDates(person);
+          const place = birthPlace(person);
 
           document.getElementById("detail-place").innerHTML = `
-        ${person.place ? `<p>${person.place}</p>` : ""}
+            ${place ? `<p class="mono">Born: ${place}</p>` : ""}
 
-        <h3>Parents</h3>
-        <p>${namesFromIds(person.parents)}</p>
+            <h3>Parents</h3>
+            <p>${namesFromIds(person.parents)}</p>
 
-        <h3>Spouse / Marriage</h3>
-        <p>${marriageText(person) || namesFromIds(person.spouses)}</p>
+            <h3>Spouse / Marriage</h3>
+            <p>${marriageText(person) || namesFromIds(person.spouses)}</p>
 
-        <h3>Children</h3>
-        <p>${namesFromIds(person.children)}</p>
+            <h3>Children</h3>
+            <p>${namesFromIds(person.children)}</p>
 
-        <h3>Siblings</h3>
-        <p>${namesFromIds(person.siblings)}</p>
-      `;
+            <h3>Siblings</h3>
+            <p>${namesFromIds(person.siblings)}</p>
+          `;
 
           attachPersonLinkHandlers();
         }
