@@ -690,16 +690,17 @@
             couple
               ? pedigreeCoupleCard(couple)
               : `
-  <div class="pedigree-couple empty-card">
-    <div class="pedigree-person-name ghost-line">Unknown</div>
-    <div class="mono pedigree-dates ghost-line">? – ?</div>
-    <div class="mono pedigree-age ghost-line">&nbsp;</div>
-    <div class="couple-divider ghost-line">and</div>
-    <div class="pedigree-person-name ghost-line">Unknown</div>
-    <div class="mono pedigree-dates ghost-line">? – ?</div>
-    <div class="mono pedigree-age ghost-line">&nbsp;</div>
-  </div>
-`          ).join("")}
+                <div class="pedigree-couple empty-card">
+                  <div class="pedigree-person-name ghost-line">Unknown</div>
+                  <div class="mono pedigree-dates ghost-line">? – ?</div>
+                  <div class="mono pedigree-age ghost-line">&nbsp;</div>
+                  <div class="couple-divider ghost-line">and</div>
+                  <div class="pedigree-person-name ghost-line">Unknown</div>
+                  <div class="mono pedigree-dates ghost-line">? – ?</div>
+                  <div class="mono pedigree-age ghost-line">&nbsp;</div>
+                </div>
+              `
+          ).join("")}
                   </div>
                   <div class="branch-label">Grandparents</div>
                   ${pedigreeCoupleCard(branch.grandparentCouple)}
@@ -768,12 +769,12 @@
           const photoDiv = document.getElementById("detail-photo");
 
           photoDiv.innerHTML = `
-  <img
-    src="photos/${person.id}.png"
-    alt="${person.name}"
-    onerror="this.parentElement.innerHTML='';"
-  >
-`;
+            <img
+              src="photos/${person.id}/portrait.png"
+              alt="${person.name}"
+              onerror="this.parentElement.innerHTML='';"
+            >
+          `;
 
           document.getElementById("detail-name").textContent = person.name;
           document.getElementById("detail-dates").textContent = lifeDates(person);
