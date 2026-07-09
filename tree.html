@@ -324,6 +324,19 @@
       margin-top: 4px;
     }
 
+    #detail-photo {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    #detail-photo img {
+      width: 220px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid var(--brass);
+    }
+
     @media (max-width: 900px) {
       #content {
         flex-direction: column;
@@ -335,6 +348,8 @@
         max-width: none;
         width: 100%;
       }
+
+
 
       .ancestor-branches {
         grid-template-columns: 1fr;
@@ -381,6 +396,7 @@
     <div id="details">
       <h2 id="detail-name">Select a Person</h2>
       <p class="mono" id="detail-dates"></p>
+      <div id="detail-photo"></div>
       <div id="detail-place"></div>
     </div>
   </div>
@@ -748,6 +764,16 @@
           );
 
           renderPedigree(person);
+
+          const photoDiv = document.getElementById("detail-photo");
+
+          photoDiv.innerHTML = `
+  <img
+    src="photos/${person.id}.png"
+    alt="${person.name}"
+    onerror="this.parentElement.innerHTML='';"
+  >
+`;
 
           document.getElementById("detail-name").textContent = person.name;
           document.getElementById("detail-dates").textContent = lifeDates(person);
