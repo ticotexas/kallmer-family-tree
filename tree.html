@@ -413,6 +413,29 @@
       color: var(--homestead-clay);
     }
 
+    .story-content em {
+      font-style: italic;
+    }
+
+    .story-content blockquote {
+      margin: 1.25rem 0;
+      padding: 0.15rem 0 0.15rem 1rem;
+      border-left: 3px solid var(--brass);
+      color: #d8d1bd;
+      font-style: italic;
+    }
+
+    .story-content blockquote br {
+      display: block;
+      content: "";
+      margin-top: 0.4rem;
+    }
+
+    .story-content strong {
+      font-weight: 600;
+      color: var(--paper);
+    }
+
     @media (max-width: 900px) {
       #content {
         flex-direction: column;
@@ -829,6 +852,13 @@
           });
         }
 
+        function formatInlineMarkdown(text) {
+          return text
+            .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+            .replace(/\*(.+?)\*/g, "<em>$1</em>")
+            .replace(/\n/g, "<br>");
+        }
+
         async function loadStory(person) {
           const storyDiv = document.getElementById("detail-story");
 
@@ -888,17 +918,32 @@
 
                 contentDiv.innerHTML =
                   md
-                    .split("\n\n")
-                    .map(paragraph => {
-                      if (paragraph.startsWith("# ")) {
-                        return `<h3>${paragraph.substring(2)}</h3>`;
+                    .split(/\n\s*\n/)
+                    .map(block => {
+                      const paragraph = block.trim();
+
+                      if (!paragraph) {
+                        return "";
                       }
 
                       if (paragraph.startsWith("## ")) {
-                        return `<h4>${paragraph.substring(3)}</h4>`;
+                        return `<h4>${formatInlineMarkdown(paragraph.substring(3))}</h4>`;
                       }
 
-                      return `<p>${paragraph}</p>`;
+                      if (paragraph.startsWith("# ")) {
+                        return `<h3>${formatInlineMarkdown(paragraph.substring(2))}</h3>`;
+                      }
+
+                      if (paragraph.startsWith("> ")) {
+                        const quote = paragraph
+                          .split("\n")
+                          .map(line => line.replace(/^>\s?/, ""))
+                          .join("\n");
+
+                        return `<blockquote>${formatInlineMarkdown(quote)}</blockquote>`;
+                      }
+
+                      return `<p>${formatInlineMarkdown(paragraph)}</p>`;
                     })
                     .join("");
               };
