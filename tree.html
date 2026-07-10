@@ -271,6 +271,14 @@
       box-shadow: 0 1px 0 rgba(31, 46, 69, 0.08);
     }
 
+    .great-stack .pedigree-couple {
+      height: 176px;
+      min-height: 176px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .pedigree-couple.empty-card {
       background: rgba(255, 250, 240, 0.25);
       border: 1px dashed rgba(176, 141, 63, 0.45);
@@ -297,8 +305,14 @@
       font-family: "Source Serif 4", serif;
       font-size: 1rem;
       font-weight: 600;
+      line-height: 1.15;
       cursor: pointer;
       text-align: center;
+      overflow-wrap: anywhere;
+    }
+
+    .pedigree-person-name.long-name {
+      font-size: 0.9rem;
     }
 
     .pedigree-person-name:hover {
@@ -757,10 +771,14 @@
           const dateOnly = age ? dates.replace(age, "").trim() : dates;
 
           return `
-           <button class="pedigree-person-name" data-person-id="${person.id}">
+            <button
+              class="pedigree-person-name ${person.name.length > 22 ? "long-name" : ""}"
+              data-person-id="${person.id}"
+            > 
              ${person.name}
             </button>
-           <div class="mono pedigree-dates">${dateOnly}</div>
+
+            <div class="mono pedigree-dates">${dateOnly}</div>
             <div class="mono pedigree-age">${age || "&nbsp;"}</div>
          `;
         }

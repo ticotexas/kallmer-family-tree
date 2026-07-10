@@ -410,7 +410,7 @@
     },
     {
       "id": "I0014",
-      "name": "Edit Linnéa Stål",
+      "name": "Edith Linnea Steele",
       "living": false,
       "birth": "1 JUN 1908",
       "death": "11 MAY 1957",
@@ -573,7 +573,7 @@
       "id": "I0019",
       "name": "Tilda Boletta Olson",
       "living": false,
-      "birth": "28 OCT 1891",
+      "birth": "28 DEC 1891",
       "death": "30 AUG 1983",
       "place": "Caledonia, Houston, Minnesota",
       "birth_place": "Box Butte Township, Box Butte, Nebraska",
@@ -666,7 +666,12 @@
         "I0034",
         "I0035"
       ],
-      "siblings": [],
+      "siblings": [
+        "I0200",
+        "I0201",
+        "I0202",
+        "I0203"
+      ],
       "marriages": [
         {
           "spouse": "I0022",
@@ -742,13 +747,13 @@
     },
     {
       "id": "I0024",
-      "name": "John W. Dinges Sr.",
+      "name": "John William Dinges Sr.",
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
+      "birth": "21 FEB 1846",
+      "death": "18 NOV 1914",
+      "place": "Odebolt, Sac, Iowa",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "Odebolt, Sac, Iowa",
       "parents": [
         "I0040",
         "I0041"
@@ -769,8 +774,8 @@
       "marriages": [
         {
           "spouse": "I0039",
-          "date": "",
-          "place": ""
+          "date": "3 JAN 1869",
+          "place": "Sublette Township, Lee, Illinois"
         }
       ]
     },
@@ -1084,7 +1089,11 @@
         "I0038"
       ],
       "children": [
-        "I0021"
+        "I0021",
+        "I0200",
+        "I0201",
+        "I0202",
+        "I0203"
       ],
       "siblings": [],
       "marriages": [
@@ -1127,7 +1136,11 @@
         "I0036"
       ],
       "children": [
-        "I0021"
+        "I0021",
+        "I0200",
+        "I0201",
+        "I0202",
+        "I0203"
       ],
       "siblings": [],
       "marriages": [
@@ -1140,14 +1153,17 @@
     },
     {
       "id": "I0039",
-      "name": "Katherine Dinges",
+      "name": "Catherina Beitz",
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
-      "parents": [],
+      "birth": "21 NOV 1845",
+      "death": "23 NOV 1932",
+      "place": "Odebolt, Sac, Iowa",
+      "birth_place": "Oberhöchstadt, Obertaunuskreis, Hesse-Nassau, Prussia, Germany",
+      "death_place": "Odebolt, Sac, Iowa",
+      "parents": [
+        "I0198",
+        "I0199"
+      ],
       "spouses": [
         "I0024"
       ],
@@ -1164,17 +1180,17 @@
       "marriages": [
         {
           "spouse": "I0024",
-          "date": "",
-          "place": ""
+          "date": "3 JAN 1869",
+          "place": "Sublette Township, Lee, Illinois"
         }
       ]
     },
     {
       "id": "I0040",
-      "name": "John Dinges",
+      "name": "Johann Wilhelm William Dinges",
       "living": false,
-      "birth": "?",
-      "death": "?",
+      "birth": "1805",
+      "death": "1906",
       "place": "",
       "birth_place": "",
       "death_place": "",
@@ -1189,8 +1205,8 @@
       "marriages": [
         {
           "spouse": "I0041",
-          "date": "",
-          "place": ""
+          "date": "26 DEC 1843",
+          "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany"
         }
       ]
     },
@@ -1198,8 +1214,8 @@
       "id": "I0041",
       "name": "Christina Port",
       "living": false,
-      "birth": "?",
-      "death": "?",
+      "birth": "1820",
+      "death": "1904",
       "place": "",
       "birth_place": "",
       "death_place": "",
@@ -1214,8 +1230,8 @@
       "marriages": [
         {
           "spouse": "I0040",
-          "date": "",
-          "place": ""
+          "date": "26 DEC 1843",
+          "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany"
         }
       ]
     },
@@ -2204,7 +2220,7 @@
     },
     {
       "id": "I0080",
-      "name": "Inger Johanne Kaasa",
+      "name": "Inger Johanna Kaasa",
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5318,6 +5334,148 @@
         "I0193"
       ],
       "marriages": []
+    },
+    {
+      "id": "I0198",
+      "name": "Peter Lewis Beitz Sr",
+      "living": false,
+      "birth": "1805",
+      "death": "1882",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0199"
+      ],
+      "children": [
+        "I0039"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "spouse": "I0199",
+          "date": "24 OCT 1826",
+          "place": "Oberhöchstadt, Obertaunuskreis, Hesse-Nassau, Prussia, Germany"
+        }
+      ]
+    },
+    {
+      "id": "I0199",
+      "name": "Anna Margaretha Beitz",
+      "living": false,
+      "birth": "1799",
+      "death": "1882",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0198"
+      ],
+      "children": [
+        "I0039"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "spouse": "I0198",
+          "date": "24 OCT 1826",
+          "place": "Oberhöchstadt, Obertaunuskreis, Hesse-Nassau, Prussia, Germany"
+        }
+      ]
+    },
+    {
+      "id": "I0200",
+      "name": "Anna C Kallmer",
+      "living": false,
+      "birth": "1861",
+      "death": "1920",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0036",
+        "I0038"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0021",
+        "I0201",
+        "I0202",
+        "I0203"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0201",
+      "name": "Johannah M Kallmer",
+      "living": false,
+      "birth": "1865",
+      "death": "1949",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0036",
+        "I0038"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0021",
+        "I0200",
+        "I0202",
+        "I0203"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0202",
+      "name": "Lena Kallmer",
+      "living": false,
+      "birth": "1866",
+      "death": "1908",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0036",
+        "I0038"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0021",
+        "I0200",
+        "I0201",
+        "I0203"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0203",
+      "name": "Rosa Louise Kallmer",
+      "living": false,
+      "birth": "1873",
+      "death": "1937",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0036",
+        "I0038"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0021",
+        "I0200",
+        "I0201",
+        "I0202"
+      ],
+      "marriages": []
     }
   ],
   "families": [
@@ -5429,15 +5587,19 @@
         "I0028",
         "I0029"
       ],
-      "marriage_date": "",
-      "marriage_place": ""
+      "marriage_date": "3 JAN 1869",
+      "marriage_place": "Sublette Township, Lee, Illinois"
     },
     {
       "id": "F0009",
       "husband": "I0036",
       "wife": "I0038",
       "children": [
-        "I0021"
+        "I0021",
+        "I0200",
+        "I0201",
+        "I0202",
+        "I0203"
       ],
       "marriage_date": "",
       "marriage_place": ""
@@ -5449,8 +5611,8 @@
       "children": [
         "I0024"
       ],
-      "marriage_date": "",
-      "marriage_place": ""
+      "marriage_date": "26 DEC 1843",
+      "marriage_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany"
     },
     {
       "id": "F0011",
@@ -6064,6 +6226,16 @@
       ],
       "marriage_date": "JUN 1895",
       "marriage_place": "Wapello, Louisa, Iowa"
+    },
+    {
+      "id": "F0069",
+      "husband": "I0198",
+      "wife": "I0199",
+      "children": [
+        "I0039"
+      ],
+      "marriage_date": "24 OCT 1826",
+      "marriage_place": "Oberhöchstadt, Obertaunuskreis, Hesse-Nassau, Prussia, Germany"
     }
   ]
 }
