@@ -32,7 +32,7 @@
         .hero {
             max-width: 900px;
             margin: 0 auto;
-            padding: 100px 30px;
+            padding: 70px 30px;
             text-align: center;
         }
 
@@ -46,12 +46,12 @@
             font-size: 1.4rem;
             line-height: 1.6;
             max-width: 700px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto 30px auto;
         }
 
         .stats {
             font-family: "IBM Plex Mono", monospace;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: var(--prairie-sage);
         }
 
@@ -76,6 +76,27 @@
             color: var(--prairie-sage);
             font-size: 0.9rem;
         }
+
+        .archive-logo {
+            max-width: 560px;
+            width: 100%;
+            margin: 0 auto 25px;
+        }
+
+        @media (max-width: 700px) {
+            .archive-logo {
+                max-width: 95%;
+            }
+        }
+
+        .site-footer {
+            margin-top: 80px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--prairie-sage);
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
     </style>
 </head>
 
@@ -83,11 +104,11 @@
 
     <div class="hero">
 
-        <h1>The Kallmer Family Archive</h1>
+        <img src="images/kallmer-archive-logo.png" alt="The Kallmer Family Archive" class="archive-logo">
 
         <p class="tagline">
-            Tracing the lives, migrations, and stories of the families
-            who journeyed from Sweden and Germany to the American prairie.
+            Tracing the lives, migrations, and stories of the families who journeyed from Sweden and Germany to the
+            American prairie — and the generations that followed.
         </p>
 
         <div class="stats" id="archive-stats">
@@ -95,14 +116,16 @@
         </div>
 
         <a href="tree.html" class="button">
-            Explore the Tree
+            Begin Your Journey
         </a>
 
-        <footer>
-            Version 1.0 • July 2026
-        </footer>
-
     </div>
+
+    <footer class="site-footer">
+        Version 1.1 • July 2026
+    </footer>
+
+
 
     <script>
         fetch("public-data/family.json?v=" + Date.now())
