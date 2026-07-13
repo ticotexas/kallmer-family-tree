@@ -22,9 +22,14 @@
       ],
       "marriages": [
         {
+          "family": "F0001",
           "spouse": "I0006",
-          "date": "1998",
-          "place": "Maui, Hawaii"
+          "children": [],
+          "marriage_date": "1998",
+          "marriage_place": "Maui, Hawaii",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -54,9 +59,17 @@
       ],
       "marriages": [
         {
+          "family": "F0000",
           "spouse": "I0002",
-          "date": "1964",
-          "place": "Storm Lake, Iowa"
+          "children": [
+            "I0000",
+            "I0005"
+          ],
+          "marriage_date": "1964",
+          "marriage_place": "Storm Lake, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -85,9 +98,17 @@
       ],
       "marriages": [
         {
+          "family": "F0000",
           "spouse": "I0001",
-          "date": "1964",
-          "place": "Storm Lake, Iowa"
+          "children": [
+            "I0000",
+            "I0005"
+          ],
+          "marriage_date": "1964",
+          "marriage_place": "Storm Lake, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -110,9 +131,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0018",
           "spouse": "I0004",
-          "date": "7 JUL 1826",
-          "place": "Tullanäs, Västra Torsås, Kronoberg, Sweden"
+          "children": [
+            "I0049"
+          ],
+          "marriage_date": "7 JUL 1826",
+          "marriage_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -135,9 +163,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0018",
           "spouse": "I0003",
-          "date": "7 JUL 1826",
-          "place": "Tullanäs, Västra Torsås, Kronoberg, Sweden"
+          "children": [
+            "I0049"
+          ],
+          "marriage_date": "7 JUL 1826",
+          "marriage_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -167,9 +202,18 @@
       ],
       "marriages": [
         {
+          "family": "F0002",
           "spouse": "I0007",
-          "date": "1998",
-          "place": "Omaha, Nebraska"
+          "children": [
+            "I0008",
+            "I0009",
+            "I0010"
+          ],
+          "marriage_date": "1998",
+          "marriage_place": "Omaha, Nebraska",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -195,9 +239,14 @@
       ],
       "marriages": [
         {
+          "family": "F0001",
           "spouse": "I0000",
-          "date": "1998",
-          "place": "Maui, Hawaii"
+          "children": [],
+          "marriage_date": "1998",
+          "marriage_place": "Maui, Hawaii",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -222,9 +271,18 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0002",
           "spouse": "I0005",
-          "date": "1998",
-          "place": "Omaha, Nebraska"
+          "children": [
+            "I0008",
+            "I0009",
+            "I0010"
+          ],
+          "marriage_date": "1998",
+          "marriage_place": "Omaha, Nebraska",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -323,9 +381,17 @@
       ],
       "marriages": [
         {
+          "family": "F0003",
           "spouse": "I0012",
-          "date": "31 MAR 1941",
-          "place": "Decorah Township, Winneshiek, Iowa"
+          "children": [
+            "I0002",
+            "I0020"
+          ],
+          "marriage_date": "31 MAR 1941",
+          "marriage_place": "Decorah Township, Winneshiek, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -360,9 +426,17 @@
       ],
       "marriages": [
         {
+          "family": "F0003",
           "spouse": "I0011",
-          "date": "31 MAR 1941",
-          "place": "Decorah Township, Winneshiek, Iowa"
+          "children": [
+            "I0002",
+            "I0020"
+          ],
+          "marriage_date": "31 MAR 1941",
+          "marriage_place": "Decorah Township, Winneshiek, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -397,14 +471,28 @@
       ],
       "marriages": [
         {
+          "family": "F0004",
           "spouse": "I0014",
-          "date": "3 JAN 1935",
-          "place": "Storm Lake, Buena Vista, Iowa"
+          "children": [
+            "I0001",
+            "I0016",
+            "I0017"
+          ],
+          "marriage_date": "3 JAN 1935",
+          "marriage_place": "Storm Lake, Buena Vista, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         },
         {
+          "family": "F0005",
           "spouse": "I0015",
-          "date": "15 FEB 1964",
-          "place": "Sioux City, Woodbury, Iowa"
+          "children": [],
+          "marriage_date": "15 FEB 1964",
+          "marriage_place": "Sioux City, Woodbury, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -439,9 +527,18 @@
       ],
       "marriages": [
         {
+          "family": "F0004",
           "spouse": "I0013",
-          "date": "3 JAN 1935",
-          "place": "Storm Lake, Buena Vista, Iowa"
+          "children": [
+            "I0001",
+            "I0016",
+            "I0017"
+          ],
+          "marriage_date": "3 JAN 1935",
+          "marriage_place": "Storm Lake, Buena Vista, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -462,9 +559,14 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0005",
           "spouse": "I0013",
-          "date": "15 FEB 1964",
-          "place": "Sioux City, Woodbury, Iowa"
+          "children": [],
+          "marriage_date": "15 FEB 1964",
+          "marriage_place": "Sioux City, Woodbury, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -491,9 +593,14 @@
       ],
       "marriages": [
         {
+          "family": "F0021",
           "spouse": "I0066",
-          "date": "DEC 1981",
-          "place": "Thailand"
+          "children": [],
+          "marriage_date": "DEC 1981",
+          "marriage_place": "Thailand",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -523,9 +630,17 @@
       ],
       "marriages": [
         {
+          "family": "F0014",
           "spouse": "I0046",
-          "date": "1967",
-          "place": "Storm Lake, Iowa"
+          "children": [
+            "I0067",
+            "I0068"
+          ],
+          "marriage_date": "1967",
+          "marriage_place": "Storm Lake, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -563,9 +678,24 @@
       ],
       "marriages": [
         {
+          "family": "F0006",
           "spouse": "I0019",
-          "date": "24 AUG 1912",
-          "place": "Winona, Winona, Minnesota"
+          "children": [
+            "I0011",
+            "I0071",
+            "I0072",
+            "I0073",
+            "I0074",
+            "I0075",
+            "I0076",
+            "I0077",
+            "I0078"
+          ],
+          "marriage_date": "24 AUG 1912",
+          "marriage_place": "Winona, Winona, Minnesota",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -606,9 +736,24 @@
       ],
       "marriages": [
         {
+          "family": "F0006",
           "spouse": "I0018",
-          "date": "24 AUG 1912",
-          "place": "Winona, Winona, Minnesota"
+          "children": [
+            "I0011",
+            "I0071",
+            "I0072",
+            "I0073",
+            "I0074",
+            "I0075",
+            "I0076",
+            "I0077",
+            "I0078"
+          ],
+          "marriage_date": "24 AUG 1912",
+          "marriage_place": "Winona, Winona, Minnesota",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -636,9 +781,16 @@
       ],
       "marriages": [
         {
+          "family": "F0022",
           "spouse": "I0069",
-          "date": "1979",
-          "place": "Santa Cruz, California"
+          "children": [
+            "I0070"
+          ],
+          "marriage_date": "1979",
+          "marriage_place": "Santa Cruz, California",
+          "divorced": true,
+          "divorce_date": "1991",
+          "divorce_place": "Apache Junction, Arizona"
         }
       ]
     },
@@ -656,7 +808,8 @@
         "I0038"
       ],
       "spouses": [
-        "I0022"
+        "I0022",
+        "I0210"
       ],
       "children": [
         "I0013",
@@ -670,13 +823,37 @@
         "I0200",
         "I0201",
         "I0202",
-        "I0203"
+        "I0203",
+        "I0206",
+        "I0209"
       ],
       "marriages": [
         {
+          "family": "F0007",
           "spouse": "I0022",
-          "date": "2 APR 1895",
-          "place": "Odebolt, Sac, Iowa"
+          "children": [
+            "I0013",
+            "I0031",
+            "I0032",
+            "I0033",
+            "I0034",
+            "I0035"
+          ],
+          "marriage_date": "2 APR 1895",
+          "marriage_place": "Odebolt, Sac, Iowa",
+          "divorced": true,
+          "divorce_date": "",
+          "divorce_place": ""
+        },
+        {
+          "family": "F0073",
+          "spouse": "I0210",
+          "children": [],
+          "marriage_date": "13 MAY 1925",
+          "marriage_place": "Sioux City, Woodbury, Iowa",
+          "divorced": true,
+          "divorce_date": "OCT 1925",
+          "divorce_place": "Ida Grove, Ida, Iowa"
         }
       ]
     },
@@ -705,7 +882,6 @@
         "I0035"
       ],
       "siblings": [
-        "I0023",
         "I0025",
         "I0026",
         "I0027",
@@ -714,36 +890,23 @@
       ],
       "marriages": [
         {
+          "family": "F0007",
           "spouse": "I0021",
-          "date": "2 APR 1895",
-          "place": "Odebolt, Sac, Iowa"
+          "children": [
+            "I0013",
+            "I0031",
+            "I0032",
+            "I0033",
+            "I0034",
+            "I0035"
+          ],
+          "marriage_date": "2 APR 1895",
+          "marriage_place": "Odebolt, Sac, Iowa",
+          "divorced": true,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
-    },
-    {
-      "id": "I0023",
-      "name": "Katherine Dinges",
-      "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
-      "parents": [
-        "I0024",
-        "I0039"
-      ],
-      "spouses": [],
-      "children": [],
-      "siblings": [
-        "I0022",
-        "I0025",
-        "I0026",
-        "I0027",
-        "I0028",
-        "I0029"
-      ],
-      "marriages": []
     },
     {
       "id": "I0024",
@@ -763,7 +926,6 @@
       ],
       "children": [
         "I0022",
-        "I0023",
         "I0025",
         "I0026",
         "I0027",
@@ -773,9 +935,21 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0008",
           "spouse": "I0039",
-          "date": "3 JAN 1869",
-          "place": "Sublette Township, Lee, Illinois"
+          "children": [
+            "I0022",
+            "I0025",
+            "I0026",
+            "I0027",
+            "I0028",
+            "I0029"
+          ],
+          "marriage_date": "3 JAN 1869",
+          "marriage_place": "Sublette Township, Lee, Illinois",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -796,7 +970,6 @@
       "children": [],
       "siblings": [
         "I0022",
-        "I0023",
         "I0026",
         "I0027",
         "I0028",
@@ -821,7 +994,6 @@
       "children": [],
       "siblings": [
         "I0022",
-        "I0023",
         "I0025",
         "I0027",
         "I0028",
@@ -846,7 +1018,6 @@
       "children": [],
       "siblings": [
         "I0022",
-        "I0023",
         "I0025",
         "I0026",
         "I0028",
@@ -871,7 +1042,6 @@
       "children": [],
       "siblings": [
         "I0022",
-        "I0023",
         "I0025",
         "I0026",
         "I0027",
@@ -896,7 +1066,6 @@
       "children": [],
       "siblings": [
         "I0022",
-        "I0023",
         "I0025",
         "I0026",
         "I0027",
@@ -923,9 +1092,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0019",
           "spouse": "I0063",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0048"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -957,9 +1133,16 @@
       ],
       "marriages": [
         {
+          "family": "F0020",
           "spouse": "I0064",
-          "date": "12 DEC 1918",
-          "place": "Sioux City, Woodbury, Iowa"
+          "children": [
+            "I0065"
+          ],
+          "marriage_date": "12 DEC 1918",
+          "marriage_place": "Sioux City, Woodbury, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -989,15 +1172,20 @@
       ],
       "marriages": [
         {
+          "family": "F0012",
           "spouse": "I0044",
-          "date": "1 JAN 1917",
-          "place": "Ida Grove, Ida, Iowa"
+          "children": [],
+          "marriage_date": "1 OCT 1917",
+          "marriage_place": "Ida Grove, Ida, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
     {
       "id": "I0033",
-      "name": "Hazel Lynch",
+      "name": "Hazel Catherine Kallmer",
       "living": false,
       "birth": "3 APR 1900",
       "death": "16 AUG 1983",
@@ -1021,9 +1209,14 @@
       ],
       "marriages": [
         {
+          "family": "F0013",
           "spouse": "I0045",
-          "date": "14 MAY 1919",
-          "place": ""
+          "children": [],
+          "marriage_date": "14 MAY 1919",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1093,14 +1286,29 @@
         "I0200",
         "I0201",
         "I0202",
-        "I0203"
+        "I0203",
+        "I0206",
+        "I0209"
       ],
       "siblings": [],
       "marriages": [
         {
+          "family": "F0009",
           "spouse": "I0038",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0021",
+            "I0200",
+            "I0201",
+            "I0202",
+            "I0203",
+            "I0206",
+            "I0209"
+          ],
+          "marriage_date": "10 MAY 1857",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1124,14 +1332,17 @@
     },
     {
       "id": "I0038",
-      "name": "Caroline Jacobson",
+      "name": "Carolina Calmer",
       "living": false,
-      "birth": "1831",
-      "death": "?",
-      "place": "Odebolt, Sac, Iowa",
+      "birth": "17 JUN 1832",
+      "death": "27 OCT 1911",
+      "place": "Sterling, Colorado",
       "birth_place": "Germany",
-      "death_place": "Odebolt, Sac, Iowa",
-      "parents": [],
+      "death_place": "Sterling, Colorado",
+      "parents": [
+        "I0207",
+        "I0208"
+      ],
       "spouses": [
         "I0036"
       ],
@@ -1140,20 +1351,35 @@
         "I0200",
         "I0201",
         "I0202",
-        "I0203"
+        "I0203",
+        "I0206",
+        "I0209"
       ],
       "siblings": [],
       "marriages": [
         {
+          "family": "F0009",
           "spouse": "I0036",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0021",
+            "I0200",
+            "I0201",
+            "I0202",
+            "I0203",
+            "I0206",
+            "I0209"
+          ],
+          "marriage_date": "10 MAY 1857",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
     {
       "id": "I0039",
-      "name": "Catherina Beitz",
+      "name": "Catherine Dinges",
       "living": false,
       "birth": "21 NOV 1845",
       "death": "23 NOV 1932",
@@ -1169,7 +1395,6 @@
       ],
       "children": [
         "I0022",
-        "I0023",
         "I0025",
         "I0026",
         "I0027",
@@ -1179,9 +1404,21 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0008",
           "spouse": "I0024",
-          "date": "3 JAN 1869",
-          "place": "Sublette Township, Lee, Illinois"
+          "children": [
+            "I0022",
+            "I0025",
+            "I0026",
+            "I0027",
+            "I0028",
+            "I0029"
+          ],
+          "marriage_date": "3 JAN 1869",
+          "marriage_place": "Sublette Township, Lee, Illinois",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1204,9 +1441,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0010",
           "spouse": "I0041",
-          "date": "26 DEC 1843",
-          "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany"
+          "children": [
+            "I0024"
+          ],
+          "marriage_date": "26 DEC 1843",
+          "marriage_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1229,9 +1473,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0010",
           "spouse": "I0040",
-          "date": "26 DEC 1843",
-          "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany"
+          "children": [
+            "I0024"
+          ],
+          "marriage_date": "26 DEC 1843",
+          "marriage_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1254,9 +1505,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0011",
           "spouse": "I0043",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0037"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1279,9 +1537,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0011",
           "spouse": "I0042",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0037"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1302,9 +1567,14 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0012",
           "spouse": "I0032",
-          "date": "1 JAN 1917",
-          "place": "Ida Grove, Ida, Iowa"
+          "children": [],
+          "marriage_date": "1 OCT 1917",
+          "marriage_place": "Ida Grove, Ida, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1325,9 +1595,14 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0013",
           "spouse": "I0033",
-          "date": "14 MAY 1919",
-          "place": ""
+          "children": [],
+          "marriage_date": "14 MAY 1919",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1351,9 +1626,17 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0014",
           "spouse": "I0017",
-          "date": "1967",
-          "place": "Storm Lake, Iowa"
+          "children": [
+            "I0067",
+            "I0068"
+          ],
+          "marriage_date": "1967",
+          "marriage_place": "Storm Lake, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1390,9 +1673,22 @@
       ],
       "marriages": [
         {
+          "family": "F0015",
           "spouse": "I0048",
-          "date": "29 DEC 1894",
-          "place": "Tullanäs, Västra Torsås, Kronoberg, Sweden"
+          "children": [
+            "I0014",
+            "I0057",
+            "I0058",
+            "I0059",
+            "I0060",
+            "I0061",
+            "I0062"
+          ],
+          "marriage_date": "29 DEC 1894",
+          "marriage_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1424,9 +1720,22 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0015",
           "spouse": "I0047",
-          "date": "29 DEC 1894",
-          "place": "Tullanäs, Västra Torsås, Kronoberg, Sweden"
+          "children": [
+            "I0014",
+            "I0057",
+            "I0058",
+            "I0059",
+            "I0060",
+            "I0061",
+            "I0062"
+          ],
+          "marriage_date": "29 DEC 1894",
+          "marriage_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1456,9 +1765,20 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0016",
           "spouse": "I0050",
-          "date": "13 OCT 1860",
-          "place": "Tullanäs, Västra Torsås, Kronoberg, Sweden"
+          "children": [
+            "I0047",
+            "I0053",
+            "I0054",
+            "I0055",
+            "I0056"
+          ],
+          "marriage_date": "13 OCT 1860",
+          "marriage_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1488,9 +1808,20 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0016",
           "spouse": "I0049",
-          "date": "13 OCT 1860",
-          "place": "Tullanäs, Västra Torsås, Kronoberg, Sweden"
+          "children": [
+            "I0047",
+            "I0053",
+            "I0054",
+            "I0055",
+            "I0056"
+          ],
+          "marriage_date": "13 OCT 1860",
+          "marriage_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1513,9 +1844,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0017",
           "spouse": "I0052",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0050"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1538,9 +1876,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0017",
           "spouse": "I0051",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0050"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1805,9 +2150,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0019",
           "spouse": "I0030",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0048"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1830,9 +2182,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0020",
           "spouse": "I0031",
-          "date": "12 DEC 1918",
-          "place": "Sioux City, Woodbury, Iowa"
+          "children": [
+            "I0065"
+          ],
+          "marriage_date": "12 DEC 1918",
+          "marriage_place": "Sioux City, Woodbury, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1871,9 +2230,14 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0021",
           "spouse": "I0016",
-          "date": "DEC 1981",
-          "place": "Thailand"
+          "children": [],
+          "marriage_date": "DEC 1981",
+          "marriage_place": "Thailand",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1902,9 +2266,17 @@
       ],
       "marriages": [
         {
+          "family": "F0054",
           "spouse": "I0148",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0149",
+            "I0150"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -1947,9 +2319,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0022",
           "spouse": "I0020",
-          "date": "1979",
-          "place": "Santa Cruz, California"
+          "children": [
+            "I0070"
+          ],
+          "marriage_date": "1979",
+          "marriage_place": "Santa Cruz, California",
+          "divorced": true,
+          "divorce_date": "1991",
+          "divorce_place": "Apache Junction, Arizona"
         }
       ]
     },
@@ -1959,8 +2338,8 @@
       "living": true,
       "birth": "1988",
       "death": "",
-      "place": "",
-      "birth_place": "",
+      "place": "Phoenix, Arizona",
+      "birth_place": "Phoenix, Maricopa, Arizona",
       "death_place": "",
       "parents": [
         "I0020",
@@ -2173,7 +2552,9 @@
         "I0018",
         "I0019"
       ],
-      "spouses": [],
+      "spouses": [
+        "I0212"
+      ],
       "children": [],
       "siblings": [
         "I0011",
@@ -2185,7 +2566,18 @@
         "I0076",
         "I0077"
       ],
-      "marriages": []
+      "marriages": [
+        {
+          "family": "F0075",
+          "spouse": "I0212",
+          "children": [],
+          "marriage_date": "20 AUG 1950",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
     },
     {
       "id": "I0079",
@@ -2212,9 +2604,22 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0023",
           "spouse": "I0080",
-          "date": "8 NOV 1888",
-          "place": ""
+          "children": [
+            "I0019",
+            "I0081",
+            "I0082",
+            "I0083",
+            "I0084",
+            "I0085",
+            "I0086"
+          ],
+          "marriage_date": "8 NOV 1888",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2243,9 +2648,22 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0023",
           "spouse": "I0079",
-          "date": "8 NOV 1888",
-          "place": ""
+          "children": [
+            "I0019",
+            "I0081",
+            "I0082",
+            "I0083",
+            "I0084",
+            "I0085",
+            "I0086"
+          ],
+          "marriage_date": "8 NOV 1888",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2424,9 +2842,19 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0024",
           "spouse": "I0088",
-          "date": "22 OCT 1887",
-          "place": "Postville, Allamakee, Iowa"
+          "children": [
+            "I0018",
+            "I0089",
+            "I0090",
+            "I0091"
+          ],
+          "marriage_date": "22 OCT 1887",
+          "marriage_place": "Postville, Allamakee, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2452,9 +2880,19 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0024",
           "spouse": "I0087",
-          "date": "22 OCT 1887",
-          "place": "Postville, Allamakee, Iowa"
+          "children": [
+            "I0018",
+            "I0089",
+            "I0090",
+            "I0091"
+          ],
+          "marriage_date": "22 OCT 1887",
+          "marriage_place": "Postville, Allamakee, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2543,9 +2981,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0025",
           "spouse": "I0093",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0087"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2571,9 +3016,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0025",
           "spouse": "I0092",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0087"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2599,9 +3051,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0026",
           "spouse": "I0095",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0093"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2624,9 +3083,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0026",
           "spouse": "I0094",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0093"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2649,9 +3115,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0027",
           "spouse": "I0097",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0094"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2677,9 +3150,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0027",
           "spouse": "I0096",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0094"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2702,9 +3182,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0028",
           "spouse": "I0099",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0097"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2730,9 +3217,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0028",
           "spouse": "I0098",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0097"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2758,9 +3252,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0029",
           "spouse": "I0101",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0099"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2783,9 +3284,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0029",
           "spouse": "I0100",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0099"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2808,9 +3316,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0030",
           "spouse": "I0103",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0100"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2836,9 +3351,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0030",
           "spouse": "I0102",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0100"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2861,9 +3383,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0031",
           "spouse": "I0105",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0103"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2889,9 +3418,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0031",
           "spouse": "I0104",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0103"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2914,9 +3450,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0032",
           "spouse": "I0107",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0105"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2942,9 +3485,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0032",
           "spouse": "I0106",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0105"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2967,9 +3517,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0033",
           "spouse": "I0109",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0107"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -2995,9 +3552,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0033",
           "spouse": "I0108",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0107"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3020,9 +3584,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0034",
           "spouse": "I0111",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0109"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3048,9 +3619,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0034",
           "spouse": "I0110",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0109"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3073,9 +3651,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0035",
           "spouse": "I0113",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0111"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3101,9 +3686,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0035",
           "spouse": "I0112",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0111"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3129,9 +3721,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0036",
           "spouse": "I0115",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0113"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3154,9 +3753,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0036",
           "spouse": "I0114",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0113"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3179,9 +3785,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0037",
           "spouse": "I0117",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0114"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3207,9 +3820,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0037",
           "spouse": "I0116",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0114"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3235,9 +3855,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0038",
           "spouse": "I0119",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0117"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3260,9 +3887,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0038",
           "spouse": "I0118",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0117"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3285,9 +3919,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0039",
           "spouse": "I0121",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0118"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3313,9 +3954,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0039",
           "spouse": "I0120",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0118"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3341,9 +3989,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0040",
           "spouse": "I0123",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0121"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3366,9 +4021,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0040",
           "spouse": "I0122",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0121"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3391,9 +4053,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0041",
           "spouse": "I0125",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0122"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3419,9 +4088,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0041",
           "spouse": "I0124",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0122"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3444,9 +4120,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0042",
           "spouse": "I0127",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0125"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3472,9 +4155,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0042",
           "spouse": "I0126",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0125"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3500,9 +4190,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0043",
           "spouse": "I0129",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0127"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3525,9 +4222,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0043",
           "spouse": "I0128",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0127"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3550,9 +4254,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0044",
           "spouse": "I0131",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0128"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3578,9 +4289,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0044",
           "spouse": "I0130",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0128"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3603,9 +4321,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0045",
           "spouse": "I0133",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0131"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3631,9 +4356,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0045",
           "spouse": "I0132",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0131"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3656,9 +4388,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0046",
           "spouse": "I0135",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0133"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3683,9 +4422,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0046",
           "spouse": "I0134",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0133"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3728,9 +4474,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0048",
           "spouse": "I0138",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0136"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3756,9 +4509,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0048",
           "spouse": "I0137",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0136"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3784,9 +4544,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0049",
           "spouse": "I0140",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0138"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3809,9 +4576,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0049",
           "spouse": "I0139",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0138"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3834,9 +4608,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0050",
           "spouse": "I0142",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0139"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3862,9 +4643,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0050",
           "spouse": "I0141",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0139"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3889,9 +4677,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0051",
           "spouse": "I0144",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0142"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3914,9 +4709,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0051",
           "spouse": "I0143",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0142"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3959,9 +4761,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0053",
           "spouse": "I0147",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0145"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -3984,9 +4793,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0053",
           "spouse": "I0146",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0145"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4010,9 +4826,17 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0054",
           "spouse": "I0067",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0149",
+            "I0150"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4079,9 +4903,17 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0055",
           "spouse": "I0152",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0006",
+            "I0174"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4108,9 +4940,17 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0055",
           "spouse": "I0151",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0006",
+            "I0174"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4145,9 +4985,16 @@
       ],
       "marriages": [
         {
+          "family": "F0056",
           "spouse": "I0154",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0151"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4179,9 +5026,16 @@
       ],
       "marriages": [
         {
+          "family": "F0056",
           "spouse": "I0153",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0151"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4212,9 +5066,24 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0057",
           "spouse": "I0156",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0153",
+            "I0157",
+            "I0158",
+            "I0159",
+            "I0160",
+            "I0161",
+            "I0162",
+            "I0163",
+            "I0164"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4245,9 +5114,24 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0057",
           "spouse": "I0155",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0153",
+            "I0157",
+            "I0158",
+            "I0159",
+            "I0160",
+            "I0161",
+            "I0162",
+            "I0163",
+            "I0164"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4491,9 +5375,21 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0058",
           "spouse": "I0166",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0154",
+            "I0167",
+            "I0168",
+            "I0169",
+            "I0170",
+            "I0171"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4521,9 +5417,21 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0058",
           "spouse": "I0165",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0154",
+            "I0167",
+            "I0168",
+            "I0169",
+            "I0170",
+            "I0171"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4669,9 +5577,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0059",
           "spouse": "I0173",
-          "date": "1934",
-          "place": "Lackawanna, Pennsylvania"
+          "children": [
+            "I0152"
+          ],
+          "marriage_date": "1934",
+          "marriage_place": "Lackawanna, Pennsylvania",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4697,9 +5612,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0059",
           "spouse": "I0172",
-          "date": "1934",
-          "place": "Lackawanna, Pennsylvania"
+          "children": [
+            "I0152"
+          ],
+          "marriage_date": "1934",
+          "marriage_place": "Lackawanna, Pennsylvania",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4725,9 +5647,14 @@
       ],
       "marriages": [
         {
+          "family": "F0060",
           "spouse": "I0175",
-          "date": "",
-          "place": ""
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4748,9 +5675,14 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0060",
           "spouse": "I0174",
-          "date": "",
-          "place": ""
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4773,9 +5705,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0061",
           "spouse": "I0177",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0172"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4801,9 +5740,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0061",
           "spouse": "I0176",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0172"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4826,9 +5772,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0062",
           "spouse": "I0179",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0173"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4851,9 +5804,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0062",
           "spouse": "I0178",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0173"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4876,9 +5836,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0063",
           "spouse": "I0181",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0177"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4904,9 +5871,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0063",
           "spouse": "I0180",
-          "date": "",
-          "place": ""
+          "children": [
+            "I0177"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4929,9 +5903,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0065",
           "spouse": "I0183",
-          "date": "1 SEP 1849",
-          "place": "Herrick Township, Susquehanna, Pennsylvania"
+          "children": [
+            "I0181"
+          ],
+          "marriage_date": "1 SEP 1849",
+          "marriage_place": "Herrick Township, Susquehanna, Pennsylvania",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4954,9 +5935,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0065",
           "spouse": "I0182",
-          "date": "1 SEP 1849",
-          "place": "Herrick Township, Susquehanna, Pennsylvania"
+          "children": [
+            "I0181"
+          ],
+          "marriage_date": "1 SEP 1849",
+          "marriage_place": "Herrick Township, Susquehanna, Pennsylvania",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -4993,9 +5981,23 @@
       ],
       "marriages": [
         {
+          "family": "F0066",
           "spouse": "I0185",
-          "date": "5 JUL 1915",
-          "place": "Lourdes, Howard, Iowa"
+          "children": [
+            "I0012",
+            "I0188",
+            "I0189",
+            "I0190",
+            "I0191",
+            "I0192",
+            "I0193",
+            "I0197"
+          ],
+          "marriage_date": "5 JUL 1915",
+          "marriage_place": "Lourdes, Howard, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -5025,9 +6027,23 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0066",
           "spouse": "I0184",
-          "date": "5 JUL 1915",
-          "place": "Lourdes, Howard, Iowa"
+          "children": [
+            "I0012",
+            "I0188",
+            "I0189",
+            "I0190",
+            "I0191",
+            "I0192",
+            "I0193",
+            "I0197"
+          ],
+          "marriage_date": "5 JUL 1915",
+          "marriage_place": "Lourdes, Howard, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -5053,9 +6069,19 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0068",
           "spouse": "I0187",
-          "date": "JUN 1895",
-          "place": "Wapello, Louisa, Iowa"
+          "children": [
+            "I0184",
+            "I0194",
+            "I0195",
+            "I0196"
+          ],
+          "marriage_date": "JUN 1895",
+          "marriage_place": "Wapello, Louisa, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -5081,9 +6107,19 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0068",
           "spouse": "I0186",
-          "date": "JUN 1895",
-          "place": "Wapello, Louisa, Iowa"
+          "children": [
+            "I0184",
+            "I0194",
+            "I0195",
+            "I0196"
+          ],
+          "marriage_date": "JUN 1895",
+          "marriage_place": "Wapello, Louisa, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -5354,9 +6390,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0069",
           "spouse": "I0199",
-          "date": "24 OCT 1826",
-          "place": "Oberhöchstadt, Obertaunuskreis, Hesse-Nassau, Prussia, Germany"
+          "children": [
+            "I0039"
+          ],
+          "marriage_date": "24 OCT 1826",
+          "marriage_place": "Oberhöchstadt, Obertaunuskreis, Hesse-Nassau, Prussia, Germany",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -5379,9 +6422,16 @@
       "siblings": [],
       "marriages": [
         {
+          "family": "F0069",
           "spouse": "I0198",
-          "date": "24 OCT 1826",
-          "place": "Oberhöchstadt, Obertaunuskreis, Hesse-Nassau, Prussia, Germany"
+          "children": [
+            "I0039"
+          ],
+          "marriage_date": "24 OCT 1826",
+          "marriage_place": "Oberhöchstadt, Obertaunuskreis, Hesse-Nassau, Prussia, Germany",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
         }
       ]
     },
@@ -5389,47 +6439,88 @@
       "id": "I0200",
       "name": "Anna C Kallmer",
       "living": false,
-      "birth": "1861",
-      "death": "1920",
-      "place": "",
+      "birth": "27 NOV 1861",
+      "death": "27 JUL 1920",
+      "place": "Houston, Harris, Texas",
       "birth_place": "",
-      "death_place": "",
+      "death_place": "Houston, Harris, Texas",
       "parents": [
         "I0036",
         "I0038"
       ],
-      "spouses": [],
+      "spouses": [
+        "I0204",
+        "I0211"
+      ],
       "children": [],
       "siblings": [
         "I0021",
         "I0201",
         "I0202",
-        "I0203"
+        "I0203",
+        "I0206",
+        "I0209"
       ],
-      "marriages": []
+      "marriages": [
+        {
+          "family": "F0070",
+          "spouse": "I0204",
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        },
+        {
+          "family": "F0074",
+          "spouse": "I0211",
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
     },
     {
       "id": "I0201",
-      "name": "Johannah M Kallmer",
+      "name": "Johannah Margaretha Kallmer",
       "living": false,
-      "birth": "1865",
+      "birth": "JUL 1865",
       "death": "1949",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
+      "place": "Harrison, Sioux, Nebraska",
+      "birth_place": "Germany",
+      "death_place": "Harrison, Sioux, Nebraska",
       "parents": [
         "I0036",
         "I0038"
       ],
-      "spouses": [],
+      "spouses": [
+        "I0205"
+      ],
       "children": [],
       "siblings": [
         "I0021",
         "I0200",
         "I0202",
-        "I0203"
+        "I0203",
+        "I0206",
+        "I0209"
       ],
-      "marriages": []
+      "marriages": [
+        {
+          "family": "F0071",
+          "spouse": "I0205",
+          "children": [],
+          "marriage_date": "12 JUL 1881",
+          "marriage_place": "Richland Township, Sac, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
     },
     {
       "id": "I0202",
@@ -5450,7 +6541,9 @@
         "I0021",
         "I0200",
         "I0201",
-        "I0203"
+        "I0203",
+        "I0206",
+        "I0209"
       ],
       "marriages": []
     },
@@ -5473,9 +6566,265 @@
         "I0021",
         "I0200",
         "I0201",
-        "I0202"
+        "I0202",
+        "I0206",
+        "I0209"
       ],
       "marriages": []
+    },
+    {
+      "id": "I0204",
+      "name": "C. C. Perry",
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0200"
+      ],
+      "children": [],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0070",
+          "spouse": "I0200",
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0205",
+      "name": "Henry Friedrich Warneke",
+      "living": false,
+      "birth": "1 MAY 1857",
+      "death": "12 JAN 1930",
+      "place": "Denver, Denver",
+      "birth_place": "Lower Saxony, Germany",
+      "death_place": "Denver, Denver",
+      "parents": [],
+      "spouses": [
+        "I0201"
+      ],
+      "children": [],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0071",
+          "spouse": "I0201",
+          "children": [],
+          "marriage_date": "12 JUL 1881",
+          "marriage_place": "Richland Township, Sac, Iowa",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0206",
+      "name": "Lizi C Kallmer",
+      "living": false,
+      "birth": "1866",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0036",
+        "I0038"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0021",
+        "I0200",
+        "I0201",
+        "I0202",
+        "I0203",
+        "I0209"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0207",
+      "name": "Hans Jacobson",
+      "living": false,
+      "birth": "1800",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0208"
+      ],
+      "children": [
+        "I0038"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0072",
+          "spouse": "I0208",
+          "children": [
+            "I0038"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0208",
+      "name": "Lissel Jochinson",
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0207"
+      ],
+      "children": [
+        "I0038"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0072",
+          "spouse": "I0207",
+          "children": [
+            "I0038"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0209",
+      "name": "Isabel Kallmer",
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0036",
+        "I0038"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0021",
+        "I0200",
+        "I0201",
+        "I0202",
+        "I0203",
+        "I0206"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0210",
+      "name": "Laura E Kallmer",
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0021"
+      ],
+      "children": [],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0073",
+          "spouse": "I0021",
+          "children": [],
+          "marriage_date": "13 MAY 1925",
+          "marriage_place": "Sioux City, Woodbury, Iowa",
+          "divorced": true,
+          "divorce_date": "OCT 1925",
+          "divorce_place": "Ida Grove, Ida, Iowa"
+        }
+      ]
+    },
+    {
+      "id": "I0211",
+      "name": "Herman Jacobe",
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0200"
+      ],
+      "children": [],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0074",
+          "spouse": "I0200",
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0212",
+      "name": "Barton Bulman",
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0078"
+      ],
+      "children": [],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0075",
+          "spouse": "I0078",
+          "children": [],
+          "marriage_date": "20 AUG 1950",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
     }
   ],
   "families": [
@@ -5488,7 +6837,10 @@
         "I0005"
       ],
       "marriage_date": "1964",
-      "marriage_place": "Storm Lake, Buena Vista, Iowa"
+      "marriage_place": "Storm Lake, Iowa",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0001",
@@ -5496,7 +6848,10 @@
       "wife": "I0006",
       "children": [],
       "marriage_date": "1998",
-      "marriage_place": "Maui, Maui, Hawaii"
+      "marriage_place": "Maui, Hawaii",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0002",
@@ -5508,7 +6863,10 @@
         "I0010"
       ],
       "marriage_date": "1998",
-      "marriage_place": "Omaha, Douglas, Nebraska"
+      "marriage_place": "Omaha, Nebraska",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0003",
@@ -5519,7 +6877,10 @@
         "I0020"
       ],
       "marriage_date": "31 MAR 1941",
-      "marriage_place": "Decorah Township, Winneshiek, Iowa"
+      "marriage_place": "Decorah Township, Winneshiek, Iowa",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0004",
@@ -5531,7 +6892,10 @@
         "I0017"
       ],
       "marriage_date": "3 JAN 1935",
-      "marriage_place": "Storm Lake, Buena Vista, Iowa"
+      "marriage_place": "Storm Lake, Buena Vista, Iowa",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0005",
@@ -5539,7 +6903,10 @@
       "wife": "I0015",
       "children": [],
       "marriage_date": "15 FEB 1964",
-      "marriage_place": "Sioux City, Woodbury, Iowa"
+      "marriage_place": "Sioux City, Woodbury, Iowa",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0006",
@@ -5557,7 +6924,10 @@
         "I0078"
       ],
       "marriage_date": "24 AUG 1912",
-      "marriage_place": "Winona, Winona, Minnesota"
+      "marriage_place": "Winona, Winona, Minnesota",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0007",
@@ -5572,7 +6942,10 @@
         "I0035"
       ],
       "marriage_date": "2 APR 1895",
-      "marriage_place": "Odebolt, Sac, Iowa"
+      "marriage_place": "Odebolt, Sac, Iowa",
+      "divorced": true,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0008",
@@ -5580,7 +6953,6 @@
       "wife": "I0039",
       "children": [
         "I0022",
-        "I0023",
         "I0025",
         "I0026",
         "I0027",
@@ -5588,7 +6960,10 @@
         "I0029"
       ],
       "marriage_date": "3 JAN 1869",
-      "marriage_place": "Sublette Township, Lee, Illinois"
+      "marriage_place": "Sublette Township, Lee, Illinois",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0009",
@@ -5599,10 +6974,15 @@
         "I0200",
         "I0201",
         "I0202",
-        "I0203"
+        "I0203",
+        "I0206",
+        "I0209"
       ],
-      "marriage_date": "",
-      "marriage_place": ""
+      "marriage_date": "10 MAY 1857",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0010",
@@ -5612,7 +6992,10 @@
         "I0024"
       ],
       "marriage_date": "26 DEC 1843",
-      "marriage_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany"
+      "marriage_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0011",
@@ -5622,15 +7005,21 @@
         "I0037"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0012",
       "husband": "I0044",
       "wife": "I0032",
       "children": [],
-      "marriage_date": "1 JAN 1917",
-      "marriage_place": "Ida Grove, Ida, Iowa"
+      "marriage_date": "1 OCT 1917",
+      "marriage_place": "Ida Grove, Ida, Iowa",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0013",
@@ -5638,7 +7027,10 @@
       "wife": "I0033",
       "children": [],
       "marriage_date": "14 MAY 1919",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0014",
@@ -5649,7 +7041,10 @@
         "I0068"
       ],
       "marriage_date": "1967",
-      "marriage_place": "Storm Lake, Buena Vista, Iowa"
+      "marriage_place": "Storm Lake, Iowa",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0015",
@@ -5665,7 +7060,10 @@
         "I0062"
       ],
       "marriage_date": "29 DEC 1894",
-      "marriage_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden"
+      "marriage_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0016",
@@ -5679,7 +7077,10 @@
         "I0056"
       ],
       "marriage_date": "13 OCT 1860",
-      "marriage_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden"
+      "marriage_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0017",
@@ -5689,7 +7090,10 @@
         "I0050"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0018",
@@ -5699,7 +7103,10 @@
         "I0049"
       ],
       "marriage_date": "7 JUL 1826",
-      "marriage_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden"
+      "marriage_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0019",
@@ -5709,7 +7116,10 @@
         "I0048"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0020",
@@ -5719,7 +7129,10 @@
         "I0065"
       ],
       "marriage_date": "12 DEC 1918",
-      "marriage_place": "Sioux City, Woodbury, Iowa"
+      "marriage_place": "Sioux City, Woodbury, Iowa",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0021",
@@ -5727,7 +7140,10 @@
       "wife": "I0066",
       "children": [],
       "marriage_date": "DEC 1981",
-      "marriage_place": "Thailand"
+      "marriage_place": "Thailand",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0022",
@@ -5737,7 +7153,10 @@
         "I0070"
       ],
       "marriage_date": "1979",
-      "marriage_place": "Santa Cruz, Santa Cruz, California"
+      "marriage_place": "Santa Cruz, California",
+      "divorced": true,
+      "divorce_date": "1991",
+      "divorce_place": "Apache Junction, Arizona"
     },
     {
       "id": "F0023",
@@ -5753,7 +7172,10 @@
         "I0086"
       ],
       "marriage_date": "8 NOV 1888",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0024",
@@ -5766,7 +7188,10 @@
         "I0091"
       ],
       "marriage_date": "22 OCT 1887",
-      "marriage_place": "Postville, Allamakee, Iowa"
+      "marriage_place": "Postville, Allamakee, Iowa",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0025",
@@ -5776,7 +7201,10 @@
         "I0087"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0026",
@@ -5786,7 +7214,10 @@
         "I0093"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0027",
@@ -5796,7 +7227,10 @@
         "I0094"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0028",
@@ -5806,7 +7240,10 @@
         "I0097"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0029",
@@ -5816,7 +7253,10 @@
         "I0099"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0030",
@@ -5826,7 +7266,10 @@
         "I0100"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0031",
@@ -5836,7 +7279,10 @@
         "I0103"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0032",
@@ -5846,7 +7292,10 @@
         "I0105"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0033",
@@ -5856,7 +7305,10 @@
         "I0107"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0034",
@@ -5866,7 +7318,10 @@
         "I0109"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0035",
@@ -5876,7 +7331,10 @@
         "I0111"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0036",
@@ -5886,7 +7344,10 @@
         "I0113"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0037",
@@ -5896,7 +7357,10 @@
         "I0114"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0038",
@@ -5906,7 +7370,10 @@
         "I0117"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0039",
@@ -5916,7 +7383,10 @@
         "I0118"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0040",
@@ -5926,7 +7396,10 @@
         "I0121"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0041",
@@ -5936,7 +7409,10 @@
         "I0122"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0042",
@@ -5946,7 +7422,10 @@
         "I0125"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0043",
@@ -5956,7 +7435,10 @@
         "I0127"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0044",
@@ -5966,7 +7448,10 @@
         "I0128"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0045",
@@ -5976,7 +7461,10 @@
         "I0131"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0046",
@@ -5986,7 +7474,10 @@
         "I0133"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0047",
@@ -5996,7 +7487,10 @@
         "I0135"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0048",
@@ -6006,7 +7500,10 @@
         "I0136"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0049",
@@ -6016,7 +7513,10 @@
         "I0138"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0050",
@@ -6026,7 +7526,10 @@
         "I0139"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0051",
@@ -6036,7 +7539,10 @@
         "I0142"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0052",
@@ -6046,7 +7552,10 @@
         "I0143"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0053",
@@ -6056,7 +7565,10 @@
         "I0145"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0054",
@@ -6067,7 +7579,10 @@
         "I0150"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0055",
@@ -6078,7 +7593,10 @@
         "I0174"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0056",
@@ -6088,7 +7606,10 @@
         "I0151"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0057",
@@ -6106,7 +7627,10 @@
         "I0164"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0058",
@@ -6121,7 +7645,10 @@
         "I0171"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0059",
@@ -6131,7 +7658,10 @@
         "I0152"
       ],
       "marriage_date": "1934",
-      "marriage_place": "Lackawanna, Pennsylvania"
+      "marriage_place": "Lackawanna, Pennsylvania",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0060",
@@ -6139,7 +7669,10 @@
       "wife": "I0174",
       "children": [],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0061",
@@ -6149,7 +7682,10 @@
         "I0172"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0062",
@@ -6159,7 +7695,10 @@
         "I0173"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0063",
@@ -6169,7 +7708,10 @@
         "I0177"
       ],
       "marriage_date": "",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0064",
@@ -6177,7 +7719,10 @@
       "wife": "",
       "children": [],
       "marriage_date": "EST 1885",
-      "marriage_place": ""
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0065",
@@ -6187,7 +7732,10 @@
         "I0181"
       ],
       "marriage_date": "1 SEP 1849",
-      "marriage_place": "Herrick Township, Susquehanna, Pennsylvania"
+      "marriage_place": "Herrick Township, Susquehanna, Pennsylvania",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0066",
@@ -6204,7 +7752,10 @@
         "I0197"
       ],
       "marriage_date": "5 JUL 1915",
-      "marriage_place": "Lourdes, Howard, Iowa"
+      "marriage_place": "Lourdes, Howard, Iowa",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0067",
@@ -6212,7 +7763,10 @@
       "wife": "I0184",
       "children": [],
       "marriage_date": "6 JUL 1915",
-      "marriage_place": "Howard, Iowa"
+      "marriage_place": "Howard, Iowa",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0068",
@@ -6225,7 +7779,10 @@
         "I0196"
       ],
       "marriage_date": "JUN 1895",
-      "marriage_place": "Wapello, Louisa, Iowa"
+      "marriage_place": "Wapello, Louisa, Iowa",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     },
     {
       "id": "F0069",
@@ -6235,7 +7792,78 @@
         "I0039"
       ],
       "marriage_date": "24 OCT 1826",
-      "marriage_place": "Oberhöchstadt, Obertaunuskreis, Hesse-Nassau, Prussia, Germany"
+      "marriage_place": "Oberhöchstadt, Obertaunuskreis, Hesse-Nassau, Prussia, Germany",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0070",
+      "husband": "I0204",
+      "wife": "I0200",
+      "children": [],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0071",
+      "husband": "I0205",
+      "wife": "I0201",
+      "children": [],
+      "marriage_date": "12 JUL 1881",
+      "marriage_place": "Richland Township, Sac, Iowa",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0072",
+      "husband": "I0207",
+      "wife": "I0208",
+      "children": [
+        "I0038"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0073",
+      "husband": "I0021",
+      "wife": "I0210",
+      "children": [],
+      "marriage_date": "13 MAY 1925",
+      "marriage_place": "Sioux City, Woodbury, Iowa",
+      "divorced": true,
+      "divorce_date": "OCT 1925",
+      "divorce_place": "Ida Grove, Ida, Iowa"
+    },
+    {
+      "id": "F0074",
+      "husband": "I0211",
+      "wife": "I0200",
+      "children": [],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0075",
+      "husband": "I0212",
+      "wife": "I0078",
+      "children": [],
+      "marriage_date": "20 AUG 1950",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
     }
   ]
 }

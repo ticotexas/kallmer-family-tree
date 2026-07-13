@@ -104,9 +104,11 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
                 "wife": "",
                 "children": [],
                 "marriage_date": "",
-                "marriage_place": ""
+                "marriage_place": "",
+                "divorced": False,
+                "divorce_date": "",
+                "divorce_place": ""
             }
-
         else:
             current_type = None
             current_id = None
@@ -154,6 +156,9 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
         if level == "1":
             current_event = tag
 
+            if tag == "DIV":
+                family["divorced"] = True
+
             if tag == "HUSB":
                 family["husband"] = clean_xref(value)
 
@@ -165,12 +170,19 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
 
             continue
 
-        if level == "2" and current_event == "MARR":
-            if tag == "DATE":
-                family["marriage_date"] = value
-            elif tag == "PLAC":
-                family["marriage_place"] = value
+        if level == "2":
+            if current_event == "MARR":
+                if tag == "DATE":
+                    family["marriage_date"] = value
+                elif tag == "PLAC":
+                    family["marriage_place"] = value
 
+            elif current_event == "DIV":
+                if tag == "DATE":
+                    family["divorce_date"] = value
+                elif tag == "PLAC":
+                    family["divorce_place"] = value
+                    
 for family in families.values():
     husband = family["husband"]
     wife = family["wife"]
@@ -183,15 +195,25 @@ for family in families.values():
         people[wife]["spouses"].add(husband)
 
         people[husband]["marriages"].append({
+            "family": family["id"],
             "spouse": wife,
-            "date": family["marriage_date"],
-            "place": family["marriage_place"]
+            "children": list(children),
+            "marriage_date": family["marriage_date"],
+            "marriage_place": family["marriage_place"],
+            "divorced": family["divorced"],
+            "divorce_date": family["divorce_date"],
+            "divorce_place": family["divorce_place"]
         })
 
         people[wife]["marriages"].append({
+            "family": family["id"],
             "spouse": husband,
-            "date": family["marriage_date"],
-            "place": family["marriage_place"]
+            "children": list(children),
+            "marriage_date": family["marriage_date"],
+            "marriage_place": family["marriage_place"],
+            "divorced": family["divorced"],
+            "divorce_date": family["divorce_date"],
+            "divorce_place": family["divorce_place"]
         })
 
     for child in children:
@@ -222,28 +244,63 @@ def is_public_living(person):
 
 def public_marriage_record(person, marriage):
     spouse = people.get(marriage.get("spouse", ""))
+    has_living_spouse = (
+        is_public_living(person)
+        or (spouse and is_public_living(spouse))
+    )
 
-    # If either spouse is living, show only the marriage year in the public file.
-    # If both spouses are deceased, keep the full marriage date and place.
-    if is_public_living(person) or (spouse and is_public_living(spouse)):
-        return {
-            "spouse": marriage.get("spouse", ""),
-            "date": year_from_date(marriage.get("date", "")),
-            "place": simplify_place(marriage.get("place", "")),
-        }
+    public_marriage = {
+        "family": marriage.get("family", ""),
+        "spouse": marriage.get("spouse", ""),
+        "children": marriage.get("children", []),
+        "marriage_date": marriage.get("marriage_date", ""),
+        "marriage_place": marriage.get("marriage_place", ""),
+        "divorced": marriage.get("divorced", False),
+        "divorce_date": marriage.get("divorce_date", ""),
+        "divorce_place": marriage.get("divorce_place", "")
+    }
 
-    return marriage
+    if has_living_spouse:
+        public_marriage["marriage_date"] = year_from_date(
+            marriage.get("marriage_date", "")
+        )
+        public_marriage["marriage_place"] = simplify_place(
+            marriage.get("marriage_place", "")
+        )
+        public_marriage["divorce_date"] = year_from_date(
+            marriage.get("divorce_date", "")
+        )
+        public_marriage["divorce_place"] = simplify_place(
+            marriage.get("divorce_place", "")
+        )
+
+    return public_marriage
 
 def public_family_record(family):
     husband = people.get(family.get("husband", ""))
     wife = people.get(family.get("wife", ""))
-    has_living_spouse = (husband and is_public_living(husband)) or (wife and is_public_living(wife))
-
+    has_living_spouse = (
+        (husband and is_public_living(husband))
+        or
+        (wife and is_public_living(wife))
+    )
+        
     public_family = dict(family)
 
     # The families array is also in the public JSON, so sanitize it too.
     if has_living_spouse:
-        public_family["marriage_date"] = year_from_date(family.get("marriage_date", ""))
+        public_family["marriage_date"] = year_from_date(
+            family.get("marriage_date", "")
+        )
+        public_family["marriage_place"] = simplify_place(
+            family.get("marriage_place", "")
+        )
+        public_family["divorce_date"] = year_from_date(
+            family.get("divorce_date", "")
+        )
+        public_family["divorce_place"] = simplify_place(
+            family.get("divorce_place", "")
+        )
 
     return public_family
 

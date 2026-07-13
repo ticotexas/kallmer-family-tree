@@ -351,6 +351,39 @@
       border: 1px solid var(--brass);
     }
 
+    .marriage-entry {
+      margin: 0 0 22px;
+    }
+
+    .marriage-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .relationship-details,
+    .relationship-status {
+      display: block;
+      margin-top: 5px;
+    }
+
+    .relationship-status {
+      color: var(--homestead-clay);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+    }
+
+    .children-group {
+      margin-bottom: 18px;
+    }
+
+    .children-group-label {
+      display: block;
+      margin-bottom: 7px;
+      color: #b7c69f;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+    }
+
     #detail-story {
       margin-top: 28px;
       border-top: 1px solid var(--brass);
@@ -694,18 +727,85 @@
             .join("<br>");
         }
 
-        function marriageText(person) {
-          if (!person.marriages || person.marriages.length === 0) return "";
+        function sortedMarriages(person) {
+          return [...(person.marriages || [])].sort((a, b) => {
+            const yearA = yearFromText(a.marriage_date) || 9999;
+            const yearB = yearFromText(b.marriage_date) || 9999;
+            return yearA - yearB;
+          });
+        }
 
-          return person.marriages.map(m => {
-            const spouse = peopleById[m.spouse];
-            const spouseName = spouse ? personButton(spouse) : m.spouse;
-            const details = [m.date, displayPlace(m.place)].filter(Boolean).join(" — ");
+        function marriagesText(person) {
+          const marriages = sortedMarriages(person);
+          if (marriages.length === 0) return namesFromIds(person.spouses);
 
-            return details
-              ? `${spouseName}<br><span class="mono">${details}</span>`
-              : spouseName;
-          }).join("<br><br>");
+          return marriages.map(marriage => {
+            const spouse = peopleById[marriage.spouse];
+            const spouseName = spouse
+              ? personButton(spouse)
+              : (marriage.spouse || "Unknown");
+
+            const marriageDetails = [
+              marriage.marriage_date,
+              displayPlace(marriage.marriage_place)
+            ].filter(Boolean).join(" — ");
+
+            const divorceDetails = [
+              marriage.divorce_date,
+              displayPlace(marriage.divorce_place)
+            ].filter(Boolean).join(" — ");
+
+            return `
+              <div class="marriage-entry">
+                ${spouseName}
+                ${marriageDetails
+                  ? `<span class="mono relationship-details">Married ${marriageDetails}</span>`
+                  : ""}
+                ${marriage.divorced
+                  ? `<span class="relationship-status">${divorceDetails ? `Divorced ${divorceDetails}` : "Divorced"}</span>`
+                  : ""}
+              </div>
+            `;
+          }).join("");
+        }
+
+        function childrenByMarriageText(person) {
+          const marriages = sortedMarriages(person);
+          const assigned = new Set();
+          const groups = [];
+
+          marriages.forEach(marriage => {
+            const childIds = (marriage.children || []).filter(id => peopleById[id]);
+            childIds.forEach(id => assigned.add(id));
+
+            if (childIds.length === 0) return;
+
+            const spouse = peopleById[marriage.spouse];
+            const label = spouse
+              ? `Children with ${spouse.name}`
+              : "Children from this relationship";
+
+            groups.push(`
+              <div class="children-group">
+                <span class="children-group-label">${label}</span>
+                ${namesFromIds(childIds)}
+              </div>
+            `);
+          });
+
+          const unassigned = (person.children || [])
+            .filter(id => peopleById[id] && !assigned.has(id));
+
+          if (unassigned.length > 0) {
+            groups.push(`
+              <div class="children-group">
+                <span class="children-group-label">Other children</span>
+                ${namesFromIds(unassigned)}
+              </div>
+            `);
+          }
+
+          return groups.length ? groups.join("") : "None listed";
         }
 
         function getParents(person) {
@@ -715,7 +815,15 @@
         }
 
         function getPrimarySpouse(person) {
-          if (!person || !person.spouses || person.spouses.length === 0) return null;
+          if (!person) return null;
+
+          const marriages = sortedMarriages(person);
+          if (marriages.length > 0) {
+            const latestMarriage = marriages[marriages.length - 1];
+            return peopleById[latestMarriage.spouse] || null;
+          }
+
+          if (!person.spouses || person.spouses.length === 0) return null;
           return peopleById[person.spouses[0]] || null;
         }
 
@@ -785,12 +893,11 @@
         function pedigreeCoupleCard(couple, isCurrent = false) {
           const personA = couple.personA;
           const personB = couple.personB;
-
           return `
             <div class="pedigree-couple ${isCurrent ? "current" : ""}">
               ${pedigreePersonLine(personA)}
               ${personB ? `<div class="couple-divider">and</div>${pedigreePersonLine(personB)}` : ""}
-            </div>
+              </div>
           `;
         }
 
@@ -1010,11 +1117,11 @@
             <h3>Parents</h3>
             <p>${namesFromIds(person.parents)}</p>
 
-            <h3>Spouse / Marriage</h3>
-            <p>${marriageText(person) || namesFromIds(person.spouses)}</p>
+            <h3>Marriages</h3>
+            <div>${marriagesText(person)}</div>
 
             <h3>Children</h3>
-            <p>${namesFromIds(person.children)}</p>
+            <div>${childrenByMarriageText(person)}</div>
 
             <h3>Siblings</h3>
             <p>${namesFromIds(person.siblings)}</p>
