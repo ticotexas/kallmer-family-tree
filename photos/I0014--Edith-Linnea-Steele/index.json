@@ -1,12 +1,57 @@
 [
   {
     "file": "portrait.png",
-    "caption": "Portrait",
+    "caption": "Edith Steele, circa 1919",
+    "alt": "Edith Linnea Steele"
+  },
+  {
+    "file": "Edith age 18.png",
+    "caption": "Edith Age 18",
     "alt": "Edith Linnea Steele"
   },
   {
     "file": "Edith as young adult.png",
-    "caption": "Edith As Young Adult",
+    "caption": "Edith Steele As Young Adult",
+    "alt": "Edith Linnea Steele"
+  },
+  {
+    "file": "Edith circa 1926.png",
+    "caption": "Edith Steele, circa 1926",
+    "alt": "Edith Linnea Steele"
+  },
+  {
+    "file": "Edith Ellen and Catherine.png",
+    "caption": "Edith Ellen And Catherine",
+    "alt": "Edith Linnea Steele"
+  },
+  {
+    "file": "Edith Steele in middle life.png",
+    "caption": "Edith Steele In Middle Life",
+    "alt": "Edith Linnea Steele"
+  },
+  {
+    "file": "Edith wearing a hat.png",
+    "caption": "Edith Steele Wearing A Hat",
+    "alt": "Edith Linnea Steele"
+  },
+  {
+    "file": "Ediths high school diploma.png",
+    "caption": "Edith's High School Diploma",
+    "alt": "Edith Linnea Steele"
+  },
+  {
+    "file": "Ediths postcard to Selma July 14 1953.png",
+    "caption": "Ediths Postcard To Selma July 14 1953",
+    "alt": "Edith Linnea Steele"
+  },
+  {
+    "file": "Floyd and Edith, August 28th 1934.png",
+    "caption": "Floyd And Edith, August 28th 1934",
+    "alt": "Edith Linnea Steele"
+  },
+  {
+    "file": "Selma Ellen Edith and Helga.png",
+    "caption": "Selma Ellen Edith And Helga",
     "alt": "Edith Linnea Steele"
   }
 ]

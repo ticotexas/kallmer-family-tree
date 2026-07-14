@@ -31,6 +31,24 @@
       color: var(--ledger-ink);
     }
 
+    .archive-home-link {
+      display: inline-block;
+      margin-bottom: 10px;
+
+      color: var(--prairie-sage);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .archive-home-link:hover {
+      color: var(--homestead-clay);
+      text-decoration: underline;
+    }
+
     header {
       padding: 22px 40px;
       border-bottom: 1px solid var(--brass);
@@ -568,8 +586,15 @@
 </head>
 
 <body>
+
   <header>
+
+    <a href="index.html" class="archive-home-link">
+      ← The Kallmer Family Archive
+    </a>
+
     <h1>Kallmer Family Tree</h1>
+
     <div id="search-area">
       <input type="text" id="person-search" placeholder="Search for a person..." autocomplete="off" />
       <div id="search-results"></div>

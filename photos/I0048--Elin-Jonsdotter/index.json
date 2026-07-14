@@ -1,7 +1,27 @@
 [
   {
     "file": "portrait.png",
-    "caption": "Portrait",
+    "caption": "Elin Jonsdotter, circa 1931",
+    "alt": "Elin Jonsdotter"
+  },
+  {
+    "file": "Edith Ellen and Catherine.png",
+    "caption": "Edith Ellen And Catherine",
+    "alt": "Elin Jonsdotter"
+  },
+  {
+    "file": "Ellen Steele later in life.png",
+    "caption": "Ellen Steele Later In Life",
+    "alt": "Elin Jonsdotter"
+  },
+  {
+    "file": "Ellen Steeles house in Alta.png",
+    "caption": "Ellen Steele's House In Alta",
+    "alt": "Elin Jonsdotter"
+  },
+  {
+    "file": "Selma Ellen Edith and Helga.png",
+    "caption": "Selma Ellen Edith And Helga",
     "alt": "Elin Jonsdotter"
   }
 ]

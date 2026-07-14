@@ -1162,7 +1162,10 @@
       "spouses": [
         "I0044"
       ],
-      "children": [],
+      "children": [
+        "I0213",
+        "I0214"
+      ],
       "siblings": [
         "I0013",
         "I0031",
@@ -1174,7 +1177,10 @@
         {
           "family": "F0012",
           "spouse": "I0044",
-          "children": [],
+          "children": [
+            "I0213",
+            "I0214"
+          ],
           "marriage_date": "1 OCT 1917",
           "marriage_place": "Ida Grove, Ida, Iowa",
           "divorced": false,
@@ -1563,13 +1569,19 @@
       "spouses": [
         "I0032"
       ],
-      "children": [],
+      "children": [
+        "I0213",
+        "I0214"
+      ],
       "siblings": [],
       "marriages": [
         {
           "family": "F0012",
           "spouse": "I0032",
-          "children": [],
+          "children": [
+            "I0213",
+            "I0214"
+          ],
           "marriage_date": "1 OCT 1917",
           "marriage_place": "Ida Grove, Ida, Iowa",
           "divorced": false,
@@ -6825,6 +6837,46 @@
           "divorce_place": ""
         }
       ]
+    },
+    {
+      "id": "I0213",
+      "name": "Donnabelle Margaret Satterlee",
+      "living": false,
+      "birth": "1919",
+      "death": "2007",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0032",
+        "I0044"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0214"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0214",
+      "name": "Charles Ebon Satterlee",
+      "living": false,
+      "birth": "1923",
+      "death": "2003",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0032",
+        "I0044"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0213"
+      ],
+      "marriages": []
     }
   ],
   "families": [
@@ -7014,7 +7066,10 @@
       "id": "F0012",
       "husband": "I0044",
       "wife": "I0032",
-      "children": [],
+      "children": [
+        "I0213",
+        "I0214"
+      ],
       "marriage_date": "1 OCT 1917",
       "marriage_place": "Ida Grove, Ida, Iowa",
       "divorced": false,
