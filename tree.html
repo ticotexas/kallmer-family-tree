@@ -351,37 +351,77 @@
       border: 1px solid var(--brass);
     }
 
-    .marriage-entry {
-      margin: 0 0 22px;
+    .photo-gallery {
+      display: none;
     }
 
-    .marriage-entry:last-child {
-      margin-bottom: 0;
-    }
-
-    .relationship-details,
-    .relationship-status {
+    .photo-gallery.has-photo {
       display: block;
-      margin-top: 5px;
     }
 
-    .relationship-status {
-      color: var(--homestead-clay);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.82rem;
+    .photo-frame {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
     }
 
-    .children-group {
-      margin-bottom: 18px;
-    }
-
-    .children-group-label {
+    .photo-gallery-image {
       display: block;
-      margin-bottom: 7px;
+      width: 220px;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 6px;
+      border: 1px solid var(--brass);
+    }
+
+    .photo-gallery-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 9px;
+    }
+
+    .photo-gallery-button {
+      width: 34px;
+      height: 30px;
+      padding: 0;
+      border: 1px solid var(--brass);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--paper);
+      font-family: "Source Serif 4", serif;
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .photo-gallery-button:hover,
+    .photo-gallery-button:focus {
+      background: var(--homestead-clay);
+      border-color: var(--homestead-clay);
+      outline: none;
+    }
+
+    .photo-gallery-button:disabled {
+      display: none;
+    }
+
+    .photo-gallery-count {
+      min-width: 88px;
       color: #b7c69f;
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.78rem;
-      letter-spacing: 0.03em;
+    }
+
+    .photo-gallery-caption {
+      max-width: 270px;
+      margin: 9px auto 0;
+      color: #d8d1bd;
+      font-size: 0.92rem;
+      line-height: 1.35;
+      font-style: italic;
     }
 
     #detail-story {
@@ -570,6 +610,30 @@
           peopleById[person.id] = person;
         });
 
+        let photoFolderMap = {};
+        let storyFolderMap = {};
+
+        const mediaFolderMapsReady = Promise.all([
+          fetch("photos/index.json?v=" + Date.now())
+            .then(response => response.ok ? response.json() : {})
+            .catch(() => ({})),
+
+          fetch("stories/index.json?v=" + Date.now())
+            .then(response => response.ok ? response.json() : {})
+            .catch(() => ({}))
+        ]).then(([photoMap, storyMap]) => {
+          photoFolderMap = photoMap || {};
+          storyFolderMap = storyMap || {};
+        });
+
+        function photoFolderFor(personId) {
+          return photoFolderMap[personId] || personId;
+        }
+
+        function storyFolderFor(personId) {
+          return storyFolderMap[personId] || personId;
+        }
+
 
         function normalizeText(text) {
           return (text || "")
@@ -727,85 +791,63 @@
             .join("<br>");
         }
 
-        function sortedMarriages(person) {
-          return [...(person.marriages || [])].sort((a, b) => {
-            const yearA = yearFromText(a.marriage_date) || 9999;
-            const yearB = yearFromText(b.marriage_date) || 9999;
-            return yearA - yearB;
-          });
+        function birthSortValue(person) {
+          const text = String(person && person.birth || "").toUpperCase();
+
+          const yearMatch = text.match(/\b(1[5-9]\d{2}|20\d{2})\b/);
+          if (!yearMatch) return Number.POSITIVE_INFINITY;
+
+          const year = parseInt(yearMatch[1], 10);
+          const monthNames = {
+            JAN: 1, FEB: 2, MAR: 3, APR: 4,
+            MAY: 5, JUN: 6, JUL: 7, AUG: 8,
+            SEP: 9, OCT: 10, NOV: 11, DEC: 12
+          };
+
+          const monthMatch = text.match(
+            /\b(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\b/
+          );
+          const month = monthMatch ? monthNames[monthMatch[1]] : 1;
+
+          const dayMatch = text.match(
+            /\b([0-2]?\d|3[01])\s+(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\b/
+          );
+          const day = dayMatch ? parseInt(dayMatch[1], 10) : 1;
+
+          return (year * 10000) + (month * 100) + day;
         }
 
-        function marriagesText(person) {
-          const marriages = sortedMarriages(person);
-          if (marriages.length === 0) return namesFromIds(person.spouses);
+        function namesFromIdsOldestFirst(ids) {
+          if (!ids || ids.length === 0) return "None listed";
 
-          return marriages.map(marriage => {
-            const spouse = peopleById[marriage.spouse];
-            const spouseName = spouse
-              ? personButton(spouse)
-              : (marriage.spouse || "Unknown");
+          return ids
+            .map(id => peopleById[id])
+            .filter(Boolean)
+            .sort((a, b) => {
+              const dateDifference = birthSortValue(a) - birthSortValue(b);
 
-            const marriageDetails = [
-              marriage.marriage_date,
-              displayPlace(marriage.marriage_place)
-            ].filter(Boolean).join(" — ");
+              if (dateDifference !== 0) {
+                return dateDifference;
+              }
 
-            const divorceDetails = [
-              marriage.divorce_date,
-              displayPlace(marriage.divorce_place)
-            ].filter(Boolean).join(" — ");
-
-            return `
-              <div class="marriage-entry">
-                ${spouseName}
-                ${marriageDetails
-                  ? `<span class="mono relationship-details">Married ${marriageDetails}</span>`
-                  : ""}
-                ${marriage.divorced
-                  ? `<span class="relationship-status">${divorceDetails ? `Divorced ${divorceDetails}` : "Divorced"}</span>`
-                  : ""}
-              </div>
-            `;
-          }).join("");
+              return a.name.localeCompare(b.name);
+            })
+            .map(personButton)
+            .join("<br>");
         }
 
-        function childrenByMarriageText(person) {
-          const marriages = sortedMarriages(person);
-          const assigned = new Set();
-          const groups = [];
+        function marriageText(person) {
+          if (!person.marriages || person.marriages.length === 0) return "";
 
-          marriages.forEach(marriage => {
-            const childIds = (marriage.children || []).filter(id => peopleById[id]);
-            childIds.forEach(id => assigned.add(id));
+          return person.marriages.map(m => {
+            const spouse = peopleById[m.spouse];
+            const spouseName = spouse ? personButton(spouse) : m.spouse;
+            const details = [m.date, displayPlace(m.place)].filter(Boolean).join(" — ");
 
-            if (childIds.length === 0) return;
-
-            const spouse = peopleById[marriage.spouse];
-            const label = spouse
-              ? `Children with ${spouse.name}`
-              : "Children from this relationship";
-
-            groups.push(`
-              <div class="children-group">
-                <span class="children-group-label">${label}</span>
-                ${namesFromIds(childIds)}
-              </div>
-            `);
-          });
-
-          const unassigned = (person.children || [])
-            .filter(id => peopleById[id] && !assigned.has(id));
-
-          if (unassigned.length > 0) {
-            groups.push(`
-              <div class="children-group">
-                <span class="children-group-label">Other children</span>
-                ${namesFromIds(unassigned)}
-              </div>
-            `);
-          }
-
-          return groups.length ? groups.join("") : "None listed";
+            return details
+              ? `${spouseName}<br><span class="mono">${details}</span>`
+              : spouseName;
+          }).join("<br><br>");
         }
 
         function getParents(person) {
@@ -815,15 +857,7 @@
         }
 
         function getPrimarySpouse(person) {
-          if (!person) return null;
-
-          const marriages = sortedMarriages(person);
-          if (marriages.length > 0) {
-            const latestMarriage = marriages[marriages.length - 1];
-            return peopleById[latestMarriage.spouse] || null;
-          }
-
-          if (!person.spouses || person.spouses.length === 0) return null;
+          if (!person || !person.spouses || person.spouses.length === 0) return null;
           return peopleById[person.spouses[0]] || null;
         }
 
@@ -893,11 +927,12 @@
         function pedigreeCoupleCard(couple, isCurrent = false) {
           const personA = couple.personA;
           const personB = couple.personB;
+
           return `
             <div class="pedigree-couple ${isCurrent ? "current" : ""}">
               ${pedigreePersonLine(personA)}
               ${personB ? `<div class="couple-divider">and</div>${pedigreePersonLine(personB)}` : ""}
-              </div>
+            </div>
           `;
         }
 
@@ -992,7 +1027,7 @@
 
           try {
             const response = await fetch(
-              `stories/${person.id}/index.json?v=${Date.now()}`
+              `stories/${storyFolderFor(person.id)}/index.json?v=${Date.now()}`
             );
 
             if (!response.ok) {
@@ -1038,7 +1073,7 @@
                 button.classList.add("open");
 
                 const md = await fetch(
-                  `stories/${person.id}/${filename}?v=${Date.now()}`
+                  `stories/${storyFolderFor(person.id)}/${filename}?v=${Date.now()}`
                 ).then(r => r.text());
 
                 contentDiv.innerHTML =
@@ -1083,6 +1118,166 @@
           }
         }
 
+        let photoGalleryRequest = 0;
+
+        function normalizePhotoEntries(payload) {
+          const rawEntries = Array.isArray(payload)
+            ? payload
+            : (payload && Array.isArray(payload.photos) ? payload.photos : []);
+
+          return rawEntries
+            .map(entry => {
+              if (typeof entry === "string") {
+                return {
+                  file: entry,
+                  caption: "",
+                  alt: ""
+                };
+              }
+
+              if (!entry || typeof entry !== "object") {
+                return null;
+              }
+
+              const file = entry.file || entry.filename || entry.src || "";
+
+              if (!file) {
+                return null;
+              }
+
+              return {
+                file,
+                caption: entry.caption || "",
+                alt: entry.alt || ""
+              };
+            })
+            .filter(Boolean);
+        }
+
+        async function loadPhotoGallery(person) {
+          const requestId = ++photoGalleryRequest;
+          const photoDiv = document.getElementById("detail-photo");
+
+          photoDiv.innerHTML = "";
+
+          let photos = [];
+
+          try {
+            const response = await fetch(
+              `photos/${photoFolderFor(person.id)}/index.json?v=${Date.now()}`
+            );
+
+            if (response.ok) {
+              photos = normalizePhotoEntries(await response.json());
+            }
+          } catch {
+            photos = [];
+          }
+
+          if (requestId !== photoGalleryRequest) {
+            return;
+          }
+
+          // Existing portrait-only folders continue to work without index.json.
+          if (photos.length === 0) {
+            photos = [{
+              file: "portrait.png",
+              caption: "",
+              alt: person.name
+            }];
+          }
+
+          let currentIndex = 0;
+
+          const gallery = document.createElement("div");
+          gallery.className = "photo-gallery";
+
+          const frame = document.createElement("div");
+          frame.className = "photo-frame";
+
+          const image = document.createElement("img");
+          image.className = "photo-gallery-image";
+
+          const controls = document.createElement("div");
+          controls.className = "photo-gallery-controls";
+
+          const previousButton = document.createElement("button");
+          previousButton.type = "button";
+          previousButton.className = "photo-gallery-button";
+          previousButton.setAttribute("aria-label", "Previous photo");
+          previousButton.textContent = "←";
+
+          const count = document.createElement("span");
+          count.className = "photo-gallery-count";
+
+          const nextButton = document.createElement("button");
+          nextButton.type = "button";
+          nextButton.className = "photo-gallery-button";
+          nextButton.setAttribute("aria-label", "Next photo");
+          nextButton.textContent = "→";
+
+          const caption = document.createElement("div");
+          caption.className = "photo-gallery-caption";
+
+          controls.append(previousButton, count, nextButton);
+          frame.appendChild(image);
+          gallery.append(frame, controls, caption);
+          photoDiv.appendChild(gallery);
+
+          function renderPhoto() {
+            const photo = photos[currentIndex];
+            const encodedFile = photo.file
+              .split("/")
+              .map(part => encodeURIComponent(part))
+              .join("/");
+
+            image.src = `photos/${photoFolderFor(person.id)}/${encodedFile}`;
+            image.alt = photo.alt || photo.caption || person.name;
+
+            count.textContent = photos.length > 1
+              ? `Photo ${currentIndex + 1} of ${photos.length}`
+              : "Photo 1 of 1";
+
+            previousButton.disabled = photos.length < 2;
+            nextButton.disabled = photos.length < 2;
+
+            caption.textContent = photo.caption || "";
+            caption.style.display = photo.caption ? "block" : "none";
+          }
+
+          previousButton.onclick = () => {
+            currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+            renderPhoto();
+          };
+
+          nextButton.onclick = () => {
+            currentIndex = (currentIndex + 1) % photos.length;
+            renderPhoto();
+          };
+
+          image.onload = () => {
+            gallery.classList.add("has-photo");
+          };
+
+          image.onerror = () => {
+            // If a listed gallery image is missing, skip it when possible.
+            if (photos.length > 1) {
+              photos.splice(currentIndex, 1);
+
+              if (currentIndex >= photos.length) {
+                currentIndex = 0;
+              }
+
+              renderPhoto();
+              return;
+            }
+
+            gallery.remove();
+          };
+
+          renderPhoto();
+        }
+
         function showDetails(person) {
 
           const url = new URL(window.location);
@@ -1097,15 +1292,7 @@
 
           renderPedigree(person);
 
-          const photoDiv = document.getElementById("detail-photo");
-
-          photoDiv.innerHTML = `
-            <img
-              src="photos/${person.id}/portrait.png"
-              alt="${person.name}"
-              onerror="this.parentElement.innerHTML='';"
-            >
-          `;
+          loadPhotoGallery(person);
 
           document.getElementById("detail-name").textContent = person.name;
           document.getElementById("detail-dates").textContent = lifeDates(person);
@@ -1117,14 +1304,14 @@
             <h3>Parents</h3>
             <p>${namesFromIds(person.parents)}</p>
 
-            <h3>Marriages</h3>
-            <div>${marriagesText(person)}</div>
+            <h3>Spouse / Marriage</h3>
+            <p>${marriageText(person) || namesFromIds(person.spouses)}</p>
 
             <h3>Children</h3>
-            <div>${childrenByMarriageText(person)}</div>
+            <p>${namesFromIdsOldestFirst(person.children)}</p>
 
             <h3>Siblings</h3>
-            <p>${namesFromIds(person.siblings)}</p>
+            <p>${namesFromIdsOldestFirst(person.siblings)}</p>
           `;
 
           loadStory(person);
@@ -1132,17 +1319,19 @@
           attachPersonLinkHandlers();
         }
 
-        setupSearch();
+        mediaFolderMapsReady.then(() => {
+          setupSearch();
 
-        const params = new URLSearchParams(window.location.search);
-        const personId = params.get("person");
+          const params = new URLSearchParams(window.location.search);
+          const personId = params.get("person");
 
-        const startPerson =
-          (personId && peopleById[personId]) ||
-          peopleById["I0000"] ||
-          data.people[0];
+          const startPerson =
+            (personId && peopleById[personId]) ||
+            peopleById["I0000"] ||
+            data.people[0];
 
-        showDetails(startPerson);
+          showDetails(startPerson);
+        });
       });
   </script>
 
