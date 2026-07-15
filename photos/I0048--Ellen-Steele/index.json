@@ -1,7 +1,7 @@
 [
   {
     "file": "portrait.png",
-    "caption": "Elin Jonsdotter, circa 1931",
+    "caption": "Elin Jonsdotter, Circa 1931",
     "alt": "Elin Jonsdotter"
   },
   {
@@ -20,8 +20,13 @@
     "alt": "Elin Jonsdotter"
   },
   {
+    "file": "Ellen Steels headstone.png",
+    "caption": "Ellen Steels Headstone",
+    "alt": "Ellen Steele"
+  },
+  {
     "file": "Selma Ellen Edith and Helga.png",
-    "caption": "Selma Ellen Edith And Helga",
+    "caption": "Selma, Ellen, Edith, And Helga",
     "alt": "Elin Jonsdotter"
   }
 ]
