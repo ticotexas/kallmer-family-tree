@@ -79,6 +79,7 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
             people[current_id] = {
                 "id": current_id,
                 "name": "",
+                "names": [],
                 "birth_date": "",
                 "birth_year": "",
                 "birth_place": "",
@@ -122,7 +123,17 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
             current_event = tag
 
             if tag == "NAME":
-                person["name"] = value.replace("/", "").strip()
+                clean_name = value.replace("/", "").strip()
+                person["names"].append({
+                    "name": clean_name,
+                    "type": ""
+                })
+
+                # Gramps writes the preferred name first in GEDCOM.
+                # Keep that first NAME as the display name instead of
+                # overwriting it with later alternate names.
+                if not person["name"]:
+                    person["name"] = clean_name
 
             elif tag == "DEAT":
                 person["living"] = False
@@ -136,7 +147,11 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
             continue
 
         if level == "2":
-            if current_event == "BIRT":
+            if current_event == "NAME":
+                if tag == "TYPE" and person["names"]:
+                    person["names"][-1]["type"] = value.strip()
+
+            elif current_event == "BIRT":
                 if tag == "DATE":
                     person["birth_date"] = value
                     person["birth_year"] = year_from_date(value)
@@ -304,8 +319,73 @@ def public_family_record(family):
 
     return public_family
 
+def normalized_name_type(value):
+    """Normalize Gramps/GEDCOM name-type labels for reliable matching."""
+    return re.sub(r"[^a-z0-9]+", " ", str(value or "").lower()).strip()
+
+def is_birth_name_type(value):
+    name_type = normalized_name_type(value)
+
+    return (
+        name_type in {"birth", "birth name", "maiden", "maiden name"}
+        or "birth" in name_type
+        or "maiden" in name_type
+    )
+
+def is_married_name_type(value):
+    name_type = normalized_name_type(value)
+
+    return (
+        name_type in {"married", "married name"}
+        or "married" in name_type
+    )
+
+def name_metadata(person):
+    all_names = [
+        {
+            "name": entry.get("name", ""),
+            "type": entry.get("type", "")
+        }
+        for entry in person.get("names", [])
+        if entry.get("name", "")
+    ]
+
+    preferred_name = person.get("name", "")
+    alternate_names = [
+        entry for entry in all_names
+        if entry.get("name") != preferred_name
+    ]
+
+    birth_name = ""
+
+    # Gramps may export the type as "Birth Name", "birth", "Maiden Name",
+    # or another closely related label depending on export/version.
+    for entry in all_names:
+        if is_birth_name_type(entry.get("type", "")):
+            birth_name = entry.get("name", "")
+            break
+
+    # Safe fallback for the common Gramps arrangement shown in this project:
+    # preferred name is explicitly a Married Name and there is one alternate.
+    if not birth_name and all_names:
+        preferred_entry = next(
+            (entry for entry in all_names if entry.get("name") == preferred_name),
+            None
+        )
+
+        if (
+            preferred_entry
+            and is_married_name_type(preferred_entry.get("type", ""))
+            and len(alternate_names) == 1
+        ):
+            birth_name = alternate_names[0].get("name", "")
+
+    return preferred_name, birth_name, alternate_names
+
+
 def public_person_record(person):
     living = is_public_living(person)
+    preferred_name, birth_name, alternate_names = name_metadata(person)
 
     if living:
         # For living people: keep names, relationships, birth year, and place; hide exact birth date.
@@ -324,7 +404,9 @@ def public_person_record(person):
 
     return {
         "id": person["id"],
-        "name": person["name"],
+        "name": preferred_name,
+        "birth_name": birth_name,
+        "alternate_names": alternate_names,
         "living": living,
         "birth": display_birth,
         "death": display_death,
@@ -340,9 +422,13 @@ def public_person_record(person):
 
 def private_person_record(person):
     # Private version keeps fuller date strings for local/family use.
+    preferred_name, birth_name, alternate_names = name_metadata(person)
+
     return {
         "id": person["id"],
-        "name": person["name"],
+        "name": preferred_name,
+        "birth_name": birth_name,
+        "alternate_names": alternate_names,
         "living": person["living"],
         "birth": person["birth_date"] or person["birth_year"] or "?",
         "death": person["death_date"] or person["death_year"] or "",

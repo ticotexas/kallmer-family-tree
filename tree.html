@@ -170,6 +170,14 @@
       line-height: 1.1;
     }
 
+    .detail-birth-name {
+      margin: -8px 0 10px;
+      color: #d8d1bd;
+      font-size: 0.95rem;
+      font-style: italic;
+      line-height: 1.3;
+    }
+
     #details h3 {
       margin-top: 28px;
       color: var(--brass);
@@ -379,18 +387,141 @@
 
     .photo-frame {
       position: relative;
-      display: inline-block;
-      max-width: 100%;
+      width: 100%;
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
     }
 
     .photo-gallery-image {
       display: block;
-      width: 220px;
       max-width: 100%;
+      max-height: 100%;
+      width: auto;
       height: auto;
       margin: 0 auto;
       border-radius: 6px;
       border: 1px solid var(--brass);
+      object-fit: contain;
+      cursor: zoom-in;
+    }
+
+    .photo-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      box-sizing: border-box;
+      background: rgba(10, 18, 31, 0.94);
+    }
+
+    .photo-lightbox.open {
+      display: flex;
+    }
+
+    .photo-lightbox-content {
+      position: relative;
+      width: min(1100px, 96vw);
+      height: min(92vh, 900px);
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr) 56px;
+      grid-template-rows: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .photo-lightbox-image-wrap {
+      grid-column: 2;
+      grid-row: 1;
+      min-width: 0;
+      min-height: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-lightbox-image {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border: 1px solid var(--brass);
+      border-radius: 6px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .photo-lightbox-caption {
+      grid-column: 2;
+      grid-row: 2;
+      min-height: 1.4em;
+      color: var(--paper);
+      text-align: center;
+      font-size: 1rem;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .photo-lightbox-close,
+    .photo-lightbox-nav {
+      border: 1px solid var(--brass);
+      border-radius: 4px;
+      background: rgba(31, 46, 69, 0.9);
+      color: var(--paper);
+      cursor: pointer;
+      font-family: "Source Serif 4", serif;
+    }
+
+    .photo-lightbox-close:hover,
+    .photo-lightbox-close:focus,
+    .photo-lightbox-nav:hover,
+    .photo-lightbox-nav:focus {
+      background: var(--homestead-clay);
+      border-color: var(--homestead-clay);
+      outline: none;
+    }
+
+    .photo-lightbox-close {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      z-index: 2;
+      width: 42px;
+      height: 42px;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .photo-lightbox-nav {
+      width: 46px;
+      height: 54px;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .photo-lightbox-previous {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: center;
+    }
+
+    .photo-lightbox-next {
+      grid-column: 3;
+      grid-row: 1;
+      justify-self: center;
+    }
+
+    .photo-lightbox-nav:disabled {
+      visibility: hidden;
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
     }
 
     .photo-gallery-controls {
@@ -564,6 +695,25 @@
         min-width: 0;
         max-width: 360px;
       }
+
+      .photo-frame {
+        height: 340px;
+      }
+
+      .photo-lightbox {
+        padding: 12px;
+      }
+
+      .photo-lightbox-content {
+        width: 100%;
+        height: 94vh;
+        grid-template-columns: 44px minmax(0, 1fr) 44px;
+      }
+
+      .photo-lightbox-nav {
+        width: 40px;
+        height: 48px;
+      }
     }
 
     .person-link span {
@@ -606,10 +756,49 @@
 
     <div id="details">
       <h2 id="detail-name">Select a Person</h2>
+      <p id="detail-birth-name" class="detail-birth-name"></p>
       <p class="mono" id="detail-dates"></p>
       <div id="detail-photo"></div>
       <div id="detail-place"></div>
       <div id="detail-story"></div>
+    </div>
+  </div>
+
+  <div
+    id="photo-lightbox"
+    class="photo-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Photo viewer"
+    aria-hidden="true"
+  >
+    <div class="photo-lightbox-content">
+      <button
+        id="photo-lightbox-close"
+        class="photo-lightbox-close"
+        type="button"
+        aria-label="Close photo viewer"
+      >×</button>
+
+      <button
+        id="photo-lightbox-previous"
+        class="photo-lightbox-nav photo-lightbox-previous"
+        type="button"
+        aria-label="Previous photo"
+      >←</button>
+
+      <div class="photo-lightbox-image-wrap">
+        <img id="photo-lightbox-image" class="photo-lightbox-image" alt="">
+      </div>
+
+      <button
+        id="photo-lightbox-next"
+        class="photo-lightbox-nav photo-lightbox-next"
+        type="button"
+        aria-label="Next photo"
+      >→</button>
+
+      <div id="photo-lightbox-caption" class="photo-lightbox-caption"></div>
     </div>
   </div>
 
@@ -629,6 +818,76 @@
         });
 
         const searchResults = document.getElementById("search-results");
+
+        const lightbox = document.getElementById("photo-lightbox");
+        const lightboxImage = document.getElementById("photo-lightbox-image");
+        const lightboxCaption = document.getElementById("photo-lightbox-caption");
+        const lightboxClose = document.getElementById("photo-lightbox-close");
+        const lightboxPrevious = document.getElementById("photo-lightbox-previous");
+        const lightboxNext = document.getElementById("photo-lightbox-next");
+
+        let activeLightboxGallery = null;
+
+        function closePhotoLightbox() {
+          lightbox.classList.remove("open");
+          lightbox.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("lightbox-open");
+          activeLightboxGallery = null;
+        }
+
+        function renderLightboxPhoto() {
+          if (!activeLightboxGallery || activeLightboxGallery.photos.length === 0) {
+            return;
+          }
+
+          const photo = activeLightboxGallery.photos[activeLightboxGallery.getCurrentIndex()];
+          lightboxImage.src = activeLightboxGallery.photoUrl(photo);
+          lightboxImage.alt = photo.alt || photo.caption || activeLightboxGallery.personName;
+          lightboxCaption.textContent = photo.caption || "";
+          lightboxPrevious.disabled = activeLightboxGallery.photos.length < 2;
+          lightboxNext.disabled = activeLightboxGallery.photos.length < 2;
+        }
+
+        function openPhotoLightbox(galleryState) {
+          activeLightboxGallery = galleryState;
+          renderLightboxPhoto();
+          lightbox.classList.add("open");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.classList.add("lightbox-open");
+          lightboxClose.focus();
+        }
+
+        lightboxClose.addEventListener("click", closePhotoLightbox);
+
+        lightbox.addEventListener("click", event => {
+          if (event.target === lightbox) {
+            closePhotoLightbox();
+          }
+        });
+
+        lightboxPrevious.addEventListener("click", () => {
+          if (!activeLightboxGallery) return;
+          activeLightboxGallery.previous();
+          renderLightboxPhoto();
+        });
+
+        lightboxNext.addEventListener("click", () => {
+          if (!activeLightboxGallery) return;
+          activeLightboxGallery.next();
+          renderLightboxPhoto();
+        });
+
+        document.addEventListener("keydown", event => {
+          if (!lightbox.classList.contains("open")) return;
+
+          if (event.key === "Escape") {
+            closePhotoLightbox();
+          } else if (event.key === "ArrowLeft") {
+            lightboxPrevious.click();
+          } else if (event.key === "ArrowRight") {
+            lightboxNext.click();
+          }
+        });
 
         const peopleById = {};
         data.people.forEach(person => {
@@ -673,9 +932,32 @@
             .replace(/þ/g, "th");
         }
 
+        function alternateNameTexts(person) {
+          const names = [];
+
+          if (person.birth_name) {
+            names.push(person.birth_name);
+          }
+
+          if (Array.isArray(person.alternate_names)) {
+            person.alternate_names.forEach(entry => {
+              if (typeof entry === "string") {
+                names.push(entry);
+              } else if (entry && entry.name) {
+                names.push(entry.name);
+              }
+            });
+          }
+
+          return names;
+        }
+
         const searchablePeople = data.people.map(person => ({
           person,
-          searchName: normalizeText(person.name)
+          searchName: normalizeText([
+            person.name,
+            ...alternateNameTexts(person)
+          ].filter(Boolean).join(" "))
         }));
 
         function hideSearchResults() {
@@ -1249,14 +1531,19 @@
           gallery.append(frame, controls, caption);
           photoDiv.appendChild(gallery);
 
-          function renderPhoto() {
-            const photo = photos[currentIndex];
+          function photoUrl(photo) {
             const encodedFile = photo.file
               .split("/")
               .map(part => encodeURIComponent(part))
               .join("/");
 
-            image.src = `photos/${photoFolderFor(person.id)}/${encodedFile}`;
+            return `photos/${photoFolderFor(person.id)}/${encodedFile}`;
+          }
+
+          function renderPhoto() {
+            const photo = photos[currentIndex];
+
+            image.src = photoUrl(photo);
             image.alt = photo.alt || photo.caption || person.name;
 
             count.textContent = photos.length > 1
@@ -1268,16 +1555,49 @@
 
             caption.textContent = photo.caption || "";
             caption.style.display = photo.caption ? "block" : "none";
+
+            if (
+              activeLightboxGallery
+              && activeLightboxGallery.personId === person.id
+            ) {
+              renderLightboxPhoto();
+            }
           }
 
-          previousButton.onclick = () => {
+          function showPreviousPhoto() {
             currentIndex = (currentIndex - 1 + photos.length) % photos.length;
             renderPhoto();
-          };
+          }
 
-          nextButton.onclick = () => {
+          function showNextPhoto() {
             currentIndex = (currentIndex + 1) % photos.length;
             renderPhoto();
+          }
+
+          previousButton.onclick = showPreviousPhoto;
+          nextButton.onclick = showNextPhoto;
+
+          image.tabIndex = 0;
+          image.setAttribute("role", "button");
+          image.setAttribute("aria-label", "Open full-size photo");
+
+          image.onclick = () => {
+            openPhotoLightbox({
+              personId: person.id,
+              personName: person.name,
+              photos,
+              getCurrentIndex: () => currentIndex,
+              previous: showPreviousPhoto,
+              next: showNextPhoto,
+              photoUrl
+            });
+          };
+
+          image.onkeydown = event => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              image.click();
+            }
           };
 
           image.onload = () => {
@@ -1303,7 +1623,20 @@
           renderPhoto();
         }
 
+        function birthNameLabel(person) {
+          const birthName = String(person && person.birth_name || "").trim();
+          const preferredName = String(person && person.name || "").trim();
+
+          if (!birthName || normalizeText(birthName) === normalizeText(preferredName)) {
+            return "";
+          }
+
+          return `Born ${birthName}`;
+        }
+
         function showDetails(person) {
+
+          closePhotoLightbox();
 
           const url = new URL(window.location);
 
@@ -1320,6 +1653,12 @@
           loadPhotoGallery(person);
 
           document.getElementById("detail-name").textContent = person.name;
+
+          const birthNameElement = document.getElementById("detail-birth-name");
+          const birthNameText = birthNameLabel(person);
+          birthNameElement.textContent = birthNameText;
+          birthNameElement.style.display = birthNameText ? "block" : "none";
+
           document.getElementById("detail-dates").textContent = lifeDates(person);
           const place = displayPlace(birthPlace(person));
 

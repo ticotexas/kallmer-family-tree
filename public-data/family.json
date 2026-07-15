@@ -3,6 +3,8 @@
     {
       "id": "I0000",
       "name": "Timothy Layne Kallmer",
+      "birth_name": "Timothy Layne Kallmer",
+      "alternate_names": [],
       "living": true,
       "birth": "1969",
       "death": "",
@@ -36,6 +38,8 @@
     {
       "id": "I0001",
       "name": "William Frederick Kallmer",
+      "birth_name": "William Frederick Kallmer",
+      "alternate_names": [],
       "living": true,
       "birth": "1942",
       "death": "",
@@ -75,7 +79,14 @@
     },
     {
       "id": "I0002",
-      "name": "LaDon Raye Huffey",
+      "name": "LaDon Raye Kallmer",
+      "birth_name": "LaDon Raye Huffey",
+      "alternate_names": [
+        {
+          "name": "LaDon Raye Huffey",
+          "type": "birth"
+        }
+      ],
       "living": true,
       "birth": "1943",
       "death": "",
@@ -115,6 +126,8 @@
     {
       "id": "I0003",
       "name": "Håkan Svensson",
+      "birth_name": "Håkan Svensson",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -147,6 +160,8 @@
     {
       "id": "I0004",
       "name": "Ingeborg Persdotter",
+      "birth_name": "Ingeborg Persdotter",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -178,7 +193,14 @@
     },
     {
       "id": "I0005",
-      "name": "Cherlyn Janel Kallmer",
+      "name": "Cherlyn Janel Humburg",
+      "birth_name": "Cherlyn Janel Kallmer",
+      "alternate_names": [
+        {
+          "name": "Cherlyn Janel Kallmer",
+          "type": "birth"
+        }
+      ],
       "living": true,
       "birth": "1973",
       "death": "",
@@ -219,7 +241,14 @@
     },
     {
       "id": "I0006",
-      "name": "Sunny Lynn Urban",
+      "name": "Sunny Lynn Kallmer",
+      "birth_name": "Sunny Lynn Urban",
+      "alternate_names": [
+        {
+          "name": "Sunny Lynn Urban",
+          "type": "birth"
+        }
+      ],
       "living": true,
       "birth": "1971",
       "death": "",
@@ -253,6 +282,8 @@
     {
       "id": "I0007",
       "name": "Brent Paul Humburg",
+      "birth_name": "Brent Paul Humburg",
+      "alternate_names": [],
       "living": true,
       "birth": "1971",
       "death": "",
@@ -289,6 +320,8 @@
     {
       "id": "I0008",
       "name": "Reed Jayden Humburg",
+      "birth_name": "Reed Jayden Humburg",
+      "alternate_names": [],
       "living": true,
       "birth": "2008",
       "death": "",
@@ -310,6 +343,8 @@
     {
       "id": "I0009",
       "name": "Brielle Logan Humburg",
+      "birth_name": "Brielle Logan Humburg",
+      "alternate_names": [],
       "living": true,
       "birth": "2011",
       "death": "",
@@ -331,6 +366,8 @@
     {
       "id": "I0010",
       "name": "Cole Brayden Humburg",
+      "birth_name": "Cole Brayden Humburg",
+      "alternate_names": [],
       "living": true,
       "birth": "2011",
       "death": "",
@@ -351,7 +388,9 @@
     },
     {
       "id": "I0011",
-      "name": "Vernon Levere Huffey",
+      "name": "Vernon LeVere Huffey",
+      "birth_name": "Vernon LeVere Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "9 SEP 1917",
       "death": "27 MAR 2006",
@@ -397,7 +436,14 @@
     },
     {
       "id": "I0012",
-      "name": "Marian Elizabeth Lepa",
+      "name": "Marian Elizabeth Huffey",
+      "birth_name": "Marian Elizabeth Lepa",
+      "alternate_names": [
+        {
+          "name": "Marian Elizabeth Lepa",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "9 DEC 1919",
       "death": "17 JUN 2004",
@@ -443,6 +489,8 @@
     {
       "id": "I0013",
       "name": "Floyd Frederick Kallmer",
+      "birth_name": "Floyd Frederick Kallmer",
+      "alternate_names": [],
       "living": false,
       "birth": "25 JAN 1907",
       "death": "30 JAN 2001",
@@ -498,7 +546,18 @@
     },
     {
       "id": "I0014",
-      "name": "Edith Linnea Steele",
+      "name": "Edith Linnea Kallmer",
+      "birth_name": "Edith Linnea Steele",
+      "alternate_names": [
+        {
+          "name": "Edit Linnéa Stål",
+          "type": "aka"
+        },
+        {
+          "name": "Edith Linnea Steele",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "1 JUN 1908",
       "death": "11 MAY 1957",
@@ -544,7 +603,14 @@
     },
     {
       "id": "I0015",
-      "name": "Dorcas McPherrin",
+      "name": "Dorcas Kallmer",
+      "birth_name": "Dorcas McPherrin",
+      "alternate_names": [
+        {
+          "name": "Dorcas McPherrin",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "19 MAY 1914",
       "death": "7 MAR 2014",
@@ -573,6 +639,8 @@
     {
       "id": "I0016",
       "name": "Robert Clyde Kallmer",
+      "birth_name": "Robert Clyde Kallmer",
+      "alternate_names": [],
       "living": false,
       "birth": "11 NOV 1939",
       "death": "16 APR 2010",
@@ -607,6 +675,8 @@
     {
       "id": "I0017",
       "name": "James Steele Kallmer",
+      "birth_name": "James Steele Kallmer",
+      "alternate_names": [],
       "living": true,
       "birth": "1941",
       "death": "",
@@ -647,6 +717,8 @@
     {
       "id": "I0018",
       "name": "Walter Angus Huffey",
+      "birth_name": "Walter Angus Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "12 SEP 1891",
       "death": "8 MAY 1975",
@@ -701,7 +773,14 @@
     },
     {
       "id": "I0019",
-      "name": "Tilda Boletta Olson",
+      "name": "Tilda Boletta Huffey",
+      "birth_name": "Tilda Boletta Olson",
+      "alternate_names": [
+        {
+          "name": "Tilda Boletta Olson",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "28 DEC 1891",
       "death": "30 AUG 1983",
@@ -760,6 +839,8 @@
     {
       "id": "I0020",
       "name": "Paul Vernon Huffey",
+      "birth_name": "Paul Vernon Huffey",
+      "alternate_names": [],
       "living": true,
       "birth": "1950",
       "death": "",
@@ -797,6 +878,8 @@
     {
       "id": "I0021",
       "name": "Andrew Christ Kallmer",
+      "birth_name": "Andrew Christ Kallmer",
+      "alternate_names": [],
       "living": false,
       "birth": "19 AUG 1868",
       "death": "12 OCT 1935",
@@ -859,7 +942,14 @@
     },
     {
       "id": "I0022",
-      "name": "Margaret Mary Dinges",
+      "name": "Margaret Mary Kallmer",
+      "birth_name": "Margaret Mary Dinges",
+      "alternate_names": [
+        {
+          "name": "Margaret Mary Dinges",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "4 APR 1875",
       "death": "7 MAY 1908",
@@ -911,6 +1001,8 @@
     {
       "id": "I0024",
       "name": "John William Dinges Sr.",
+      "birth_name": "John William Dinges Sr.",
+      "alternate_names": [],
       "living": false,
       "birth": "21 FEB 1846",
       "death": "18 NOV 1914",
@@ -956,6 +1048,8 @@
     {
       "id": "I0025",
       "name": "Julia Koehler",
+      "birth_name": "",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -980,6 +1074,8 @@
     {
       "id": "I0026",
       "name": "Joseph Dinges",
+      "birth_name": "Joseph Dinges",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -1004,6 +1100,8 @@
     {
       "id": "I0027",
       "name": "John Dinges Jr.",
+      "birth_name": "John Dinges Jr.",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -1028,6 +1126,8 @@
     {
       "id": "I0028",
       "name": "Pete Dinges",
+      "birth_name": "Pete Dinges",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -1052,6 +1152,8 @@
     {
       "id": "I0029",
       "name": "Fred Dinges",
+      "birth_name": "Fred Dinges",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -1075,7 +1177,9 @@
     },
     {
       "id": "I0030",
-      "name": "Jons Persson",
+      "name": "Jöns Persson",
+      "birth_name": "Jöns Persson",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -1087,7 +1191,12 @@
         "I0063"
       ],
       "children": [
-        "I0048"
+        "I0048",
+        "I0215",
+        "I0216",
+        "I0217",
+        "I0218",
+        "I0219"
       ],
       "siblings": [],
       "marriages": [
@@ -1095,7 +1204,12 @@
           "family": "F0019",
           "spouse": "I0063",
           "children": [
-            "I0048"
+            "I0048",
+            "I0215",
+            "I0216",
+            "I0217",
+            "I0218",
+            "I0219"
           ],
           "marriage_date": "",
           "marriage_place": "",
@@ -1107,7 +1221,14 @@
     },
     {
       "id": "I0031",
-      "name": "Isabell Kallmer",
+      "name": "Isabel Bernhardt",
+      "birth_name": "Isabell Kallmer",
+      "alternate_names": [
+        {
+          "name": "Isabell Kallmer",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "29 DEC 1895",
       "death": "EST 1987",
@@ -1148,7 +1269,14 @@
     },
     {
       "id": "I0032",
-      "name": "Bernice Mae Kallmer",
+      "name": "Bernice Mae Satterlee",
+      "birth_name": "Bernice Mae Kallmer",
+      "alternate_names": [
+        {
+          "name": "Bernice Mae Kallmer",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "25 SEP 1897",
       "death": "10 DEC 1984",
@@ -1191,7 +1319,14 @@
     },
     {
       "id": "I0033",
-      "name": "Hazel Catherine Kallmer",
+      "name": "Hazel Catherine Lynch",
+      "birth_name": "Hazel Catherine Kallmer",
+      "alternate_names": [
+        {
+          "name": "Hazel Catherine Kallmer",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "3 APR 1900",
       "death": "16 AUG 1983",
@@ -1229,6 +1364,8 @@
     {
       "id": "I0034",
       "name": "Baby Boy Kallmer",
+      "birth_name": "Baby Boy Kallmer",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -1253,6 +1390,8 @@
     {
       "id": "I0035",
       "name": "Leslie Jacob Kallmer",
+      "birth_name": "Leslie Jacob Kallmer",
+      "alternate_names": [],
       "living": false,
       "birth": "11 JUL 1902",
       "death": "7 AUG 1928",
@@ -1276,7 +1415,22 @@
     },
     {
       "id": "I0036",
-      "name": "Jacobus Kallmer",
+      "name": "Jacob Kallmer",
+      "birth_name": "Jacob Kallmer",
+      "alternate_names": [
+        {
+          "name": "Jacob Kalmer",
+          "type": "aka"
+        },
+        {
+          "name": "Jacob Calmer",
+          "type": "birth"
+        },
+        {
+          "name": "Jacobus Kallmer",
+          "type": "aka"
+        }
+      ],
       "living": false,
       "birth": "24 JUL 1834",
       "death": "25 AUG 1912",
@@ -1321,6 +1475,8 @@
     {
       "id": "I0037",
       "name": "Marie K Kallmer",
+      "birth_name": "",
+      "alternate_names": [],
       "living": false,
       "birth": "27 APR 1834",
       "death": "22 FEB 1913",
@@ -1338,7 +1494,22 @@
     },
     {
       "id": "I0038",
-      "name": "Carolina Calmer",
+      "name": "Caroline Kallmer",
+      "birth_name": "Caroline Jacobsen",
+      "alternate_names": [
+        {
+          "name": "Caroline Jacobsen",
+          "type": "birth"
+        },
+        {
+          "name": "Caroline Jacobson",
+          "type": "aka"
+        },
+        {
+          "name": "Carolina Calmer",
+          "type": "aka"
+        }
+      ],
       "living": false,
       "birth": "17 JUN 1832",
       "death": "27 OCT 1911",
@@ -1385,7 +1556,18 @@
     },
     {
       "id": "I0039",
-      "name": "Catherine Dinges",
+      "name": "Katherine Dinges",
+      "birth_name": "Catherina Beitz",
+      "alternate_names": [
+        {
+          "name": "Catherina Beitz",
+          "type": "birth"
+        },
+        {
+          "name": "Catherine Dinges",
+          "type": "aka"
+        }
+      ],
       "living": false,
       "birth": "21 NOV 1845",
       "death": "23 NOV 1932",
@@ -1431,6 +1613,8 @@
     {
       "id": "I0040",
       "name": "Johann Wilhelm William Dinges",
+      "birth_name": "Johann Wilhelm William Dinges",
+      "alternate_names": [],
       "living": false,
       "birth": "1805",
       "death": "1906",
@@ -1463,6 +1647,8 @@
     {
       "id": "I0041",
       "name": "Christina Port",
+      "birth_name": "Christina Port",
+      "alternate_names": [],
       "living": false,
       "birth": "1820",
       "death": "1904",
@@ -1495,6 +1681,8 @@
     {
       "id": "I0042",
       "name": "A Albertson",
+      "birth_name": "A Albertson",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -1527,6 +1715,8 @@
     {
       "id": "I0043",
       "name": "H Anderson",
+      "birth_name": "H Anderson",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -1559,6 +1749,8 @@
     {
       "id": "I0044",
       "name": "Charles Ernst Satterlee",
+      "birth_name": "Charles Ernst Satterlee",
+      "alternate_names": [],
       "living": false,
       "birth": "30 DEC 1892",
       "death": "11 APR 1980",
@@ -1593,6 +1785,8 @@
     {
       "id": "I0045",
       "name": "Roy Edward Lynch",
+      "birth_name": "Roy Edward Lynch",
+      "alternate_names": [],
       "living": false,
       "birth": "21 MAR 1901",
       "death": "22 FEB 1965",
@@ -1620,7 +1814,14 @@
     },
     {
       "id": "I0046",
-      "name": "Diana Christine Bodaken",
+      "name": "Diana Christine Kallmer",
+      "birth_name": "Diana Christine Bodaken",
+      "alternate_names": [
+        {
+          "name": "Diana Christine Bodaken",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "4 MAR 1941",
       "death": "7 FEB 2019",
@@ -1654,13 +1855,24 @@
     },
     {
       "id": "I0047",
-      "name": "Sven Magni Magnusson Stål",
+      "name": "Sven Magni Steele",
+      "birth_name": "Sven Magni Magnusson",
+      "alternate_names": [
+        {
+          "name": "Sven Magni Magnusson",
+          "type": "birth"
+        },
+        {
+          "name": "Sven Magni Magnusson Stål",
+          "type": "aka"
+        }
+      ],
       "living": false,
       "birth": "19 FEB 1872",
       "death": "14 MAR 1948",
-      "place": "Stenbrohult, Kronoberg, Sweden",
+      "place": "Stenbrohult, Västra Torsås, Kronoberg, Sweden",
       "birth_place": "Tullanäs, Västra Torsås, Kronoberg, Sweden",
-      "death_place": "Stenbrohult, Kronoberg, Sweden",
+      "death_place": "Stenbrohult, Västra Torsås, Kronoberg, Sweden",
       "parents": [
         "I0049",
         "I0050"
@@ -1706,12 +1918,19 @@
     },
     {
       "id": "I0048",
-      "name": "Elin Jonsdotter",
+      "name": "Ellen Steele",
+      "birth_name": "Elin Jonsdotter",
+      "alternate_names": [
+        {
+          "name": "Elin Jonsdotter",
+          "type": "birth"
+        }
+      ],
       "living": false,
-      "birth": "EST AUG 1867",
-      "death": "JUL 1952",
+      "birth": "1 AUG 1867",
+      "death": "11 JUL 1952",
       "place": "Alta, Buena Vista, Iowa",
-      "birth_place": "Hybugden, Femsjö, Kronoberg, Sweden",
+      "birth_place": "Nybygden, Västra Torsås, Kronoberg, Sweden",
       "death_place": "Alta, Buena Vista, Iowa",
       "parents": [
         "I0030",
@@ -1729,7 +1948,13 @@
         "I0061",
         "I0062"
       ],
-      "siblings": [],
+      "siblings": [
+        "I0215",
+        "I0216",
+        "I0217",
+        "I0218",
+        "I0219"
+      ],
       "marriages": [
         {
           "family": "F0015",
@@ -1754,6 +1979,8 @@
     {
       "id": "I0049",
       "name": "Magnus Håkansson",
+      "birth_name": "Magnus Håkansson",
+      "alternate_names": [],
       "living": false,
       "birth": "1 APR 1829",
       "death": "?",
@@ -1797,6 +2024,8 @@
     {
       "id": "I0050",
       "name": "Pernilla Svensdotter",
+      "birth_name": "Pernilla Svensdotter",
+      "alternate_names": [],
       "living": false,
       "birth": "17 JUL 1837",
       "death": "?",
@@ -1840,6 +2069,8 @@
     {
       "id": "I0051",
       "name": "Sven Nilsson",
+      "birth_name": "Sven Nilsson",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -1872,6 +2103,8 @@
     {
       "id": "I0052",
       "name": "Elna Persdotter",
+      "birth_name": "Elna Persdotter",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -1904,6 +2137,8 @@
     {
       "id": "I0053",
       "name": "Ida Magnusdotter",
+      "birth_name": "Ida Magnusdotter",
+      "alternate_names": [],
       "living": false,
       "birth": "1869",
       "death": "?",
@@ -1927,6 +2162,8 @@
     {
       "id": "I0054",
       "name": "Peter Johan Magnusson",
+      "birth_name": "Peter Johan Magnusson",
+      "alternate_names": [],
       "living": false,
       "birth": "1866",
       "death": "?",
@@ -1950,6 +2187,8 @@
     {
       "id": "I0055",
       "name": "Emma Christina Magnusdotter",
+      "birth_name": "Emma Christina Magnusdotter",
+      "alternate_names": [],
       "living": false,
       "birth": "1865",
       "death": "?",
@@ -1973,6 +2212,8 @@
     {
       "id": "I0056",
       "name": "Christina Magnusdotter",
+      "birth_name": "Christina Magnusdotter",
+      "alternate_names": [],
       "living": false,
       "birth": "1859",
       "death": "?",
@@ -1996,6 +2237,8 @@
     {
       "id": "I0057",
       "name": "Oskar Albin Stål",
+      "birth_name": "Oskar Albin Stål",
+      "alternate_names": [],
       "living": false,
       "birth": "1895",
       "death": "?",
@@ -2021,6 +2264,8 @@
     {
       "id": "I0058",
       "name": "Helga Elida Stål",
+      "birth_name": "Helga Elida Stål",
+      "alternate_names": [],
       "living": false,
       "birth": "1898",
       "death": "?",
@@ -2046,6 +2291,8 @@
     {
       "id": "I0059",
       "name": "Nelly Stål",
+      "birth_name": "Nelly Stål",
+      "alternate_names": [],
       "living": false,
       "birth": "1900",
       "death": "?",
@@ -2071,6 +2318,8 @@
     {
       "id": "I0060",
       "name": "Alma Idalia Stål",
+      "birth_name": "Alma Idalia Stål",
+      "alternate_names": [],
       "living": false,
       "birth": "1902",
       "death": "?",
@@ -2096,6 +2345,8 @@
     {
       "id": "I0061",
       "name": "Edvin Julius Stål",
+      "birth_name": "Edvin Julius Stål",
+      "alternate_names": [],
       "living": false,
       "birth": "1906",
       "death": "?",
@@ -2121,6 +2372,8 @@
     {
       "id": "I0062",
       "name": "Selma Idalia Stål",
+      "birth_name": "Selma Idalia Stål",
+      "alternate_names": [],
       "living": false,
       "birth": "1909",
       "death": "?",
@@ -2146,8 +2399,10 @@
     {
       "id": "I0063",
       "name": "Ingrid Aronsdotter",
+      "birth_name": "Ingrid Aronsdotter",
+      "alternate_names": [],
       "living": false,
-      "birth": "?",
+      "birth": "23 AUG 1823",
       "death": "?",
       "place": "",
       "birth_place": "",
@@ -2157,7 +2412,12 @@
         "I0030"
       ],
       "children": [
-        "I0048"
+        "I0048",
+        "I0215",
+        "I0216",
+        "I0217",
+        "I0218",
+        "I0219"
       ],
       "siblings": [],
       "marriages": [
@@ -2165,7 +2425,12 @@
           "family": "F0019",
           "spouse": "I0030",
           "children": [
-            "I0048"
+            "I0048",
+            "I0215",
+            "I0216",
+            "I0217",
+            "I0218",
+            "I0219"
           ],
           "marriage_date": "",
           "marriage_place": "",
@@ -2178,6 +2443,8 @@
     {
       "id": "I0064",
       "name": "Fred Bernhardt",
+      "birth_name": "Fred Bernhardt",
+      "alternate_names": [],
       "living": false,
       "birth": "23 FEB 1894",
       "death": "22 APR 1976",
@@ -2209,7 +2476,14 @@
     },
     {
       "id": "I0065",
-      "name": "Arlene Bernhardt",
+      "name": "Arlene Grundmeier",
+      "birth_name": "Arlene Bernhardt",
+      "alternate_names": [
+        {
+          "name": "Arlene Bernhardt",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -2228,6 +2502,8 @@
     {
       "id": "I0066",
       "name": "Manilat Ramsin",
+      "birth_name": "Manilat Ramsin",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -2256,6 +2532,8 @@
     {
       "id": "I0067",
       "name": "Jonathan Kallmer",
+      "birth_name": "Jonathan Kallmer",
+      "alternate_names": [],
       "living": true,
       "birth": "1972",
       "death": "",
@@ -2295,6 +2573,8 @@
     {
       "id": "I0068",
       "name": "Brent Kallmer",
+      "birth_name": "Brent Kallmer",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -2314,7 +2594,18 @@
     },
     {
       "id": "I0069",
-      "name": "Kelly Parnum",
+      "name": "Kelly Athena",
+      "birth_name": "Kelly Parnum",
+      "alternate_names": [
+        {
+          "name": "Kelly Huffey",
+          "type": "married"
+        },
+        {
+          "name": "Kelly Parnum",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -2347,6 +2638,8 @@
     {
       "id": "I0070",
       "name": "Christopher Huffey",
+      "birth_name": "Christopher Huffey",
+      "alternate_names": [],
       "living": true,
       "birth": "1988",
       "death": "",
@@ -2365,6 +2658,8 @@
     {
       "id": "I0071",
       "name": "Lloyd L Huffey",
+      "birth_name": "Lloyd L Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "1913",
       "death": "1987",
@@ -2392,6 +2687,8 @@
     {
       "id": "I0072",
       "name": "Vinton E Huffey",
+      "birth_name": "Vinton E Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "1916",
       "death": "2008",
@@ -2419,6 +2716,8 @@
     {
       "id": "I0073",
       "name": "Shirley Geraldine Huffey",
+      "birth_name": "Shirley Geraldine Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "1919",
       "death": "2010",
@@ -2446,6 +2745,8 @@
     {
       "id": "I0074",
       "name": "Merle Arleen Huffey",
+      "birth_name": "Merle Arleen Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "1921",
       "death": "2003",
@@ -2473,6 +2774,8 @@
     {
       "id": "I0075",
       "name": "Gretta J Huffey",
+      "birth_name": "Gretta J Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "1922",
       "death": "2014",
@@ -2500,6 +2803,8 @@
     {
       "id": "I0076",
       "name": "George Waymer Huffey",
+      "birth_name": "George Waymer Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "1924",
       "death": "2016",
@@ -2527,6 +2832,8 @@
     {
       "id": "I0077",
       "name": "Esther Naomi Huffey",
+      "birth_name": "Esther Naomi Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "1927",
       "death": "2020",
@@ -2554,6 +2861,8 @@
     {
       "id": "I0078",
       "name": "Lotus Wenona Huffey",
+      "birth_name": "Lotus Wenona Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "1931",
       "death": "2024",
@@ -2594,6 +2903,8 @@
     {
       "id": "I0079",
       "name": "George Benjamin Olson",
+      "birth_name": "George Benjamin Olson",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -2638,6 +2949,8 @@
     {
       "id": "I0080",
       "name": "Inger Johanna Kaasa",
+      "birth_name": "Inger Johanna Kaasa",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -2682,6 +2995,8 @@
     {
       "id": "I0081",
       "name": "Percival Wilhelm Olson",
+      "birth_name": "Percival Wilhelm Olson",
+      "alternate_names": [],
       "living": false,
       "birth": "1889",
       "death": "1974",
@@ -2707,6 +3022,8 @@
     {
       "id": "I0082",
       "name": "Gunda Elvira Olson",
+      "birth_name": "Gunda Elvira Olson",
+      "alternate_names": [],
       "living": false,
       "birth": "1898",
       "death": "1975",
@@ -2732,6 +3049,8 @@
     {
       "id": "I0083",
       "name": "Hjalmar Bernhard Olson",
+      "birth_name": "Hjalmar Bernhard Olson",
+      "alternate_names": [],
       "living": false,
       "birth": "1900",
       "death": "1986",
@@ -2757,6 +3076,8 @@
     {
       "id": "I0084",
       "name": "Inga Genette Olson",
+      "birth_name": "Inga Genette Olson",
+      "alternate_names": [],
       "living": false,
       "birth": "1902",
       "death": "1975",
@@ -2782,6 +3103,8 @@
     {
       "id": "I0085",
       "name": "Evelyn Benoni Olson",
+      "birth_name": "Evelyn Benoni Olson",
+      "alternate_names": [],
       "living": false,
       "birth": "1904",
       "death": "1980",
@@ -2807,6 +3130,8 @@
     {
       "id": "I0086",
       "name": "Clara Amanda Olson",
+      "birth_name": "Clara Amanda Olson",
+      "alternate_names": [],
       "living": false,
       "birth": "1906",
       "death": "1995",
@@ -2832,6 +3157,8 @@
     {
       "id": "I0087",
       "name": "William Angus Huffey",
+      "birth_name": "William Angus Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "1866",
       "death": "?",
@@ -2873,6 +3200,8 @@
     {
       "id": "I0088",
       "name": "Ellen Miranda Gordon",
+      "birth_name": "Ellen Miranda Gordon",
+      "alternate_names": [],
       "living": false,
       "birth": "1864",
       "death": "1964",
@@ -2911,6 +3240,8 @@
     {
       "id": "I0089",
       "name": "Fred Parker Haffa",
+      "birth_name": "Fred Parker Haffa",
+      "alternate_names": [],
       "living": false,
       "birth": "1888",
       "death": "1981",
@@ -2933,6 +3264,8 @@
     {
       "id": "I0090",
       "name": "Harriet Nancy Huffey",
+      "birth_name": "Harriet Nancy Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "1890",
       "death": "1982",
@@ -2955,6 +3288,8 @@
     {
       "id": "I0091",
       "name": "Harry Clarence Huffey",
+      "birth_name": "Harry Clarence Huffey",
+      "alternate_names": [],
       "living": false,
       "birth": "1894",
       "death": "1970",
@@ -2977,6 +3312,8 @@
     {
       "id": "I0092",
       "name": "John Haffa",
+      "birth_name": "John Haffa",
+      "alternate_names": [],
       "living": false,
       "birth": "1846",
       "death": "1936",
@@ -3009,6 +3346,8 @@
     {
       "id": "I0093",
       "name": "Harriet Parker",
+      "birth_name": "Harriet Parker",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -3044,6 +3383,8 @@
     {
       "id": "I0094",
       "name": "William Gordon Parker",
+      "birth_name": "William Gordon Parker",
+      "alternate_names": [],
       "living": false,
       "birth": "1831",
       "death": "1898",
@@ -3079,6 +3420,8 @@
     {
       "id": "I0095",
       "name": "Emily Heaton McKinney",
+      "birth_name": "Emily Heaton McKinney",
+      "alternate_names": [],
       "living": false,
       "birth": "1831",
       "death": "1903",
@@ -3111,6 +3454,8 @@
     {
       "id": "I0096",
       "name": "William C Parker",
+      "birth_name": "William C Parker",
+      "alternate_names": [],
       "living": false,
       "birth": "1798",
       "death": "1858",
@@ -3143,6 +3488,8 @@
     {
       "id": "I0097",
       "name": "Sarah Hartwell",
+      "birth_name": "Sarah Hartwell",
+      "alternate_names": [],
       "living": false,
       "birth": "1800",
       "death": "1875",
@@ -3178,6 +3525,8 @@
     {
       "id": "I0098",
       "name": "Ephraim Hartwell",
+      "birth_name": "Ephraim Hartwell",
+      "alternate_names": [],
       "living": false,
       "birth": "1775",
       "death": "1853",
@@ -3210,6 +3559,8 @@
     {
       "id": "I0099",
       "name": "Clarissa Wright",
+      "birth_name": "Clarissa Wright",
+      "alternate_names": [],
       "living": false,
       "birth": "1773",
       "death": "1841",
@@ -3245,6 +3596,8 @@
     {
       "id": "I0100",
       "name": "Abijah Wright",
+      "birth_name": "Abijah Wright",
+      "alternate_names": [],
       "living": false,
       "birth": "1759",
       "death": "1794",
@@ -3280,6 +3633,8 @@
     {
       "id": "I0101",
       "name": "Hannah Dickinson",
+      "birth_name": "Hannah Dickinson",
+      "alternate_names": [],
       "living": false,
       "birth": "1763",
       "death": "1806",
@@ -3312,6 +3667,8 @@
     {
       "id": "I0102",
       "name": "Thomas Wright",
+      "birth_name": "Thomas Wright",
+      "alternate_names": [],
       "living": false,
       "birth": "1721",
       "death": "1771",
@@ -3344,6 +3701,8 @@
     {
       "id": "I0103",
       "name": "Esther Andrus",
+      "birth_name": "Esther Andrus",
+      "alternate_names": [],
       "living": false,
       "birth": "1741",
       "death": "1811",
@@ -3379,6 +3738,8 @@
     {
       "id": "I0104",
       "name": "Caleb Andrus",
+      "birth_name": "Caleb Andrus",
+      "alternate_names": [],
       "living": false,
       "birth": "1696",
       "death": "1775",
@@ -3411,6 +3772,8 @@
     {
       "id": "I0105",
       "name": "Mary Gillett",
+      "birth_name": "Mary Gillett",
+      "alternate_names": [],
       "living": false,
       "birth": "1699",
       "death": "1786",
@@ -3446,6 +3809,8 @@
     {
       "id": "I0106",
       "name": "Joseph Gillett",
+      "birth_name": "Joseph Gillett",
+      "alternate_names": [],
       "living": false,
       "birth": "1664",
       "death": "1746",
@@ -3478,6 +3843,8 @@
     {
       "id": "I0107",
       "name": "Mary Griswold",
+      "birth_name": "Mary Griswold",
+      "alternate_names": [],
       "living": false,
       "birth": "1671",
       "death": "1719",
@@ -3513,6 +3880,8 @@
     {
       "id": "I0108",
       "name": "Joseph Griswold",
+      "birth_name": "Joseph Griswold",
+      "alternate_names": [],
       "living": false,
       "birth": "1647",
       "death": "1716",
@@ -3545,6 +3914,8 @@
     {
       "id": "I0109",
       "name": "Mary Gaylord",
+      "birth_name": "Mary Gaylord",
+      "alternate_names": [],
       "living": false,
       "birth": "1649",
       "death": "1713",
@@ -3580,6 +3951,8 @@
     {
       "id": "I0110",
       "name": "Samuel Gaylord",
+      "birth_name": "Samuel Gaylord",
+      "alternate_names": [],
       "living": false,
       "birth": "1619",
       "death": "1689",
@@ -3612,6 +3985,8 @@
     {
       "id": "I0111",
       "name": "Elizabeth Hull",
+      "birth_name": "Elizabeth Hull",
+      "alternate_names": [],
       "living": false,
       "birth": "1625",
       "death": "1680",
@@ -3647,6 +4022,8 @@
     {
       "id": "I0112",
       "name": "George Hull",
+      "birth_name": "George Hull",
+      "alternate_names": [],
       "living": false,
       "birth": "1590",
       "death": "1659",
@@ -3679,6 +4056,8 @@
     {
       "id": "I0113",
       "name": "Thamzen Mitchell",
+      "birth_name": "Thamzen Mitchell",
+      "alternate_names": [],
       "living": false,
       "birth": "1592",
       "death": "1654",
@@ -3714,6 +4093,8 @@
     {
       "id": "I0114",
       "name": "Robert Mitchell",
+      "birth_name": "Robert Mitchell",
+      "alternate_names": [],
       "living": false,
       "birth": "1568",
       "death": "1656",
@@ -3749,6 +4130,8 @@
     {
       "id": "I0115",
       "name": "Margaret Anne Bates",
+      "birth_name": "Margaret Anne Bates",
+      "alternate_names": [],
       "living": false,
       "birth": "1568",
       "death": "1618",
@@ -3781,6 +4164,8 @@
     {
       "id": "I0116",
       "name": "John Mitchell",
+      "birth_name": "John Mitchell",
+      "alternate_names": [],
       "living": false,
       "birth": "1534",
       "death": "1573",
@@ -3813,6 +4198,8 @@
     {
       "id": "I0117",
       "name": "Jane Killigrew",
+      "birth_name": "Jane Killigrew",
+      "alternate_names": [],
       "living": false,
       "birth": "1535",
       "death": "1574",
@@ -3848,6 +4235,8 @@
     {
       "id": "I0118",
       "name": "John Killigrew of Arwenack",
+      "birth_name": "John Killigrew of Arwenack",
+      "alternate_names": [],
       "living": false,
       "birth": "1508",
       "death": "1567",
@@ -3883,6 +4272,8 @@
     {
       "id": "I0119",
       "name": "Elizabeth Mary Trewinnard",
+      "birth_name": "Elizabeth Mary Trewinnard",
+      "alternate_names": [],
       "living": false,
       "birth": "1518",
       "death": "1583",
@@ -3915,6 +4306,8 @@
     {
       "id": "I0120",
       "name": "John Killigrew",
+      "birth_name": "John Killigrew",
+      "alternate_names": [],
       "living": false,
       "birth": "1450",
       "death": "1536",
@@ -3947,6 +4340,8 @@
     {
       "id": "I0121",
       "name": "Jane Petit",
+      "birth_name": "Jane Petit",
+      "alternate_names": [],
       "living": false,
       "birth": "1453",
       "death": "1508",
@@ -3982,6 +4377,8 @@
     {
       "id": "I0122",
       "name": "Valentine Pettit",
+      "birth_name": "Valentine Pettit",
+      "alternate_names": [],
       "living": false,
       "birth": "1429",
       "death": "1490",
@@ -4017,6 +4414,8 @@
     {
       "id": "I0123",
       "name": "Jane Anthorne",
+      "birth_name": "Jane Anthorne",
+      "alternate_names": [],
       "living": false,
       "birth": "1430",
       "death": "1486",
@@ -4049,6 +4448,8 @@
     {
       "id": "I0124",
       "name": "John Mychell Petit",
+      "birth_name": "John Mychell Petit",
+      "alternate_names": [],
       "living": false,
       "birth": "1389",
       "death": "1455",
@@ -4081,6 +4482,8 @@
     {
       "id": "I0125",
       "name": "Margaret de Trenoweth",
+      "birth_name": "Margaret de Trenoweth",
+      "alternate_names": [],
       "living": false,
       "birth": "1400",
       "death": "1471",
@@ -4116,6 +4519,8 @@
     {
       "id": "I0126",
       "name": "Ralph Trenoweth",
+      "birth_name": "Ralph Trenoweth",
+      "alternate_names": [],
       "living": false,
       "birth": "1373",
       "death": "1427",
@@ -4148,6 +4553,8 @@
     {
       "id": "I0127",
       "name": "Joan Basset",
+      "birth_name": "Joan Basset",
+      "alternate_names": [],
       "living": false,
       "birth": "1372",
       "death": "1400",
@@ -4183,6 +4590,8 @@
     {
       "id": "I0128",
       "name": "William Basset",
+      "birth_name": "William Basset",
+      "alternate_names": [],
       "living": false,
       "birth": "1337",
       "death": "1384",
@@ -4218,6 +4627,8 @@
     {
       "id": "I0129",
       "name": "Margaret le Fleming",
+      "birth_name": "Margaret le Fleming",
+      "alternate_names": [],
       "living": false,
       "birth": "1347",
       "death": "1387",
@@ -4250,6 +4661,8 @@
     {
       "id": "I0130",
       "name": "William Basset",
+      "birth_name": "William Basset",
+      "alternate_names": [],
       "living": false,
       "birth": "1300",
       "death": "1351",
@@ -4282,6 +4695,8 @@
     {
       "id": "I0131",
       "name": "Johanna de Botreaux",
+      "birth_name": "Johanna de Botreaux",
+      "alternate_names": [],
       "living": false,
       "birth": "1311",
       "death": "1361",
@@ -4317,6 +4732,8 @@
     {
       "id": "I0132",
       "name": "William de Botreaux",
+      "birth_name": "William de Botreaux",
+      "alternate_names": [],
       "living": false,
       "birth": "1264",
       "death": "1340",
@@ -4349,6 +4766,8 @@
     {
       "id": "I0133",
       "name": "Dionisia de Champernowne",
+      "birth_name": "Dionisia de Champernowne",
+      "alternate_names": [],
       "living": false,
       "birth": "1280",
       "death": "1334",
@@ -4384,6 +4803,8 @@
     {
       "id": "I0134",
       "name": "William de Champernowne",
+      "birth_name": "William de Champernowne",
+      "alternate_names": [],
       "living": false,
       "birth": "1233",
       "death": "1304",
@@ -4416,6 +4837,8 @@
     {
       "id": "I0135",
       "name": "Joan de Ferrers",
+      "birth_name": "Joan de Ferrers",
+      "alternate_names": [],
       "living": false,
       "birth": "1263",
       "death": "1309",
@@ -4450,6 +4873,8 @@
     {
       "id": "I0136",
       "name": "William de Ferrers",
+      "birth_name": "William de Ferrers",
+      "alternate_names": [],
       "living": false,
       "birth": "1225",
       "death": "1280",
@@ -4470,6 +4895,8 @@
     {
       "id": "I0137",
       "name": "Reginald de Ferrières I, of Bere",
+      "birth_name": "Reginald de Ferrières I, of Bere",
+      "alternate_names": [],
       "living": false,
       "birth": "1194",
       "death": "1247",
@@ -4502,6 +4929,8 @@
     {
       "id": "I0138",
       "name": "Agnes of Chester",
+      "birth_name": "Agnes of Chester",
+      "alternate_names": [],
       "living": false,
       "birth": "1174",
       "death": "1247",
@@ -4537,6 +4966,8 @@
     {
       "id": "I0139",
       "name": "Hugh de Cyfeiliog",
+      "birth_name": "Hugh de Cyfeiliog",
+      "alternate_names": [],
       "living": false,
       "birth": "1147",
       "death": "1181",
@@ -4572,6 +5003,8 @@
     {
       "id": "I0140",
       "name": "Bertrade de Montfort",
+      "birth_name": "Bertrade de Montfort",
+      "alternate_names": [],
       "living": false,
       "birth": "1155",
       "death": "1227",
@@ -4604,6 +5037,8 @@
     {
       "id": "I0141",
       "name": "Ranulph fitz Ranulf",
+      "birth_name": "Ranulph fitz Ranulf",
+      "alternate_names": [],
       "living": false,
       "birth": "1100",
       "death": "1153",
@@ -4636,6 +5071,8 @@
     {
       "id": "I0142",
       "name": "Maud of Gloucester",
+      "birth_name": "Maud of Gloucester",
+      "alternate_names": [],
       "living": false,
       "birth": "1120",
       "death": "1189",
@@ -4671,6 +5108,8 @@
     {
       "id": "I0143",
       "name": "Robert FitzRoy",
+      "birth_name": "Robert FitzRoy",
+      "alternate_names": [],
       "living": false,
       "birth": "1090",
       "death": "1147",
@@ -4705,6 +5144,8 @@
     {
       "id": "I0144",
       "name": "Mabel FitzRobert",
+      "birth_name": "Mabel FitzRobert",
+      "alternate_names": [],
       "living": false,
       "birth": "1100",
       "death": "1157",
@@ -4737,6 +5178,8 @@
     {
       "id": "I0145",
       "name": "Henry  I, King of England",
+      "birth_name": "Henry  I, King of England",
+      "alternate_names": [],
       "living": false,
       "birth": "1068",
       "death": "1135",
@@ -4757,6 +5200,8 @@
     {
       "id": "I0146",
       "name": "William  I, King of England",
+      "birth_name": "William  I, King of England",
+      "alternate_names": [],
       "living": false,
       "birth": "1028",
       "death": "1087",
@@ -4789,6 +5234,8 @@
     {
       "id": "I0147",
       "name": "Matilda of Flanders",
+      "birth_name": "Matilda of Flanders",
+      "alternate_names": [],
       "living": false,
       "birth": "1031",
       "death": "1083",
@@ -4821,6 +5268,8 @@
     {
       "id": "I0148",
       "name": "Dylana Blum",
+      "birth_name": "Dylana Blum",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -4855,6 +5304,8 @@
     {
       "id": "I0149",
       "name": "Nadia Kallmer",
+      "birth_name": "Nadia Kallmer",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -4875,6 +5326,8 @@
     {
       "id": "I0150",
       "name": "Mira Kallmer",
+      "birth_name": "Mira Kallmer",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -4895,6 +5348,8 @@
     {
       "id": "I0151",
       "name": "Walter Robert Urban",
+      "birth_name": "Walter Robert Urban",
+      "alternate_names": [],
       "living": true,
       "birth": "1938",
       "death": "",
@@ -4923,15 +5378,22 @@
           ],
           "marriage_date": "",
           "marriage_place": "",
-          "divorced": false,
+          "divorced": true,
           "divorce_date": "",
-          "divorce_place": ""
+          "divorce_place": "Omaha, Nebraska"
         }
       ]
     },
     {
       "id": "I0152",
-      "name": "Joanne Hutchins",
+      "name": "Joanne Pauline Urban",
+      "birth_name": "Joanne Pauline Urban",
+      "alternate_names": [
+        {
+          "name": "Joanne Hutchins",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "21 SEP 1945",
       "death": "16 MAY 2019",
@@ -4960,15 +5422,17 @@
           ],
           "marriage_date": "",
           "marriage_place": "",
-          "divorced": false,
+          "divorced": true,
           "divorce_date": "",
-          "divorce_place": ""
+          "divorce_place": "Omaha, Nebraska"
         }
       ]
     },
     {
       "id": "I0153",
       "name": "Walter Carl Urban",
+      "birth_name": "Walter Carl Urban",
+      "alternate_names": [],
       "living": false,
       "birth": "17 AUG 1901",
       "death": "10 JUL 1973",
@@ -5012,7 +5476,14 @@
     },
     {
       "id": "I0154",
-      "name": "Zella Ullstrom",
+      "name": "Zella L Urban",
+      "birth_name": "Zella L Urban",
+      "alternate_names": [
+        {
+          "name": "Zella Ullstrom",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "19 JAN 1902",
       "death": "28 MAR 1990",
@@ -5054,6 +5525,8 @@
     {
       "id": "I0155",
       "name": "John Christ Urban",
+      "birth_name": "John Christ Urban",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5101,7 +5574,14 @@
     },
     {
       "id": "I0156",
-      "name": "Anna Schmidt",
+      "name": "Anna Urban",
+      "birth_name": "Anna Urban",
+      "alternate_names": [
+        {
+          "name": "Anna Schmidt",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5150,6 +5630,8 @@
     {
       "id": "I0157",
       "name": "John Urban",
+      "birth_name": "John Urban",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5177,6 +5659,8 @@
     {
       "id": "I0158",
       "name": "Herman Urban",
+      "birth_name": "Herman Urban",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5204,6 +5688,8 @@
     {
       "id": "I0159",
       "name": "Chris Urban",
+      "birth_name": "Chris Urban",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5231,6 +5717,8 @@
     {
       "id": "I0160",
       "name": "Mabel Urban",
+      "birth_name": "Mabel Urban",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5258,6 +5746,8 @@
     {
       "id": "I0161",
       "name": "Helen Urban",
+      "birth_name": "Helen Urban",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5285,6 +5775,8 @@
     {
       "id": "I0162",
       "name": "Ella Urban",
+      "birth_name": "Ella Urban",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5312,6 +5804,8 @@
     {
       "id": "I0163",
       "name": "Minna Urban",
+      "birth_name": "Minna Urban",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5339,6 +5833,8 @@
     {
       "id": "I0164",
       "name": "August Urban",
+      "birth_name": "August Urban",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5366,6 +5862,8 @@
     {
       "id": "I0165",
       "name": "Andrew Ullstrom",
+      "birth_name": "Andrew Ullstrom",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5407,7 +5905,14 @@
     },
     {
       "id": "I0166",
-      "name": "Ida Lohey",
+      "name": "Ida Ullstrom",
+      "birth_name": "Ida Ullstrom",
+      "alternate_names": [
+        {
+          "name": "Ida Lohey",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5450,6 +5955,8 @@
     {
       "id": "I0167",
       "name": "Clara Mae Ullstrom",
+      "birth_name": "Clara Mae Ullstrom",
+      "alternate_names": [],
       "living": false,
       "birth": "1899",
       "death": "1980",
@@ -5474,6 +5981,8 @@
     {
       "id": "I0168",
       "name": "Crystal Ullstrom",
+      "birth_name": "Crystal Ullstrom",
+      "alternate_names": [],
       "living": false,
       "birth": "1897",
       "death": "1972",
@@ -5498,6 +6007,8 @@
     {
       "id": "I0169",
       "name": "Richard Raymond Ullstrom",
+      "birth_name": "Richard Raymond Ullstrom",
+      "alternate_names": [],
       "living": false,
       "birth": "1907",
       "death": "1972",
@@ -5522,6 +6033,8 @@
     {
       "id": "I0170",
       "name": "Carl Herbert Ullstrom",
+      "birth_name": "Carl Herbert Ullstrom",
+      "alternate_names": [],
       "living": false,
       "birth": "1913",
       "death": "1993",
@@ -5546,6 +6059,8 @@
     {
       "id": "I0171",
       "name": "Elmer Theodore Ullstrom",
+      "birth_name": "Elmer Theodore Ullstrom",
+      "alternate_names": [],
       "living": false,
       "birth": "1904",
       "death": "1998",
@@ -5570,6 +6085,8 @@
     {
       "id": "I0172",
       "name": "Kenneth E Hutchins",
+      "birth_name": "Kenneth E Hutchins",
+      "alternate_names": [],
       "living": false,
       "birth": "1910",
       "death": "?",
@@ -5604,7 +6121,14 @@
     },
     {
       "id": "I0173",
-      "name": "Pauline V Haser",
+      "name": "Pauline V Hutchins",
+      "birth_name": "Pauline V Haser",
+      "alternate_names": [
+        {
+          "name": "Pauline V Haser",
+          "type": "birth"
+        }
+      ],
       "living": true,
       "birth": "1916",
       "death": "",
@@ -5640,6 +6164,8 @@
     {
       "id": "I0174",
       "name": "Sheri Ann Urban",
+      "birth_name": "Sheri Ann Urban",
+      "alternate_names": [],
       "living": true,
       "birth": "1967",
       "death": "",
@@ -5673,6 +6199,8 @@
     {
       "id": "I0175",
       "name": "Kurtis J Foster",
+      "birth_name": "Kurtis J Foster",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5701,6 +6229,8 @@
     {
       "id": "I0176",
       "name": "Edward Hutchins",
+      "birth_name": "Edward Hutchins",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5732,7 +6262,18 @@
     },
     {
       "id": "I0177",
-      "name": "Edna A Brown",
+      "name": "Edna A Rounds",
+      "birth_name": "Edna A Rounds",
+      "alternate_names": [
+        {
+          "name": "Edna A Hutchins",
+          "type": "married"
+        },
+        {
+          "name": "Edna A Brown",
+          "type": "aka"
+        }
+      ],
       "living": false,
       "birth": "12 AUG 1886",
       "death": "DEC 1970",
@@ -5768,6 +6309,8 @@
     {
       "id": "I0178",
       "name": "Pauline Bibla",
+      "birth_name": "Pauline Bibla",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5800,6 +6343,8 @@
     {
       "id": "I0179",
       "name": "Albert Haser",
+      "birth_name": "Albert Haser",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -5832,6 +6377,8 @@
     {
       "id": "I0180",
       "name": "Oney Thomas Rounds",
+      "birth_name": "Oney Thomas Rounds",
+      "alternate_names": [],
       "living": false,
       "birth": "18 JUL 1868",
       "death": "20 OCT 1918",
@@ -5864,6 +6411,8 @@
     {
       "id": "I0181",
       "name": "Martha Jane Breese",
+      "birth_name": "Martha Jane Breese",
+      "alternate_names": [],
       "living": false,
       "birth": "19 OCT 1866",
       "death": "12 OCT 1936",
@@ -5899,6 +6448,8 @@
     {
       "id": "I0182",
       "name": "Isaac J Breese",
+      "birth_name": "Isaac J Breese",
+      "alternate_names": [],
       "living": false,
       "birth": "15 NOV 1819",
       "death": "27 MAY 1903",
@@ -5931,6 +6482,8 @@
     {
       "id": "I0183",
       "name": "Margaret Owens",
+      "birth_name": "Margaret Owens",
+      "alternate_names": [],
       "living": false,
       "birth": "17 MAR 1830",
       "death": "19 FEB 1904",
@@ -5963,6 +6516,8 @@
     {
       "id": "I0184",
       "name": "Pearl Lucille Lathrop",
+      "birth_name": "Pearl Lucille Lathrop",
+      "alternate_names": [],
       "living": false,
       "birth": "5 SEP 1898",
       "death": "15 JAN 1980",
@@ -6016,6 +6571,8 @@
     {
       "id": "I0185",
       "name": "James David Lepa",
+      "birth_name": "James David Lepa",
+      "alternate_names": [],
       "living": false,
       "birth": "1884",
       "death": "6 MAY 1963",
@@ -6062,6 +6619,8 @@
     {
       "id": "I0186",
       "name": "Louis Franklin Lathrop",
+      "birth_name": "Louis Franklin Lathrop",
+      "alternate_names": [],
       "living": false,
       "birth": "1873",
       "death": "1956",
@@ -6099,7 +6658,14 @@
     },
     {
       "id": "I0187",
-      "name": "Nellie Millhouse",
+      "name": "Nellie G Milhous",
+      "birth_name": "Nellie G Milhous",
+      "alternate_names": [
+        {
+          "name": "Nellie Millhouse",
+          "type": "aka"
+        }
+      ],
       "living": false,
       "birth": "1877",
       "death": "1908",
@@ -6138,6 +6704,8 @@
     {
       "id": "I0188",
       "name": "John Lawrence Lepa",
+      "birth_name": "John Lawrence Lepa",
+      "alternate_names": [],
       "living": false,
       "birth": "1917",
       "death": "11 JAN 1969",
@@ -6164,6 +6732,8 @@
     {
       "id": "I0189",
       "name": "Lawrence James Lepa",
+      "birth_name": "Lawrence James Lepa",
+      "alternate_names": [],
       "living": false,
       "birth": "1921",
       "death": "1992",
@@ -6190,6 +6760,8 @@
     {
       "id": "I0190",
       "name": "Lucile Arline Lepa",
+      "birth_name": "Lucile Arline Lepa",
+      "alternate_names": [],
       "living": false,
       "birth": "1924",
       "death": "1992",
@@ -6216,6 +6788,8 @@
     {
       "id": "I0191",
       "name": "Dorothy Marie Lepa",
+      "birth_name": "Dorothy Marie Lepa",
+      "alternate_names": [],
       "living": false,
       "birth": "1926",
       "death": "1995",
@@ -6242,6 +6816,8 @@
     {
       "id": "I0192",
       "name": "Dale Raymond Lepa",
+      "birth_name": "Dale Raymond Lepa",
+      "alternate_names": [],
       "living": false,
       "birth": "1929",
       "death": "1985",
@@ -6268,6 +6844,8 @@
     {
       "id": "I0193",
       "name": "James Roger Lepa",
+      "birth_name": "James Roger Lepa",
+      "alternate_names": [],
       "living": false,
       "birth": "1931",
       "death": "2018",
@@ -6294,6 +6872,8 @@
     {
       "id": "I0194",
       "name": "Olive A Lathrop",
+      "birth_name": "Olive A Lathrop",
+      "alternate_names": [],
       "living": false,
       "birth": "1899",
       "death": "1940",
@@ -6316,6 +6896,8 @@
     {
       "id": "I0195",
       "name": "Elmer Roy Lathrop",
+      "birth_name": "Elmer Roy Lathrop",
+      "alternate_names": [],
       "living": false,
       "birth": "1901",
       "death": "1979",
@@ -6338,6 +6920,8 @@
     {
       "id": "I0196",
       "name": "Floyd Lathrop",
+      "birth_name": "Floyd Lathrop",
+      "alternate_names": [],
       "living": false,
       "birth": "1906",
       "death": "?",
@@ -6360,6 +6944,8 @@
     {
       "id": "I0197",
       "name": "Baby Boy Lepa",
+      "birth_name": "Baby Boy Lepa",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -6386,6 +6972,8 @@
     {
       "id": "I0198",
       "name": "Peter Lewis Beitz Sr",
+      "birth_name": "Peter Lewis Beitz Sr",
+      "alternate_names": [],
       "living": false,
       "birth": "1805",
       "death": "1882",
@@ -6418,6 +7006,8 @@
     {
       "id": "I0199",
       "name": "Anna Margaretha Beitz",
+      "birth_name": "Anna Margaretha Beitz",
+      "alternate_names": [],
       "living": false,
       "birth": "1799",
       "death": "1882",
@@ -6449,7 +7039,14 @@
     },
     {
       "id": "I0200",
-      "name": "Anna C Kallmer",
+      "name": "Anna C Perry",
+      "birth_name": "Anna C Kallmer",
+      "alternate_names": [
+        {
+          "name": "Anna C Kallmer",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "27 NOV 1861",
       "death": "27 JUL 1920",
@@ -6498,7 +7095,14 @@
     },
     {
       "id": "I0201",
-      "name": "Johannah Margaretha Kallmer",
+      "name": "Johanna Margaretha Warneke",
+      "birth_name": "Johannah Margaretha Kallmer",
+      "alternate_names": [
+        {
+          "name": "Johannah Margaretha Kallmer",
+          "type": "birth"
+        }
+      ],
       "living": false,
       "birth": "JUL 1865",
       "death": "1949",
@@ -6537,6 +7141,8 @@
     {
       "id": "I0202",
       "name": "Lena Kallmer",
+      "birth_name": "Lena Kallmer",
+      "alternate_names": [],
       "living": false,
       "birth": "1866",
       "death": "1908",
@@ -6562,6 +7168,8 @@
     {
       "id": "I0203",
       "name": "Rosa Louise Kallmer",
+      "birth_name": "Rosa Louise Kallmer",
+      "alternate_names": [],
       "living": false,
       "birth": "1873",
       "death": "1937",
@@ -6587,6 +7195,8 @@
     {
       "id": "I0204",
       "name": "C. C. Perry",
+      "birth_name": "C. C. Perry",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -6615,6 +7225,8 @@
     {
       "id": "I0205",
       "name": "Henry Friedrich Warneke",
+      "birth_name": "Henry Friedrich Warneke",
+      "alternate_names": [],
       "living": false,
       "birth": "1 MAY 1857",
       "death": "12 JAN 1930",
@@ -6643,6 +7255,8 @@
     {
       "id": "I0206",
       "name": "Lizi C Kallmer",
+      "birth_name": "Lizi C Kallmer",
+      "alternate_names": [],
       "living": false,
       "birth": "1866",
       "death": "?",
@@ -6668,6 +7282,8 @@
     {
       "id": "I0207",
       "name": "Hans Jacobson",
+      "birth_name": "Hans Jacobson",
+      "alternate_names": [],
       "living": false,
       "birth": "1800",
       "death": "?",
@@ -6700,6 +7316,8 @@
     {
       "id": "I0208",
       "name": "Lissel Jochinson",
+      "birth_name": "Lissel Jochinson",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -6732,6 +7350,8 @@
     {
       "id": "I0209",
       "name": "Isabel Kallmer",
+      "birth_name": "Isabel Kallmer",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -6757,6 +7377,8 @@
     {
       "id": "I0210",
       "name": "Laura E Kallmer",
+      "birth_name": "",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -6785,6 +7407,8 @@
     {
       "id": "I0211",
       "name": "Herman Jacobe",
+      "birth_name": "Herman Jacobe",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -6813,6 +7437,8 @@
     {
       "id": "I0212",
       "name": "Barton Bulman",
+      "birth_name": "Barton Bulman",
+      "alternate_names": [],
       "living": false,
       "birth": "?",
       "death": "?",
@@ -6841,6 +7467,8 @@
     {
       "id": "I0213",
       "name": "Donnabelle Margaret Satterlee",
+      "birth_name": "Donnabelle Margaret Satterlee",
+      "alternate_names": [],
       "living": false,
       "birth": "1919",
       "death": "2007",
@@ -6861,6 +7489,8 @@
     {
       "id": "I0214",
       "name": "Charles Ebon Satterlee",
+      "birth_name": "Charles Ebon Satterlee",
+      "alternate_names": [],
       "living": false,
       "birth": "1923",
       "death": "2003",
@@ -6875,6 +7505,136 @@
       "children": [],
       "siblings": [
         "I0213"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0215",
+      "name": "Magnus Jönsson",
+      "birth_name": "Magnus Jönsson",
+      "alternate_names": [],
+      "living": false,
+      "birth": "1855",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0030",
+        "I0063"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0048",
+        "I0216",
+        "I0217",
+        "I0218",
+        "I0219"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0216",
+      "name": "Johan Jönsson",
+      "birth_name": "Johan Jönsson",
+      "alternate_names": [],
+      "living": false,
+      "birth": "1857",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0030",
+        "I0063"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0048",
+        "I0215",
+        "I0217",
+        "I0218",
+        "I0219"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0217",
+      "name": "Gustaf Jönsson",
+      "birth_name": "Gustaf Jönsson",
+      "alternate_names": [],
+      "living": false,
+      "birth": "1860",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0030",
+        "I0063"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0048",
+        "I0215",
+        "I0216",
+        "I0218",
+        "I0219"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0218",
+      "name": "Signild Jönsdotter",
+      "birth_name": "Signild Jönsdotter",
+      "alternate_names": [],
+      "living": false,
+      "birth": "1863",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0030",
+        "I0063"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0048",
+        "I0215",
+        "I0216",
+        "I0217",
+        "I0219"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0219",
+      "name": "Christina Jönsdotter",
+      "birth_name": "Christina Jönsdotter",
+      "alternate_names": [],
+      "living": false,
+      "birth": "1873",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0030",
+        "I0063"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0048",
+        "I0215",
+        "I0216",
+        "I0217",
+        "I0218"
       ],
       "marriages": []
     }
@@ -7168,7 +7928,12 @@
       "husband": "I0030",
       "wife": "I0063",
       "children": [
-        "I0048"
+        "I0048",
+        "I0215",
+        "I0216",
+        "I0217",
+        "I0218",
+        "I0219"
       ],
       "marriage_date": "",
       "marriage_place": "",
@@ -7649,9 +8414,9 @@
       ],
       "marriage_date": "",
       "marriage_place": "",
-      "divorced": false,
+      "divorced": true,
       "divorce_date": "",
-      "divorce_place": ""
+      "divorce_place": "Omaha, Nebraska"
     },
     {
       "id": "F0056",

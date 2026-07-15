@@ -7,7 +7,7 @@
 
 Dear Sally —
 
-Here for few days with Pat & boys. Having a nice quiet time. They are fishing today. I am coming up next month with Leona B for nearly a week. That will be my vacation. Nell was down, Ed is coming again next month.
+Here for few days with Stub & boys. Having a nice quiet time. They are fishing today. I am coming up next month with Leona B for nearly a week. That will be my vacation. Nell was down Wed, is coming again next month.
 
 Love,
 
