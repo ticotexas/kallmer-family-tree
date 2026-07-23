@@ -873,7 +873,7 @@
             "I0070"
           ],
           "marriage_date": "1979",
-          "marriage_place": "Santa Cruz, California",
+          "marriage_place": "Scotts Valley, California",
           "divorced": true,
           "divorce_date": "1991",
           "divorce_place": "Apache Junction, Arizona"
@@ -2685,7 +2685,10 @@
       "place": "",
       "birth_place": "",
       "death_place": "",
-      "parents": [],
+      "parents": [
+        "I0319",
+        "I0320"
+      ],
       "spouses": [
         "I0020"
       ],
@@ -2701,7 +2704,7 @@
             "I0070"
           ],
           "marriage_date": "1979",
-          "marriage_place": "Santa Cruz, California",
+          "marriage_place": "Scotts Valley, California",
           "divorced": true,
           "divorce_date": "1991",
           "divorce_place": "Apache Junction, Arizona"
@@ -5674,7 +5677,12 @@
       "id": "I0155",
       "name": "John Christ Urban",
       "birth_name": "John Christ Urban",
-      "alternate_names": [],
+      "alternate_names": [
+        {
+          "name": "Johann Christian Urban",
+          "type": "aka"
+        }
+      ],
       "living": false,
       "birth": "17 DEC 1862",
       "death": "20 SEP 1928",
@@ -5728,14 +5736,22 @@
         {
           "name": "Anna Elizabeth Schmidt",
           "type": "birth"
+        },
+        {
+          "name": "Anna Elizabeth Schneidt",
+          "type": "aka"
+        },
+        {
+          "name": "Anna Elizabeth Smidt",
+          "type": "aka"
         }
       ],
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
+      "birth": "3 DEC 1872",
+      "death": "18 MAR 1958",
+      "place": "Omaha, Douglas, Nebraska",
+      "birth_place": "Germany",
+      "death_place": "Omaha, Douglas, Nebraska",
       "parents": [],
       "spouses": [
         "I0155"
@@ -5777,20 +5793,22 @@
     },
     {
       "id": "I0157",
-      "name": "John Urban",
-      "birth_name": "John Urban",
+      "name": "John W. Urban",
+      "birth_name": "John W. Urban",
       "alternate_names": [],
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
+      "birth": "13 JAN 1897",
+      "death": "27 APR 1973",
+      "place": "Nebraska",
+      "birth_place": "Nebraska",
       "death_place": "",
       "parents": [
         "I0155",
         "I0156"
       ],
-      "spouses": [],
+      "spouses": [
+        "I0315"
+      ],
       "children": [],
       "siblings": [
         "I0153",
@@ -5802,7 +5820,18 @@
         "I0163",
         "I0164"
       ],
-      "marriages": []
+      "marriages": [
+        {
+          "family": "F0102",
+          "spouse": "I0315",
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
     },
     {
       "id": "I0158",
@@ -5835,15 +5864,20 @@
     },
     {
       "id": "I0159",
-      "name": "Chris Urban",
-      "birth_name": "Chris Urban",
-      "alternate_names": [],
+      "name": "Chris A. Urban",
+      "birth_name": "Chris A. Urban",
+      "alternate_names": [
+        {
+          "name": "Christ A. Urban",
+          "type": "aka"
+        }
+      ],
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
+      "birth": "6 APR 1891",
+      "death": "1 SEP 1952",
+      "place": "Chicago, Cook, Illinois",
+      "birth_place": "Chalco, Sarpy, Nebraska",
+      "death_place": "Chicago, Cook, Illinois",
       "parents": [
         "I0155",
         "I0156"
@@ -5864,11 +5898,16 @@
     },
     {
       "id": "I0160",
-      "name": "Mabel Urban",
-      "birth_name": "Mabel Urban",
-      "alternate_names": [],
+      "name": "Mabel M. Smith",
+      "birth_name": "Mabel M. Urban",
+      "alternate_names": [
+        {
+          "name": "Mabel M. Urban",
+          "type": "birth"
+        }
+      ],
       "living": false,
-      "birth": "?",
+      "birth": "1899",
       "death": "?",
       "place": "",
       "birth_place": "",
@@ -5877,7 +5916,9 @@
         "I0155",
         "I0156"
       ],
-      "spouses": [],
+      "spouses": [
+        "I0316"
+      ],
       "children": [],
       "siblings": [
         "I0153",
@@ -5889,24 +5930,42 @@
         "I0163",
         "I0164"
       ],
-      "marriages": []
+      "marriages": [
+        {
+          "family": "F0103",
+          "spouse": "I0316",
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
     },
     {
       "id": "I0161",
-      "name": "Helen Urban",
-      "birth_name": "Helen Urban",
-      "alternate_names": [],
+      "name": "Helen Christine McGrail",
+      "birth_name": "Helen Christine Urban",
+      "alternate_names": [
+        {
+          "name": "Helen Christine Urban",
+          "type": "birth"
+        }
+      ],
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
+      "birth": "27 APR 1909",
+      "death": "10 SEP 1931",
+      "place": "Douglas, Nebraska",
+      "birth_place": "Millard, Douglas, Nebraska",
+      "death_place": "Douglas, Nebraska",
       "parents": [
         "I0155",
         "I0156"
       ],
-      "spouses": [],
+      "spouses": [
+        "I0314"
+      ],
       "children": [],
       "siblings": [
         "I0153",
@@ -5918,23 +5977,34 @@
         "I0163",
         "I0164"
       ],
-      "marriages": []
+      "marriages": [
+        {
+          "family": "F0101",
+          "spouse": "I0314",
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
     },
     {
       "id": "I0162",
-      "name": "Ella Hemmer",
-      "birth_name": "Ella Urban",
+      "name": "Ella Margaret Hemmer",
+      "birth_name": "Ella Margaret Urban",
       "alternate_names": [
         {
-          "name": "Ella Urban",
+          "name": "Ella Margaret Urban",
           "type": "birth"
         }
       ],
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
+      "birth": "3 APR 1911",
+      "death": "6 AUG 2004",
+      "place": "Oakland, Burt, Nebraska",
+      "birth_place": "Oakland, Burt, Nebraska",
       "death_place": "",
       "parents": [
         "I0155",
@@ -5956,25 +6026,27 @@
     },
     {
       "id": "I0163",
-      "name": "Minna Hood",
-      "birth_name": "Minna Urban",
+      "name": "Minna Helena Hood",
+      "birth_name": "Minna Helena Urban",
       "alternate_names": [
         {
-          "name": "Minna Urban",
+          "name": "Minna Helena Urban",
           "type": "birth"
         }
       ],
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
+      "birth": "24 DEC 1906",
+      "death": "25 OCT 1999",
+      "place": "Lincoln, Lancaster, Nebraska",
+      "birth_place": "Lincoln, Lancaster, Nebraska",
       "death_place": "",
       "parents": [
         "I0155",
         "I0156"
       ],
-      "spouses": [],
+      "spouses": [
+        "I0318"
+      ],
       "children": [],
       "siblings": [
         "I0153",
@@ -5986,7 +6058,18 @@
         "I0162",
         "I0164"
       ],
-      "marriages": []
+      "marriages": [
+        {
+          "family": "F0105",
+          "spouse": "I0318",
+          "children": [],
+          "marriage_date": "8 SEP 1927",
+          "marriage_place": "Ashland, Saunders, Nebraska",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
     },
     {
       "id": "I0164",
@@ -11129,6 +11212,215 @@
         "I0312"
       ],
       "marriages": []
+    },
+    {
+      "id": "I0314",
+      "name": "James P. McGrail",
+      "birth_name": "James P. McGrail",
+      "alternate_names": [],
+      "living": false,
+      "birth": "1905",
+      "death": "11 SEP 1931",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0317"
+      ],
+      "spouses": [
+        "I0161"
+      ],
+      "children": [],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0101",
+          "spouse": "I0161",
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0315",
+      "name": "Anna C. A. Urban",
+      "birth_name": "",
+      "alternate_names": [],
+      "living": false,
+      "birth": "1894",
+      "death": "1984",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0157"
+      ],
+      "children": [],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0102",
+          "spouse": "I0157",
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0316",
+      "name": "Arthur Olie Smith",
+      "birth_name": "Arthur Olie Smith",
+      "alternate_names": [],
+      "living": false,
+      "birth": "7 JUL 1889",
+      "death": "1 MAR 1975",
+      "place": "Los Angeles, Los Angeles, California",
+      "birth_place": "Grand Rapids, Kent, Michigan",
+      "death_place": "Los Angeles, Los Angeles, California",
+      "parents": [],
+      "spouses": [
+        "I0160"
+      ],
+      "children": [],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0103",
+          "spouse": "I0160",
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0317",
+      "name": "John J McGrail",
+      "birth_name": "John J McGrail",
+      "alternate_names": [],
+      "living": false,
+      "birth": "?",
+      "death": "11 MAR 1932",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [],
+      "children": [
+        "I0314"
+      ],
+      "siblings": [],
+      "marriages": []
+    },
+    {
+      "id": "I0318",
+      "name": "Charles H. Hood",
+      "birth_name": "Charles H. Hood",
+      "alternate_names": [],
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0163"
+      ],
+      "children": [],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0105",
+          "spouse": "I0163",
+          "children": [],
+          "marriage_date": "8 SEP 1927",
+          "marriage_place": "Ashland, Saunders, Nebraska",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0319",
+      "name": "E. M. Parnum",
+      "birth_name": "E. M. Parnum",
+      "alternate_names": [],
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0320"
+      ],
+      "children": [
+        "I0069"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0106",
+          "spouse": "I0320",
+          "children": [
+            "I0069"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0320",
+      "name": "Val Lawrence",
+      "birth_name": "",
+      "alternate_names": [],
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0319"
+      ],
+      "children": [
+        "I0069"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0106",
+          "spouse": "I0319",
+          "children": [
+            "I0069"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
     }
   ],
   "families": [
@@ -11469,7 +11761,7 @@
         "I0070"
       ],
       "marriage_date": "1979",
-      "marriage_place": "Santa Cruz, California",
+      "marriage_place": "Scotts Valley, California",
       "divorced": true,
       "divorce_date": "1991",
       "divorce_place": "Apache Junction, Arizona"
@@ -12530,6 +12822,76 @@
         "I0310",
         "I0312",
         "I0313"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0101",
+      "husband": "I0314",
+      "wife": "I0161",
+      "children": [],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0102",
+      "husband": "I0157",
+      "wife": "I0315",
+      "children": [],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0103",
+      "husband": "I0316",
+      "wife": "I0160",
+      "children": [],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0104",
+      "husband": "I0317",
+      "wife": "",
+      "children": [
+        "I0314"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0105",
+      "husband": "I0318",
+      "wife": "I0163",
+      "children": [],
+      "marriage_date": "8 SEP 1927",
+      "marriage_place": "Ashland, Saunders, Nebraska",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0106",
+      "husband": "I0319",
+      "wife": "I0320",
+      "children": [
+        "I0069"
       ],
       "marriage_date": "",
       "marriage_place": "",
