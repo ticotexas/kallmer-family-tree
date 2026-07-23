@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Interactive Family Tree | The Kallmer Family Archive</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/family-tree.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div>
+      <a class="archive-link" href="index.html">
+        The Kallmer Family Archive
+      </a>
+
+      <h1>Interactive Family Tree</h1>
+    </div>
+
+    <a class="pedigree-link" href="tree.html">
+      Pedigree View
+    </a>
+  </header>
+
+  <main class="tree-page">
+    <div class="tree-status" id="tree-status">
+      Loading family archive…
+    </div>
+
+    <svg
+      id="family-tree"
+      class="family-tree"
+      role="img"
+      aria-labelledby="tree-title tree-description"
+    >
+      <title id="tree-title">Interactive Kallmer family tree</title>
+      <desc id="tree-description">
+        A relationship-centered view of the Kallmer family archive.
+      </desc>
+
+      <g id="tree-stage"></g>
+    </svg>
+  </main>
+
+  <script src="js/family-tree.js"></script>
+</body>
+
+</html>
