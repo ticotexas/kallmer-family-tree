@@ -488,7 +488,7 @@ function layoutFamilyUnit(
   };
 }
 
-function buildLayout(model) {
+function layoutPrimaryFamily(model) {
   const person = model.selected;
   const father = model.parents.father;
   const mother = model.parents.mother;
@@ -529,9 +529,7 @@ function buildLayout(model) {
   };
 
   const selectedCenterX = selectedCard.x + selectedCard.width / 2;
-
   const parentPairWidth = parentWidth * 2 + parentGap;
-
   const parentPairLeft = selectedCenterX - parentPairWidth / 2;
 
   const fatherCard = {
@@ -553,6 +551,28 @@ function buildLayout(model) {
     width: parentWidth,
     height: parentHeight,
   };
+
+  return {
+    father,
+    mother,
+    selectedY,
+    selectedCard,
+    fatherCard,
+    motherCard,
+    layoutUnits,
+  };
+}
+
+function buildLayout(model) {
+  const {
+    father,
+    mother,
+    selectedY,
+    selectedCard,
+    fatherCard,
+    motherCard,
+    layoutUnits,
+  } = layoutPrimaryFamily(model);
 
   const unionLayouts = [];
   let nextUnionTop = selectedY;
