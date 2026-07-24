@@ -640,17 +640,11 @@ function calculateLayoutBounds(cards, selectedCard) {
   };
 }
 
-function buildLayout(model) {
-  const {
-    father,
-    mother,
-    selectedY,
-    selectedCard,
-    fatherCard,
-    motherCard,
-    layoutUnits,
-  } = layoutPrimaryFamily(model);
-
+function layoutFamilyUnits(
+  layoutUnits,
+  selectedCard,
+  selectedY,
+) {
   const unionLayouts = [];
   let nextUnionTop = selectedY;
 
@@ -666,6 +660,26 @@ function buildLayout(model) {
     unionLayouts.push(result.layout);
     nextUnionTop = result.nextUnionTop;
   });
+
+  return unionLayouts;
+}
+
+function buildLayout(model) {
+  const {
+    father,
+    mother,
+    selectedY,
+    selectedCard,
+    fatherCard,
+    motherCard,
+    layoutUnits,
+  } = layoutPrimaryFamily(model);
+
+  const unionLayouts = layoutFamilyUnits(
+    layoutUnits,
+    selectedCard,
+    selectedY,
+  );
 
   const cards = buildCardModel(
     fatherCard,
