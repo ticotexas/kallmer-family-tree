@@ -31,6 +31,10 @@ function yearFromText(value) {
 }
 
 function formatLifeYears(person) {
+  if (person.placeholder) {
+    return "Research continuing";
+  }
+
   const birthYear = yearFromText(person.birth);
   const deathYear = yearFromText(person.death);
 
@@ -42,16 +46,16 @@ function formatLifeYears(person) {
 }
 
 function splitNameIntoLines(name) {
-  const words = String(name || "").trim().split(/\s+/).filter(Boolean);
+  const words = String(name || "")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
 
   if (words.length < 2) {
     return [name];
   }
 
-  return [
-    words.slice(0, -1).join(" "),
-    words.at(-1),
-  ];
+  return [words.slice(0, -1).join(" "), words.at(-1)];
 }
 
 function findParentFamily(personId) {
@@ -79,44 +83,107 @@ function getOtherSpouseId(family, personId) {
   return null;
 }
 
+function getGenderAccentClass(person) {
+  if (person?.placeholder) {
+    return "unknown-person-accent";
+  }
+
+  const recordedGender = String(person?.gender ?? person?.sex ?? "")
+    .trim()
+    .toLowerCase();
+
+  if (recordedGender === "m" || recordedGender === "male") {
+    return "male-person-accent";
+  }
+
+  if (recordedGender === "f" || recordedGender === "female") {
+    return "female-person-accent";
+  }
+
+  const appearsAsHusband = [...familiesById.values()].some(
+    (family) => family.husband === person.id,
+  );
+
+  if (appearsAsHusband) {
+    return "male-person-accent";
+  }
+
+  const appearsAsWife = [...familiesById.values()].some(
+    (family) => family.wife === person.id,
+  );
+
+  if (appearsAsWife) {
+    return "female-person-accent";
+  }
+
+  return "neutral-person-accent";
+}
+
 function drawPersonCard(person, x, y, options = {}) {
   if (!person) {
     return;
   }
 
   const { width = 240, height = 92, selected = false } = options;
+  const isPlaceholder = Boolean(person.placeholder);
   const nameLines = splitNameIntoLines(person.name);
   const hasProfileLink = selected;
-  const nameStartY = nameLines.length > 1
-    ? (hasProfileLink ? 27 : 22)
-    : (hasProfileLink ? 34 : 28);
-  const dateY = nameLines.length > 1
-    ? (hasProfileLink ? 64 : 59)
-    : (hasProfileLink ? 58 : 53);
+  const nameStartY =
+    nameLines.length > 1
+      ? hasProfileLink
+        ? 27
+        : 30
+      : hasProfileLink
+        ? 34
+        : 36;
+  const dateY =
+    nameLines.length > 1
+      ? hasProfileLink
+        ? 64
+        : 67
+      : hasProfileLink
+        ? 58
+        : 61;
 
   const group = createSvgElement("g", {
-    class: "person-card-group",
+    class: isPlaceholder
+      ? "person-card-group placeholder-card-group"
+      : "person-card-group",
     transform: `translate(${x} ${y})`,
-    tabindex: "0",
-    role: "button",
-    "aria-label": selected
-      ? `${person.name}, selected. Recenter tree.`
-      : `${person.name}. Recenter tree around this person.`,
+    ...(isPlaceholder
+      ? {}
+      : {
+          tabindex: "0",
+          role: "button",
+          "aria-label": selected
+            ? `${person.name}, selected. Recenter tree.`
+            : `${person.name}. Recenter tree around this person.`,
+        }),
   });
 
   const card = createSvgElement("rect", {
-    class: selected ? "person-card selected-person-card" : "person-card",
+    class: isPlaceholder
+      ? "person-card unknown-person-card"
+      : selected
+        ? "person-card selected-person-card"
+        : "person-card",
     width,
     height,
     rx: 7,
     ry: 7,
   });
 
+  const genderAccentClass = getGenderAccentClass(person);
+
   const accent = createSvgElement("rect", {
-    class: selected
-      ? "person-card-accent selected-person-accent"
-      : "person-card-accent",
-    width: selected ? 7 : 5,
+    class: [
+      "person-card-accent",
+      genderAccentClass,
+      selected ? "selected-person-accent" : "",
+    ]
+      .filter(Boolean)
+      .join(" "),
+    width: selected ? 8 : 6,
     height,
     rx: 3,
     ry: 3,
@@ -125,9 +192,9 @@ function drawPersonCard(person, x, y, options = {}) {
   group.append(card, accent);
 
   const name = createSvgElement("text", {
-    class: person.name.length > 25
-      ? "person-name long-person-name"
-      : "person-name",
+    class: `${
+      person.name.length > 25 ? "person-name long-person-name" : "person-name"
+    }${isPlaceholder ? " unknown-person-name" : ""}`,
     x: width / 2,
     y: nameStartY,
   });
@@ -143,7 +210,7 @@ function drawPersonCard(person, x, y, options = {}) {
   });
 
   const dates = createSvgElement("text", {
-    class: "person-dates",
+    class: isPlaceholder ? "person-dates unknown-person-dates" : "person-dates",
     x: width / 2,
     y: dateY,
   });
@@ -181,15 +248,17 @@ function drawPersonCard(person, x, y, options = {}) {
     group.append(profileLink);
   }
 
-  const recenter = () => selectPerson(person.id);
+  if (!isPlaceholder) {
+    const recenter = () => selectPerson(person.id);
 
-  group.addEventListener("click", recenter);
-  group.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      recenter();
-    }
-  });
+    group.addEventListener("click", recenter);
+    group.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        recenter();
+      }
+    });
+  }
 
   stage.append(group);
 }
@@ -217,14 +286,36 @@ function getCardGeometry(card) {
   };
 }
 
+function createUnknownAncestor(side) {
+  return {
+    id: `unknown-${side}`,
+    name: "Unknown Ancestor",
+    birth: "",
+    death: "",
+    living: false,
+    placeholder: true,
+  };
+}
+
 function buildFamilyViewModel(person) {
   const parentFamily = findParentFamily(person.id);
 
-  const father = parentFamily?.husband
+  let father = parentFamily?.husband
     ? peopleById.get(parentFamily.husband)
     : null;
 
-  const mother = parentFamily?.wife ? peopleById.get(parentFamily.wife) : null;
+  let mother = parentFamily?.wife ? peopleById.get(parentFamily.wife) : null;
+
+  // Show a quiet archival placeholder only when a known parent union is
+  // missing one person. Do not invent an entire pair when no parent family
+  // has yet been documented.
+  if (parentFamily && father && !mother) {
+    mother = createUnknownAncestor("mother");
+  }
+
+  if (parentFamily && mother && !father) {
+    father = createUnknownAncestor("father");
+  }
 
   const unions = findSpouseFamilies(person.id)
     .map((family) => {
@@ -255,121 +346,164 @@ function birthSortValue(person) {
   return match ? Number(match[1]) : Number.POSITIVE_INFINITY;
 }
 
+function measureFamilyUnit(model) {
+  const selectedWidth = 238;
+  const spouseWidth = 214;
+  const spouseGap = 62;
+
+  const primaryUnion = model.unions[0] || null;
+  const coupleWidth = primaryUnion
+    ? selectedWidth + spouseGap + spouseWidth
+    : selectedWidth;
+
+  return {
+    selectedWidth,
+    spouseWidth,
+    spouseGap,
+    coupleWidth,
+  };
+}
+
 function buildLayout(model) {
   const person = model.selected;
   const father = model.parents.father;
   const mother = model.parents.mother;
 
-  const secondaryHeight = 82;
-  const parentWidth = 220;
-  const parentHeight = secondaryHeight;
-  const selectedWidth = 250;
-  const selectedHeight = 112;
-  const spouseWidth = 220;
-  const spouseHeight = secondaryHeight;
+  const parentY = 20;
+  const selectedY = 214;
+
+  const parentWidth = 214;
+  const parentHeight = 78;
+  const parentGap = 54;
+
+  const selectedHeight = 106;
+  const spouseHeight = 78;
+
   const childWidth = 190;
-  const childHeight = secondaryHeight;
-  const childGap = 16;
+  const childHeight = 78;
+  const childGapX = 30;
+  const childGapY = 22;
+  const childrenTopGap = 62;
   const childrenPerRow = 3;
-  const childrenTopGap = 44;
-  const unionGap = 50;
-  const unionStartY = 205;
+  const unionBlockGap = 72;
+
+  const familyCenterX = 600;
+  const measurements = measureFamilyUnit(model);
+
+  const selectedX = familyCenterX - measurements.coupleWidth / 2;
+
+  const selectedCard = {
+    key: "selected",
+    person,
+    selected: true,
+    x: selectedX,
+    y: selectedY,
+    width: measurements.selectedWidth,
+    height: selectedHeight,
+  };
+
+  const selectedCenterX = selectedCard.x + selectedCard.width / 2;
+
+  const parentPairWidth = parentWidth * 2 + parentGap;
+
+  const parentPairLeft = selectedCenterX - parentPairWidth / 2;
+
+  const fatherCard = {
+    key: "father",
+    person: father,
+    selected: false,
+    x: parentPairLeft,
+    y: parentY,
+    width: parentWidth,
+    height: parentHeight,
+  };
+
+  const motherCard = {
+    key: "mother",
+    person: mother,
+    selected: false,
+    x: parentPairLeft + parentWidth + parentGap,
+    y: parentY,
+    width: parentWidth,
+    height: parentHeight,
+  };
 
   const unionLayouts = [];
-  let nextUnionY = unionStartY;
+  let nextUnionTop = selectedY;
 
   model.unions.forEach((union, unionIndex) => {
     const children = [...union.children].sort((a, b) => {
       const dateDifference = birthSortValue(a) - birthSortValue(b);
+
       return dateDifference || a.name.localeCompare(b.name);
     });
 
-    const childRows = Math.ceil(children.length / childrenPerRow);
-    const childrenHeight = childRows > 0
-      ? childRows * childHeight + (childRows - 1) * childGap
-      : 0;
-
-    const blockHeight = spouseHeight +
-      (childRows > 0 ? childrenTopGap + childrenHeight : 0);
+    const isPrimary = unionIndex === 0;
 
     const spouseCard = {
       key: `spouse-${unionIndex}`,
       person: union.spouse,
       union,
       selected: false,
-      x: 730,
-      y: nextUnionY,
-      width: spouseWidth,
+      x: selectedCard.x + selectedCard.width + measurements.spouseGap,
+      y: isPrimary
+        ? selectedY + (selectedHeight - spouseHeight) / 2
+        : nextUnionTop,
+      width: measurements.spouseWidth,
       height: spouseHeight,
     };
 
+    const unionCenterX =
+      (selectedCard.x + selectedCard.width + spouseCard.x) / 2;
+
+    const firstChildY =
+      Math.max(
+        selectedCard.y + selectedCard.height,
+        spouseCard.y + spouseCard.height,
+      ) + childrenTopGap;
+
     const childCards = children.map((child, childIndex) => {
-      const column = childIndex % childrenPerRow;
       const row = Math.floor(childIndex / childrenPerRow);
+
+      const column = childIndex % childrenPerRow;
+
+      const rowStart = row * childrenPerRow;
+
+      const rowCount = Math.min(childrenPerRow, children.length - rowStart);
+
+      const rowWidth = rowCount * childWidth + (rowCount - 1) * childGapX;
+
+      const rowLeft = unionCenterX - rowWidth / 2;
 
       return {
         key: `union-${unionIndex}-child-${childIndex}`,
         person: child,
         union,
         selected: false,
-        x: 720 + column * (childWidth + childGap),
-        y: nextUnionY + spouseHeight + childrenTopGap +
-          row * (childHeight + childGap),
+        x: rowLeft + column * (childWidth + childGapX),
+        y: firstChildY + row * (childHeight + childGapY),
         width: childWidth,
         height: childHeight,
       };
     });
 
+    const childrenBottom = childCards.length
+      ? Math.max(...childCards.map((card) => card.y + card.height))
+      : spouseCard.y + spouseCard.height;
+
     unionLayouts.push({
-      unionIndex,
       spouseCard,
       childCards,
-      blockHeight,
+      unionCenterX,
+      isPrimary,
     });
 
-    nextUnionY += blockHeight + unionGap;
+    nextUnionTop = childrenBottom + unionBlockGap;
   });
 
-  const unionStackHeight = unionLayouts.length > 0
-    ? nextUnionY - unionStartY - unionGap
-    : 0;
-
-  const primarySpouseCard = unionLayouts[0]?.spouseCard || null;
-
-  const selectedCard = {
-    key: "selected",
-    person,
-    selected: true,
-    x: 440,
-    // Keep the focused person and the primary spouse on the same
-    // horizontal relationship line. Because the selected card is taller,
-    // align their vertical centers rather than their top edges.
-    y: primarySpouseCard
-      ? primarySpouseCard.y + spouseHeight / 2 - selectedHeight / 2
-      : 250,
-    width: selectedWidth,
-    height: selectedHeight,
-  };
-
   const cards = [
-    {
-      key: "father",
-      person: father,
-      selected: false,
-      x: 350,
-      y: 60,
-      width: parentWidth,
-      height: parentHeight,
-    },
-    {
-      key: "mother",
-      person: mother,
-      selected: false,
-      x: 630,
-      y: 60,
-      width: parentWidth,
-      height: parentHeight,
-    },
+    fatherCard,
+    motherCard,
     selectedCard,
     ...unionLayouts.flatMap(({ spouseCard, childCards }) => [
       spouseCard,
@@ -388,33 +522,50 @@ function buildLayout(model) {
     });
   }
 
-  unionLayouts.forEach(({ spouseCard, childCards }) => {
-    relationships.push({
-      type: "spouse-union",
-      from: "selected",
-      to: spouseCard.key,
-      children: childCards.map((card) => card.key),
-    });
-  });
+  unionLayouts.forEach(
+    ({ spouseCard, childCards, unionCenterX, isPrimary }) => {
+      relationships.push({
+        type: "spouse-union",
+        from: "selected",
+        to: spouseCard.key,
+        children: childCards.map((card) => card.key),
+        unionCenterX,
+        isPrimary,
+      });
+    },
+  );
 
   const visibleCards = cards.filter((card) => card.person);
+
+  const leftmostCardEdge = visibleCards.reduce(
+    (leftmost, card) => Math.min(leftmost, card.x),
+    selectedCard.x,
+  );
+
+  const rightmostCardEdge = visibleCards.reduce(
+    (rightmost, card) => Math.max(rightmost, card.x + card.width),
+    selectedCard.x + selectedCard.width,
+  );
+
   const lowestCardBottom = visibleCards.reduce(
     (lowest, card) => Math.max(lowest, card.y + card.height),
     selectedCard.y + selectedCard.height,
   );
-  const rightmostCardEdge = visibleCards.reduce(
-    (rightmost, card) => Math.max(rightmost, card.x + card.width),
-    1200,
-  );
+
+  const horizontalPadding = 92;
+  const topPadding = 18;
 
   return {
     cards,
     relationships,
     viewBox: {
-      x: 0,
-      y: 0,
-      width: Math.max(1200, rightmostCardEdge + 90),
-      height: Math.max(700, lowestCardBottom + 110),
+      x: leftmostCardEdge - horizontalPadding,
+      y: topPadding,
+      width: Math.max(
+        900,
+        rightmostCardEdge - leftmostCardEdge + horizontalPadding * 2,
+      ),
+      height: Math.max(630, lowestCardBottom + 82 - topPadding),
     },
   };
 }
@@ -433,9 +584,58 @@ function drawCards(cards) {
   }
 }
 
+function roundedOrthogonalPath(points, radius = 42) {
+  if (points.length < 2) {
+    return "";
+  }
+
+  const commands = [`M ${points[0].x} ${points[0].y}`];
+
+  for (let index = 1; index < points.length - 1; index += 1) {
+    const previous = points[index - 1];
+    const current = points[index];
+    const next = points[index + 1];
+
+    const incomingDistance = Math.hypot(
+      current.x - previous.x,
+      current.y - previous.y,
+    );
+    const outgoingDistance = Math.hypot(next.x - current.x, next.y - current.y);
+    const cornerRadius = Math.min(
+      radius,
+      incomingDistance / 2,
+      outgoingDistance / 2,
+    );
+
+    const incomingPoint = {
+      x: current.x - Math.sign(current.x - previous.x) * cornerRadius,
+      y: current.y - Math.sign(current.y - previous.y) * cornerRadius,
+    };
+    const outgoingPoint = {
+      x: current.x + Math.sign(next.x - current.x) * cornerRadius,
+      y: current.y + Math.sign(next.y - current.y) * cornerRadius,
+    };
+
+    commands.push(`L ${incomingPoint.x} ${incomingPoint.y}`);
+    commands.push(
+      `Q ${current.x} ${current.y} ${outgoingPoint.x} ${outgoingPoint.y}`,
+    );
+  }
+
+  const finalPoint = points.at(-1);
+  commands.push(`L ${finalPoint.x} ${finalPoint.y}`);
+
+  return commands.join(" ");
+}
+
+function drawRoundedRelationship(points, radius = 42) {
+  drawRelationshipPath(roundedOrthogonalPath(points, radius));
+}
+
 function drawRelationshipLines(cards, relationships) {
   const cardMap = Object.fromEntries(cards.map((card) => [card.key, card]));
   const edgeOverlap = 1.5;
+  const cornerRadius = 46;
 
   for (const relationship of relationships) {
     if (relationship.type === "parent-union") {
@@ -450,13 +650,23 @@ function drawRelationshipLines(cards, relationships) {
       const fromBox = getCardGeometry(fromCard);
       const toBox = getCardGeometry(toCard);
       const childBox = getCardGeometry(childCard);
-      const unionMidpointX = (fromBox.right + toBox.left) / 2;
-      const descentY = childBox.top - 30;
+      const parentUnionX = (fromBox.right + toBox.left) / 2;
+      const descentY = childBox.top - 34;
 
-      drawRelationshipSegments([
-        `M ${fromBox.right - edgeOverlap} ${fromBox.centerY} H ${toBox.left + edgeOverlap}`,
-        `M ${unionMidpointX} ${fromBox.centerY} V ${descentY} H ${childBox.centerX} V ${childBox.top + edgeOverlap}`,
+      drawRoundedRelationship([
+        { x: fromBox.right - edgeOverlap, y: fromBox.centerY },
+        { x: toBox.left + edgeOverlap, y: toBox.centerY },
       ]);
+
+      drawRoundedRelationship(
+        [
+          { x: parentUnionX, y: fromBox.centerY },
+          { x: parentUnionX, y: descentY },
+          { x: childBox.centerX, y: descentY },
+          { x: childBox.centerX, y: childBox.top + edgeOverlap },
+        ],
+        cornerRadius,
+      );
     }
 
     if (relationship.type === "spouse-union") {
@@ -469,50 +679,90 @@ function drawRelationshipLines(cards, relationships) {
 
       const fromBox = getCardGeometry(fromCard);
       const toBox = getCardGeometry(toCard);
-      const elbowX = fromBox.right + 24;
-      const unionAnchorX = (elbowX + toBox.left) / 2;
-      const segments = [
-        `M ${fromBox.right - edgeOverlap} ${fromBox.centerY} H ${elbowX} V ${toBox.centerY} H ${toBox.left + edgeOverlap}`,
-      ];
-
       const childCards = (relationship.children || [])
         .map((key) => cardMap[key])
         .filter(Boolean);
 
-      if (childCards.length > 0) {
-        const rowGroups = new Map();
-
-        childCards.forEach((card) => {
-          const row = rowGroups.get(card.y) || [];
-          row.push(card);
-          rowGroups.set(card.y, row);
-        });
-
-        const rows = [...rowGroups.values()]
-          .sort((a, b) => a[0].y - b[0].y)
-          .map((rowCards) => ({
-            cards: rowCards.sort((a, b) => a.x - b.x),
-            busY: rowCards[0].y - 18,
-          }));
-
-        segments.push(`M ${unionAnchorX} ${toBox.centerY} V ${rows.at(-1).busY}`);
-
-        rows.forEach(({ cards: rowCards, busY }) => {
-          const rowBoxes = rowCards.map(getCardGeometry);
-          const firstCenterX = rowBoxes[0].centerX;
-          const lastCenterX = rowBoxes.at(-1).centerX;
-
-          segments.push(
-            `M ${Math.min(unionAnchorX, firstCenterX)} ${busY} H ${Math.max(unionAnchorX, lastCenterX)}`,
-          );
-
-          rowBoxes.forEach((box) => {
-            segments.push(`M ${box.centerX} ${busY} V ${box.top + edgeOverlap}`);
-          });
-        });
+      if (relationship.isPrimary) {
+        drawRoundedRelationship([
+          { x: fromBox.right - edgeOverlap, y: fromBox.centerY },
+          { x: toBox.left + edgeOverlap, y: toBox.centerY },
+        ]);
+      } else {
+        const elbowX = fromBox.right + 34;
+        drawRoundedRelationship(
+          [
+            { x: fromBox.right - edgeOverlap, y: fromBox.centerY },
+            { x: elbowX, y: fromBox.centerY },
+            { x: elbowX, y: toBox.centerY },
+            { x: toBox.left + edgeOverlap, y: toBox.centerY },
+          ],
+          cornerRadius,
+        );
       }
 
-      drawRelationshipSegments(segments);
+      if (childCards.length === 0) {
+        continue;
+      }
+
+      const unionAnchorX =
+        relationship.unionCenterX ?? (fromBox.right + toBox.left) / 2;
+      const rowGroups = new Map();
+
+      childCards.forEach((card) => {
+        const row = rowGroups.get(card.y) || [];
+        row.push(card);
+        rowGroups.set(card.y, row);
+      });
+
+      const rows = [...rowGroups.values()]
+        .sort((a, b) => a[0].y - b[0].y)
+        .map((rowCards) => ({
+          cards: rowCards.sort((a, b) => a.x - b.x),
+          busY: rowCards[0].y - 24,
+        }));
+
+      const firstBusY = rows[0].busY;
+      const lastBusY = rows.at(-1).busY;
+
+      const branchRadius = 22;
+
+      rows.forEach(({ cards: rowCards, busY }, rowIndex) => {
+        const rowBoxes = rowCards.map(getCardGeometry);
+        const firstCenterX = rowBoxes[0].centerX;
+        const lastCenterX = rowBoxes.at(-1).centerX;
+        const trunkStartY =
+          rowIndex === 0 ? fromBox.centerY : rows[rowIndex - 1].busY;
+
+        if (firstCenterX < unionAnchorX) {
+          drawRelationshipPath(
+            [
+              `M ${unionAnchorX} ${trunkStartY}`,
+              `V ${busY - branchRadius}`,
+              `Q ${unionAnchorX} ${busY} ${unionAnchorX - branchRadius} ${busY}`,
+              `H ${firstCenterX}`,
+            ].join(" "),
+          );
+        } else {
+          drawRelationshipPath(`M ${unionAnchorX} ${trunkStartY} V ${busY}`);
+        }
+
+        if (lastCenterX > unionAnchorX) {
+          drawRelationshipPath(
+            [
+              `M ${unionAnchorX} ${busY - branchRadius}`,
+              `Q ${unionAnchorX} ${busY} ${unionAnchorX + branchRadius} ${busY}`,
+              `H ${lastCenterX}`,
+            ].join(" "),
+          );
+        }
+
+        rowBoxes.forEach((box) => {
+          drawRelationshipPath(
+            `M ${box.centerX} ${busY} V ${box.top + edgeOverlap}`,
+          );
+        });
+      });
     }
   }
 }
@@ -564,6 +814,17 @@ function renderError(message) {
   stage.append(text);
 }
 
+function placeStatusUnderHeading() {
+  const heading = document.querySelector(".site-header h1");
+
+  if (!heading || !statusElement) {
+    return;
+  }
+
+  statusElement.classList.add("header-tree-status");
+  heading.insertAdjacentElement("afterend", statusElement);
+}
+
 async function loadFamilyArchive() {
   try {
     const response = await fetch(`public-data/family.json?v=${Date.now()}`);
@@ -607,6 +868,8 @@ async function loadFamilyArchive() {
     renderError("The family tree could not be loaded.");
   }
 }
+
+placeStatusUnderHeading();
 
 window.addEventListener("popstate", () => {
   const personId = getRequestedPersonId();
