@@ -608,6 +608,38 @@ function buildCardModel(
   ];
 }
 
+function calculateLayoutBounds(cards, selectedCard) {
+  const visibleCards = cards.filter((card) => card.person);
+
+  const leftmostCardEdge = visibleCards.reduce(
+    (leftmost, card) => Math.min(leftmost, card.x),
+    selectedCard.x,
+  );
+
+  const rightmostCardEdge = visibleCards.reduce(
+    (rightmost, card) => Math.max(rightmost, card.x + card.width),
+    selectedCard.x + selectedCard.width,
+  );
+
+  const lowestCardBottom = visibleCards.reduce(
+    (lowest, card) => Math.max(lowest, card.y + card.height),
+    selectedCard.y + selectedCard.height,
+  );
+
+  const horizontalPadding = 92;
+  const topPadding = 18;
+
+  return {
+    x: leftmostCardEdge - horizontalPadding,
+    y: topPadding,
+    width: Math.max(
+      900,
+      rightmostCardEdge - leftmostCardEdge + horizontalPadding * 2,
+    ),
+    height: Math.max(630, lowestCardBottom + 82 - topPadding),
+  };
+}
+
 function buildLayout(model) {
   const {
     father,
@@ -648,38 +680,10 @@ function buildLayout(model) {
     unionLayouts,
   );
 
-  const visibleCards = cards.filter((card) => card.person);
-
-  const leftmostCardEdge = visibleCards.reduce(
-    (leftmost, card) => Math.min(leftmost, card.x),
-    selectedCard.x,
-  );
-
-  const rightmostCardEdge = visibleCards.reduce(
-    (rightmost, card) => Math.max(rightmost, card.x + card.width),
-    selectedCard.x + selectedCard.width,
-  );
-
-  const lowestCardBottom = visibleCards.reduce(
-    (lowest, card) => Math.max(lowest, card.y + card.height),
-    selectedCard.y + selectedCard.height,
-  );
-
-  const horizontalPadding = 92;
-  const topPadding = 18;
-
   return {
     cards,
     relationships,
-    viewBox: {
-      x: leftmostCardEdge - horizontalPadding,
-      y: topPadding,
-      width: Math.max(
-        900,
-        rightmostCardEdge - leftmostCardEdge + horizontalPadding * 2,
-      ),
-      height: Math.max(630, lowestCardBottom + 82 - topPadding),
-    },
+    viewBox: calculateLayoutBounds(cards, selectedCard),
   };
 }
 
