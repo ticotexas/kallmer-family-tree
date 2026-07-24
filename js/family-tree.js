@@ -300,6 +300,7 @@ function createUnknownAncestor(side) {
 function buildFamilyUnits(person, unions) {
   return unions.map((union, unionIndex) => ({
     id: union.family.id,
+    union,
     primaryPerson: person,
     spouse: union.spouse,
     children: union.children,
@@ -428,6 +429,7 @@ function buildLayout(model) {
 
   const primaryUnit = measuredUnits[0];
   const measurements = primaryUnit.measurements;
+  const layoutUnits = model.familyUnits.length ? measuredUnits : [];
 
   const selectedX = familyCenterX - measurements.coupleWidth / 2;
 
@@ -470,20 +472,19 @@ function buildLayout(model) {
   const unionLayouts = [];
   let nextUnionTop = selectedY;
 
-  model.unions.forEach((union, unionIndex) => {
-    const unitMeasurements =
-      measuredUnits[unionIndex]?.measurements ?? measurements;
-
-    const children = [...union.children].sort((a, b) => {
+  layoutUnits.forEach((unit, unitIndex) => {
+    const union = unit.union;
+    const unitMeasurements = unit.measurements;
+    const children = [...unit.children].sort((a, b) => {
       const dateDifference = birthSortValue(a) - birthSortValue(b);
 
       return dateDifference || a.name.localeCompare(b.name);
     });
 
-    const isPrimary = unionIndex === 0;
+    const isPrimary = unit.isPrimary;
 
     const spouseCard = {
-      key: `spouse-${unionIndex}`,
+      key: `spouse-${unitIndex}`,
       person: union.spouse,
       union,
       selected: false,
@@ -520,7 +521,7 @@ function buildLayout(model) {
       const rowLeft = unionCenterX - rowWidth / 2;
 
       return {
-        key: `union-${unionIndex}-child-${childIndex}`,
+        key: `union-${unitIndex}-child-${childIndex}`,
         person: child,
         union,
         selected: false,
