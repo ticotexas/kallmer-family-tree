@@ -331,6 +331,14 @@ function buildFamilyViewModel(person) {
     })
     .filter((union) => union.spouse);
 
+  const familyUnits = unions.map((union, unionIndex) => ({
+    id: union.family.id,
+    primaryPerson: person,
+    spouse: union.spouse,
+    children: union.children,
+    isPrimary: unionIndex === 0,
+  }));
+
   return {
     selected: person,
     parents: {
@@ -338,6 +346,7 @@ function buildFamilyViewModel(person) {
       mother,
     },
     unions,
+    familyUnits,
   };
 }
 
@@ -346,13 +355,12 @@ function birthSortValue(person) {
   return match ? Number(match[1]) : Number.POSITIVE_INFINITY;
 }
 
-function measureFamilyUnit(model) {
-  const selectedWidth = 238;
+function measureFamilyUnit(unit) {
+  const selectedWidth = unit?.isPrimary ? 238 : 214;
   const spouseWidth = 214;
   const spouseGap = 62;
 
-  const primaryUnion = model.unions[0] || null;
-  const coupleWidth = primaryUnion
+  const coupleWidth = unit?.spouse
     ? selectedWidth + spouseGap + spouseWidth
     : selectedWidth;
 
@@ -388,7 +396,13 @@ function buildLayout(model) {
   const unionBlockGap = 72;
 
   const familyCenterX = 600;
-  const measurements = measureFamilyUnit(model);
+  const primaryUnit = model.familyUnits[0] || {
+    primaryPerson: person,
+    spouse: null,
+    children: [],
+    isPrimary: true,
+  };
+  const measurements = measureFamilyUnit(primaryUnit);
 
   const selectedX = familyCenterX - measurements.coupleWidth / 2;
 
