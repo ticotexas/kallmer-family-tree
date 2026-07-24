@@ -563,6 +563,34 @@ function layoutPrimaryFamily(model) {
   };
 }
 
+function buildRelationshipModel(father, mother, unionLayouts) {
+  const relationships = [];
+
+  if (father && mother) {
+    relationships.push({
+      type: "parent-union",
+      from: "father",
+      to: "mother",
+      child: "selected",
+    });
+  }
+
+  unionLayouts.forEach(
+    ({ spouseCard, childCards, unionCenterX, isPrimary }) => {
+      relationships.push({
+        type: "spouse-union",
+        from: "selected",
+        to: spouseCard.key,
+        children: childCards.map((card) => card.key),
+        unionCenterX,
+        isPrimary,
+      });
+    },
+  );
+
+  return relationships;
+}
+
 function buildLayout(model) {
   const {
     father,
@@ -600,28 +628,10 @@ function buildLayout(model) {
     ]),
   ];
 
-  const relationships = [];
-
-  if (father && mother) {
-    relationships.push({
-      type: "parent-union",
-      from: "father",
-      to: "mother",
-      child: "selected",
-    });
-  }
-
-  unionLayouts.forEach(
-    ({ spouseCard, childCards, unionCenterX, isPrimary }) => {
-      relationships.push({
-        type: "spouse-union",
-        from: "selected",
-        to: spouseCard.key,
-        children: childCards.map((card) => card.key),
-        unionCenterX,
-        isPrimary,
-      });
-    },
+  const relationships = buildRelationshipModel(
+    father,
+    mother,
+    unionLayouts,
   );
 
   const visibleCards = cards.filter((card) => card.person);
