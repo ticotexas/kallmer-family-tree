@@ -403,6 +403,91 @@ function measureFamilyUnits(units) {
   }));
 }
 
+function layoutFamilyUnit(
+  unit,
+  unitIndex,
+  selectedCard,
+  selectedY,
+  nextUnionTop,
+) {
+  const union = unit.union;
+  const measurements = unit.measurements;
+  const children = [...unit.children].sort((a, b) => {
+    const dateDifference = birthSortValue(a) - birthSortValue(b);
+
+    return dateDifference || a.name.localeCompare(b.name);
+  });
+
+  const spouseCard = {
+    key: `spouse-${unitIndex}`,
+    person: union.spouse,
+    union,
+    selected: false,
+    x: selectedCard.x + selectedCard.width + measurements.spouseGap,
+    y: unit.isPrimary
+      ? selectedY +
+        (measurements.selectedHeight - measurements.spouseHeight) / 2
+      : nextUnionTop,
+    width: measurements.spouseWidth,
+    height: measurements.spouseHeight,
+  };
+
+  const unionCenterX =
+    (selectedCard.x + selectedCard.width + spouseCard.x) / 2;
+
+  const firstChildY =
+    Math.max(
+      selectedCard.y + selectedCard.height,
+      spouseCard.y + spouseCard.height,
+    ) + measurements.childrenTopGap;
+
+  const childCards = children.map((child, childIndex) => {
+    const row = Math.floor(childIndex / measurements.childrenPerRow);
+    const column = childIndex % measurements.childrenPerRow;
+    const rowStart = row * measurements.childrenPerRow;
+
+    const rowCount = Math.min(
+      measurements.childrenPerRow,
+      children.length - rowStart,
+    );
+
+    const rowWidth =
+      rowCount * measurements.childWidth +
+      (rowCount - 1) * measurements.childGapX;
+
+    const rowLeft = unionCenterX - rowWidth / 2;
+
+    return {
+      key: `union-${unitIndex}-child-${childIndex}`,
+      person: child,
+      union,
+      selected: false,
+      x:
+        rowLeft +
+        column * (measurements.childWidth + measurements.childGapX),
+      y:
+        firstChildY +
+        row * (measurements.childHeight + measurements.childGapY),
+      width: measurements.childWidth,
+      height: measurements.childHeight,
+    };
+  });
+
+  const childrenBottom = childCards.length
+    ? Math.max(...childCards.map((card) => card.y + card.height))
+    : spouseCard.y + spouseCard.height;
+
+  return {
+    layout: {
+      spouseCard,
+      childCards,
+      unionCenterX,
+      isPrimary: unit.isPrimary,
+    },
+    nextUnionTop: childrenBottom + measurements.unitBlockGap,
+  };
+}
+
 function buildLayout(model) {
   const person = model.selected;
   const father = model.parents.father;
@@ -473,79 +558,16 @@ function buildLayout(model) {
   let nextUnionTop = selectedY;
 
   layoutUnits.forEach((unit, unitIndex) => {
-    const union = unit.union;
-    const unitMeasurements = unit.measurements;
-    const children = [...unit.children].sort((a, b) => {
-      const dateDifference = birthSortValue(a) - birthSortValue(b);
+    const result = layoutFamilyUnit(
+      unit,
+      unitIndex,
+      selectedCard,
+      selectedY,
+      nextUnionTop,
+    );
 
-      return dateDifference || a.name.localeCompare(b.name);
-    });
-
-    const isPrimary = unit.isPrimary;
-
-    const spouseCard = {
-      key: `spouse-${unitIndex}`,
-      person: union.spouse,
-      union,
-      selected: false,
-      x: selectedCard.x + selectedCard.width + unitMeasurements.spouseGap,
-      y: isPrimary
-        ? selectedY +
-          (unitMeasurements.selectedHeight - unitMeasurements.spouseHeight) / 2
-        : nextUnionTop,
-      width: unitMeasurements.spouseWidth,
-      height: unitMeasurements.spouseHeight,
-    };
-
-    const unionCenterX =
-      (selectedCard.x + selectedCard.width + spouseCard.x) / 2;
-
-    const firstChildY =
-      Math.max(
-        selectedCard.y + selectedCard.height,
-        spouseCard.y + spouseCard.height,
-      ) + unitMeasurements.childrenTopGap;
-
-    const childCards = children.map((child, childIndex) => {
-      const row = Math.floor(childIndex / unitMeasurements.childrenPerRow);
-
-      const column = childIndex % unitMeasurements.childrenPerRow;
-
-      const rowStart = row * unitMeasurements.childrenPerRow;
-
-      const rowCount = Math.min(unitMeasurements.childrenPerRow, children.length - rowStart);
-
-      const rowWidth = rowCount * unitMeasurements.childWidth +
-        (rowCount - 1) * unitMeasurements.childGapX;
-
-      const rowLeft = unionCenterX - rowWidth / 2;
-
-      return {
-        key: `union-${unitIndex}-child-${childIndex}`,
-        person: child,
-        union,
-        selected: false,
-        x: rowLeft +
-          column * (unitMeasurements.childWidth + unitMeasurements.childGapX),
-        y: firstChildY +
-          row * (unitMeasurements.childHeight + unitMeasurements.childGapY),
-        width: unitMeasurements.childWidth,
-        height: unitMeasurements.childHeight,
-      };
-    });
-
-    const childrenBottom = childCards.length
-      ? Math.max(...childCards.map((card) => card.y + card.height))
-      : spouseCard.y + spouseCard.height;
-
-    unionLayouts.push({
-      spouseCard,
-      childCards,
-      unionCenterX,
-      isPrimary,
-    });
-
-    nextUnionTop = childrenBottom + unitMeasurements.unitBlockGap;
+    unionLayouts.push(result.layout);
+    nextUnionTop = result.nextUnionTop;
   });
 
   const cards = [
