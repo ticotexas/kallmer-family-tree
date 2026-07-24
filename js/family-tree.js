@@ -591,6 +591,23 @@ function buildRelationshipModel(father, mother, unionLayouts) {
   return relationships;
 }
 
+function buildCardModel(
+  fatherCard,
+  motherCard,
+  selectedCard,
+  unionLayouts,
+) {
+  return [
+    fatherCard,
+    motherCard,
+    selectedCard,
+    ...unionLayouts.flatMap(({ spouseCard, childCards }) => [
+      spouseCard,
+      ...childCards,
+    ]),
+  ];
+}
+
 function buildLayout(model) {
   const {
     father,
@@ -618,15 +635,12 @@ function buildLayout(model) {
     nextUnionTop = result.nextUnionTop;
   });
 
-  const cards = [
+  const cards = buildCardModel(
     fatherCard,
     motherCard,
     selectedCard,
-    ...unionLayouts.flatMap(({ spouseCard, childCards }) => [
-      spouseCard,
-      ...childCards,
-    ]),
-  ];
+    unionLayouts,
+  );
 
   const relationships = buildRelationshipModel(
     father,
