@@ -1,0 +1,89 @@
+/* Phase 3C: calm, profile-oriented card treatment */
+.person-card-group {
+  cursor: pointer;
+  outline: none;
+}
+
+.person-card {
+  fill: var(--paper, #fffaf0);
+  stroke: var(--brass, #b08d3f);
+  stroke-width: 1;
+  filter: drop-shadow(0 2px 3px rgba(31, 46, 69, 0.10));
+  transition: fill 140ms ease, stroke 140ms ease, filter 140ms ease;
+}
+
+.person-card-group:hover .person-card,
+.person-card-group:focus .person-card {
+  fill: #fff4df;
+  stroke: var(--homestead-clay, #a8552e);
+  filter: drop-shadow(0 4px 7px rgba(31, 46, 69, 0.16));
+}
+
+.selected-person-card {
+  fill: #fff4df;
+  stroke: var(--homestead-clay, #a8552e);
+  stroke-width: 2;
+}
+
+.person-card-accent {
+  fill: var(--prairie-sage, #6b7c5a);
+  opacity: 0.78;
+}
+
+.selected-person-accent {
+  fill: var(--brass, #b08d3f);
+  opacity: 1;
+}
+
+.person-name {
+  fill: var(--ledger-ink, #1f2e45);
+  font-family: "Source Serif 4", serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.15;
+  text-anchor: middle;
+}
+
+.long-person-name {
+  font-size: 15.5px;
+}
+
+.person-dates {
+  fill: var(--prairie-sage, #6b7c5a);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-anchor: middle;
+}
+
+.person-role,
+.person-id {
+  display: none;
+}
+
+.profile-link-hitbox {
+  fill: transparent;
+}
+
+.profile-link-text {
+  fill: var(--homestead-clay, #a8552e);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  text-anchor: middle;
+  text-decoration: underline;
+}
+
+.profile-link:hover .profile-link-text,
+.profile-link:focus .profile-link-text {
+  fill: var(--ledger-ink, #1f2e45);
+}
+
+.relationship-line {
+  fill: none;
+  stroke: rgba(31, 46, 69, 0.52);
+  stroke-width: 1.35;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+}
