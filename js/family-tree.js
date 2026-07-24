@@ -297,6 +297,16 @@ function createUnknownAncestor(side) {
   };
 }
 
+function buildFamilyUnits(person, unions) {
+  return unions.map((union, unionIndex) => ({
+    id: union.family.id,
+    primaryPerson: person,
+    spouse: union.spouse,
+    children: union.children,
+    isPrimary: unionIndex === 0,
+  }));
+}
+
 function buildFamilyViewModel(person) {
   const parentFamily = findParentFamily(person.id);
 
@@ -331,13 +341,7 @@ function buildFamilyViewModel(person) {
     })
     .filter((union) => union.spouse);
 
-  const familyUnits = unions.map((union, unionIndex) => ({
-    id: union.family.id,
-    primaryPerson: person,
-    spouse: union.spouse,
-    children: union.children,
-    isPrimary: unionIndex === 0,
-  }));
+  const familyUnits = buildFamilyUnits(person, unions);
 
   return {
     selected: person,
