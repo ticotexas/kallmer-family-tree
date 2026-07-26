@@ -564,6 +564,14 @@ function layoutFamilyUnit(
       x: unitCenterX,
       y: spouseCard.y,
     },
+    spouseAnchor: {
+      x: unitCenterX,
+      y: spouseCard.y,
+    },
+    childAnchor: {
+      x: unitCenterX,
+      y: spouseCard.y + spouseCard.height,
+    },
     unionCenterX: unitCenterX,
     isPrimary: unit.isPrimary,
   };
@@ -666,12 +674,16 @@ function buildRelationshipModel(father, mother, unionLayouts) {
           spouseCard,
           childCards,
           anchor,
+          spouseAnchor,
+          childAnchor,
           siblingBusX,
           isPrimary,
         }) => ({
           spouse: spouseCard.key,
           children: childCards.map((card) => card.key),
           anchorX: anchor.x,
+          spouseAnchor,
+          childAnchor,
           siblingBusX,
           isPrimary,
         }),
