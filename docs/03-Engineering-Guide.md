@@ -314,3 +314,47 @@ A change is complete when:
 - the commit is focused;
 - the working tree status is understood;
 - current status documentation is updated when the milestone warrants it.
+
+## ChatGPT Development Workflow
+
+This project follows a disciplined ChatGPT collaboration workflow to reduce context drift and make each change auditable.
+
+### Capture the current implementation
+
+Before modifying any function, ask the user to print the current implementation from their local working copy rather than relying on reconstructed examples.
+
+Preferred pattern:
+
+```bash
+id="abcd1234"
+
+{
+  sed -n '/function buildLayout/,/function drawCards/p' js/family-tree.js
+} | tee /tmp/buildLayout-${id}.txt | xclip -selection clipboard
+```
+
+For numbered excerpts:
+
+```bash
+id="abcd1234"
+
+{
+  nl -ba js/family-tree.js | sed -n '420,620p'
+} | tee /tmp/layout-${id}.txt | xclip -selection clipboard
+```
+
+Why this pattern:
+
+- `tee` preserves an exact snapshot under `/tmp` for reference.
+- `xclip` places the same output on the clipboard for immediate pasting into ChatGPT.
+- The snapshot and clipboard always contain identical content.
+
+### Development discipline
+
+1. Work from the user's current local files.
+2. Make one meaningful architectural change per commit.
+3. Run `node --check js/family-tree.js` after every JavaScript edit.
+4. Review the `git diff`.
+5. Hard-refresh the browser.
+6. Verify there are no unintended visual regressions.
+7. Commit only the intended files.
