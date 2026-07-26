@@ -653,7 +653,7 @@ function buildRelationshipModel(father, mother, unionLayouts) {
       type: "parent-union",
       from: "father",
       to: "mother",
-      child: "selected",
+      axisOwner: "selected",
     });
   }
 
@@ -891,17 +891,19 @@ function drawRelationshipLines(cards, relationships) {
     if (relationship.type === "parent-union") {
       const fromCard = cardMap[relationship.from];
       const toCard = cardMap[relationship.to];
-      const childCard = cardMap[relationship.child];
+      const axisOwnerCard =
+        cardMap[relationship.axisOwner];
 
-      if (!(fromCard && toCard && childCard)) {
+      if (!(fromCard && toCard && axisOwnerCard)) {
         continue;
       }
 
       const fromBox = getCardGeometry(fromCard);
       const toBox = getCardGeometry(toCard);
-      const childBox = getCardGeometry(childCard);
+      const axisOwnerBox =
+        getCardGeometry(axisOwnerCard);
       const parentUnionX = (fromBox.right + toBox.left) / 2;
-      const descentY = childBox.top - 34;
+      const descentY = axisOwnerBox.top - 34;
 
       drawRoundedRelationship([
         {
@@ -925,12 +927,12 @@ function drawRelationshipLines(cards, relationships) {
             y: descentY,
           },
           {
-            x: childBox.centerX,
+            x: axisOwnerBox.centerX,
             y: descentY,
           },
           {
-            x: childBox.centerX,
-            y: childBox.top + edgeOverlap,
+            x: axisOwnerBox.centerX,
+            y: axisOwnerBox.top + edgeOverlap,
           },
         ],
         cornerRadius,
