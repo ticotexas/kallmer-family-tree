@@ -638,7 +638,7 @@ function buildRelationshipModel(father, mother, unionLayouts) {
 
   if (unionLayouts.length > 0) {
     relationships.push({
-      type: "family-unit-row",
+      type: "family-unit-bus",
       from: unionLayouts[0].ownerKey,
       units: unionLayouts.map(
         ({
@@ -914,7 +914,7 @@ function drawRelationshipLines(cards, relationships) {
       );
     }
 
-    if (relationship.type === "family-unit-row") {
+    if (relationship.type === "family-unit-bus") {
       const ownerCard = cardMap[relationship.from];
 
       if (!ownerCard) {
