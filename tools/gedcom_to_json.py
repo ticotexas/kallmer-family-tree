@@ -87,6 +87,7 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
                 "death_year": "",
                 "death_place": "",
                 "living": True,
+                "gender": "",
                 "parents": set(),
                 "spouses": set(),
                 "children": set(),
@@ -134,6 +135,9 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
                 # overwriting it with later alternate names.
                 if not person["name"]:
                     person["name"] = clean_name
+
+            elif tag == "SEX":
+                person["gender"] = value.strip()
 
             elif tag == "DEAT":
                 person["living"] = False
@@ -407,6 +411,7 @@ def public_person_record(person):
         "name": preferred_name,
         "birth_name": birth_name,
         "alternate_names": alternate_names,
+        "gender": person["gender"],
         "living": living,
         "birth": display_birth,
         "death": display_death,
@@ -429,6 +434,7 @@ def private_person_record(person):
         "name": preferred_name,
         "birth_name": birth_name,
         "alternate_names": alternate_names,
+        "gender": person["gender"],
         "living": person["living"],
         "birth": person["birth_date"] or person["birth_year"] or "?",
         "death": person["death_date"] or person["death_year"] or "",

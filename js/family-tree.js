@@ -32,7 +32,7 @@ function yearFromText(value) {
 
 function formatLifeYears(person) {
   if (person.placeholder) {
-    return "Research continuing";
+    return person.placeholderSubtitle || "Research continuing";
   }
 
   const birthYear = yearFromText(person.birth);
@@ -85,7 +85,7 @@ function getOtherSpouseId(family, personId) {
 
 function getGenderAccentClass(person) {
   if (person?.placeholder) {
-    return "unknown-person-accent";
+    return person.placeholderAccentClass || "unknown-person-accent";
   }
 
   const recordedGender = String(person?.gender ?? person?.sex ?? "")
@@ -316,11 +316,12 @@ function createUnknownAncestor(side) {
 function createUnknownSpouse(familyId) {
   return {
     id: `unknown-spouse-${familyId}`,
-    name: "Unknown Spouse",
+    name: "Unknown",
     birth: "",
     death: "",
     living: false,
     placeholder: true,
+    placeholderSubtitle: "not yet identified",
   };
 }
 
@@ -1046,16 +1047,26 @@ function drawRelationshipLines(cards, relationships) {
 
           const firstChildBusY = rows[0].busY;
           const lastChildBusY = rows.at(-1).busY;
+          const usesWrappedRows = rows.length > 1;
 
-          drawRelationshipPath(
-            [
-              `M ${unitAnchorX} ${spouseBox.bottom - edgeOverlap}`,
-              `V ${firstChildBusY - branchRadius}`,
-              `Q ${unitAnchorX} ${firstChildBusY} ${unitAnchorX - branchRadius} ${firstChildBusY}`,
-              `H ${siblingBusX}`,
-              `V ${lastChildBusY}`,
-            ].join(" "),
-          );
+          if (usesWrappedRows) {
+            drawRelationshipPath(
+              [
+                `M ${unitAnchorX} ${spouseBox.bottom - edgeOverlap}`,
+                `V ${firstChildBusY - branchRadius}`,
+                `Q ${unitAnchorX} ${firstChildBusY} ${unitAnchorX - branchRadius} ${firstChildBusY}`,
+                `H ${siblingBusX}`,
+                `V ${lastChildBusY}`,
+              ].join(" "),
+            );
+          } else {
+            drawRelationshipPath(
+              [
+                `M ${unitAnchorX} ${spouseBox.bottom - edgeOverlap}`,
+                `V ${firstChildBusY}`,
+              ].join(" "),
+            );
+          }
 
           rows.forEach(
             ({
@@ -1068,8 +1079,18 @@ function drawRelationshipLines(cards, relationships) {
               const lastCenterX =
                 rowBoxes.at(-1).centerX;
 
+              const firstCenterX =
+                rowBoxes[0].centerX;
+              const rowBusStartX = usesWrappedRows
+                ? siblingBusX
+                : Math.min(firstCenterX, unitAnchorX);
+              const rowBusEndX = Math.max(
+                lastCenterX,
+                usesWrappedRows ? siblingBusX : unitAnchorX,
+              );
+
               drawRelationshipPath(
-                `M ${siblingBusX} ${childBusY} H ${lastCenterX}`,
+                `M ${rowBusStartX} ${childBusY} H ${rowBusEndX}`,
               );
 
               rowBoxes.forEach((box) => {
