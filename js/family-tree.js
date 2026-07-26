@@ -313,6 +313,17 @@ function createUnknownAncestor(side) {
   };
 }
 
+function createUnknownSpouse(familyId) {
+  return {
+    id: `unknown-spouse-${familyId}`,
+    name: "Unknown Spouse",
+    birth: "",
+    death: "",
+    living: false,
+    placeholder: true,
+  };
+}
+
 function buildFamilyUnits(person, unions) {
   return unions.map((union, unionIndex) => ({
     id: union.family.id,
@@ -350,13 +361,14 @@ function buildFamilyViewModel(person) {
 
       return {
         family,
-        spouse: spouseId ? peopleById.get(spouseId) : null,
+        spouse:
+          (spouseId ? peopleById.get(spouseId) : null) ??
+          createUnknownSpouse(family.id),
         children: (family.children ?? [])
           .map((childId) => peopleById.get(childId))
           .filter(Boolean),
       };
-    })
-    .filter((union) => union.spouse);
+    });
 
   const familyUnits = buildFamilyUnits(person, unions);
 
