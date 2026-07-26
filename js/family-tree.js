@@ -568,6 +568,7 @@ function layoutPrimaryFamily(model) {
   };
 }
 
+
 function buildRelationshipModel(father, mother, unionLayouts) {
   const relationships = [];
 
@@ -580,24 +581,25 @@ function buildRelationshipModel(father, mother, unionLayouts) {
     });
   }
 
-  unionLayouts.forEach(
-    ({
-      ownerKey,
-      spouseCard,
-      childCards,
-      anchor,
-      isPrimary,
-    }) => {
-      relationships.push({
-        type: "spouse-union",
-        from: ownerKey,
-        to: spouseCard.key,
-        children: childCards.map((card) => card.key),
-        unionCenterX: anchor.x,
-        isPrimary,
-      });
-    },
-  );
+  if (unionLayouts.length > 0) {
+    relationships.push({
+      type: "family-unit-row",
+      from: unionLayouts[0].ownerKey,
+      units: unionLayouts.map(
+        ({
+          spouseCard,
+          childCards,
+          anchor,
+          isPrimary,
+        }) => ({
+          spouse: spouseCard.key,
+          children: childCards.map((card) => card.key),
+          anchorX: anchor.x,
+          isPrimary,
+        }),
+      ),
+    });
+  }
 
   return relationships;
 }
@@ -796,10 +798,15 @@ function drawRoundedRelationship(points, radius = 42) {
   drawRelationshipPath(roundedOrthogonalPath(points, radius));
 }
 
+
 function drawRelationshipLines(cards, relationships) {
-  const cardMap = Object.fromEntries(cards.map((card) => [card.key, card]));
+  const cardMap = Object.fromEntries(
+    cards.map((card) => [card.key, card]),
+  );
+
   const edgeOverlap = 1.5;
   const cornerRadius = 46;
+  const branchRadius = 22;
 
   for (const relationship of relationships) {
     if (relationship.type === "parent-union") {
@@ -818,115 +825,208 @@ function drawRelationshipLines(cards, relationships) {
       const descentY = childBox.top - 34;
 
       drawRoundedRelationship([
-        { x: fromBox.right - edgeOverlap, y: fromBox.centerY },
-        { x: toBox.left + edgeOverlap, y: toBox.centerY },
+        {
+          x: fromBox.right - edgeOverlap,
+          y: fromBox.centerY,
+        },
+        {
+          x: toBox.left + edgeOverlap,
+          y: toBox.centerY,
+        },
       ]);
 
       drawRoundedRelationship(
         [
-          { x: parentUnionX, y: fromBox.centerY },
-          { x: parentUnionX, y: descentY },
-          { x: childBox.centerX, y: descentY },
-          { x: childBox.centerX, y: childBox.top + edgeOverlap },
+          {
+            x: parentUnionX,
+            y: fromBox.centerY,
+          },
+          {
+            x: parentUnionX,
+            y: descentY,
+          },
+          {
+            x: childBox.centerX,
+            y: descentY,
+          },
+          {
+            x: childBox.centerX,
+            y: childBox.top + edgeOverlap,
+          },
         ],
         cornerRadius,
       );
     }
 
-    if (relationship.type === "spouse-union") {
-      const fromCard = cardMap[relationship.from];
-      const toCard = cardMap[relationship.to];
+    if (relationship.type === "family-unit-row") {
+      const ownerCard = cardMap[relationship.from];
 
-      if (!(fromCard && toCard)) {
+      if (!ownerCard) {
         continue;
       }
 
-      const fromBox = getCardGeometry(fromCard);
-      const toBox = getCardGeometry(toCard);
-      const childCards = (relationship.children || [])
-        .map((key) => cardMap[key])
+      const ownerBox = getCardGeometry(ownerCard);
+
+      const units = (relationship.units || [])
+        .map((unit) => {
+          const spouseCard = cardMap[unit.spouse];
+
+          if (!spouseCard) {
+            return null;
+          }
+
+          const spouseBox = getCardGeometry(spouseCard);
+          const childCards = (unit.children || [])
+            .map((key) => cardMap[key])
+            .filter(Boolean);
+
+          return {
+            ...unit,
+            spouseBox,
+            childCards,
+          };
+        })
         .filter(Boolean);
 
-      if (relationship.isPrimary) {
-        drawRoundedRelationship([
-          { x: fromBox.right - edgeOverlap, y: fromBox.centerY },
-          { x: toBox.left + edgeOverlap, y: toBox.centerY },
-        ]);
-      } else {
-        const elbowX = fromBox.right + 34;
-        drawRoundedRelationship(
-          [
-            { x: fromBox.right - edgeOverlap, y: fromBox.centerY },
-            { x: elbowX, y: fromBox.centerY },
-            { x: elbowX, y: toBox.centerY },
-            { x: toBox.left + edgeOverlap, y: toBox.centerY },
-          ],
-          cornerRadius,
+      if (units.length === 0) {
+        continue;
+      }
+
+      const spouseRowTop = Math.min(
+        ...units.map(({ spouseBox }) => spouseBox.top),
+      );
+
+      const busY =
+        ownerBox.bottom +
+        (spouseRowTop - ownerBox.bottom) / 2;
+
+      const unitAnchorXs = units.map(
+        ({ anchorX, spouseBox }) =>
+          anchorX ?? spouseBox.centerX,
+      );
+
+      const busLeft = Math.min(
+        ownerBox.centerX,
+        ...unitAnchorXs,
+      );
+
+      const busRight = Math.max(
+        ownerBox.centerX,
+        ...unitAnchorXs,
+      );
+
+      drawRelationshipPath(
+        [
+          `M ${ownerBox.centerX} ${ownerBox.bottom - edgeOverlap}`,
+          `V ${busY}`,
+        ].join(" "),
+      );
+
+      if (busRight > busLeft) {
+        drawRelationshipPath(
+          `M ${busLeft} ${busY} H ${busRight}`,
         );
       }
 
-      if (childCards.length === 0) {
-        continue;
-      }
+      units.forEach(
+        ({
+          anchorX,
+          spouseBox,
+          childCards,
+        }) => {
+          const unitAnchorX =
+            anchorX ?? spouseBox.centerX;
 
-      const unionAnchorX =
-        relationship.unionCenterX ?? (fromBox.right + toBox.left) / 2;
-      const rowGroups = new Map();
-
-      childCards.forEach((card) => {
-        const row = rowGroups.get(card.y) || [];
-        row.push(card);
-        rowGroups.set(card.y, row);
-      });
-
-      const rows = [...rowGroups.values()]
-        .sort((a, b) => a[0].y - b[0].y)
-        .map((rowCards) => ({
-          cards: rowCards.sort((a, b) => a.x - b.x),
-          busY: rowCards[0].y - 24,
-        }));
-
-      const firstBusY = rows[0].busY;
-      const lastBusY = rows.at(-1).busY;
-
-      const branchRadius = 22;
-
-      rows.forEach(({ cards: rowCards, busY }, rowIndex) => {
-        const rowBoxes = rowCards.map(getCardGeometry);
-        const firstCenterX = rowBoxes[0].centerX;
-        const lastCenterX = rowBoxes.at(-1).centerX;
-        const trunkStartY =
-          rowIndex === 0 ? fromBox.centerY : rows[rowIndex - 1].busY;
-
-        if (firstCenterX < unionAnchorX) {
           drawRelationshipPath(
             [
-              `M ${unionAnchorX} ${trunkStartY}`,
-              `V ${busY - branchRadius}`,
-              `Q ${unionAnchorX} ${busY} ${unionAnchorX - branchRadius} ${busY}`,
-              `H ${firstCenterX}`,
+              `M ${unitAnchorX} ${busY}`,
+              `V ${spouseBox.top + edgeOverlap}`,
             ].join(" "),
           );
-        } else {
-          drawRelationshipPath(`M ${unionAnchorX} ${trunkStartY} V ${busY}`);
-        }
 
-        if (lastCenterX > unionAnchorX) {
-          drawRelationshipPath(
-            [
-              `M ${unionAnchorX} ${busY - branchRadius}`,
-              `Q ${unionAnchorX} ${busY} ${unionAnchorX + branchRadius} ${busY}`,
-              `H ${lastCenterX}`,
-            ].join(" "),
-          );
-        }
+          if (childCards.length === 0) {
+            return;
+          }
 
-        rowBoxes.forEach((box) => {
-          drawRelationshipPath(
-            `M ${box.centerX} ${busY} V ${box.top + edgeOverlap}`,
+          const rowGroups = new Map();
+
+          childCards.forEach((card) => {
+            const row = rowGroups.get(card.y) || [];
+            row.push(card);
+            rowGroups.set(card.y, row);
+          });
+
+          const rows = [...rowGroups.values()]
+            .sort((a, b) => a[0].y - b[0].y)
+            .map((rowCards) => ({
+              cards: rowCards.sort(
+                (a, b) => a.x - b.x,
+              ),
+              busY: rowCards[0].y - 24,
+            }));
+
+          rows.forEach(
+            (
+              {
+                cards: rowCards,
+                busY: childBusY,
+              },
+              rowIndex,
+            ) => {
+              const rowBoxes =
+                rowCards.map(getCardGeometry);
+
+              const firstCenterX =
+                rowBoxes[0].centerX;
+
+              const lastCenterX =
+                rowBoxes.at(-1).centerX;
+
+              const trunkStartY =
+                rowIndex === 0
+                  ? spouseBox.bottom - edgeOverlap
+                  : rows[rowIndex - 1].busY;
+
+              if (firstCenterX < unitAnchorX) {
+                drawRelationshipPath(
+                  [
+                    `M ${unitAnchorX} ${trunkStartY}`,
+                    `V ${childBusY - branchRadius}`,
+                    `Q ${unitAnchorX} ${childBusY} ${unitAnchorX - branchRadius} ${childBusY}`,
+                    `H ${firstCenterX}`,
+                  ].join(" "),
+                );
+              } else {
+                drawRelationshipPath(
+                  [
+                    `M ${unitAnchorX} ${trunkStartY}`,
+                    `V ${childBusY}`,
+                  ].join(" "),
+                );
+              }
+
+              if (lastCenterX > unitAnchorX) {
+                drawRelationshipPath(
+                  [
+                    `M ${unitAnchorX} ${childBusY - branchRadius}`,
+                    `Q ${unitAnchorX} ${childBusY} ${unitAnchorX + branchRadius} ${childBusY}`,
+                    `H ${lastCenterX}`,
+                  ].join(" "),
+                );
+              }
+
+              rowBoxes.forEach((box) => {
+                drawRelationshipPath(
+                  [
+                    `M ${box.centerX} ${childBusY}`,
+                    `V ${box.top + edgeOverlap}`,
+                  ].join(" "),
+                );
+              });
+            },
           );
-        });
-      });
+        },
+      );
     }
   }
 }
