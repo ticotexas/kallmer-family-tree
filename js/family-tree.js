@@ -431,9 +431,10 @@ function measureFamilyUnit(unit) {
   const childWidth = 190;
   const childHeight = 78;
   const childGapX = 30;
-  const childGapY = 22;
+  const childGapY = 54;
   const childrenTopGap = 62;
-  const childrenPerRow = 3;
+  const childrenPerRow = 4;
+  const siblingBusGutter = 64;
 
   const familyUnitsTopGap = 82;
   const familyUnitGap = 88;
@@ -446,7 +447,10 @@ function measureFamilyUnit(unit) {
       (widestChildRowCount - 1) * childGapX
     : 0;
 
-  const unitWidth = Math.max(spouseWidth, widestChildRowWidth);
+  const unitWidth = Math.max(
+    spouseWidth,
+    siblingBusGutter + widestChildRowWidth,
+  );
 
   return {
     selectedWidth,
@@ -459,6 +463,7 @@ function measureFamilyUnit(unit) {
     childGapY,
     childrenTopGap,
     childrenPerRow,
+    siblingBusGutter,
     familyUnitsTopGap,
     familyUnitGap,
     unitWidth,
@@ -525,7 +530,8 @@ function layoutFamilyUnit(
       rowCount * measurements.childWidth +
       (rowCount - 1) * measurements.childGapX;
 
-    const rowLeft = unitCenterX - rowWidth / 2;
+    const rowLeft =
+      unitLeft + measurements.siblingBusGutter;
 
     return {
       key: `union-${unitIndex}-child-${childIndex}`,
@@ -549,6 +555,8 @@ function layoutFamilyUnit(
     left: unitLeft,
     width: measurements.unitWidth,
     centerX: unitCenterX,
+    siblingBusX:
+      unitLeft + measurements.siblingBusGutter / 2,
     spouseCard,
     childCards,
     anchor: {
@@ -657,11 +665,13 @@ function buildRelationshipModel(father, mother, unionLayouts) {
           spouseCard,
           childCards,
           anchor,
+          siblingBusX,
           isPrimary,
         }) => ({
           spouse: spouseCard.key,
           children: childCards.map((card) => card.key),
           anchorX: anchor.x,
+          siblingBusX,
           isPrimary,
         }),
       ),
@@ -999,6 +1009,7 @@ function drawRelationshipLines(cards, relationships) {
       units.forEach(
         ({
           anchorX,
+          siblingBusX,
           spouseBox,
           childCards,
         }) => {
@@ -1033,55 +1044,33 @@ function drawRelationshipLines(cards, relationships) {
               busY: rowCards[0].y - 24,
             }));
 
+          const firstChildBusY = rows[0].busY;
+          const lastChildBusY = rows.at(-1).busY;
+
+          drawRelationshipPath(
+            [
+              `M ${unitAnchorX} ${spouseBox.bottom - edgeOverlap}`,
+              `V ${firstChildBusY - branchRadius}`,
+              `Q ${unitAnchorX} ${firstChildBusY} ${unitAnchorX - branchRadius} ${firstChildBusY}`,
+              `H ${siblingBusX}`,
+              `V ${lastChildBusY}`,
+            ].join(" "),
+          );
+
           rows.forEach(
-            (
-              {
-                cards: rowCards,
-                busY: childBusY,
-              },
-              rowIndex,
-            ) => {
+            ({
+              cards: rowCards,
+              busY: childBusY,
+            }) => {
               const rowBoxes =
                 rowCards.map(getCardGeometry);
-
-              const firstCenterX =
-                rowBoxes[0].centerX;
 
               const lastCenterX =
                 rowBoxes.at(-1).centerX;
 
-              const trunkStartY =
-                rowIndex === 0
-                  ? spouseBox.bottom - edgeOverlap
-                  : rows[rowIndex - 1].busY;
-
-              if (firstCenterX < unitAnchorX) {
-                drawRelationshipPath(
-                  [
-                    `M ${unitAnchorX} ${trunkStartY}`,
-                    `V ${childBusY - branchRadius}`,
-                    `Q ${unitAnchorX} ${childBusY} ${unitAnchorX - branchRadius} ${childBusY}`,
-                    `H ${firstCenterX}`,
-                  ].join(" "),
-                );
-              } else {
-                drawRelationshipPath(
-                  [
-                    `M ${unitAnchorX} ${trunkStartY}`,
-                    `V ${childBusY}`,
-                  ].join(" "),
-                );
-              }
-
-              if (lastCenterX > unitAnchorX) {
-                drawRelationshipPath(
-                  [
-                    `M ${unitAnchorX} ${childBusY - branchRadius}`,
-                    `Q ${unitAnchorX} ${childBusY} ${unitAnchorX + branchRadius} ${childBusY}`,
-                    `H ${lastCenterX}`,
-                  ].join(" "),
-                );
-              }
+              drawRelationshipPath(
+                `M ${siblingBusX} ${childBusY} H ${lastCenterX}`,
+              );
 
               rowBoxes.forEach((box) => {
                 drawRelationshipPath(
