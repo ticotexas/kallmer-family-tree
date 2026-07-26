@@ -365,7 +365,6 @@ function measureFamilyUnit(unit) {
   const selectedHeight = unit?.isPrimary ? 106 : 78;
   const spouseWidth = 214;
   const spouseHeight = 78;
-  const spouseGap = 62;
 
   const childWidth = 190;
   const childHeight = 78;
@@ -373,26 +372,34 @@ function measureFamilyUnit(unit) {
   const childGapY = 22;
   const childrenTopGap = 62;
   const childrenPerRow = 3;
-  const unitBlockGap = 72;
 
-  const coupleWidth = unit?.spouse
-    ? selectedWidth + spouseGap + spouseWidth
-    : selectedWidth;
+  const familyUnitsTopGap = 82;
+  const familyUnitGap = 88;
+
+  const childCount = unit?.children?.length ?? 0;
+  const widestChildRowCount = Math.min(childrenPerRow, childCount);
+
+  const widestChildRowWidth = widestChildRowCount
+    ? widestChildRowCount * childWidth +
+      (widestChildRowCount - 1) * childGapX
+    : 0;
+
+  const unitWidth = Math.max(spouseWidth, widestChildRowWidth);
 
   return {
     selectedWidth,
     selectedHeight,
     spouseWidth,
     spouseHeight,
-    spouseGap,
     childWidth,
     childHeight,
     childGapX,
     childGapY,
     childrenTopGap,
     childrenPerRow,
-    unitBlockGap,
-    coupleWidth,
+    familyUnitsTopGap,
+    familyUnitGap,
+    unitWidth,
   };
 }
 
@@ -408,8 +415,8 @@ function layoutFamilyUnit(
   unit,
   unitIndex,
   selectedCard,
-  selectedY,
-  nextUnionTop,
+  unitLeft,
+  spouseY,
 ) {
   const union = unit.union;
   const measurements = unit.measurements;
@@ -419,28 +426,23 @@ function layoutFamilyUnit(
     return dateDifference || a.name.localeCompare(b.name);
   });
 
+  const unitCenterX = unitLeft + measurements.unitWidth / 2;
+
   const spouseCard = {
     key: `spouse-${unitIndex}`,
     person: union.spouse,
     union,
     selected: false,
-    x: selectedCard.x + selectedCard.width + measurements.spouseGap,
-    y: unit.isPrimary
-      ? selectedY +
-        (measurements.selectedHeight - measurements.spouseHeight) / 2
-      : nextUnionTop,
+    x: unitCenterX - measurements.spouseWidth / 2,
+    y: spouseY,
     width: measurements.spouseWidth,
     height: measurements.spouseHeight,
   };
 
-  const unionCenterX =
-    (selectedCard.x + selectedCard.width + spouseCard.x) / 2;
-
   const firstChildY =
-    Math.max(
-      selectedCard.y + selectedCard.height,
-      spouseCard.y + spouseCard.height,
-    ) + measurements.childrenTopGap;
+    spouseCard.y +
+    spouseCard.height +
+    measurements.childrenTopGap;
 
   const childCards = children.map((child, childIndex) => {
     const row = Math.floor(childIndex / measurements.childrenPerRow);
@@ -456,7 +458,7 @@ function layoutFamilyUnit(
       rowCount * measurements.childWidth +
       (rowCount - 1) * measurements.childGapX;
 
-    const rowLeft = unionCenterX - rowWidth / 2;
+    const rowLeft = unitCenterX - rowWidth / 2;
 
     return {
       key: `union-${unitIndex}-child-${childIndex}`,
@@ -474,32 +476,20 @@ function layoutFamilyUnit(
     };
   });
 
-  const visibleCards = [spouseCard, ...childCards];
-  const unitLeft = Math.min(...visibleCards.map((card) => card.x));
-  const unitRight = Math.max(
-    ...visibleCards.map((card) => card.x + card.width),
-  );
-  const childrenBottom = childCards.length
-    ? Math.max(...childCards.map((card) => card.y + card.height))
-    : spouseCard.y + spouseCard.height;
-
   return {
-    layout: {
-      id: unit.id,
-      ownerKey: unit.ownerKey,
-      left: unitLeft,
-      width: unitRight - unitLeft,
-      centerX: (unitLeft + unitRight) / 2,
-      spouseCard,
-      childCards,
-      anchor: {
-        x: unionCenterX,
-        y: spouseCard.y + spouseCard.height / 2,
-      },
-      unionCenterX,
-      isPrimary: unit.isPrimary,
+    id: unit.id,
+    ownerKey: unit.ownerKey,
+    left: unitLeft,
+    width: measurements.unitWidth,
+    centerX: unitCenterX,
+    spouseCard,
+    childCards,
+    anchor: {
+      x: unitCenterX,
+      y: spouseCard.y,
     },
-    nextUnionTop: childrenBottom + measurements.unitBlockGap,
+    unionCenterX: unitCenterX,
+    isPrimary: unit.isPrimary,
   };
 }
 
@@ -531,7 +521,7 @@ function layoutPrimaryFamily(model) {
   const measurements = primaryUnit.measurements;
   const layoutUnits = model.familyUnits.length ? preparedUnits : [];
 
-  const selectedX = familyCenterX - measurements.coupleWidth / 2;
+  const selectedX = familyCenterX - measurements.selectedWidth / 2;
 
   const selectedCard = {
     key: "selected",
@@ -666,23 +656,45 @@ function layoutFamilyUnits(
   selectedCard,
   selectedY,
 ) {
-  const unionLayouts = [];
-  let nextUnionTop = selectedY;
+  if (layoutUnits.length === 0) {
+    return [];
+  }
 
-  layoutUnits.forEach((unit, unitIndex) => {
-    const result = layoutFamilyUnit(
+  const familyUnitGap = layoutUnits[0].measurements.familyUnitGap;
+
+  const familyUnitsWidth =
+    layoutUnits.reduce(
+      (total, unit) => total + unit.measurements.unitWidth,
+      0,
+    ) +
+    familyUnitGap * (layoutUnits.length - 1);
+
+  const selectedCenterX =
+    selectedCard.x + selectedCard.width / 2;
+
+  let nextUnitLeft =
+    selectedCenterX - familyUnitsWidth / 2;
+
+  const spouseY =
+    selectedY +
+    selectedCard.height +
+    layoutUnits[0].measurements.familyUnitsTopGap;
+
+  return layoutUnits.map((unit, unitIndex) => {
+    const layout = layoutFamilyUnit(
       unit,
       unitIndex,
       selectedCard,
-      selectedY,
-      nextUnionTop,
+      nextUnitLeft,
+      spouseY,
     );
 
-    unionLayouts.push(result.layout);
-    nextUnionTop = result.nextUnionTop;
-  });
+    nextUnitLeft +=
+      unit.measurements.unitWidth +
+      unit.measurements.familyUnitGap;
 
-  return unionLayouts;
+    return layout;
+  });
 }
 
 function buildLayout(model) {
