@@ -125,6 +125,16 @@ body {
   user-select: none;
 }
 
+#tree-stage {
+  opacity: 1;
+  transition: opacity 170ms ease;
+}
+
+#tree-stage.tree-stage-exiting,
+#tree-stage.tree-stage-entering {
+  opacity: 0.38;
+}
+
 .person-card-group {
   cursor: pointer;
   outline: none;
@@ -303,6 +313,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  #tree-stage,
   .person-card {
     transition: none;
   }

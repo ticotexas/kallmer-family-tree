@@ -1123,19 +1123,55 @@ function drawRelationshipLines(cards, relationships) {
   }
 }
 
+let renderTransitionId = 0;
+
 function renderFamilyView(person) {
-  stage.replaceChildren();
+  const transitionId = ++renderTransitionId;
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
-  const model = buildFamilyViewModel(person);
-  const layout = buildLayout(model);
+  const render = () => {
+    if (transitionId !== renderTransitionId) {
+      return;
+    }
 
-  svg.setAttribute(
-    "viewBox",
-    `${layout.viewBox.x} ${layout.viewBox.y} ${layout.viewBox.width} ${layout.viewBox.height}`,
-  );
+    stage.replaceChildren();
 
-  drawRelationshipLines(layout.cards, layout.relationships);
-  drawCards(layout.cards);
+    const model = buildFamilyViewModel(person);
+    const layout = buildLayout(model);
+
+    svg.setAttribute(
+      "viewBox",
+      `${layout.viewBox.x} ${layout.viewBox.y} ${layout.viewBox.width} ${layout.viewBox.height}`,
+    );
+
+    drawRelationshipLines(layout.cards, layout.relationships);
+    drawCards(layout.cards);
+
+    stage.classList.remove("tree-stage-exiting");
+
+    if (!prefersReducedMotion) {
+      stage.classList.add("tree-stage-entering");
+
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          if (transitionId === renderTransitionId) {
+            stage.classList.remove("tree-stage-entering");
+          }
+        });
+      });
+    }
+  };
+
+  if (prefersReducedMotion || !stage.childElementCount) {
+    render();
+    return;
+  }
+
+  stage.classList.remove("tree-stage-entering");
+  stage.classList.add("tree-stage-exiting");
+  window.setTimeout(render, 170);
 }
 
 function selectPerson(personId, options = {}) {
