@@ -5686,10 +5686,13 @@
       "living": false,
       "birth": "17 DEC 1862",
       "death": "20 SEP 1928",
-      "place": "Rendsburg, Schleswig-Holstein, Germany",
-      "birth_place": "Rendsburg, Schleswig-Holstein, Germany",
+      "place": "Fockbek, Rendsburg, Schleswig-Holstein, Germany",
+      "birth_place": "Fockbek, Rendsburg, Schleswig-Holstein, Germany",
       "death_place": "",
-      "parents": [],
+      "parents": [
+        "I0322",
+        "I0323"
+      ],
       "spouses": [
         "I0156"
       ],
@@ -5750,9 +5753,12 @@
       "birth": "3 DEC 1872",
       "death": "18 MAR 1958",
       "place": "Omaha, Douglas, Nebraska",
-      "birth_place": "Germany",
+      "birth_place": "Hammelburg, Bad Kissingen, Lower Franconia, Germany",
       "death_place": "Omaha, Douglas, Nebraska",
-      "parents": [],
+      "parents": [
+        "I0329",
+        "I0330"
+      ],
       "spouses": [
         "I0155"
       ],
@@ -5767,7 +5773,11 @@
         "I0163",
         "I0164"
       ],
-      "siblings": [],
+      "siblings": [
+        "I0331",
+        "I0332",
+        "I0333"
+      ],
       "marriages": [
         {
           "family": "F0057",
@@ -5809,7 +5819,9 @@
       "spouses": [
         "I0315"
       ],
-      "children": [],
+      "children": [
+        "I0321"
+      ],
       "siblings": [
         "I0153",
         "I0158",
@@ -5824,9 +5836,11 @@
         {
           "family": "F0102",
           "spouse": "I0315",
-          "children": [],
-          "marriage_date": "",
-          "marriage_place": "",
+          "children": [
+            "I0321"
+          ],
+          "marriage_date": "11 MAY 1918",
+          "marriage_place": "Fremont, Dodge, Nebraska",
           "divorced": false,
           "divorce_date": "",
           "divorce_place": ""
@@ -6010,7 +6024,9 @@
         "I0155",
         "I0156"
       ],
-      "spouses": [],
+      "spouses": [
+        "I0328"
+      ],
       "children": [],
       "siblings": [
         "I0153",
@@ -6022,7 +6038,18 @@
         "I0163",
         "I0164"
       ],
-      "marriages": []
+      "marriages": [
+        {
+          "family": "F0110",
+          "spouse": "I0328",
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
     },
     {
       "id": "I0163",
@@ -11247,12 +11274,17 @@
     },
     {
       "id": "I0315",
-      "name": "Anna C. A. Urban",
-      "birth_name": "",
-      "alternate_names": [],
+      "name": "Anna C. Urban",
+      "birth_name": "Anna C. Kriebel",
+      "alternate_names": [
+        {
+          "name": "Anna C. Kriebel",
+          "type": "birth"
+        }
+      ],
       "living": false,
-      "birth": "1894",
-      "death": "1984",
+      "birth": "11 SEP 1894",
+      "death": "18 JUN 1984",
       "place": "",
       "birth_place": "",
       "death_place": "",
@@ -11260,15 +11292,19 @@
       "spouses": [
         "I0157"
       ],
-      "children": [],
+      "children": [
+        "I0321"
+      ],
       "siblings": [],
       "marriages": [
         {
           "family": "F0102",
           "spouse": "I0157",
-          "children": [],
-          "marriage_date": "",
-          "marriage_place": "",
+          "children": [
+            "I0321"
+          ],
+          "marriage_date": "11 MAY 1918",
+          "marriage_place": "Fremont, Dodge, Nebraska",
           "divorced": false,
           "divorce_date": "",
           "divorce_place": ""
@@ -11421,6 +11457,448 @@
           "divorce_place": ""
         }
       ]
+    },
+    {
+      "id": "I0321",
+      "name": "Ruth Ann Urban",
+      "birth_name": "Ruth Ann Urban",
+      "alternate_names": [],
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0157",
+        "I0315"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "marriages": []
+    },
+    {
+      "id": "I0322",
+      "name": "Christian Friedrich Urban",
+      "birth_name": "Christian Friedrich Urban",
+      "alternate_names": [],
+      "living": false,
+      "birth": "25 MAY 1832",
+      "death": "APR 1886",
+      "place": "Schacht-Audorf, Rendsburg, Schleswig-Holstein, Germany",
+      "birth_place": "Schacht-Audorf, Rendsburg, Schleswig-Holstein, Germany",
+      "death_place": "",
+      "parents": [
+        "I0324",
+        "I0325"
+      ],
+      "spouses": [
+        "I0323"
+      ],
+      "children": [
+        "I0155"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0107",
+          "spouse": "I0323",
+          "children": [
+            "I0155"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0323",
+      "name": "Margaretha Urban",
+      "birth_name": "Margaretha Urban",
+      "alternate_names": [
+        {
+          "name": "Margaretha Moeller",
+          "type": "birth"
+        }
+      ],
+      "living": false,
+      "birth": "17 MAR 1835",
+      "death": "15 SEP 1883",
+      "place": "Fockbek, Rendsburg, Schleswig-Holstein, Germany",
+      "birth_place": "Fockbek, Rendsburg, Schleswig-Holstein, Germany",
+      "death_place": "",
+      "parents": [
+        "I0326",
+        "I0327"
+      ],
+      "spouses": [
+        "I0322"
+      ],
+      "children": [
+        "I0155"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0107",
+          "spouse": "I0322",
+          "children": [
+            "I0155"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0324",
+      "name": "Johann Urban",
+      "birth_name": "Johann Urban",
+      "alternate_names": [],
+      "living": false,
+      "birth": "ABT 1806",
+      "death": "6 JAN 1869",
+      "place": "Schacht-Audorf, Rendsburg, Schleswig-Holstein, Germany",
+      "birth_place": "Schacht-Audorf, Rendsburg, Schleswig-Holstein, Germany",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0325"
+      ],
+      "children": [
+        "I0322"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0108",
+          "spouse": "I0325",
+          "children": [
+            "I0322"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0325",
+      "name": "Anna Dorothea Urban",
+      "birth_name": "Anna Dorothea Eggers",
+      "alternate_names": [
+        {
+          "name": "Anna Dorothea Eggers",
+          "type": "birth"
+        }
+      ],
+      "living": false,
+      "birth": "ABT 1810",
+      "death": "?",
+      "place": "Schacht-Audorf, Rendsburg, Schleswig-Holstein, Germany",
+      "birth_place": "Schacht-Audorf, Rendsburg, Schleswig-Holstein, Germany",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0324"
+      ],
+      "children": [
+        "I0322"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0108",
+          "spouse": "I0324",
+          "children": [
+            "I0322"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0326",
+      "name": "Claus Moeller",
+      "birth_name": "Claus Moeller",
+      "alternate_names": [],
+      "living": false,
+      "birth": "27 OCT 1797",
+      "death": "6 JUL 1862",
+      "place": "Fockbek, Rendsburg, Schleswig-Holstein, Germany",
+      "birth_place": "Fockbek, Rendsburg, Schleswig-Holstein, Germany",
+      "death_place": "Fockbek, Rendsburg, Schleswig-Holstein, Germany",
+      "parents": [],
+      "spouses": [
+        "I0327"
+      ],
+      "children": [
+        "I0323"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0109",
+          "spouse": "I0327",
+          "children": [
+            "I0323"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0327",
+      "name": "Margaretha Moeller",
+      "birth_name": "Margaretha Groth",
+      "alternate_names": [
+        {
+          "name": "Margaretha Groth",
+          "type": "birth"
+        }
+      ],
+      "living": false,
+      "birth": "3 AUG 1804",
+      "death": "20 JAN 1847",
+      "place": "Fockbek, Rendsburg, Schleswig-Holstein, Germany",
+      "birth_place": "Fockbek, Rendsburg, Schleswig-Holstein, Germany",
+      "death_place": "Fockbek, Rendsburg, Schleswig-Holstein, Germany",
+      "parents": [],
+      "spouses": [
+        "I0326"
+      ],
+      "children": [
+        "I0323"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0109",
+          "spouse": "I0326",
+          "children": [
+            "I0323"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0328",
+      "name": "Obert A. Hemmer",
+      "birth_name": "Obert A. Hemmer",
+      "alternate_names": [],
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0162"
+      ],
+      "children": [],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0110",
+          "spouse": "I0162",
+          "children": [],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0329",
+      "name": "August Schmidt",
+      "birth_name": "August Schmidt",
+      "alternate_names": [],
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0330"
+      ],
+      "children": [
+        "I0156",
+        "I0331",
+        "I0332",
+        "I0333"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0111",
+          "spouse": "I0330",
+          "children": [
+            "I0156",
+            "I0331",
+            "I0332",
+            "I0333"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0330",
+      "name": "Wilhelmina Schmidt",
+      "birth_name": "",
+      "alternate_names": [],
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0329"
+      ],
+      "children": [
+        "I0156",
+        "I0331",
+        "I0332",
+        "I0333"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0111",
+          "spouse": "I0329",
+          "children": [
+            "I0156",
+            "I0331",
+            "I0332",
+            "I0333"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0331",
+      "name": "Ella Daeman",
+      "birth_name": "Ella Schmidt",
+      "alternate_names": [
+        {
+          "name": "Ella Schmidt",
+          "type": "birth"
+        }
+      ],
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0329",
+        "I0330"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0156",
+        "I0332",
+        "I0333"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0332",
+      "name": "Mathilda Dixon",
+      "birth_name": "Mathilda Schmidt",
+      "alternate_names": [
+        {
+          "name": "Mathilda Schmidt",
+          "type": "birth"
+        }
+      ],
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0329",
+        "I0330"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0156",
+        "I0331",
+        "I0333"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0333",
+      "name": "Helen Mason",
+      "birth_name": "Helen Schmidt",
+      "alternate_names": [
+        {
+          "name": "Helen Schmidt",
+          "type": "birth"
+        }
+      ],
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0329",
+        "I0330"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0156",
+        "I0331",
+        "I0332"
+      ],
+      "marriages": []
     }
   ],
   "families": [
@@ -12844,9 +13322,11 @@
       "id": "F0102",
       "husband": "I0157",
       "wife": "I0315",
-      "children": [],
-      "marriage_date": "",
-      "marriage_place": "",
+      "children": [
+        "I0321"
+      ],
+      "marriage_date": "11 MAY 1918",
+      "marriage_place": "Fremont, Dodge, Nebraska",
       "divorced": false,
       "divorce_date": "",
       "divorce_place": ""
@@ -12892,6 +13372,72 @@
       "wife": "I0320",
       "children": [
         "I0069"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0107",
+      "husband": "I0322",
+      "wife": "I0323",
+      "children": [
+        "I0155"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0108",
+      "husband": "I0324",
+      "wife": "I0325",
+      "children": [
+        "I0322"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0109",
+      "husband": "I0326",
+      "wife": "I0327",
+      "children": [
+        "I0323"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0110",
+      "husband": "I0328",
+      "wife": "I0162",
+      "children": [],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0111",
+      "husband": "I0329",
+      "wife": "I0330",
+      "children": [
+        "I0156",
+        "I0331",
+        "I0332",
+        "I0333"
       ],
       "marriage_date": "",
       "marriage_place": "",
