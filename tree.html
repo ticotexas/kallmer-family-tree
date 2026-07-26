@@ -22,6 +22,7 @@
       --brass: #b08d3f;
       --paper: #fffaf0;
       --white: #ffffff;
+      --tree-blue: #4f7194;
     }
 
     body {
@@ -33,20 +34,18 @@
 
     .archive-home-link {
       display: inline-block;
-      margin-bottom: 10px;
-
+      margin-bottom: 3px;
       color: var(--prairie-sage);
-
       font-family: "IBM Plex Mono", monospace;
-      font-size: 0.85rem;
-
+      font-size: 13px;
+      letter-spacing: 0.045em;
       text-decoration: none;
-      letter-spacing: 0.05em;
     }
 
-    .archive-home-link:hover {
+    .archive-home-link:hover,
+    .archive-home-link:focus-visible {
       color: var(--homestead-clay);
-      text-decoration: underline;
+      text-decoration: none;
     }
 
     header {
@@ -54,23 +53,80 @@
       border-bottom: 1px solid var(--brass);
     }
 
+    .detail-header {
+      box-sizing: border-box;
+      min-height: 164px;
+      padding: 16px 32px 18px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .detail-header > .header-main {
+      min-width: 0;
+    }
+
     h1 {
       margin: 0;
-      font-family: "Fraunces", serif;
-      font-size: 2.4rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(30px, 3vw, 42px);
+      font-weight: 600;
+      line-height: 1.04;
     }
 
 
+    .detail-header h1 {
+      color: var(--homestead-clay);
+    }
+
+    .view-switch-link {
+      display: inline-block;
+      padding: 8px 13px;
+      border: 1px solid var(--tree-blue);
+      border-radius: 4px;
+      background: var(--tree-blue);
+      color: var(--paper);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      box-shadow: 0 1px 2px rgba(31, 46, 69, 0.12);
+      transition:
+        filter 120ms ease,
+        transform 120ms ease,
+        box-shadow 120ms ease;
+    }
+
+    .view-switch-link:hover,
+    .view-switch-link:focus-visible {
+      color: var(--paper);
+      filter: brightness(0.92);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 7px rgba(31, 46, 69, 0.17);
+      outline: none;
+    }
+
+    .header-archive-status {
+      margin-top: 4px;
+      color: rgba(31, 46, 69, 0.62);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.025em;
+    }
+
     #search-area {
-      margin-top: 18px;
-      max-width: 420px;
       position: relative;
+      width: min(420px, calc(100vw - 160px));
+      max-width: 420px;
+      margin-top: 10px;
     }
 
     #person-search {
       width: 100%;
+      height: 39px;
       box-sizing: border-box;
-      padding: 12px 14px;
+      padding: 9px 12px;
       border: 1px solid var(--brass);
       border-radius: 4px;
       background: var(--paper);
@@ -737,18 +793,32 @@
 
 <body>
 
-  <header>
+  <header class="detail-header">
+    <div class="header-main">
+      <a href="index.html" class="archive-home-link">
+        ← The Kallmer Family Archive
+      </a>
 
-    <a href="index.html" class="archive-home-link">
-      ← The Kallmer Family Archive
-    </a>
+      <h1>Person Details</h1>
 
-    <h1>Kallmer Family Tree</h1>
+      <div
+        id="detail-archive-status"
+        class="header-archive-status"
+      ></div>
 
-    <div id="search-area">
-      <input type="text" id="person-search" placeholder="Search for a person..." autocomplete="off" />
-      <div id="search-results"></div>
+      <div id="search-area">
+        <input type="text" id="person-search" placeholder="Search for a person..." autocomplete="off" />
+        <div id="search-results"></div>
+      </div>
     </div>
+
+    <a
+      id="tree-view-link"
+      class="view-switch-link"
+      href="family-tree.html"
+    >
+      Tree View
+    </a>
   </header>
 
   <div id="content">
@@ -893,6 +963,14 @@
         data.people.forEach(person => {
           peopleById[person.id] = person;
         });
+
+        const detailArchiveStatus =
+          document.getElementById("detail-archive-status");
+
+        if (detailArchiveStatus) {
+          detailArchiveStatus.textContent =
+            `${data.people.length} individuals • ${data.families.length} families`;
+        }
 
         let photoFolderMap = {};
         let storyFolderMap = {};
@@ -1647,6 +1725,12 @@
             "",
             url
           );
+
+          const treeViewLink = document.getElementById("tree-view-link");
+          treeViewLink.href =
+            `family-tree.html?person=${encodeURIComponent(person.id)}`;
+
+          searchInput.value = person.name;
 
           renderPedigree(person);
 

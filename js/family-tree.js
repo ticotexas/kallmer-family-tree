@@ -6,9 +6,13 @@ const SVG_NAMESPACE = "http://www.w3.org/2000/svg";
 const svg = document.getElementById("family-tree");
 const stage = document.getElementById("tree-stage");
 const statusElement = document.getElementById("tree-status");
+const pedigreeLink = document.querySelector(".pedigree-link");
+const searchInput = document.getElementById("person-search");
+const searchResults = document.getElementById("search-results");
 
 let peopleById = new Map();
 let familiesById = new Map();
+let searchablePeople = [];
 
 function createSvgElement(tagName, attributes = {}) {
   const element = document.createElementNS(SVG_NAMESPACE, tagName);
@@ -43,6 +47,121 @@ function formatLifeYears(person) {
   }
 
   return `${birthYear} – ${deathYear}`;
+}
+
+function normalizeText(text) {
+  return String(text || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/ł/g, "l")
+    .replace(/ø/g, "o")
+    .replace(/æ/g, "ae")
+    .replace(/œ/g, "oe")
+    .replace(/ð/g, "d")
+    .replace(/þ/g, "th");
+}
+
+function alternateNameTexts(person) {
+  const names = [];
+
+  if (person.birth_name) {
+    names.push(person.birth_name);
+  }
+
+  if (Array.isArray(person.alternate_names)) {
+    person.alternate_names.forEach((entry) => {
+      if (typeof entry === "string") {
+        names.push(entry);
+      } else if (entry?.name) {
+        names.push(entry.name);
+      }
+    });
+  }
+
+  return names;
+}
+
+function hideSearchResults() {
+  searchResults.style.display = "none";
+  searchResults.replaceChildren();
+}
+
+function renderSearchResults(matches) {
+  searchResults.replaceChildren();
+
+  if (!matches.length) {
+    const empty = document.createElement("div");
+    empty.className = "search-empty";
+    empty.textContent = "No matching people found";
+    searchResults.append(empty);
+    searchResults.style.display = "block";
+    return;
+  }
+
+  matches.forEach(({ person }) => {
+    const button = document.createElement("button");
+    button.className = "search-result";
+    button.type = "button";
+
+    const name = document.createElement("span");
+    name.className = "search-result-name";
+    name.textContent = person.name;
+
+    const dates = document.createElement("span");
+    dates.className = "search-result-dates";
+    dates.textContent = formatLifeYears(person);
+
+    button.append(name, dates);
+
+    button.addEventListener("click", () => {
+      selectPerson(person.id);
+      searchInput.value = person.name;
+      hideSearchResults();
+    });
+
+    searchResults.append(button);
+  });
+
+  searchResults.style.display = "block";
+}
+
+function setupSearch() {
+  searchInput.addEventListener("focus", () => {
+    window.setTimeout(() => searchInput.select(), 0);
+  });
+
+  searchInput.addEventListener("click", () => {
+    searchInput.select();
+  });
+
+  searchInput.addEventListener("input", () => {
+    const query = normalizeText(searchInput.value.trim());
+
+    if (query.length < 2) {
+      hideSearchResults();
+      return;
+    }
+
+    const matches = searchablePeople
+      .filter(({ searchName }) => searchName.includes(query))
+      .slice(0, 12);
+
+    renderSearchResults(matches);
+  });
+
+  searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      hideSearchResults();
+      searchInput.blur();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest("#search-area")) {
+      hideSearchResults();
+    }
+  });
 }
 
 function splitNameIntoLines(name) {
@@ -1182,6 +1301,8 @@ function selectPerson(personId, options = {}) {
     return;
   }
 
+  pedigreeLink.href = `tree.html?person=${encodeURIComponent(person.id)}`;
+
   renderFamilyView(person);
 
   if (updateHistory) {
@@ -1235,6 +1356,14 @@ async function loadFamilyArchive() {
 
     peopleById = new Map(data.people.map((person) => [person.id, person]));
 
+    searchablePeople = data.people.map((person) => ({
+      person,
+      searchName: normalizeText([
+        person.name,
+        ...alternateNameTexts(person),
+      ].filter(Boolean).join(" ")),
+    }));
+
     familiesById = new Map(data.families.map((family) => [family.id, family]));
 
     console.log(
@@ -1251,6 +1380,7 @@ async function loadFamilyArchive() {
     }
 
     selectPerson(selectedPerson.id, { updateHistory: false });
+    searchInput.value = selectedPerson.name;
 
     statusElement.textContent = `${peopleById.size} individuals • ${familiesById.size} families`;
   } catch (error) {
@@ -1262,6 +1392,7 @@ async function loadFamilyArchive() {
 }
 
 placeStatusUnderHeading();
+setupSearch();
 
 window.addEventListener("popstate", () => {
   const personId = getRequestedPersonId();

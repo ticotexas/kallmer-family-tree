@@ -18,16 +18,26 @@
 
 <body>
   <header class="site-header">
-    <div>
+    <div class="header-main">
       <a class="archive-link" href="index.html">
         ← The Kallmer Family Archive
       </a>
 
-      <h1>Interactive Family Tree</h1>
+      <h1>Family Tree</h1>
+
+      <div id="search-area">
+        <input
+          type="text"
+          id="person-search"
+          placeholder="Search for a person..."
+          autocomplete="off"
+        >
+        <div id="search-results"></div>
+      </div>
     </div>
 
     <a class="pedigree-link" href="tree.html">
-      Pedigree View
+      Detail View
     </a>
   </header>
 
