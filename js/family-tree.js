@@ -396,9 +396,10 @@ function measureFamilyUnit(unit) {
   };
 }
 
-function measureFamilyUnits(units) {
+function prepareFamilyUnitLayouts(units) {
   return units.map((unit) => ({
     ...unit,
+    ownerKey: "selected",
     measurements: measureFamilyUnit(unit),
   }));
 }
@@ -473,14 +474,28 @@ function layoutFamilyUnit(
     };
   });
 
+  const visibleCards = [spouseCard, ...childCards];
+  const unitLeft = Math.min(...visibleCards.map((card) => card.x));
+  const unitRight = Math.max(
+    ...visibleCards.map((card) => card.x + card.width),
+  );
   const childrenBottom = childCards.length
     ? Math.max(...childCards.map((card) => card.y + card.height))
     : spouseCard.y + spouseCard.height;
 
   return {
     layout: {
+      id: unit.id,
+      ownerKey: unit.ownerKey,
+      left: unitLeft,
+      width: unitRight - unitLeft,
+      centerX: (unitLeft + unitRight) / 2,
       spouseCard,
       childCards,
+      anchor: {
+        x: unionCenterX,
+        y: spouseCard.y + spouseCard.height / 2,
+      },
       unionCenterX,
       isPrimary: unit.isPrimary,
     },
@@ -508,13 +523,13 @@ function layoutPrimaryFamily(model) {
     isPrimary: true,
   };
 
-  const measuredUnits = measureFamilyUnits(
+  const preparedUnits = prepareFamilyUnitLayouts(
     model.familyUnits.length ? model.familyUnits : [fallbackUnit],
   );
 
-  const primaryUnit = measuredUnits[0];
+  const primaryUnit = preparedUnits[0];
   const measurements = primaryUnit.measurements;
-  const layoutUnits = model.familyUnits.length ? measuredUnits : [];
+  const layoutUnits = model.familyUnits.length ? preparedUnits : [];
 
   const selectedX = familyCenterX - measurements.coupleWidth / 2;
 
@@ -576,13 +591,19 @@ function buildRelationshipModel(father, mother, unionLayouts) {
   }
 
   unionLayouts.forEach(
-    ({ spouseCard, childCards, unionCenterX, isPrimary }) => {
+    ({
+      ownerKey,
+      spouseCard,
+      childCards,
+      anchor,
+      isPrimary,
+    }) => {
       relationships.push({
         type: "spouse-union",
-        from: "selected",
+        from: ownerKey,
         to: spouseCard.key,
         children: childCards.map((card) => card.key),
-        unionCenterX,
+        unionCenterX: anchor.x,
         isPrimary,
       });
     },
