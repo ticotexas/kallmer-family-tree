@@ -124,7 +124,12 @@ function drawPersonCard(person, x, y, options = {}) {
     return;
   }
 
-  const { width = 240, height = 92, selected = false } = options;
+  const {
+    width = 240,
+    height = 92,
+    selected = false,
+    relationshipLabel = "",
+  } = options;
   const isPlaceholder = Boolean(person.placeholder);
   const nameLines = splitNameIntoLines(person.name);
   const hasProfileLink = selected;
@@ -218,6 +223,17 @@ function drawPersonCard(person, x, y, options = {}) {
   dates.textContent = formatLifeYears(person);
 
   group.append(name, dates);
+
+  if (relationshipLabel) {
+    const relationship = createSvgElement("text", {
+      class: "person-relationship",
+      x: width / 2,
+      y: dateY + 18,
+    });
+
+    relationship.textContent = relationshipLabel;
+    group.append(relationship);
+  }
 
   if (selected) {
     const profileLink = createSvgElement("a", {
@@ -355,16 +371,50 @@ function buildFamilyViewModel(person) {
   };
 }
 
+function extractYear(value) {
+  const match = String(value || "").match(/\b(1[5-9]\d{2}|20\d{2})\b/);
+  return match ? Number(match[1]) : null;
+}
+
+function formatFamilyUnitRelationship(family, primaryPerson, spouse) {
+  const marriageYear = extractYear(family?.marriage_date);
+
+  if (!marriageYear) {
+    return "";
+  }
+
+  if (family?.divorced) {
+    const divorceYear = extractYear(family.divorce_date);
+    return `m. ${marriageYear}–${divorceYear ?? "?"} · divorced`;
+  }
+
+  const primaryDeathYear = extractYear(primaryPerson?.death);
+  const spouseDeathYear = extractYear(spouse?.death);
+  const deathYears = [primaryDeathYear, spouseDeathYear].filter(
+    (year) => year !== null,
+  );
+
+  if (deathYears.length > 0) {
+    return `m. ${marriageYear}–${Math.min(...deathYears)} · widowed`;
+  }
+
+  if (primaryPerson?.living || spouse?.living) {
+    return `m. ${marriageYear}–present`;
+  }
+
+  return `m. ${marriageYear}–?`;
+}
+
 function birthSortValue(person) {
-  const match = String(person?.birth || "").match(/\b(1[5-9]\d{2}|20\d{2})\b/);
-  return match ? Number(match[1]) : Number.POSITIVE_INFINITY;
+  const year = extractYear(person?.birth);
+  return year ?? Number.POSITIVE_INFINITY;
 }
 
 function measureFamilyUnit(unit) {
   const selectedWidth = unit?.isPrimary ? 238 : 214;
   const selectedHeight = unit?.isPrimary ? 106 : 78;
   const spouseWidth = 214;
-  const spouseHeight = 78;
+  const spouseHeight = 96;
 
   const childWidth = 190;
   const childHeight = 78;
@@ -432,6 +482,11 @@ function layoutFamilyUnit(
     key: `spouse-${unitIndex}`,
     person: union.spouse,
     union,
+    relationshipLabel: formatFamilyUnitRelationship(
+      union.family,
+      unit.primaryPerson ?? selectedCard.person,
+      union.spouse,
+    ),
     selected: false,
     x: unitCenterX - measurements.spouseWidth / 2,
     y: spouseY,
@@ -746,6 +801,7 @@ function drawCards(cards) {
       width: card.width,
       height: card.height,
       selected: card.selected,
+      relationshipLabel: card.relationshipLabel,
     });
   }
 }
