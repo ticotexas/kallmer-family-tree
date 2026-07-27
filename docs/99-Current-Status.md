@@ -452,3 +452,237 @@ Objectives include:
 - postpone connector-routing polish until layout behavior has stabilized.
 
 Avoid piecemeal visual tweaks before the infrastructure phase is complete.
+
+---
+
+# Current Status
+
+**Updated:** 2026-07-27
+
+## Current Milestone
+
+**Shared Archive Infrastructure — Phase 1 Complete**
+
+The archive's first reusable application component has been completed.
+
+Finished this milestone:
+
+- shared `archive-search.css`;
+- shared `archive-search.js`;
+- shared text normalization;
+- shared alternate-name indexing;
+- shared search index;
+- shared search query engine;
+- Family Tree migrated to the shared implementation;
+- Canonical Edit Cycle adopted as the required engineering workflow.
+
+The search system now has a single owner and future search improvements can be implemented once rather than separately on each page.
+
+## Current Architectural Direction
+
+The project is now moving from shared search toward a shared archive data layer.
+
+The next reusable component should centralize archive data access, including:
+
+- `peopleById`;
+- `familiesById`;
+- parent lookup;
+- spouse-family lookup;
+- relationship helpers;
+- sibling lookup.
+
+The long-term objective is for page-specific code to concentrate on presentation while shared infrastructure owns archive behavior.
+
+## Recommended Next Action
+
+Begin designing an `ArchiveData` component that becomes the common data layer for:
+
+- homepage;
+- Family Tree;
+- Person Details.
+
+As with the search extraction, migration should occur one responsibility at a time with independently verifiable commits.
+
+## Stable Engineering Process
+
+The Canonical Edit Cycle is now considered part of the project's permanent engineering practice.
+
+Every implementation should:
+
+1. capture the exact current local source;
+2. perform one guarded replacement;
+3. verify with `node --check`;
+4. inspect `git --no-pager diff`;
+5. verify in the browser;
+6. commit one meaningful architectural change.
+
+This workflow should be followed for all future implementation sessions.
+
+### Relationship Presentation (2026-07-27)
+
+The relationship presentation model has been simplified and centralized.
+
+Current behavior:
+
+- Marriage labels are owned by the selected individual rather than spouse cards.
+- Multiple marriages are displayed as a stacked relationship block beneath the selected person's life dates.
+- Spouse cards remain intentionally minimal, showing only identity information (name and life years).
+- Marriage labels now omit the redundant "widowed" suffix while continuing to distinguish divorce and ongoing marriages.
+- Selected-card spacing has been refined so relationship information forms its own visual section without crowding the profile link.
+
+This architecture better reflects the underlying family-unit model and establishes a clean foundation for future connector improvements.
+
+#### Next Milestone
+
+Chronological family-unit routing:
+
+1. Sort family units by marriage date.
+2. Give each marriage its own independent visual descent.
+3. Prevent later marriage connectors from appearing connected to earlier family child buses.
+4. Preserve all existing visual language and interaction behavior.
+
+## Marriage Lane Architecture
+
+Current family-unit rendering uses independent relationship objects.
+
+Chronological ordering determines:
+
+- spouse ordering
+- marriage labels
+- exit positions from the selected person
+
+Connector routing is handled independently.
+
+The renderer now stacks routing corridors independently of chronological order, allowing longer routes to occupy outer lanes and preventing connector crossings without introducing a shared marriage bus.
+
+This architecture successfully supports one, two, and three marriages using the same rendering code.
+
+### Current priorities
+
+The family-unit architecture is considered stable.
+
+Future work should focus on visual polish rather than structural redesign:
+
+- connector refinement
+- typography and card composition
+- large-family stress testing
+- overall composition and spacing
+- subtle animation after layout stabilization
+
+## Current Status — 2026-07-27
+
+### Homepage Polish Complete
+
+The homepage has been refined into a museum-style archive entrance.
+
+Completed:
+
+- Featured archive person presentation.
+- Portrait loading from existing photo indexes.
+- Photo caption display.
+- Featured person lifespan calculation.
+- Direct profile navigation.
+- Featured profile button styling.
+- Improved homepage vertical composition.
+- Refined exhibit heading hierarchy.
+- Improved spacing between featured person and archive statistics.
+
+Current homepage behavior:
+
+- Landing page introduces the archive.
+- Featured person demonstrates that the archive contains real lives and photographs.
+- Visitors can immediately enter an individual's profile.
+- Visitors can continue into the interactive tree.
+
+Visual language preserved:
+
+- parchment background
+- ledger ink primary text
+- prairie sage archival metadata
+- homestead clay actions
+- restrained typography
+- no dashboard/card aesthetic
+
+---
+
+## Next Phase: Interactive Tree Visual Polish
+
+Architecture remains stable.
+
+Do not redesign:
+
+- family-unit model
+- relationship objects
+- layout pipeline
+- routing/history behavior
+
+Next work should focus on presentation only:
+
+Priority candidates:
+
+1. Connector geometry refinement.
+   - smoother paths
+   - consistent shoulders
+   - cleaner marriage/child routing
+
+2. Large family stress testing.
+   - 6+ children
+   - 10+ children
+   - multiple marriage cases
+   - crowded branches
+
+3. Card and spacing refinement.
+   - visual rhythm
+   - alignment
+   - typography balance
+
+4. Subtle animation.
+   - transitions only
+   - preserve archival restraint
+
+Continue canonical Engineering Guide workflow:
+
+- inspect current local code
+- use xclip capture workflow
+- guarded replacements
+- node --check
+- git --no-pager diff
+- browser verification
+- one meaningful change per commit
+
+---
+
+# Append to `docs/99-Current-Status.md`
+
+````markdown
+## Current Status — Interactive Family Tree Complete
+
+The current Interactive Family Tree development phase is complete.
+
+### Stable capabilities
+
+- measured family-unit layout;
+- chronological multiple-marriage ordering;
+- independent noncrossing marriage lanes;
+- correct child association by family;
+- multi-row large-family layout;
+- divorce metadata and visual presentation;
+- unknown spouse and missing-parent placeholders;
+- direct person URLs;
+- browser back/forward support;
+- click-to-recenter behavior;
+- selected-card profile navigation;
+- family-specific adopted-parent relationships;
+- restrained `Adopted` annotations on applicable child cards.
+
+### Adoption architecture
+
+Exceptional parent-child relationships are exported as family-specific metadata:
+
+```json
+{
+  "family": "F0022",
+  "type": "adopted"
+}
+```
+````

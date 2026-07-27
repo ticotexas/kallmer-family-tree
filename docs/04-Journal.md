@@ -461,3 +461,198 @@ Architecture and visual language should now evolve independently.
 Shared infrastructure should continue to be completed before beginning a dedicated visual-polish phase. This keeps commits focused on one concern, reduces regression risk, and allows visual decisions to be evaluated across the archive rather than page by page.
 
 This milestone represents the archive's transition from primarily adding features toward strengthening long-term maintainability.
+
+---
+
+## Shared Archive Search Completion
+
+### July 27, 2026
+
+The archive completed its first extraction of a reusable application component.
+
+Until this milestone, each page owned its own search implementation, including text normalization, alternate-name indexing, search indexing, and query behavior. Although the implementations remained visually consistent, they duplicated logic and would have become increasingly difficult to evolve together.
+
+The search system was extracted incrementally through five independently verified architectural commits:
+
+1. Shared archive-search foundation.
+2. Shared search indexing.
+3. Shared search query engine.
+4. Alternate-name indexing.
+5. Family Tree migration to the shared implementation.
+
+Every step preserved browser functionality and intentionally avoided visible behavior changes. Each commit completed one architectural responsibility before introducing the next.
+
+The resulting ownership became much clearer:
+
+```
+archive-search.js
+    • normalization
+    • alternate-name collection
+    • search indexing
+    • search queries
+    • person lookup
+
+family-tree.js
+    • search UI
+    • rendering
+    • navigation
+```
+
+This session also validated the project's Canonical Edit Cycle.
+
+Every implementation followed the same sequence:
+
+- capture the current local source;
+- perform one guarded replacement;
+- verify with `node --check`;
+- inspect `git --no-pager diff`;
+- verify in the browser;
+- commit one meaningful architectural change.
+
+Rather than serving only as a safety procedure, this workflow has become part of the project's architecture. Small, independently verifiable commits now define how major refactoring should proceed.
+
+This milestone marks the archive's transition from extracting one shared component to establishing a repeatable method for future shared infrastructure.
+
+---
+
+## 2026-07-27 — Relationship Metadata Refinement
+
+### Summary
+
+Continued refinement of the Interactive Family Tree with a focus on family-unit ownership and archival presentation rather than new layout capabilities.
+
+### Completed
+
+- Simplified marriage end labels by removing the redundant "· widowed" suffix.
+  - Marriage labels now display:
+    - `m. 1941–2004`
+    - `m. 1941–1957 · divorced`
+    - `m. 1982–present`
+    - `m. 1941–?`
+
+- Refactored relationship metadata ownership.
+  - Marriage information is no longer attached to spouse cards.
+  - The selected individual now owns all relationship labels for their family units.
+  - Multiple marriages are rendered as a relationship block beneath the selected person's life dates.
+
+- Simplified spouse cards.
+  - Secondary spouse cards once again contain only:
+    - name
+    - life years
+  - This restores the minimal archival card design established earlier in the project.
+
+- Refined typography and spacing for the selected card.
+  - Added additional vertical spacing between life dates, relationship lines, and the "View Profile" link.
+  - Increased selected-card height only when relationship labels are present.
+  - The relationship block now reads as its own visual section rather than appearing crowded.
+
+### Architectural Notes
+
+This change intentionally separates _family relationship metadata_ from _individual cards_. The selected individual now serves as the single presentation point for marriage history, while spouse cards remain focused solely on representing individuals.
+
+This provides a cleaner foundation for future relationship rendering, including chronological marriage lanes and family-unit routing improvements.
+
+### Next Planned Work
+
+- Sort family units chronologically by marriage date.
+- Introduce independent marriage spines for each family unit.
+- Prevent later marriage connectors from visually joining earlier child buses.
+- Preserve the existing archival visual language while improving readability for multiple marriages.
+
+## 2026-07-27 — Independent Marriage Lanes
+
+Completed a major refinement of multi-marriage rendering.
+
+### Architectural changes
+
+- Family units are now sorted chronologically by marriage year.
+- Each marriage renders as its own independent `family-unit` relationship rather than participating in a shared marriage bus.
+- Marriage order is preserved throughout the layout pipeline and exposed to the renderer.
+
+### Rendering improvements
+
+- Each marriage now exits the selected person's card independently.
+- Relationship routing was separated conceptually into:
+  - exit geometry (where a relationship leaves the owner card), and
+  - routing geometry (how connectors travel toward spouses).
+- This separation eliminated coupling between chronological ordering and connector routing.
+
+### Noncrossing lane refinement
+
+Initial testing with a temporary third spouse revealed that independent exits alone could still produce connector crossings.
+
+Rather than changing spouse order or reintroducing a shared bus, the routing algorithm was refined by reversing only the vertical corridor stacking order while preserving chronological spouse order and exit positions.
+
+This produces nested, noncrossing relationship corridors while maintaining completely independent family units.
+
+### Validation
+
+Verified visually with:
+
+- one marriage
+- two marriages
+- temporary three-marriage stress test
+
+The same renderer handled all cases without additional branching logic.
+
+## 2026-07-27 — Homepage Featured Archive Exhibit Polish
+
+The homepage was refined from a simple archive entry page into a curated archival introduction.
+
+Completed:
+
+- Added a "From the Archive" featured person exhibit area.
+- Featured people now display only from the existing photo archive.
+- Featured portrait loads from the person's photo index.
+- Featured photo captions are displayed from photo metadata.
+- Added featured person lifespan display:
+  - birth year
+  - death year
+  - calculated lifespan in years.
+- Added direct "View Profile" entry point using existing person URL routing.
+- Styled the featured profile action using the established homestead clay button language.
+- Reduced homepage top padding to improve title-page composition.
+- Refined "From the Archive" as a quieter archival label using prairie sage.
+- Added museum-style caption treatment for featured photographs.
+- Added spacing between the featured exhibit and archive statistics.
+
+Design decisions preserved:
+
+- Homepage remains restrained and archival.
+- No cards, shadows, borders, or modern dashboard styling were introduced.
+- The photograph remains the visual artifact.
+- Orange/clay remains reserved for actions.
+- Sage remains reserved for metadata and archival labels.
+
+The homepage now establishes a clear visitor path:
+
+Archive identity →
+featured ancestor →
+portrait artifact →
+profile →
+archive exploration
+
+The homepage polish phase is considered complete.
+
+Next focus:
+Interactive family tree visual polish.
+
+## 2026-07-27 — Divorce and Adoption Relationship Presentation
+
+Completed the final relationship-presentation work for the current Interactive Family Tree phase.
+
+### Divorce presentation
+
+- Carried divorce state from family data into the relationship model.
+- Refined divorced-family connector geometry.
+- Added a restrained break marker to distinguish a dissolved marriage without changing the archival connector language.
+- Preserved independent family-unit lanes and chronological marriage ordering.
+
+### Adoption data model
+
+Investigated the source GEDCOM and confirmed that adoption is represented as family-specific parent-child metadata:
+
+```gedcom
+1 FAMC @F0022@
+2 PEDI adopted
+```
