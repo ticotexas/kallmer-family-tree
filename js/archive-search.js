@@ -14,6 +14,19 @@ class ArchiveSearch {
     this.searchablePeople = [];
   }
 
+  normalizeText(text) {
+    return String(text ?? "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "")
+      .replace(/ł/g, "l")
+      .replace(/ø/g, "o")
+      .replace(/æ/g, "ae")
+      .replace(/œ/g, "oe")
+      .replace(/ð/g, "d")
+      .replace(/þ/g, "th");
+  }
+
   setPeople(people = []) {
     this.people = [...people];
 
@@ -21,7 +34,10 @@ class ArchiveSearch {
       this.people.map((person) => [person.id, person]),
     );
 
-    this.searchablePeople = [];
+    this.searchablePeople = this.people.map((person) => ({
+      person,
+      searchName: this.normalizeText(person.name),
+    }));
   }
 
   getPerson(id) {
