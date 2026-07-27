@@ -9,10 +9,10 @@ const statusElement = document.getElementById("tree-status");
 const pedigreeLink = document.querySelector(".pedigree-link");
 const searchInput = document.getElementById("person-search");
 const searchResults = document.getElementById("search-results");
+const archiveSearch = new ArchiveSearch();
 
 let peopleById = new Map();
 let familiesById = new Map();
-let searchablePeople = [];
 
 function createSvgElement(tagName, attributes = {}) {
   const element = document.createElementNS(SVG_NAMESPACE, tagName);
@@ -49,38 +49,6 @@ function formatLifeYears(person) {
   return `${birthYear} – ${deathYear}`;
 }
 
-function normalizeText(text) {
-  return String(text || "")
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/ł/g, "l")
-    .replace(/ø/g, "o")
-    .replace(/æ/g, "ae")
-    .replace(/œ/g, "oe")
-    .replace(/ð/g, "d")
-    .replace(/þ/g, "th");
-}
-
-function alternateNameTexts(person) {
-  const names = [];
-
-  if (person.birth_name) {
-    names.push(person.birth_name);
-  }
-
-  if (Array.isArray(person.alternate_names)) {
-    person.alternate_names.forEach((entry) => {
-      if (typeof entry === "string") {
-        names.push(entry);
-      } else if (entry?.name) {
-        names.push(entry.name);
-      }
-    });
-  }
-
-  return names;
-}
 
 function hideSearchResults() {
   searchResults.style.display = "none";
@@ -99,7 +67,7 @@ function renderSearchResults(matches) {
     return;
   }
 
-  matches.forEach(({ person }) => {
+  matches.forEach((person) => {
     const button = document.createElement("button");
     button.className = "search-result";
     button.type = "button";
@@ -136,18 +104,14 @@ function setupSearch() {
   });
 
   searchInput.addEventListener("input", () => {
-    const query = normalizeText(searchInput.value.trim());
+    const query = archiveSearch.normalizeText(searchInput.value.trim());
 
     if (query.length < 2) {
       hideSearchResults();
       return;
     }
 
-    const matches = searchablePeople
-      .filter(({ searchName }) => searchName.includes(query))
-      .slice(0, 12);
-
-    renderSearchResults(matches);
+    renderSearchResults(archiveSearch.search(query));
   });
 
   searchInput.addEventListener("keydown", (event) => {
@@ -1354,15 +1318,8 @@ async function loadFamilyArchive() {
       throw new Error("Family data has an unexpected structure.");
     }
 
-    peopleById = new Map(data.people.map((person) => [person.id, person]));
-
-    searchablePeople = data.people.map((person) => ({
-      person,
-      searchName: normalizeText([
-        person.name,
-        ...alternateNameTexts(person),
-      ].filter(Boolean).join(" ")),
-    }));
+    archiveSearch.setPeople(data.people);
+    peopleById = archiveSearch.peopleById;
 
     familiesById = new Map(data.families.map((family) => [family.id, family]));
 
