@@ -11,6 +11,7 @@ const searchInput = document.getElementById("person-search");
 const searchResults = document.getElementById("search-results");
 const archiveData = new ArchiveData();
 const archiveRelationships = new ArchiveRelationships(archiveData);
+const archiveDates = new ArchiveDates();
 const archiveSearch = new ArchiveSearch();
 
 let peopleById = new Map();
@@ -31,18 +32,13 @@ function getRequestedPersonId() {
   return parameters.get("person") || DEFAULT_PERSON_ID;
 }
 
-function yearFromText(value) {
-  const match = String(value || "").match(/\b(1[5-9]\d{2}|20\d{2})\b/);
-  return match ? match[1] : "?";
-}
-
 function formatLifeYears(person) {
   if (person.placeholder) {
     return person.placeholderSubtitle || "Research continuing";
   }
 
-  const birthYear = yearFromText(person.birth);
-  const deathYear = yearFromText(person.death);
+  const birthYear = archiveDates.extractYear(person.birth) ?? "?";
+  const deathYear = archiveDates.extractYear(person.death) ?? "?";
 
   if (person.living || !person.death) {
     return `${birthYear} –`;
@@ -448,25 +444,20 @@ function buildFamilyViewModel(person) {
   };
 }
 
-function extractYear(value) {
-  const match = String(value || "").match(/\b(1[5-9]\d{2}|20\d{2})\b/);
-  return match ? Number(match[1]) : null;
-}
-
 function formatFamilyUnitRelationship(family, primaryPerson, spouse) {
-  const marriageYear = extractYear(family?.marriage_date);
+  const marriageYear = archiveDates.extractYear(family?.marriage_date);
 
   if (!marriageYear) {
     return "";
   }
 
   if (family?.divorced) {
-    const divorceYear = extractYear(family.divorce_date);
+    const divorceYear = archiveDates.extractYear(family.divorce_date);
     return `m. ${marriageYear}–${divorceYear ?? "?"} · divorced`;
   }
 
-  const primaryDeathYear = extractYear(primaryPerson?.death);
-  const spouseDeathYear = extractYear(spouse?.death);
+  const primaryDeathYear = archiveDates.extractYear(primaryPerson?.death);
+  const spouseDeathYear = archiveDates.extractYear(spouse?.death);
   const deathYears = [primaryDeathYear, spouseDeathYear].filter(
     (year) => year !== null,
   );
@@ -480,11 +471,6 @@ function formatFamilyUnitRelationship(family, primaryPerson, spouse) {
   }
 
   return `m. ${marriageYear}–?`;
-}
-
-function birthSortValue(person) {
-  const year = extractYear(person?.birth);
-  return year ?? Number.POSITIVE_INFINITY;
 }
 
 function measureFamilyUnit(unit) {
@@ -553,7 +539,9 @@ function layoutFamilyUnit(
   const union = unit.union;
   const measurements = unit.measurements;
   const children = [...unit.children].sort((a, b) => {
-    const dateDifference = birthSortValue(a) - birthSortValue(b);
+    const dateDifference =
+      archiveDates.birthYearSortValue(a) -
+      archiveDates.birthYearSortValue(b);
 
     return dateDifference || a.name.localeCompare(b.name);
   });

@@ -801,8 +801,11 @@
     </div>
   </div>
 
+  <script src="js/archive-dates.js"></script>
   <script src="js/archive-search.js"></script>
   <script>
+    const archiveDates = new ArchiveDates();
+
     fetch("public-data/family.json?v=" + Date.now())
       .then((response) => response.json())
       .then((data) => {
@@ -1031,19 +1034,14 @@
           });
         }
 
-        function yearFromText(text) {
-          const match = String(text || "").match(/\b(1[5-9]\d{2}|20\d{2})\b/);
-          return match ? parseInt(match[1], 10) : null;
-        }
-
         function ageText(person) {
           if (!person || !person.birth) return "";
 
-          const birthYear = yearFromText(person.birth);
+          const birthYear = archiveDates.extractYear(person.birth);
           if (!birthYear) return "";
 
           if (person.death) {
-            const deathYear = yearFromText(person.death);
+            const deathYear = archiveDates.extractYear(person.death);
             if (!deathYear) return "";
 
             const age = deathYear - birthYear;
@@ -1106,32 +1104,6 @@
             .join("<br>");
         }
 
-        function birthSortValue(person) {
-          const text = String(person && person.birth || "").toUpperCase();
-
-          const yearMatch = text.match(/\b(1[5-9]\d{2}|20\d{2})\b/);
-          if (!yearMatch) return Number.POSITIVE_INFINITY;
-
-          const year = parseInt(yearMatch[1], 10);
-          const monthNames = {
-            JAN: 1, FEB: 2, MAR: 3, APR: 4,
-            MAY: 5, JUN: 6, JUL: 7, AUG: 8,
-            SEP: 9, OCT: 10, NOV: 11, DEC: 12
-          };
-
-          const monthMatch = text.match(
-            /\b(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\b/
-          );
-          const month = monthMatch ? monthNames[monthMatch[1]] : 1;
-
-          const dayMatch = text.match(
-            /\b([0-2]?\d|3[01])\s+(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\b/
-          );
-          const day = dayMatch ? parseInt(dayMatch[1], 10) : 1;
-
-          return (year * 10000) + (month * 100) + day;
-        }
-
         function namesFromIdsOldestFirst(ids) {
           if (!ids || ids.length === 0) return "None listed";
 
@@ -1139,7 +1111,9 @@
             .map(id => peopleById[id])
             .filter(Boolean)
             .sort((a, b) => {
-              const dateDifference = birthSortValue(a) - birthSortValue(b);
+              const dateDifference =
+                archiveDates.birthDateSortValue(a) -
+                archiveDates.birthDateSortValue(b);
 
               if (dateDifference !== 0) {
                 return dateDifference;
