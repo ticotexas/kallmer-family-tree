@@ -259,6 +259,11 @@ body {
   vector-effect: non-scaling-stroke;
 }
 
+.marriage-line {
+  stroke: rgba(176, 141, 63, 0.82);
+  stroke-width: 2.4;
+}
+
 .placeholder-card-group {
   cursor: default;
   pointer-events: none;

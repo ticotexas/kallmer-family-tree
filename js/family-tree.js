@@ -338,9 +338,12 @@ function drawPersonCard(person, x, y, options = {}) {
   stage.append(group);
 }
 
-function drawRelationshipPath(pathData) {
+function drawRelationshipPath(
+  pathData,
+  className = "relationship-line",
+) {
   const path = createSvgElement("path", {
-    class: "relationship-line",
+    class: className,
     d: pathData,
   });
 
@@ -504,7 +507,6 @@ function measureFamilyUnit(unit) {
   const childrenPerRow = 4;
   const siblingBusGutter = 64;
 
-  const familyUnitsTopGap = 82;
   const familyUnitGap = 88;
 
   const childCount = unit?.children?.length ?? 0;
@@ -532,7 +534,6 @@ function measureFamilyUnit(unit) {
     childrenTopGap,
     childrenPerRow,
     siblingBusGutter,
-    familyUnitsTopGap,
     familyUnitGap,
     unitWidth,
   };
@@ -835,6 +836,12 @@ function layoutFamilyUnits(
   }
 
   const familyUnitGap = layoutUnits[0].measurements.familyUnitGap;
+  const singleMarriageTopGap = 46;
+  const additionalMarriageClearance = 16;
+  const familyUnitsTopGap =
+    singleMarriageTopGap +
+    Math.max(0, layoutUnits.length - 1) *
+      additionalMarriageClearance;
 
   const familyUnitsWidth =
     layoutUnits.reduce(
@@ -852,7 +859,7 @@ function layoutFamilyUnits(
   const spouseY =
     selectedY +
     selectedCard.height +
-    layoutUnits[0].measurements.familyUnitsTopGap;
+    familyUnitsTopGap;
 
   return layoutUnits.map((unit, unitIndex) => {
     const layout = layoutFamilyUnit(
@@ -967,8 +974,15 @@ function roundedOrthogonalPath(points, radius = 42) {
   return commands.join(" ");
 }
 
-function drawRoundedRelationship(points, radius = 42) {
-  drawRelationshipPath(roundedOrthogonalPath(points, radius));
+function drawRoundedRelationship(
+  points,
+  radius = 42,
+  className = "relationship-line",
+) {
+  drawRelationshipPath(
+    roundedOrthogonalPath(points, radius),
+    className,
+  );
 }
 
 
@@ -1053,9 +1067,8 @@ function drawRelationshipLines(cards, relationships) {
       const marriageOrder = relationship.marriageOrder ?? 0;
       const marriageCount = relationship.marriageCount ?? 1;
       const firstLaneY = ownerBox.bottom + 34;
-      const laneGap = 18;
-      const laneOrder =
-        marriageCount - 1 - marriageOrder;
+      const laneGap = 10;
+      const laneOrder = marriageOrder;
       const laneY = firstLaneY + laneOrder * laneGap;
 
       const ownerWidth = ownerBox.right - ownerBox.left;
@@ -1091,6 +1104,7 @@ function drawRelationshipLines(cards, relationships) {
           },
         ],
         branchRadius,
+        "relationship-line marriage-line",
       );
 
       if (childCards.length === 0) {
