@@ -32,7 +32,7 @@
         .hero {
             max-width: 900px;
             margin: 0 auto;
-            padding: 70px 30px;
+            padding: 30px 30px 70px;
             text-align: center;
         }
 
@@ -51,6 +51,7 @@
 
         .stats {
             font-family: "IBM Plex Mono", monospace;
+            margin-top: 15px;
             margin-bottom: 30px;
             color: var(--prairie-sage);
         }
@@ -66,6 +67,22 @@
         }
 
         .button:hover {
+            background: var(--homestead-clay);
+            color: white;
+        }
+
+        .featured-profile-button {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 10px 22px;
+            border: 2px solid var(--homestead-clay);
+            color: var(--homestead-clay);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .featured-profile-button:hover {
             background: var(--homestead-clay);
             color: white;
         }
@@ -92,6 +109,24 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        .featured-person {
+            margin-bottom: 30px;
+        }
+
+        .featured-person h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+            color: var(--prairie-sage);
+        }
+
+        .featured-person-caption {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--prairie-sage);
         }
 
         @media (max-width: 700px) {
@@ -177,7 +212,8 @@
 
                     document.getElementById("featured-person-content").innerHTML =
                         `<strong>${featuredPerson.name}</strong><br>
-                         ${birthYear}${deathYear ? " – " + deathYear : ""}${age ? " (" + age + ")" : ""}`;
+                         ${birthYear}${deathYear ? " – " + deathYear : ""}${age ? " (" + age + " years)" : ""}<br>
+                         <a class="featured-profile-button" href="tree.html?person=${featuredPerson.id}">View Profile</a>`;
 
                     fetch("photos/index.json?v=" + Date.now())
                         .then(response => response.json())
@@ -203,6 +239,7 @@
                                         `<div class="featured-person-image">
                                              <img src="photos/${folder}/${portrait.file}"
                                                   alt="${portrait.alt || featuredPerson.name}">
+                                             ${portrait.caption ? `<div class="featured-person-caption">${portrait.caption}</div>` : ""}
                                          </div>`;
                                 });
                         })
