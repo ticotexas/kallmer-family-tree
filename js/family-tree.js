@@ -1054,7 +1054,9 @@ function drawRelationshipLines(cards, relationships) {
       const marriageCount = relationship.marriageCount ?? 1;
       const firstLaneY = ownerBox.bottom + 34;
       const laneGap = 18;
-      const laneY = firstLaneY + marriageOrder * laneGap;
+      const laneOrder =
+        marriageCount - 1 - marriageOrder;
+      const laneY = firstLaneY + laneOrder * laneGap;
 
       const ownerWidth = ownerBox.right - ownerBox.left;
       const ownerLanePadding = Math.min(44, ownerWidth / 4);
