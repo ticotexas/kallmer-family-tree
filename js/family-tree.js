@@ -493,6 +493,19 @@ function formatFamilyUnitRelationship(family, primaryPerson, spouse) {
   return `m. ${marriageYear}–?`;
 }
 
+function getParentRelationshipLabel(person, familyId) {
+  const relationship = person.parent_relationships?.find(
+    (entry) => entry.family === familyId,
+  );
+
+  switch (relationship?.type) {
+    case "adopted":
+      return "Adopted";
+    default:
+      return "";
+  }
+}
+
 function measureFamilyUnit(unit) {
   const selectedWidth = unit?.isPrimary ? 238 : 214;
   const selectedHeight = unit?.isPrimary ? 106 : 78;
@@ -604,11 +617,16 @@ function layoutFamilyUnit(
     const rowLeft =
       unitLeft + measurements.siblingBusGutter;
 
+    const relationshipLabels = [
+      getParentRelationshipLabel(child, union.family.id),
+    ].filter(Boolean);
+
     return {
       key: `union-${unitIndex}-child-${childIndex}`,
       person: child,
       union,
       selected: false,
+      relationshipLabels,
       x:
         rowLeft +
         column * (measurements.childWidth + measurements.childGapX),
@@ -616,7 +634,10 @@ function layoutFamilyUnit(
         firstChildY +
         row * (measurements.childHeight + measurements.childGapY),
       width: measurements.childWidth,
-      height: measurements.childHeight,
+      height:
+        measurements.childHeight +
+        relationshipLabels.length * 18 +
+        (relationshipLabels.length > 0 ? 12 : 0),
     };
   });
 
