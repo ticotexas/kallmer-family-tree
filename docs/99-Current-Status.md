@@ -652,9 +652,6 @@ Continue canonical Engineering Guide workflow:
 
 ---
 
-# Append to `docs/99-Current-Status.md`
-
-````markdown
 ## Current Status — Interactive Family Tree Complete
 
 The current Interactive Family Tree development phase is complete.
@@ -685,4 +682,7 @@ Exceptional parent-child relationships are exported as family-specific metadata:
   "type": "adopted"
 }
 ```
-````
+
+```
+
+```
