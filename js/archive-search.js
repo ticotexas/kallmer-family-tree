@@ -10,7 +10,6 @@ class ArchiveSearch {
     this.options = options;
 
     this.people = [];
-    this.peopleById = new Map();
     this.searchablePeople = [];
   }
 
@@ -50,10 +49,6 @@ class ArchiveSearch {
   setPeople(people = []) {
     this.people = [...people];
 
-    this.peopleById = new Map(
-      this.people.map((person) => [person.id, person]),
-    );
-
     this.searchablePeople = this.people.map((person) => ({
       person,
       searchName: this.normalizeText(
@@ -73,10 +68,6 @@ class ArchiveSearch {
       .filter(({ searchName }) => searchName.includes(normalizedQuery))
       .slice(0, limit)
       .map(({ person }) => person);
-  }
-
-  getPerson(id) {
-    return this.peopleById.get(id) ?? null;
   }
 }
 

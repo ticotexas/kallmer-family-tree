@@ -9,6 +9,7 @@ const statusElement = document.getElementById("tree-status");
 const pedigreeLink = document.querySelector(".pedigree-link");
 const searchInput = document.getElementById("person-search");
 const searchResults = document.getElementById("search-results");
+const archiveData = new ArchiveData();
 const archiveSearch = new ArchiveSearch();
 
 let peopleById = new Map();
@@ -1314,14 +1315,11 @@ async function loadFamilyArchive() {
 
     const data = await response.json();
 
-    if (!Array.isArray(data.people) || !Array.isArray(data.families)) {
-      throw new Error("Family data has an unexpected structure.");
-    }
+    archiveData.setData(data);
+    archiveSearch.setPeople(archiveData.people);
 
-    archiveSearch.setPeople(data.people);
-    peopleById = archiveSearch.peopleById;
-
-    familiesById = new Map(data.families.map((family) => [family.id, family]));
+    peopleById = archiveData.peopleById;
+    familiesById = archiveData.familiesById;
 
     console.log(
       `Loaded ${peopleById.size} people and ${familiesById.size} families.`,
