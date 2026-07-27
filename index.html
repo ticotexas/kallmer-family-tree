@@ -83,6 +83,17 @@
             margin: 0 auto 25px;
         }
 
+        .featured-person-image {
+            max-width: 280px;
+            margin: 20px auto;
+        }
+
+        .featured-person-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         @media (max-width: 700px) {
             .archive-logo {
                 max-width: 95%;
@@ -113,6 +124,7 @@
 
         <section class="featured-person" id="featured-person">
             <h2>From the Archive</h2>
+            <div id="featured-person-image"></div>
             <div id="featured-person-content">
                 Loading featured person...
             </div>
@@ -166,6 +178,35 @@
                     document.getElementById("featured-person-content").innerHTML =
                         `<strong>${featuredPerson.name}</strong><br>
                          ${birthYear}${deathYear ? " – " + deathYear : ""}${age ? " (" + age + ")" : ""}`;
+
+                    fetch("photos/index.json?v=" + Date.now())
+                        .then(response => response.json())
+                        .then(photoFolders => {
+                            const folder = photoFolders[featuredPerson.id];
+
+                            if (!folder) {
+                                return;
+                            }
+
+                            return fetch(`photos/${folder}/index.json?v=${Date.now()}`)
+                                .then(response => response.json())
+                                .then(photos => {
+                                    const portrait =
+                                        photos.find(photo => photo.file === "portrait.png") ||
+                                        photos[0];
+
+                                    if (!portrait) {
+                                        return;
+                                    }
+
+                                    document.getElementById("featured-person-image").innerHTML =
+                                        `<div class="featured-person-image">
+                                             <img src="photos/${folder}/${portrait.file}"
+                                                  alt="${portrait.alt || featuredPerson.name}">
+                                         </div>`;
+                                });
+                        })
+                        .catch(() => {});
                 }
             })
             .catch(() => {
