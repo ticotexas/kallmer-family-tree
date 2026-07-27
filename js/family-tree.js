@@ -10,6 +10,7 @@ const pedigreeLink = document.querySelector(".pedigree-link");
 const searchInput = document.getElementById("person-search");
 const searchResults = document.getElementById("search-results");
 const archiveData = new ArchiveData();
+const archiveRelationships = new ArchiveRelationships(archiveData);
 const archiveSearch = new ArchiveSearch();
 
 let peopleById = new Map();
@@ -140,31 +141,6 @@ function splitNameIntoLines(name) {
   }
 
   return [words.slice(0, -1).join(" "), words.at(-1)];
-}
-
-function findParentFamily(personId) {
-  return [...familiesById.values()].find(
-    (family) =>
-      Array.isArray(family.children) && family.children.includes(personId),
-  );
-}
-
-function findSpouseFamilies(personId) {
-  return [...familiesById.values()].filter(
-    (family) => family.husband === personId || family.wife === personId,
-  );
-}
-
-function getOtherSpouseId(family, personId) {
-  if (family.husband === personId) {
-    return family.wife;
-  }
-
-  if (family.wife === personId) {
-    return family.husband;
-  }
-
-  return null;
 }
 
 function getGenderAccentClass(person) {
@@ -421,7 +397,7 @@ function buildFamilyUnits(person, unions) {
 }
 
 function buildFamilyViewModel(person) {
-  const parentFamily = findParentFamily(person.id);
+  const parentFamily = archiveRelationships.findParentFamily(person.id);
 
   let father = parentFamily?.husband
     ? peopleById.get(parentFamily.husband)
@@ -440,9 +416,13 @@ function buildFamilyViewModel(person) {
     father = createUnknownAncestor("father");
   }
 
-  const unions = findSpouseFamilies(person.id)
+  const unions = archiveRelationships
+    .findSpouseFamilies(person.id)
     .map((family) => {
-      const spouseId = getOtherSpouseId(family, person.id);
+      const spouseId = archiveRelationships.getOtherSpouseId(
+        family,
+        person.id,
+      );
 
       return {
         family,
