@@ -338,3 +338,126 @@ These remain legitimate future work:
 - optional subtree expansion or collapse.
 
 The order should continue to be determined by real archive needs and visible limitations rather than by feature accumulation.
+
+---
+
+## Unified Archive Navigation
+
+### July 26, 2026
+
+The project crossed an important threshold during this session. The Interactive Family Tree and the Person Details page ceased to behave like separate applications and instead became two complementary views into the same archive.
+
+The work focused less on adding new features and more on reducing friction between existing ones.
+
+Completed work included:
+
+- reciprocal navigation between Family Tree and Person Details;
+- preservation of the selected person while switching views;
+- matching archive headers;
+- synchronized archive statistics;
+- archive search integrated into the Family Tree;
+- search synchronized with the currently selected person;
+- destination-colored navigation buttons;
+- consistent header spacing, typography, and geometry across both pages.
+
+Several visual refinements were made before considering the work complete. Rather than accepting two similar pages, the goal became making them feel like different perspectives on the same archival collection.
+
+A small but intentional visual language emerged:
+
+- **Tree View** uses a muted blue identity, emphasizing navigation and relationships.
+- **Person Details** uses the established homestead clay identity, emphasizing the archival exhibit.
+
+This distinction allows visitors to understand where they are without changing the overall visual character of the archive.
+
+### Architectural Direction
+
+This milestone also represents a change in the project's priorities.
+
+Earlier work concentrated on building visible capabilities:
+
+- genealogy conversion;
+- photographs;
+- stories;
+- relationship history;
+- the interactive tree;
+- family-unit layout.
+
+The next phase shifts toward **shared infrastructure**.
+
+Rather than adding another independent feature, the archive will begin extracting reusable components shared across the entire site.
+
+The first of these will be a common archive-search component serving:
+
+- homepage;
+- Family Tree;
+- Person Details.
+
+Future shared components will likely include:
+
+- common page headers;
+- Featured Person panels;
+- archive navigation elements;
+- shared visual tokens.
+
+### Lessons Learned
+
+Several ideas became reinforced during this milestone.
+
+**The archive is one application.**
+
+Switching between Tree and Details should feel like changing viewpoints rather than navigating between different pages.
+
+**Consistency reduces complexity.**
+
+Matching headers, spacing, navigation, and search behavior simplify the user experience without introducing new features.
+
+**Architecture should follow stability.**
+
+The project is now mature enough that effort can increasingly shift from creating pages toward extracting reusable components.
+
+### Established Decisions
+
+The following decisions should now be considered part of the project's stable direction:
+
+- Tree and Person Details remain reciprocal views of the same archive.
+- Tree View retains its muted blue visual identity.
+- Person Details retains its homestead clay identity.
+- Search behavior should become a shared archive capability rather than page-specific code.
+- Future refactoring should favor shared components over duplicated implementations.
+- Major architectural changes continue to follow the established workflow:
+  - inspect current local code;
+  - one guarded edit;
+  - `node --check`;
+  - inspect the diff;
+  - browser verification;
+  - one meaningful commit.
+
+This milestone marks the beginning of the archive's transition from feature development toward long-term architectural refinement.
+
+---
+
+## Shared Archive Infrastructure
+
+### July 27, 2026
+
+The project reached another architectural milestone by beginning the extraction of shared infrastructure from page-specific implementations.
+
+Completed work included:
+
+- creation of a shared `archive-search.css`;
+- creation of a shared `archive-search.js` scaffold;
+- migration of the Family Tree to the shared search stylesheet;
+- migration of the Person Details page to the shared search stylesheet;
+- three small, independently verified architectural commits with no intentional visual change.
+
+Rather than adding another visible capability, this work reduced duplication and established the foundation for reusable archive components.
+
+### Established Direction
+
+This session also clarified an important development principle.
+
+Architecture and visual language should now evolve independently.
+
+Shared infrastructure should continue to be completed before beginning a dedicated visual-polish phase. This keeps commits focused on one concern, reduces regression risk, and allows visual decisions to be evaluated across the archive rather than page by page.
+
+This milestone represents the archive's transition from primarily adding features toward strengthening long-term maintainability.

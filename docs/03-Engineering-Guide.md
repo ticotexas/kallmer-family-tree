@@ -358,3 +358,100 @@ Why this pattern:
 5. Hard-refresh the browser.
 6. Verify there are no unintended visual regressions.
 7. Commit only the intended files.
+
+## 16. Canonical Edit Cycle (Required)
+
+All implementation work follows the Canonical Edit Cycle. This workflow is mandatory for every coding session and supersedes generic editing habits.
+
+### Step 1 — Capture the Current Local Source
+
+Never edit from memory, uploaded files, or previous chat history.
+
+Request the exact current local block from the user using the project's clipboard workflow.
+
+Example:
+
+```bash
+id="descriptive-operation-name"
+
+{
+  sed -n '/START_PATTERN/,/END_PATTERN/p' path/to/file
+} | tee /tmp/${id}.txt | xclip -selection clipboard
+```
+
+The clipboard output becomes the authoritative source for the next edit.
+
+### Step 2 — Perform a Guarded Replacement
+
+Do not ask the user to edit manually.
+
+Generate a guarded Python replacement using `pathlib` that:
+
+- reads the current file;
+- matches the exact captured text;
+- aborts if the expected block is not found;
+- replaces only the intended block;
+- writes the updated file.
+
+Every guarded replacement must fail safely rather than risking unintended edits.
+
+### Step 3 — Verify
+
+After every JavaScript change:
+
+```bash
+node --check path/to/file.js
+```
+
+Then inspect only the intended changes:
+
+```bash
+git --no-pager diff -- path/to/file.js
+```
+
+### Step 4 — Capture Verification
+
+Verification should also use the clipboard workflow.
+
+Example:
+
+```bash
+id="descriptive-verification-name"
+
+{
+  echo "NODE CHECK"
+  echo "=========="
+  node --check path/to/file.js
+
+  echo
+  echo "DIFF"
+  echo "===="
+  git --no-pager diff -- path/to/file.js
+} | tee /tmp/${id}.txt | xclip -selection clipboard
+```
+
+The clipboard output becomes the review artifact for the next discussion.
+
+### Step 5 — Continue Incrementally
+
+Only after verification should the next implementation step begin.
+
+Each cycle should accomplish one meaningful architectural or behavioral improvement.
+
+Avoid combining unrelated work into a single edit.
+
+## 17. Workflow Enforcement
+
+Before proposing any code modification, ChatGPT must first read this Engineering Guide and follow the Canonical Edit Cycle.
+
+If ChatGPT proposes code edits without:
+
+1. capturing the current local source,
+2. using a guarded replacement,
+3. verifying with `node --check`,
+4. reviewing with `git --no-pager diff`, and
+5. capturing verification output,
+
+then the proposal should be considered invalid and restarted using this workflow.
+
+The Canonical Edit Cycle exists to ensure that every implementation is based on the user's current local files, minimizes accidental edits, produces reproducible verification, and keeps every commit focused and reviewable.
