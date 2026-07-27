@@ -264,6 +264,17 @@ body {
   stroke-width: 2.4;
 }
 
+.divorce-marker {
+  pointer-events: none;
+  stroke: rgba(176, 141, 63, 0.96);
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+.divorce-marker line {
+  vector-effect: non-scaling-stroke;
+}
+
 .placeholder-card-group {
   cursor: default;
   pointer-events: none;

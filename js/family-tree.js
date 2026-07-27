@@ -508,6 +508,7 @@ function measureFamilyUnit(unit) {
   const siblingBusGutter = 64;
 
   const familyUnitGap = 88;
+  const divorcedUnionSeparation = 24;
 
   const childCount = unit?.children?.length ?? 0;
   const widestChildRowCount = Math.min(childrenPerRow, childCount);
@@ -535,6 +536,7 @@ function measureFamilyUnit(unit) {
     childrenPerRow,
     siblingBusGutter,
     familyUnitGap,
+    divorcedUnionSeparation,
     unitWidth,
   };
 }
@@ -565,6 +567,9 @@ function layoutFamilyUnit(
   });
 
   const unitCenterX = unitLeft + measurements.unitWidth / 2;
+  const spouseSeparation = union.family?.divorced
+    ? measurements.divorcedUnionSeparation
+    : 0;
 
   const spouseCard = {
     key: `spouse-${unitIndex}`,
@@ -572,7 +577,7 @@ function layoutFamilyUnit(
     union,
     selected: false,
     x: unitCenterX - measurements.spouseWidth / 2,
-    y: spouseY,
+    y: spouseY + spouseSeparation,
     width: measurements.spouseWidth,
     height: measurements.spouseHeight,
   };
@@ -986,6 +991,33 @@ function drawRoundedRelationship(
   );
 }
 
+function drawDivorceMarker(x, y) {
+  const halfWidth = 4.5;
+  const markerGap = 3.5;
+  const markerRise = 4;
+  const marker = createSvgElement("g", {
+    class: "divorce-marker",
+    "aria-hidden": "true",
+  });
+
+  const upperBreak = createSvgElement("line", {
+    x1: x - halfWidth,
+    y1: y - markerGap - markerRise,
+    x2: x + halfWidth,
+    y2: y - markerGap + markerRise,
+  });
+
+  const lowerBreak = createSvgElement("line", {
+    x1: x - halfWidth,
+    y1: y + markerGap - markerRise,
+    x2: x + halfWidth,
+    y2: y + markerGap + markerRise,
+  });
+
+  marker.append(upperBreak, lowerBreak);
+  stage.append(marker);
+}
+
 
 function drawRelationshipLines(cards, relationships) {
   const cardMap = Object.fromEntries(
@@ -1085,28 +1117,71 @@ function drawRelationshipLines(cards, relationships) {
             ownerLaneWidth *
               (marriageOrder / (marriageCount - 1));
 
-      drawRoundedRelationship(
-        [
-          {
-            x: ownerLaneX,
-            y: ownerBox.bottom - edgeOverlap,
-          },
-          {
-            x: ownerLaneX,
-            y: laneY,
-          },
-          {
-            x: unitAnchorX,
-            y: laneY,
-          },
-          {
-            x: unitAnchorX,
-            y: spouseBox.top + edgeOverlap,
-          },
-        ],
-        branchRadius,
-        "relationship-line marriage-line",
-      );
+      if (relationship.divorced) {
+        const divorceMarkerX = unitAnchorX;
+        const divorceMarkerY =
+          laneY + (spouseBox.top - laneY) * 0.4;
+        const divorceGapHalf = 6;
+
+        drawRoundedRelationship(
+          [
+            {
+              x: ownerLaneX,
+              y: ownerBox.bottom - edgeOverlap,
+            },
+            {
+              x: ownerLaneX,
+              y: laneY,
+            },
+            {
+              x: unitAnchorX,
+              y: laneY,
+            },
+            {
+              x: unitAnchorX,
+              y: divorceMarkerY - divorceGapHalf,
+            },
+          ],
+          branchRadius,
+          "relationship-line marriage-line",
+        );
+
+        drawRelationshipPath(
+          [
+            `M ${unitAnchorX} ${divorceMarkerY + divorceGapHalf}`,
+            `V ${spouseBox.top + edgeOverlap}`,
+          ].join(" "),
+          "relationship-line marriage-line",
+        );
+
+        drawDivorceMarker(
+          divorceMarkerX,
+          divorceMarkerY,
+        );
+      } else {
+        drawRoundedRelationship(
+          [
+            {
+              x: ownerLaneX,
+              y: ownerBox.bottom - edgeOverlap,
+            },
+            {
+              x: ownerLaneX,
+              y: laneY,
+            },
+            {
+              x: unitAnchorX,
+              y: laneY,
+            },
+            {
+              x: unitAnchorX,
+              y: spouseBox.top + edgeOverlap,
+            },
+          ],
+          branchRadius,
+          "relationship-line marriage-line",
+        );
+      }
 
       if (childCards.length === 0) {
         continue;
