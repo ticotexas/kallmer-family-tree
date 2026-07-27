@@ -111,6 +111,13 @@
             American prairie — and the generations that followed.
         </p>
 
+        <section class="featured-person" id="featured-person">
+            <h2>From the Archive</h2>
+            <div id="featured-person-content">
+                Loading featured person...
+            </div>
+        </section>
+
         <div class="stats" id="archive-stats">
             Loading archive stats...
         </div>
@@ -127,7 +134,11 @@
 
 
 
+    <script src="js/archive-dates.js"></script>
+
     <script>
+        const featuredPersonId = "I0013";
+
         fetch("public-data/family.json?v=" + Date.now())
             .then(response => response.json())
             .then(data => {
@@ -136,6 +147,26 @@
 
                 document.getElementById("archive-stats").textContent =
                     `${peopleCount} individuals • ${familyCount} families • 8 generations`;
+
+                const featuredPerson = data.people.find(
+                    person => person.id === featuredPersonId
+                );
+
+                if (featuredPerson) {
+                    const archiveDates = new ArchiveDates();
+
+                    const birthYear = archiveDates.extractYear(featuredPerson.birth);
+                    const deathYear = archiveDates.extractYear(featuredPerson.death);
+
+                    const age =
+                        birthYear !== null && deathYear !== null
+                            ? deathYear - birthYear
+                            : null;
+
+                    document.getElementById("featured-person-content").innerHTML =
+                        `<strong>${featuredPerson.name}</strong><br>
+                         ${birthYear}${deathYear ? " – " + deathYear : ""}${age ? " (" + age + ")" : ""}`;
+                }
             })
             .catch(() => {
                 document.getElementById("archive-stats").textContent =
