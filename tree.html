@@ -24,6 +24,8 @@
       --paper: #fffaf0;
       --white: #ffffff;
       --tree-blue: #4f7194;
+      --archive-search-accent: var(--homestead-clay);
+      --archive-search-hover-background: #fff4df;
     }
 
     body {
@@ -114,80 +116,6 @@
       font-family: "IBM Plex Mono", monospace;
       font-size: 10.5px;
       letter-spacing: 0.025em;
-    }
-
-    #search-area {
-      position: relative;
-      width: min(420px, calc(100vw - 160px));
-      max-width: 420px;
-      margin-top: 10px;
-    }
-
-    #person-search {
-      width: 100%;
-      height: 39px;
-      box-sizing: border-box;
-      padding: 9px 12px;
-      border: 1px solid var(--brass);
-      border-radius: 4px;
-      background: var(--paper);
-      color: var(--ledger-ink);
-      font-family: "Source Serif 4", serif;
-      font-size: 1rem;
-    }
-
-    #person-search:focus {
-      outline: 2px solid var(--homestead-clay);
-      outline-offset: 2px;
-    }
-
-    #search-results {
-      display: none;
-      position: absolute;
-      z-index: 10;
-      top: calc(100% + 6px);
-      left: 0;
-      right: 0;
-      max-height: 280px;
-      overflow-y: auto;
-      background: var(--paper);
-      border: 1px solid var(--brass);
-      border-radius: 4px;
-      box-shadow: 0 8px 22px rgba(31, 46, 69, 0.18);
-    }
-
-    .search-result {
-      display: block;
-      width: 100%;
-      border: 0;
-      border-bottom: 1px solid rgba(176, 141, 63, 0.35);
-      background: none;
-      padding: 10px 12px;
-      text-align: left;
-      color: var(--ledger-ink);
-      font-family: "Source Serif 4", serif;
-      cursor: pointer;
-    }
-
-    .search-result:hover,
-    .search-result:focus {
-      background: #fff4df;
-      color: var(--homestead-clay);
-      outline: none;
-    }
-
-    .search-result-name {
-      display: block;
-      font-weight: 600;
-    }
-
-    .search-result-dates {
-      display: block;
-      margin-top: 2px;
-    }
-
-    .search-empty {
-      padding: 10px 12px;
     }
 
     #content {
