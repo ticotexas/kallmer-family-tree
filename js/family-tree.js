@@ -385,14 +385,28 @@ function createUnknownSpouse(familyId) {
 }
 
 function buildFamilyUnits(person, unions) {
-  return unions.map((union, unionIndex) => ({
-    id: union.family.id,
-    union,
-    primaryPerson: person,
-    spouse: union.spouse,
-    children: union.children,
-    isPrimary: unionIndex === 0,
-  }));
+  return unions
+    .map((union, originalIndex) => ({
+      union,
+      originalIndex,
+      marriageYear:
+        archiveDates.extractYear(union.family?.marriage_date) ??
+        Number.POSITIVE_INFINITY,
+    }))
+    .sort(
+      (a, b) =>
+        a.marriageYear - b.marriageYear ||
+        a.originalIndex - b.originalIndex,
+    )
+    .map(({ union }, unionIndex) => ({
+      id: union.family.id,
+      union,
+      primaryPerson: person,
+      spouse: union.spouse,
+      children: union.children,
+      isPrimary: unionIndex === 0,
+      marriageOrder: unionIndex,
+    }));
 }
 
 function buildFamilyViewModel(person) {
@@ -729,31 +743,35 @@ function buildRelationshipModel(father, mother, unionLayouts) {
     });
   }
 
-  if (unionLayouts.length > 0) {
-    relationships.push({
-      type: "family-unit-bus",
-      from: unionLayouts[0].ownerKey,
-      units: unionLayouts.map(
-        ({
-          spouseCard,
-          childCards,
-          anchor,
-          spouseAnchor,
-          childAnchor,
-          siblingBusX,
-          isPrimary,
-        }) => ({
-          spouse: spouseCard.key,
-          children: childCards.map((card) => card.key),
-          anchorX: anchor.x,
-          spouseAnchor,
-          childAnchor,
-          siblingBusX,
-          isPrimary,
-        }),
-      ),
-    });
-  }
+  unionLayouts.forEach(
+    (
+      {
+        ownerKey,
+        spouseCard,
+        childCards,
+        anchor,
+        spouseAnchor,
+        childAnchor,
+        siblingBusX,
+        isPrimary,
+      },
+      marriageOrder,
+    ) => {
+      relationships.push({
+        type: "family-unit",
+        from: ownerKey,
+        spouse: spouseCard.key,
+        children: childCards.map((card) => card.key),
+        anchorX: anchor.x,
+        spouseAnchor,
+        childAnchor,
+        siblingBusX,
+        isPrimary,
+        marriageOrder,
+        marriageCount: unionLayouts.length,
+      });
+    },
+  );
 
   return relationships;
 }
@@ -1015,172 +1033,139 @@ function drawRelationshipLines(cards, relationships) {
       );
     }
 
-    if (relationship.type === "family-unit-bus") {
+    if (relationship.type === "family-unit") {
       const ownerCard = cardMap[relationship.from];
+      const spouseCard = cardMap[relationship.spouse];
 
-      if (!ownerCard) {
+      if (!(ownerCard && spouseCard)) {
         continue;
       }
 
       const ownerBox = getCardGeometry(ownerCard);
-
-      const units = (relationship.units || [])
-        .map((unit) => {
-          const spouseCard = cardMap[unit.spouse];
-
-          if (!spouseCard) {
-            return null;
-          }
-
-          const spouseBox = getCardGeometry(spouseCard);
-          const childCards = (unit.children || [])
-            .map((key) => cardMap[key])
-            .filter(Boolean);
-
-          return {
-            ...unit,
-            spouseBox,
-            childCards,
-          };
-        })
+      const spouseBox = getCardGeometry(spouseCard);
+      const childCards = (relationship.children || [])
+        .map((key) => cardMap[key])
         .filter(Boolean);
 
-      if (units.length === 0) {
+      const unitAnchorX =
+        relationship.anchorX ?? spouseBox.centerX;
+
+      const marriageOrder = relationship.marriageOrder ?? 0;
+      const marriageCount = relationship.marriageCount ?? 1;
+      const firstLaneY = ownerBox.bottom + 34;
+      const laneGap = 18;
+      const laneY = firstLaneY + marriageOrder * laneGap;
+
+      const ownerWidth = ownerBox.right - ownerBox.left;
+      const ownerLanePadding = Math.min(44, ownerWidth / 4);
+      const ownerLaneWidth =
+        ownerWidth - ownerLanePadding * 2;
+
+      const ownerLaneX =
+        marriageCount === 1
+          ? ownerBox.centerX
+          : ownerBox.left +
+            ownerLanePadding +
+            ownerLaneWidth *
+              (marriageOrder / (marriageCount - 1));
+
+      drawRoundedRelationship(
+        [
+          {
+            x: ownerLaneX,
+            y: ownerBox.bottom - edgeOverlap,
+          },
+          {
+            x: ownerLaneX,
+            y: laneY,
+          },
+          {
+            x: unitAnchorX,
+            y: laneY,
+          },
+          {
+            x: unitAnchorX,
+            y: spouseBox.top + edgeOverlap,
+          },
+        ],
+        branchRadius,
+      );
+
+      if (childCards.length === 0) {
         continue;
       }
 
-      const spouseRowTop = Math.min(
-        ...units.map(({ spouseBox }) => spouseBox.top),
-      );
+      const rowGroups = new Map();
 
-      const busY =
-        ownerBox.bottom +
-        (spouseRowTop - ownerBox.bottom) / 2;
+      childCards.forEach((card) => {
+        const row = rowGroups.get(card.y) || [];
+        row.push(card);
+        rowGroups.set(card.y, row);
+      });
 
-      const unitAnchorXs = units.map(
-        ({ anchorX, spouseBox }) =>
-          anchorX ?? spouseBox.centerX,
-      );
+      const rows = [...rowGroups.values()]
+        .sort((a, b) => a[0].y - b[0].y)
+        .map((rowCards) => ({
+          cards: rowCards.sort(
+            (a, b) => a.x - b.x,
+          ),
+          busY: rowCards[0].y - 24,
+        }));
 
-      const busLeft = Math.min(
-        ownerBox.centerX,
-        ...unitAnchorXs,
-      );
+      const firstChildBusY = rows[0].busY;
+      const lastChildBusY = rows.at(-1).busY;
+      const usesWrappedRows = rows.length > 1;
+      const siblingBusX = relationship.siblingBusX;
 
-      const busRight = Math.max(
-        ownerBox.centerX,
-        ...unitAnchorXs,
-      );
-
-      drawRelationshipPath(
-        [
-          `M ${ownerBox.centerX} ${ownerBox.bottom - edgeOverlap}`,
-          `V ${busY}`,
-        ].join(" "),
-      );
-
-      if (busRight > busLeft) {
+      if (usesWrappedRows) {
         drawRelationshipPath(
-          `M ${busLeft} ${busY} H ${busRight}`,
+          [
+            `M ${unitAnchorX} ${spouseBox.bottom - edgeOverlap}`,
+            `V ${firstChildBusY - branchRadius}`,
+            `Q ${unitAnchorX} ${firstChildBusY} ${unitAnchorX - branchRadius} ${firstChildBusY}`,
+            `H ${siblingBusX}`,
+            `V ${lastChildBusY}`,
+          ].join(" "),
+        );
+      } else {
+        drawRelationshipPath(
+          [
+            `M ${unitAnchorX} ${spouseBox.bottom - edgeOverlap}`,
+            `V ${firstChildBusY}`,
+          ].join(" "),
         );
       }
 
-      units.forEach(
+      rows.forEach(
         ({
-          anchorX,
-          siblingBusX,
-          spouseBox,
-          childCards,
+          cards: rowCards,
+          busY: childBusY,
         }) => {
-          const unitAnchorX =
-            anchorX ?? spouseBox.centerX;
+          const rowBoxes = rowCards.map(getCardGeometry);
+          const firstCenterX = rowBoxes[0].centerX;
+          const lastCenterX = rowBoxes.at(-1).centerX;
+
+          const rowBusStartX = usesWrappedRows
+            ? siblingBusX
+            : Math.min(firstCenterX, unitAnchorX);
+
+          const rowBusEndX = Math.max(
+            lastCenterX,
+            usesWrappedRows ? siblingBusX : unitAnchorX,
+          );
 
           drawRelationshipPath(
-            [
-              `M ${unitAnchorX} ${busY}`,
-              `V ${spouseBox.top + edgeOverlap}`,
-            ].join(" "),
+            `M ${rowBusStartX} ${childBusY} H ${rowBusEndX}`,
           );
 
-          if (childCards.length === 0) {
-            return;
-          }
-
-          const rowGroups = new Map();
-
-          childCards.forEach((card) => {
-            const row = rowGroups.get(card.y) || [];
-            row.push(card);
-            rowGroups.set(card.y, row);
+          rowBoxes.forEach((box) => {
+            drawRelationshipPath(
+              [
+                `M ${box.centerX} ${childBusY}`,
+                `V ${box.top + edgeOverlap}`,
+              ].join(" "),
+            );
           });
-
-          const rows = [...rowGroups.values()]
-            .sort((a, b) => a[0].y - b[0].y)
-            .map((rowCards) => ({
-              cards: rowCards.sort(
-                (a, b) => a.x - b.x,
-              ),
-              busY: rowCards[0].y - 24,
-            }));
-
-          const firstChildBusY = rows[0].busY;
-          const lastChildBusY = rows.at(-1).busY;
-          const usesWrappedRows = rows.length > 1;
-
-          if (usesWrappedRows) {
-            drawRelationshipPath(
-              [
-                `M ${unitAnchorX} ${spouseBox.bottom - edgeOverlap}`,
-                `V ${firstChildBusY - branchRadius}`,
-                `Q ${unitAnchorX} ${firstChildBusY} ${unitAnchorX - branchRadius} ${firstChildBusY}`,
-                `H ${siblingBusX}`,
-                `V ${lastChildBusY}`,
-              ].join(" "),
-            );
-          } else {
-            drawRelationshipPath(
-              [
-                `M ${unitAnchorX} ${spouseBox.bottom - edgeOverlap}`,
-                `V ${firstChildBusY}`,
-              ].join(" "),
-            );
-          }
-
-          rows.forEach(
-            ({
-              cards: rowCards,
-              busY: childBusY,
-            }) => {
-              const rowBoxes =
-                rowCards.map(getCardGeometry);
-
-              const lastCenterX =
-                rowBoxes.at(-1).centerX;
-
-              const firstCenterX =
-                rowBoxes[0].centerX;
-              const rowBusStartX = usesWrappedRows
-                ? siblingBusX
-                : Math.min(firstCenterX, unitAnchorX);
-              const rowBusEndX = Math.max(
-                lastCenterX,
-                usesWrappedRows ? siblingBusX : unitAnchorX,
-              );
-
-              drawRelationshipPath(
-                `M ${rowBusStartX} ${childBusY} H ${rowBusEndX}`,
-              );
-
-              rowBoxes.forEach((box) => {
-                drawRelationshipPath(
-                  [
-                    `M ${box.centerX} ${childBusY}`,
-                    `V ${box.top + edgeOverlap}`,
-                  ].join(" "),
-                );
-              });
-            },
-          );
         },
       );
     }
