@@ -94,6 +94,7 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
                 "siblings": set(),
                 "families_as_spouse": set(),
                 "families_as_child": set(),
+                "parent_relationships": [],
                 "marriages": []
             }
 
@@ -146,7 +147,12 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
                 person["families_as_spouse"].add(clean_xref(value))
 
             elif tag == "FAMC":
-                person["families_as_child"].add(clean_xref(value))
+                family_id = clean_xref(value)
+                person["families_as_child"].add(family_id)
+                person["parent_relationships"].append({
+                    "family": family_id,
+                    "type": ""
+                })
 
             continue
 
@@ -168,6 +174,17 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
                     person["death_year"] = year_from_date(value)
                 elif tag == "PLAC":
                     person["death_place"] = value
+
+            elif current_event == "FAMC":
+                if tag == "PEDI" and person["parent_relationships"]:
+                    relationship_type = value.strip().lower()
+
+                    if relationship_type == "birth":
+                        person["parent_relationships"].pop()
+                    else:
+                        person["parent_relationships"][-1]["type"] = (
+                            relationship_type
+                        )
 
     elif current_type == "FAM" and current_id in families:
         family = families[current_id]
@@ -406,7 +423,7 @@ def public_person_record(person):
         display_birth_place = person["birth_place"]
         display_death_place = person["death_place"]
 
-    return {
+    record = {
         "id": person["id"],
         "name": preferred_name,
         "birth_name": birth_name,
@@ -425,11 +442,16 @@ def public_person_record(person):
         "marriages": [public_marriage_record(person, marriage) for marriage in person["marriages"]],
     }
 
+    if person["parent_relationships"]:
+        record["parent_relationships"] = person["parent_relationships"]
+
+    return record
+
 def private_person_record(person):
     # Private version keeps fuller date strings for local/family use.
     preferred_name, birth_name, alternate_names = name_metadata(person)
 
-    return {
+    record = {
         "id": person["id"],
         "name": preferred_name,
         "birth_name": birth_name,
@@ -453,6 +475,11 @@ def private_person_record(person):
         "families_as_child": sorted_list(person["families_as_child"]),
         "marriages": person["marriages"],
     }
+
+    if person["parent_relationships"]:
+        record["parent_relationships"] = person["parent_relationships"]
+
+    return record
 
 public_people = [public_person_record(person) for person in people.values()]
 private_people = [private_person_record(person) for person in people.values()]

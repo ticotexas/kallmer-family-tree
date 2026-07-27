@@ -2799,7 +2799,13 @@
       "spouses": [],
       "children": [],
       "siblings": [],
-      "marriages": []
+      "marriages": [],
+      "parent_relationships": [
+        {
+          "family": "F0022",
+          "type": "adopted"
+        }
+      ]
     },
     {
       "id": "I0071",
