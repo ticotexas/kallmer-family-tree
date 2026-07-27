@@ -770,6 +770,7 @@ function buildRelationshipModel(father, mother, unionLayouts) {
         isPrimary,
         marriageOrder,
         marriageCount: unionLayouts.length,
+        divorced: Boolean(spouseCard.union?.family?.divorced),
       });
     },
   );
