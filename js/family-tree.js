@@ -463,7 +463,7 @@ function formatFamilyUnitRelationship(family, primaryPerson, spouse) {
   );
 
   if (deathYears.length > 0) {
-    return `m. ${marriageYear}–${Math.min(...deathYears)} · widowed`;
+    return `m. ${marriageYear}–${Math.min(...deathYears)}`;
   }
 
   if (primaryPerson?.living || spouse?.living) {
