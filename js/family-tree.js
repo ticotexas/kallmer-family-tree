@@ -184,7 +184,7 @@ function drawPersonCard(person, x, y, options = {}) {
     width = 240,
     height = 92,
     selected = false,
-    relationshipLabel = "",
+    relationshipLabels = [],
   } = options;
   const isPlaceholder = Boolean(person.placeholder);
   const nameLines = splitNameIntoLines(person.name);
@@ -280,16 +280,19 @@ function drawPersonCard(person, x, y, options = {}) {
 
   group.append(name, dates);
 
-  if (relationshipLabel) {
+  const relationshipStartY = dateY + 24;
+  const relationshipLineGap = 18;
+
+  relationshipLabels.forEach((relationshipLabel, index) => {
     const relationship = createSvgElement("text", {
       class: "person-relationship",
       x: width / 2,
-      y: dateY + 18,
+      y: relationshipStartY + index * relationshipLineGap,
     });
 
     relationship.textContent = relationshipLabel;
     group.append(relationship);
-  }
+  });
 
   if (selected) {
     const profileLink = createSvgElement("a", {
@@ -552,11 +555,6 @@ function layoutFamilyUnit(
     key: `spouse-${unitIndex}`,
     person: union.spouse,
     union,
-    relationshipLabel: formatFamilyUnitRelationship(
-      union.family,
-      unit.primaryPerson ?? selectedCard.person,
-      union.spouse,
-    ),
     selected: false,
     x: unitCenterX - measurements.spouseWidth / 2,
     y: spouseY,
@@ -657,16 +655,30 @@ function layoutPrimaryFamily(model) {
   const measurements = primaryUnit.measurements;
   const layoutUnits = model.familyUnits.length ? preparedUnits : [];
 
+  const relationshipLabels = layoutUnits
+    .map((unit) =>
+      formatFamilyUnitRelationship(
+        unit.union.family,
+        unit.primaryPerson ?? person,
+        unit.union.spouse,
+      ),
+    )
+    .filter(Boolean);
+
   const selectedX = familyCenterX - measurements.selectedWidth / 2;
 
   const selectedCard = {
     key: "selected",
     person,
     selected: true,
+    relationshipLabels,
     x: selectedX,
     y: selectedY,
     width: measurements.selectedWidth,
-    height: measurements.selectedHeight,
+    height:
+      measurements.selectedHeight +
+      relationshipLabels.length * 18 +
+      (relationshipLabels.length > 0 ? 12 : 0),
   };
 
   const selectedCenterX = selectedCard.x + selectedCard.width / 2;
@@ -888,7 +900,7 @@ function drawCards(cards) {
       width: card.width,
       height: card.height,
       selected: card.selected,
-      relationshipLabel: card.relationshipLabel,
+      relationshipLabels: card.relationshipLabels,
     });
   }
 }
