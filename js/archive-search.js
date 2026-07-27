@@ -40,6 +40,19 @@ class ArchiveSearch {
     }));
   }
 
+  search(query, limit = 12) {
+    const normalizedQuery = this.normalizeText(query.trim());
+
+    if (normalizedQuery.length < 2) {
+      return [];
+    }
+
+    return this.searchablePeople
+      .filter(({ searchName }) => searchName.includes(normalizedQuery))
+      .slice(0, limit)
+      .map(({ person }) => person);
+  }
+
   getPerson(id) {
     return this.peopleById.get(id) ?? null;
   }
