@@ -27,6 +27,26 @@ class ArchiveSearch {
       .replace(/þ/g, "th");
   }
 
+  getSearchableNameText(person) {
+    const names = [person.name];
+
+    if (person.birth_name) {
+      names.push(person.birth_name);
+    }
+
+    if (Array.isArray(person.alternate_names)) {
+      person.alternate_names.forEach((entry) => {
+        if (typeof entry === "string") {
+          names.push(entry);
+        } else if (entry?.name) {
+          names.push(entry.name);
+        }
+      });
+    }
+
+    return names.filter(Boolean).join(" ");
+  }
+
   setPeople(people = []) {
     this.people = [...people];
 
@@ -36,7 +56,9 @@ class ArchiveSearch {
 
     this.searchablePeople = this.people.map((person) => ({
       person,
-      searchName: this.normalizeText(person.name),
+      searchName: this.normalizeText(
+        this.getSearchableNameText(person),
+      ),
     }));
   }
 
