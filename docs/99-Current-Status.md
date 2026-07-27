@@ -682,7 +682,3 @@ Exceptional parent-child relationships are exported as family-specific metadata:
   "type": "adopted"
 }
 ```
-
-```
-
-```
