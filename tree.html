@@ -1112,21 +1112,64 @@
         }
 
         function ageText(person) {
-          if (!person || !person.birth) return "";
+          if (!person) return "";
 
-          const birthYear = archiveDates.extractYear(person.birth);
-          if (!birthYear) return "";
+          if (person.living) {
+            const age = Number(person.age);
 
-          if (person.death) {
-            const deathYear = archiveDates.extractYear(person.death);
-            if (!deathYear) return "";
-
-            const age = deathYear - birthYear;
-            return age >= 0 && age < 125 ? ` (${age})` : "";
+            return Number.isInteger(age) && age >= 0 && age < 125
+              ? ` (${age})`
+              : "";
           }
 
-          const currentYear = new Date().getFullYear();
-          const age = currentYear - birthYear;
+          if (!person.birth || !person.death) return "";
+
+          const months = {
+            JAN: 1,
+            FEB: 2,
+            MAR: 3,
+            APR: 4,
+            MAY: 5,
+            JUN: 6,
+            JUL: 7,
+            AUG: 8,
+            SEP: 9,
+            OCT: 10,
+            NOV: 11,
+            DEC: 12
+          };
+
+          function fullDateParts(value) {
+            const match = String(value || "").toUpperCase().match(
+              /\b([0-2]?\d|3[01])\s+(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\s+(1[5-9]\d{2}|20\d{2})\b/
+            );
+
+            if (!match) return null;
+
+            return {
+              day: Number(match[1]),
+              month: months[match[2]],
+              year: Number(match[3])
+            };
+          }
+
+          const birth = fullDateParts(person.birth);
+          const death = fullDateParts(person.death);
+
+          if (!birth || !death) return "";
+
+          let age = death.year - birth.year;
+
+          if (
+            death.month < birth.month ||
+            (
+              death.month === birth.month &&
+              death.day < birth.day
+            )
+          ) {
+            age -= 1;
+          }
+
           return age >= 0 && age < 125 ? ` (${age})` : "";
         }
 
