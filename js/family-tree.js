@@ -314,7 +314,7 @@ function drawPersonCard(person, x, y, options = {}) {
     const profileText = createSvgElement("text", {
       class: "profile-link-text",
       x: width / 2,
-      y: height - 12,
+      y: height - 10,
     });
 
     profileText.textContent = "View Profile";

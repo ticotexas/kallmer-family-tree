@@ -238,7 +238,7 @@ body {
 .profile-link-text {
   fill: rgba(168, 85, 46, 0.86);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 9.5px;
+  font-size: 11px;
   letter-spacing: 0.055em;
   text-anchor: middle;
   text-decoration: underline;
