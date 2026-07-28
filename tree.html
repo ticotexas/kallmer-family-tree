@@ -1835,25 +1835,74 @@
           window.setTimeout(render, 170);
         }
 
+        function showPersonNotFound() {
+          const detailsElement = document.getElementById("details");
+          const birthNameElement = document.getElementById("detail-birth-name");
+
+          ++detailTransitionId;
+          closePhotoLightbox();
+
+          document.getElementById("tree").innerHTML = "";
+          document.getElementById("detail-name").textContent =
+            "Person Not Found";
+
+          birthNameElement.textContent = "";
+          birthNameElement.style.display = "none";
+
+          document.getElementById("detail-dates").textContent = "";
+          document.getElementById("detail-photo").innerHTML = "";
+          document.getElementById("detail-place").innerHTML = `
+            <p>
+              The requested person could not be found in the public family archive.
+            </p>
+            <p>
+              Use the search field above or return to the interactive family tree.
+            </p>
+          `;
+          document.getElementById("detail-story").innerHTML = "";
+
+          searchInput.value = "";
+
+          const treeViewLink = document.getElementById("tree-view-link");
+          treeViewLink.href = "family-tree.html";
+
+          delete detailsElement.dataset.personId;
+          detailsElement.classList.remove(
+            "details-panel-exiting",
+            "details-panel-entering"
+          );
+        }
+
         function personFromCurrentUrl() {
           const params = new URLSearchParams(window.location.search);
           const personId = params.get("person");
 
-          return (
-            (personId && peopleById[personId]) ||
-            peopleById["I0000"] ||
-            data.people[0]
-          );
+          if (personId) {
+            return peopleById[personId] || null;
+          }
+
+          return peopleById["I0000"] || data.people[0] || null;
+        }
+
+        function showPersonFromCurrentUrl(historyMode = "none") {
+          const person = personFromCurrentUrl();
+
+          if (!person) {
+            showPersonNotFound();
+            return;
+          }
+
+          showDetails(person, historyMode);
         }
 
         window.addEventListener("popstate", () => {
-          showDetails(personFromCurrentUrl(), "none");
+          showPersonFromCurrentUrl("none");
         });
 
         mediaFolderMapsReady.then(() => {
           setupSearch();
 
-          showDetails(personFromCurrentUrl(), "replace");
+          showPersonFromCurrentUrl("replace");
         });
       });
   </script>
