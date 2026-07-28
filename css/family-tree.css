@@ -338,7 +338,19 @@ body {
   .tree-page {
     height: calc(100vh - 106px);
     min-height: 520px;
-    padding-top: 8px;
+    padding: 8px 0 96px;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+
+  .family-tree {
+    max-width: none;
+    max-height: none;
+    cursor: grab;
+  }
+
+  .family-tree.family-tree-panning {
+    cursor: grabbing;
   }
 }
 

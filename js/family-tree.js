@@ -1283,6 +1283,107 @@ function drawRelationshipLines(cards, relationships) {
   }
 }
 
+function setupMobileTreePanning() {
+  const treePage = svg.parentElement;
+  const mobileTreeQuery = window.matchMedia("(max-width: 760px)");
+
+  if (!treePage) {
+    return;
+  }
+
+  let activePointerId = null;
+  let pointerStartX = 0;
+  let pointerStartY = 0;
+  let scrollStartLeft = 0;
+  let scrollStartTop = 0;
+  let hasDragged = false;
+  let suppressNextClick = false;
+
+  svg.addEventListener("pointerdown", (event) => {
+    if (
+      !mobileTreeQuery.matches ||
+      event.button !== 0 ||
+      activePointerId !== null
+    ) {
+      return;
+    }
+
+    activePointerId = event.pointerId;
+    pointerStartX = event.clientX;
+    pointerStartY = event.clientY;
+    scrollStartLeft = treePage.scrollLeft;
+    scrollStartTop = treePage.scrollTop;
+    hasDragged = false;
+
+    svg.setPointerCapture(event.pointerId);
+    svg.classList.add("family-tree-panning");
+  });
+
+  svg.addEventListener("pointermove", (event) => {
+    if (event.pointerId !== activePointerId) {
+      return;
+    }
+
+    const distanceX = event.clientX - pointerStartX;
+    const distanceY = event.clientY - pointerStartY;
+
+    if (
+      !hasDragged &&
+      Math.hypot(distanceX, distanceY) >= 6
+    ) {
+      hasDragged = true;
+    }
+
+    if (!hasDragged) {
+      return;
+    }
+
+    event.preventDefault();
+
+    treePage.scrollLeft = scrollStartLeft - distanceX;
+    treePage.scrollTop = scrollStartTop - distanceY;
+  });
+
+  const finishPointerInteraction = (event) => {
+    if (event.pointerId !== activePointerId) {
+      return;
+    }
+
+    if (hasDragged) {
+      suppressNextClick = true;
+
+      window.setTimeout(() => {
+        suppressNextClick = false;
+      }, 0);
+    }
+
+    if (svg.hasPointerCapture(event.pointerId)) {
+      svg.releasePointerCapture(event.pointerId);
+    }
+
+    activePointerId = null;
+    hasDragged = false;
+    svg.classList.remove("family-tree-panning");
+  };
+
+  svg.addEventListener("pointerup", finishPointerInteraction);
+  svg.addEventListener("pointercancel", finishPointerInteraction);
+
+  svg.addEventListener(
+    "click",
+    (event) => {
+      if (!suppressNextClick) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      suppressNextClick = false;
+    },
+    true,
+  );
+}
+
 let renderTransitionId = 0;
 
 function renderFamilyView(person) {
@@ -1300,14 +1401,62 @@ function renderFamilyView(person) {
 
     const model = buildFamilyViewModel(person);
     const layout = buildLayout(model);
+    const usesScrollableMobileTree = window.matchMedia(
+      "(max-width: 760px)",
+    ).matches;
+    const mobileTreeScale = 0.82;
 
     svg.setAttribute(
       "viewBox",
       `${layout.viewBox.x} ${layout.viewBox.y} ${layout.viewBox.width} ${layout.viewBox.height}`,
     );
 
+    if (usesScrollableMobileTree) {
+      svg.style.width = `${layout.viewBox.width * mobileTreeScale}px`;
+      svg.style.height = `${layout.viewBox.height * mobileTreeScale}px`;
+    } else {
+      svg.style.removeProperty("width");
+      svg.style.removeProperty("height");
+    }
+
     drawRelationshipLines(layout.cards, layout.relationships);
     drawCards(layout.cards);
+
+    if (usesScrollableMobileTree) {
+      const selectedCard =
+        layout.cards.find((card) => card.selected) || null;
+      const treePage = svg.parentElement;
+
+      if (selectedCard && treePage) {
+        window.requestAnimationFrame(() => {
+          const selectedCenterX =
+            (
+              selectedCard.x +
+              selectedCard.width / 2 -
+              layout.viewBox.x
+            ) * mobileTreeScale;
+
+          const selectedCenterY =
+            (
+              selectedCard.y +
+              selectedCard.height / 2 -
+              layout.viewBox.y
+            ) * mobileTreeScale;
+
+          treePage.scrollTo({
+            left: Math.max(
+              0,
+              selectedCenterX - treePage.clientWidth / 2,
+            ),
+            top: Math.max(
+              0,
+              selectedCenterY - treePage.clientHeight * 0.42,
+            ),
+            behavior: "auto",
+          });
+        });
+      }
+    }
 
     stage.classList.remove("tree-stage-exiting");
 
@@ -1424,6 +1573,7 @@ async function loadFamilyArchive() {
 
 placeStatusUnderHeading();
 setupSearch();
+setupMobileTreePanning();
 
 window.addEventListener("popstate", () => {
   const personId = getRequestedPersonId();
