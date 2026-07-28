@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ticotexas.github.io/kallmer-family-tree/sitemap.xml
