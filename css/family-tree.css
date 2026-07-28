@@ -1,0 +1,362 @@
+/* Interactive Family Tree — Phase 4 starting point */
+
+:root {
+  --ledger-ink: #1f2e45;
+  --prairie-wheat: #e8dcc3;
+  --homestead-clay: #a8552e;
+  --prairie-sage: #6b7c5a;
+  --brass: #b08d3f;
+  --paper: #fffaf0;
+  --canvas: #f5eddb;
+
+  /* Muted archival gender accents */
+  --male-accent: #6687a8;
+  --female-accent: #b66f82;
+  --neutral-accent: #8b927f;
+  --unknown-accent: #aaa38f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  color: var(--ledger-ink);
+  background: var(--prairie-wheat);
+  font-family: "Source Serif 4", Georgia, serif;
+}
+
+.site-header {
+  min-height: 164px;
+  padding: 16px 32px 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid rgba(176, 141, 63, 0.72);
+  background: var(--prairie-wheat);
+}
+
+.site-header > div {
+  min-width: 0;
+}
+
+.archive-link {
+  display: inline-block;
+  margin-bottom: 3px;
+  color: var(--prairie-sage);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.045em;
+  text-decoration: none;
+}
+
+.archive-link:hover,
+.archive-link:focus-visible {
+  color: var(--homestead-clay);
+}
+
+.archive-link:hover,
+.archive-link:focus-visible {
+  color: var(--homestead-clay);
+}
+
+.site-header h1 {
+  margin: 0;
+  color: var(--ledger-ink);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 600;
+  line-height: 1.04;
+}
+
+.tree-status,
+.header-tree-status {
+  margin-top: 4px;
+  padding-left: 0;
+  color: rgba(31, 46, 69, 0.62);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.025em;
+}
+
+.pedigree-link {
+  flex: 0 0 auto;
+  padding: 8px 13px;
+  border: 1px solid var(--homestead-clay);
+  border-radius: 4px;
+  background: var(--homestead-clay);
+  color: var(--paper);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(31, 46, 69, 0.12);
+  transition:
+    filter 120ms ease,
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.pedigree-link:hover,
+.pedigree-link:focus-visible {
+  color: var(--paper);
+  filter: brightness(0.92);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 7px rgba(31, 46, 69, 0.17);
+}
+
+.pedigree-link:focus-visible {
+  outline: 2px solid var(--ledger-ink);
+  outline-offset: 3px;
+}
+
+.tree-page {
+  position: relative;
+  height: calc(100vh - 164px);
+  min-height: 480px;
+  padding: 18px 0 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 250, 240, 0.95), rgba(245, 237, 219, 0.78) 56%, rgba(232, 220, 195, 0.94) 100%);
+  border-top: 1px solid rgba(255, 250, 240, 0.74);
+}
+
+.family-tree {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  touch-action: none;
+  user-select: none;
+}
+
+#tree-stage {
+  opacity: 1;
+  transition: opacity 170ms ease;
+}
+
+#tree-stage.tree-stage-exiting,
+#tree-stage.tree-stage-entering {
+  opacity: 0.38;
+}
+
+.person-card-group {
+  cursor: pointer;
+  outline: none;
+}
+
+.person-card {
+  fill: var(--paper);
+  stroke: rgba(176, 141, 63, 0.92);
+  stroke-width: 1;
+  filter: drop-shadow(0 2px 3px rgba(31, 46, 69, 0.10));
+  transition:
+    fill 150ms ease,
+    stroke 150ms ease,
+    filter 150ms ease;
+}
+
+.person-card-group:hover .person-card,
+.person-card-group:focus .person-card {
+  fill: #fff4df;
+  stroke: var(--homestead-clay);
+  filter: drop-shadow(0 4px 7px rgba(31, 46, 69, 0.15));
+}
+
+.selected-person-card {
+  fill: #fff4df;
+  stroke: var(--homestead-clay);
+  stroke-width: 1.3;
+  filter: drop-shadow(0 3px 5px rgba(31, 46, 69, 0.12));
+}
+
+.person-card-accent {
+  opacity: 0.78;
+}
+
+.male-person-accent {
+  fill: var(--male-accent);
+}
+
+.female-person-accent {
+  fill: var(--female-accent);
+}
+
+.neutral-person-accent {
+  fill: var(--neutral-accent);
+}
+
+.selected-person-accent {
+  opacity: 1;
+}
+
+.person-name {
+  fill: var(--ledger-ink);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.15;
+  text-anchor: middle;
+}
+
+.long-person-name {
+  font-size: 15.5px;
+}
+
+.person-dates {
+  fill: var(--prairie-sage);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-anchor: middle;
+}
+
+.person-relationship {
+  fill: rgba(31, 46, 69, 0.68);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  text-anchor: middle;
+}
+
+.person-role,
+.person-id {
+  display: none;
+}
+
+.profile-link-hitbox {
+  fill: transparent;
+}
+
+.profile-link-text {
+  fill: rgba(168, 85, 46, 0.86);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.055em;
+  text-anchor: middle;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.profile-link:hover .profile-link-text,
+.profile-link:focus .profile-link-text {
+  fill: var(--homestead-clay);
+}
+
+.relationship-line {
+  fill: none;
+  stroke: rgba(31, 46, 69, 0.39);
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.marriage-line {
+  stroke: rgba(176, 141, 63, 0.82);
+  stroke-width: 2.4;
+}
+
+.divorce-marker {
+  pointer-events: none;
+  stroke: rgba(176, 141, 63, 0.96);
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+.divorce-marker line {
+  vector-effect: non-scaling-stroke;
+}
+
+.placeholder-card-group {
+  cursor: default;
+  pointer-events: none;
+}
+
+.unknown-person-card {
+  fill: rgba(255, 250, 240, 0.48);
+  stroke: rgba(107, 124, 90, 0.48);
+  stroke-width: 1;
+  stroke-dasharray: 6 5;
+  filter: none;
+}
+
+.unknown-person-accent {
+  fill: var(--unknown-accent);
+  opacity: 0.36;
+}
+
+.unknown-person-name {
+  fill: rgba(31, 46, 69, 0.58);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.unknown-person-dates {
+  fill: rgba(107, 124, 90, 0.68);
+  font-size: 9.5px;
+  letter-spacing: 0.025em;
+}
+
+.error-message {
+  fill: var(--homestead-clay);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 20px;
+  text-anchor: middle;
+}
+
+@media (max-width: 760px) {
+  body {
+    overflow: auto;
+  }
+
+  .site-header {
+    min-height: 106px;
+    padding: 10px 12px;
+  }
+
+  .site-header h1 {
+    font-size: 27px;
+  }
+
+  .pedigree-link {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .tree-page {
+    height: calc(100vh - 106px);
+    min-height: 520px;
+    padding: 8px 0 96px;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+
+  .family-tree {
+    max-width: none;
+    max-height: none;
+    cursor: grab;
+  }
+
+  .family-tree.family-tree-panning {
+    cursor: grabbing;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #tree-stage,
+  .person-card {
+    transition: none;
+  }
+}

@@ -5,13 +5,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Kallmer Family Tree</title>
+  <title>Archive | The Kallmer Family Archive</title>
+
+  <meta
+    name="description"
+    content="Browse individual profiles, family relationships, photographs, and stories in the Kallmer Family Archive."
+  >
+
+  <meta property="og:title" content="Browse the Kallmer Family Archive">
+  <meta
+    property="og:description"
+    content="Browse individual profiles, family relationships, photographs, and stories in the Kallmer Family Archive."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ticotexas.github.io/kallmer-family-tree/tree.html">
+  <meta property="og:image" content="https://ticotexas.github.io/kallmer-family-tree/images/kallmer-archive-logo.png">
+  <meta
+    property="og:image:alt"
+    content="The Kallmer Family Archive"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Browse the Kallmer Family Archive">
+  <meta
+    name="twitter:description"
+    content="Browse individual profiles, family relationships, photographs, and stories in the Kallmer Family Archive."
+  >
+  <meta name="twitter:image" content="https://ticotexas.github.io/kallmer-family-tree/images/kallmer-archive-logo.png">
+  <meta
+    name="twitter:image:alt"
+    content="The Kallmer Family Archive"
+  >
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:wght@400;500;600&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="css/archive-search.css">
 
   <style>
     :root {
@@ -22,6 +56,9 @@
       --brass: #b08d3f;
       --paper: #fffaf0;
       --white: #ffffff;
+      --tree-blue: #4f7194;
+      --archive-search-accent: var(--homestead-clay);
+      --archive-search-hover-background: #fff4df;
     }
 
     body {
@@ -33,20 +70,18 @@
 
     .archive-home-link {
       display: inline-block;
-      margin-bottom: 10px;
-
+      margin-bottom: 3px;
       color: var(--prairie-sage);
-
       font-family: "IBM Plex Mono", monospace;
-      font-size: 0.85rem;
-
+      font-size: 13px;
+      letter-spacing: 0.045em;
       text-decoration: none;
-      letter-spacing: 0.05em;
     }
 
-    .archive-home-link:hover {
+    .archive-home-link:hover,
+    .archive-home-link:focus-visible {
       color: var(--homestead-clay);
-      text-decoration: underline;
+      text-decoration: none;
     }
 
     header {
@@ -54,83 +89,66 @@
       border-bottom: 1px solid var(--brass);
     }
 
+    .detail-header {
+      box-sizing: border-box;
+      min-height: 164px;
+      padding: 16px 32px 18px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .detail-header > .header-main {
+      min-width: 0;
+    }
+
     h1 {
       margin: 0;
-      font-family: "Fraunces", serif;
-      font-size: 2.4rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(30px, 3vw, 42px);
+      font-weight: 600;
+      line-height: 1.04;
     }
 
 
-    #search-area {
-      margin-top: 18px;
-      max-width: 420px;
-      position: relative;
-    }
-
-    #person-search {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 12px 14px;
-      border: 1px solid var(--brass);
-      border-radius: 4px;
-      background: var(--paper);
-      color: var(--ledger-ink);
-      font-family: "Source Serif 4", serif;
-      font-size: 1rem;
-    }
-
-    #person-search:focus {
-      outline: 2px solid var(--homestead-clay);
-      outline-offset: 2px;
-    }
-
-    #search-results {
-      display: none;
-      position: absolute;
-      z-index: 10;
-      top: calc(100% + 6px);
-      left: 0;
-      right: 0;
-      max-height: 280px;
-      overflow-y: auto;
-      background: var(--paper);
-      border: 1px solid var(--brass);
-      border-radius: 4px;
-      box-shadow: 0 8px 22px rgba(31, 46, 69, 0.18);
-    }
-
-    .search-result {
-      display: block;
-      width: 100%;
-      border: 0;
-      border-bottom: 1px solid rgba(176, 141, 63, 0.35);
-      background: none;
-      padding: 10px 12px;
-      text-align: left;
-      color: var(--ledger-ink);
-      font-family: "Source Serif 4", serif;
-      cursor: pointer;
-    }
-
-    .search-result:hover,
-    .search-result:focus {
-      background: #fff4df;
+    .detail-header h1 {
       color: var(--homestead-clay);
+    }
+
+    .view-switch-link {
+      display: inline-block;
+      padding: 8px 13px;
+      border: 1px solid var(--tree-blue);
+      border-radius: 4px;
+      background: var(--tree-blue);
+      color: var(--paper);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      box-shadow: 0 1px 2px rgba(31, 46, 69, 0.12);
+      transition:
+        filter 120ms ease,
+        transform 120ms ease,
+        box-shadow 120ms ease;
+    }
+
+    .view-switch-link:hover,
+    .view-switch-link:focus-visible {
+      color: var(--paper);
+      filter: brightness(0.92);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 7px rgba(31, 46, 69, 0.17);
       outline: none;
     }
 
-    .search-result-name {
-      display: block;
-      font-weight: 600;
-    }
-
-    .search-result-dates {
-      display: block;
-      margin-top: 2px;
-    }
-
-    .search-empty {
-      padding: 10px 12px;
+    .header-archive-status {
+      margin-top: 4px;
+      color: rgba(31, 46, 69, 0.62);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.025em;
     }
 
     #content {
@@ -160,6 +178,13 @@
       max-width: 390px;
       box-sizing: border-box;
       box-shadow: 0 8px 22px rgba(31, 46, 69, 0.22);
+      opacity: 1;
+      transition: opacity 170ms ease;
+    }
+
+    #details.details-panel-exiting,
+    #details.details-panel-entering {
+      opacity: 0.38;
     }
 
     #details h2 {
@@ -672,6 +697,12 @@
       color: var(--paper);
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      #details {
+        transition: none;
+      }
+    }
+
     @media (max-width: 900px) {
       #content {
         flex-direction: column;
@@ -721,11 +752,34 @@
     }
 
     .link-dates,
-    .link-age {
+    .link-age,
+    .link-relationship {
       display: block;
       color: #b7c69f;
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.88rem;
+    }
+
+    .link-relationship,
+    .pedigree-relationship,
+    .detail-relationship {
+      color: #b7c69f;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      font-style: italic;
+    }
+
+    .link-relationship {
+      margin-top: 0.18rem;
+      text-decoration: none;
+    }
+
+    .pedigree-relationship {
+      margin-top: 3px;
+    }
+
+    .detail-relationship {
+      margin-top: 0.35rem;
     }
 
 
@@ -737,18 +791,32 @@
 
 <body>
 
-  <header>
+  <header class="detail-header">
+    <div class="header-main">
+      <a href="index.html" class="archive-home-link">
+        ← The Kallmer Family Archive
+      </a>
 
-    <a href="index.html" class="archive-home-link">
-      ← The Kallmer Family Archive
-    </a>
+      <h1>Person Details</h1>
 
-    <h1>Kallmer Family Tree</h1>
+      <div
+        id="detail-archive-status"
+        class="header-archive-status"
+      ></div>
 
-    <div id="search-area">
-      <input type="text" id="person-search" placeholder="Search for a person..." autocomplete="off" />
-      <div id="search-results"></div>
+      <div id="search-area">
+        <input type="text" id="person-search" aria-label="Search family members" placeholder="Search for a person..." autocomplete="off" />
+        <div id="search-results"></div>
+      </div>
     </div>
+
+    <a
+      id="tree-view-link"
+      class="view-switch-link"
+      href="family-tree.html"
+    >
+      Tree View
+    </a>
   </header>
 
   <div id="content">
@@ -802,9 +870,21 @@
     </div>
   </div>
 
+  <script src="js/archive-dates.js"></script>
+  <script src="js/archive-search.js"></script>
   <script>
+    const archiveDates = new ArchiveDates();
+
     fetch("public-data/family.json?v=" + Date.now())
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Family data request failed with status ${response.status}.`
+          );
+        }
+
+        return response.json();
+      })
       .then((data) => {
         const tree = document.getElementById("tree");
         const searchInput = document.getElementById("person-search");
@@ -893,6 +973,14 @@
         data.people.forEach(person => {
           peopleById[person.id] = person;
         });
+
+        const detailArchiveStatus =
+          document.getElementById("detail-archive-status");
+
+        if (detailArchiveStatus) {
+          detailArchiveStatus.textContent =
+            `${data.people.length} individuals • ${data.families.length} families`;
+        }
 
         let photoFolderMap = {};
         let storyFolderMap = {};
@@ -1023,27 +1111,65 @@
           });
         }
 
-        function yearFromText(text) {
-          const match = String(text || "").match(/\b(1[5-9]\d{2}|20\d{2})\b/);
-          return match ? parseInt(match[1], 10) : null;
-        }
-
         function ageText(person) {
-          if (!person || !person.birth) return "";
+          if (!person) return "";
 
-          const birthYear = yearFromText(person.birth);
-          if (!birthYear) return "";
+          if (person.living) {
+            const age = Number(person.age);
 
-          if (person.death) {
-            const deathYear = yearFromText(person.death);
-            if (!deathYear) return "";
-
-            const age = deathYear - birthYear;
-            return age >= 0 && age < 125 ? ` (${age})` : "";
+            return Number.isInteger(age) && age >= 0 && age < 125
+              ? ` (${age})`
+              : "";
           }
 
-          const currentYear = new Date().getFullYear();
-          const age = currentYear - birthYear;
+          if (!person.birth || !person.death) return "";
+
+          const months = {
+            JAN: 1,
+            FEB: 2,
+            MAR: 3,
+            APR: 4,
+            MAY: 5,
+            JUN: 6,
+            JUL: 7,
+            AUG: 8,
+            SEP: 9,
+            OCT: 10,
+            NOV: 11,
+            DEC: 12
+          };
+
+          function fullDateParts(value) {
+            const match = String(value || "").toUpperCase().match(
+              /\b([0-2]?\d|3[01])\s+(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\s+(1[5-9]\d{2}|20\d{2})\b/
+            );
+
+            if (!match) return null;
+
+            return {
+              day: Number(match[1]),
+              month: months[match[2]],
+              year: Number(match[3])
+            };
+          }
+
+          const birth = fullDateParts(person.birth);
+          const death = fullDateParts(person.death);
+
+          if (!birth || !death) return "";
+
+          let age = death.year - birth.year;
+
+          if (
+            death.month < birth.month ||
+            (
+              death.month === birth.month &&
+              death.day < birth.day
+            )
+          ) {
+            age -= 1;
+          }
+
           return age >= 0 && age < 125 ? ` (${age})` : "";
         }
 
@@ -1072,7 +1198,7 @@
         }
 
 
-        function personButton(person) {
+        function personButton(person, relationshipLabel = "") {
           const dates = lifeDates(person);
           const ageMatch = dates.match(/\(\d+\)$/);
 
@@ -1084,6 +1210,9 @@
       <span class="link-name">${person.name}</span>
       <span class="link-dates">${dateOnly}</span>
       ${age ? `<span class="link-age">${age}</span>` : ""}
+      ${relationshipLabel
+        ? `<span class="link-relationship">${relationshipLabel}</span>`
+        : ""}
     </button>
   `;
         }
@@ -1094,52 +1223,93 @@
           return ids
             .map(id => peopleById[id])
             .filter(Boolean)
-            .map(personButton)
+            .map(person => personButton(person))
             .join("<br>");
         }
 
-        function birthSortValue(person) {
-          const text = String(person && person.birth || "").toUpperCase();
-
-          const yearMatch = text.match(/\b(1[5-9]\d{2}|20\d{2})\b/);
-          if (!yearMatch) return Number.POSITIVE_INFINITY;
-
-          const year = parseInt(yearMatch[1], 10);
-          const monthNames = {
-            JAN: 1, FEB: 2, MAR: 3, APR: 4,
-            MAY: 5, JUN: 6, JUL: 7, AUG: 8,
-            SEP: 9, OCT: 10, NOV: 11, DEC: 12
-          };
-
-          const monthMatch = text.match(
-            /\b(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\b/
-          );
-          const month = monthMatch ? monthNames[monthMatch[1]] : 1;
-
-          const dayMatch = text.match(
-            /\b([0-2]?\d|3[01])\s+(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\b/
-          );
-          const day = dayMatch ? parseInt(dayMatch[1], 10) : 1;
-
-          return (year * 10000) + (month * 100) + day;
-        }
-
-        function namesFromIdsOldestFirst(ids) {
-          if (!ids || ids.length === 0) return "None listed";
-
-          return ids
+        function peopleFromIdsOldestFirst(ids) {
+          return (ids || [])
             .map(id => peopleById[id])
             .filter(Boolean)
             .sort((a, b) => {
-              const dateDifference = birthSortValue(a) - birthSortValue(b);
+              const dateDifference =
+                archiveDates.birthDateSortValue(a) -
+                archiveDates.birthDateSortValue(b);
 
               if (dateDifference !== 0) {
                 return dateDifference;
               }
 
               return a.name.localeCompare(b.name);
-            })
-            .map(personButton)
+            });
+        }
+
+        function namesFromIdsOldestFirst(ids) {
+          if (!ids || ids.length === 0) return "None listed";
+
+          return peopleFromIdsOldestFirst(ids)
+            .map(person => personButton(person))
+            .join("<br>");
+        }
+
+        function relationshipTypeLabel(type) {
+          switch (type) {
+            case "adopted":
+              return "Adopted";
+            case "foster":
+              return "Foster";
+            case "step":
+              return "Step";
+            default:
+              return "";
+          }
+        }
+
+        function childRelationshipLabel(parentId, child) {
+          const family = data.families.find(
+            entry =>
+              (entry.husband === parentId || entry.wife === parentId) &&
+              Array.isArray(entry.children) &&
+              entry.children.includes(child.id)
+          );
+
+          if (!family) return "";
+
+          const relationship = child.parent_relationships?.find(
+            entry => entry.family === family.id
+          );
+
+          return relationshipTypeLabel(relationship?.type);
+        }
+
+        function exceptionalParentRelationshipLabel(child) {
+          if (!Array.isArray(child.parent_relationships)) {
+            return "";
+          }
+
+          for (const relationship of child.parent_relationships) {
+            const label = relationshipTypeLabel(relationship.type);
+
+            if (label) {
+              return label;
+            }
+          }
+
+          return "";
+        }
+
+        function childNamesOldestFirst(parent) {
+          if (!parent.children || parent.children.length === 0) {
+            return "None listed";
+          }
+
+          return peopleFromIdsOldestFirst(parent.children)
+            .map(child =>
+              personButton(
+                child,
+                childRelationshipLabel(parent.id, child)
+              )
+            )
             .join("<br>");
         }
 
@@ -1149,11 +1319,30 @@
           return person.marriages.map(m => {
             const spouse = peopleById[m.spouse];
             const spouseName = spouse ? personButton(spouse) : m.spouse;
-            const details = [m.date, displayPlace(m.place)].filter(Boolean).join(" — ");
+            const marriageDetails = [
+              m.date || m.marriage_date,
+              displayPlace(m.place || m.marriage_place)
+            ].filter(Boolean).join(" — ");
+            const divorceDetails = [
+              m.divorce_date,
+              displayPlace(m.divorce_place)
+            ].filter(Boolean).join(" — ");
 
-            return details
-              ? `${spouseName}<br><span class="mono">${details}</span>`
-              : spouseName;
+            const lines = [spouseName];
+
+            if (marriageDetails) {
+              lines.push(`<span class="mono">${marriageDetails}</span>`);
+            }
+
+            if (m.divorced) {
+              lines.push(
+                `<span class="mono">Divorced${divorceDetails
+                  ? ` ${divorceDetails}`
+                  : ""}</span>`
+              );
+            }
+
+            return lines.join("<br>");
           }).join("<br><br>");
         }
 
@@ -1210,7 +1399,7 @@
           }).filter(Boolean);
         }
 
-        function pedigreePersonLine(person) {
+        function pedigreePersonLine(person, relationshipLabel = "") {
           if (!person) return `<div class="mono">Unknown</div>`;
 
           const dates = lifeDates(person);
@@ -1229,6 +1418,9 @@
 
             <div class="mono pedigree-dates">${dateOnly}</div>
             <div class="mono pedigree-age">${age || "&nbsp;"}</div>
+            ${relationshipLabel
+              ? `<div class="pedigree-relationship">${relationshipLabel}</div>`
+              : ""}
          `;
         }
         function pedigreeCoupleCard(couple, isCurrent = false) {
@@ -1237,8 +1429,13 @@
 
           return `
             <div class="pedigree-couple ${isCurrent ? "current" : ""}">
-              ${pedigreePersonLine(personA)}
-              ${personB ? `<div class="couple-divider">and</div>${pedigreePersonLine(personB)}` : ""}
+              ${pedigreePersonLine(
+                personA,
+                couple.personARelationshipLabel || ""
+              )}
+              ${personB
+                ? `<div class="couple-divider">and</div>${pedigreePersonLine(personB)}`
+                : ""}
             </div>
           `;
         }
@@ -1289,7 +1486,15 @@
 
               <div class="generation-row">
                 <div class="generation-label">Current family</div>
-                ${pedigreeCoupleCard({ personA: person, personB: getPrimarySpouse(person) }, true)}
+                ${pedigreeCoupleCard(
+                  {
+                    personA: person,
+                    personB: getPrimarySpouse(person),
+                    personARelationshipLabel:
+                      exceptionalParentRelationshipLabel(person)
+                  },
+                  true
+                )}
               </div>
             </div>
           `;
@@ -1634,68 +1839,215 @@
           return `Born ${birthName}`;
         }
 
-        function showDetails(person) {
+        let detailTransitionId = 0;
+
+        function showDetails(person, historyMode = "push") {
+          const transitionId = ++detailTransitionId;
+          const detailsElement = document.getElementById("details");
+          const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+          ).matches;
 
           closePhotoLightbox();
 
-          const url = new URL(window.location);
+          if (historyMode !== "none") {
+            const url = new URL(window.location);
 
-          url.searchParams.set("person", person.id);
+            url.searchParams.set("person", person.id);
 
-          history.replaceState(
-            null,
-            "",
-            url
-          );
+            const state = { personId: person.id };
 
-          renderPedigree(person);
+            if (historyMode === "replace") {
+              history.replaceState(state, "", url);
+            } else {
+              history.pushState(state, "", url);
+            }
+          }
 
-          loadPhotoGallery(person);
+          const render = () => {
+            if (transitionId !== detailTransitionId) {
+              return;
+            }
 
-          document.getElementById("detail-name").textContent = person.name;
+            const treeViewLink = document.getElementById("tree-view-link");
+            treeViewLink.href =
+              `family-tree.html?person=${encodeURIComponent(person.id)}`;
 
-          const birthNameElement = document.getElementById("detail-birth-name");
-          const birthNameText = birthNameLabel(person);
-          birthNameElement.textContent = birthNameText;
-          birthNameElement.style.display = birthNameText ? "block" : "none";
+            searchInput.value = person.name;
 
-          document.getElementById("detail-dates").textContent = lifeDates(person);
-          const place = displayPlace(birthPlace(person));
+            renderPedigree(person);
 
-          document.getElementById("detail-place").innerHTML = `
-            ${place ? `<p class="mono">Born: ${place}</p>` : ""}
+            loadPhotoGallery(person);
 
-            <h3>Parents</h3>
-            <p>${namesFromIds(person.parents)}</p>
+            document.getElementById("detail-name").textContent = person.name;
 
-            <h3>Spouse / Marriage</h3>
-            <p>${marriageText(person) || namesFromIds(person.spouses)}</p>
+            const birthNameElement = document.getElementById("detail-birth-name");
+            const birthNameText = birthNameLabel(person);
+            birthNameElement.textContent = birthNameText;
+            birthNameElement.style.display = birthNameText ? "block" : "none";
 
-            <h3>Children</h3>
-            <p>${namesFromIdsOldestFirst(person.children)}</p>
+            document.getElementById("detail-dates").textContent = lifeDates(person);
+            const place = displayPlace(birthPlace(person));
 
-            <h3>Siblings</h3>
-            <p>${namesFromIdsOldestFirst(person.siblings)}</p>
-          `;
+            document.getElementById("detail-place").innerHTML = `
+              ${place ? `<p class="mono">Born: ${place}</p>` : ""}
 
-          loadStory(person);
+              <h3>Parents</h3>
+              <p>${namesFromIds(person.parents)}</p>
+              ${exceptionalParentRelationshipLabel(person)
+                ? `<p class="detail-relationship">${exceptionalParentRelationshipLabel(person)}</p>`
+                : ""}
 
-          attachPersonLinkHandlers();
+              <h3>Spouse / Marriage</h3>
+              <p>${marriageText(person) || namesFromIds(person.spouses)}</p>
+
+              <h3>Children</h3>
+              <p>${childNamesOldestFirst(person)}</p>
+
+              <h3>Siblings</h3>
+              <p>${namesFromIdsOldestFirst(person.siblings)}</p>
+            `;
+
+            loadStory(person);
+
+            attachPersonLinkHandlers();
+
+            detailsElement.dataset.personId = person.id;
+            detailsElement.classList.remove("details-panel-exiting");
+
+            if (!prefersReducedMotion) {
+              detailsElement.classList.add("details-panel-entering");
+
+              window.requestAnimationFrame(() => {
+                window.requestAnimationFrame(() => {
+                  if (transitionId === detailTransitionId) {
+                    detailsElement.classList.remove("details-panel-entering");
+                  }
+                });
+              });
+            }
+          };
+
+          if (prefersReducedMotion || !detailsElement.dataset.personId) {
+            render();
+            return;
+          }
+
+          detailsElement.classList.remove("details-panel-entering");
+          detailsElement.classList.add("details-panel-exiting");
+          window.setTimeout(render, 170);
         }
+
+        function showPersonNotFound() {
+          const detailsElement = document.getElementById("details");
+          const birthNameElement = document.getElementById("detail-birth-name");
+
+          ++detailTransitionId;
+          closePhotoLightbox();
+
+          document.getElementById("tree").innerHTML = "";
+          document.getElementById("detail-name").textContent =
+            "Person Not Found";
+
+          birthNameElement.textContent = "";
+          birthNameElement.style.display = "none";
+
+          document.getElementById("detail-dates").textContent = "";
+          document.getElementById("detail-photo").innerHTML = "";
+          document.getElementById("detail-place").innerHTML = `
+            <p>
+              The requested person could not be found in the public family archive.
+            </p>
+            <p>
+              Use the search field above or return to the interactive family tree.
+            </p>
+          `;
+          document.getElementById("detail-story").innerHTML = "";
+
+          searchInput.value = "";
+
+          const treeViewLink = document.getElementById("tree-view-link");
+          treeViewLink.href = "family-tree.html";
+
+          delete detailsElement.dataset.personId;
+          detailsElement.classList.remove(
+            "details-panel-exiting",
+            "details-panel-entering"
+          );
+        }
+
+        function personFromCurrentUrl() {
+          const params = new URLSearchParams(window.location.search);
+          const personId = params.get("person");
+
+          if (personId) {
+            return peopleById[personId] || null;
+          }
+
+          return peopleById["I0000"] || data.people[0] || null;
+        }
+
+        function showPersonFromCurrentUrl(historyMode = "none") {
+          const person = personFromCurrentUrl();
+
+          if (!person) {
+            showPersonNotFound();
+            return;
+          }
+
+          showDetails(person, historyMode);
+        }
+
+        window.addEventListener("popstate", () => {
+          showPersonFromCurrentUrl("none");
+        });
 
         mediaFolderMapsReady.then(() => {
           setupSearch();
 
-          const params = new URLSearchParams(window.location.search);
-          const personId = params.get("person");
-
-          const startPerson =
-            (personId && peopleById[personId]) ||
-            peopleById["I0000"] ||
-            data.people[0];
-
-          showDetails(startPerson);
+          showPersonFromCurrentUrl("replace");
         });
+      })
+      .catch((error) => {
+        console.error("Unable to load family archive:", error);
+
+        const detailsElement = document.getElementById("details");
+        const treeViewLink = document.getElementById("tree-view-link");
+        const searchInput = document.getElementById("person-search");
+
+        document.getElementById("tree").innerHTML = "";
+        document.getElementById("detail-name").textContent =
+          "Unable to Load Archive";
+        document.getElementById("detail-birth-name").textContent = "";
+        document.getElementById("detail-birth-name").style.display = "none";
+        document.getElementById("detail-dates").textContent = "";
+        document.getElementById("detail-photo").innerHTML = "";
+        document.getElementById("detail-place").innerHTML = `
+          <p>
+            The family archive could not be loaded.
+          </p>
+          <p>
+            Refresh the page or try again later.
+          </p>
+        `;
+        document.getElementById("detail-story").innerHTML = "";
+
+        if (searchInput) {
+          searchInput.value = "";
+          searchInput.disabled = true;
+        }
+
+        if (treeViewLink) {
+          treeViewLink.href = "family-tree.html";
+        }
+
+        if (detailsElement) {
+          delete detailsElement.dataset.personId;
+          detailsElement.classList.remove(
+            "details-panel-exiting",
+            "details-panel-entering"
+          );
+        }
       });
   </script>
 

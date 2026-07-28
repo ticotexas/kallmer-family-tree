@@ -1,0 +1,94 @@
+/*
+ * Shared Archive Search Styles
+ *
+ * Page-level styles may override the accent variables to preserve
+ * the visual language of each archive view.
+ */
+
+#search-area {
+  position: relative;
+  width: min(420px, calc(100vw - 160px));
+  max-width: 420px;
+  margin-top: 10px;
+}
+
+#person-search {
+  box-sizing: border-box;
+  width: 100%;
+  height: 39px;
+  padding: 9px 12px;
+  border: 1px solid var(--brass);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--ledger-ink);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.88rem;
+  letter-spacing: 0.015em;
+}
+
+#person-search:focus {
+  border-color: var(--archive-search-accent, var(--male-accent));
+  outline: 2px solid var(--archive-search-accent, var(--male-accent));
+  outline-offset: 2px;
+}
+
+#search-results {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 6px);
+  right: 0;
+  left: 0;
+  max-height: 280px;
+  overflow-y: auto;
+  border: 1px solid var(--brass);
+  border-radius: 4px;
+  background: var(--paper);
+  box-shadow: 0 8px 22px rgba(31, 46, 69, 0.18);
+}
+
+.search-result {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-bottom: 1px solid rgba(176, 141, 63, 0.35);
+  background: none;
+  color: var(--ledger-ink);
+  font-family: "Source Serif 4", Georgia, serif;
+  text-align: left;
+  cursor: pointer;
+}
+
+.search-result:last-child {
+  border-bottom: 0;
+}
+
+.search-result:hover,
+.search-result:focus,
+.search-result:focus-visible {
+  background: var(
+    --archive-search-hover-background,
+    rgba(102, 135, 168, 0.09)
+  );
+  color: var(--archive-search-accent, var(--male-accent));
+  outline: none;
+}
+
+.search-result-name {
+  display: block;
+  font-weight: 600;
+}
+
+.search-result-dates,
+.search-empty {
+  display: block;
+  margin-top: 2px;
+  color: rgba(31, 46, 69, 0.66);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.76rem;
+}
+
+.search-empty {
+  padding: 11px 12px;
+}

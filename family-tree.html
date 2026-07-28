@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Interactive Family Tree | The Kallmer Family Archive</title>
+
+  <meta
+    name="description"
+    content="Explore generations of the Kallmer family through an interactive family tree."
+  >
+
+  <meta
+    property="og:title"
+    content="Interactive Family Tree | The Kallmer Family Archive"
+  >
+  <meta
+    property="og:description"
+    content="Explore generations of the Kallmer family through an interactive family tree."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:url"
+    content="https://ticotexas.github.io/kallmer-family-tree/family-tree.html"
+  >
+  <meta property="og:image" content="https://ticotexas.github.io/kallmer-family-tree/images/kallmer-archive-logo.png">
+  <meta
+    property="og:image:alt"
+    content="The Kallmer Family Archive"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:title"
+    content="Interactive Family Tree | The Kallmer Family Archive"
+  >
+  <meta
+    name="twitter:description"
+    content="Explore generations of the Kallmer family through an interactive family tree."
+  >
+  <meta name="twitter:image" content="https://ticotexas.github.io/kallmer-family-tree/images/kallmer-archive-logo.png">
+  <meta
+    name="twitter:image:alt"
+    content="The Kallmer Family Archive"
+  >
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/family-tree.css">
+  <link rel="stylesheet" href="css/archive-search.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-main">
+      <a class="archive-link" href="index.html">
+        ← The Kallmer Family Archive
+      </a>
+
+      <h1>Family Tree</h1>
+
+      <div id="search-area">
+        <input
+          type="text"
+          id="person-search"
+          aria-label="Search family members"
+          placeholder="Search for a person..."
+          autocomplete="off"
+        >
+        <div id="search-results"></div>
+      </div>
+    </div>
+
+    <a class="pedigree-link" href="tree.html">
+      Detail View
+    </a>
+  </header>
+
+  <main class="tree-page">
+    <div class="tree-status" id="tree-status">
+      Loading family archive…
+    </div>
+
+    <svg id="family-tree" class="family-tree" role="img" aria-labelledby="tree-title tree-description">
+      <title id="tree-title">Interactive Kallmer family tree</title>
+      <desc id="tree-description">
+        A relationship-centered view of the Kallmer family archive.
+      </desc>
+
+      <g id="tree-stage"></g>
+    </svg>
+  </main>
+
+  <script src="js/archive-data.js"></script>
+  <script src="js/archive-relationships.js"></script>
+  <script src="js/archive-dates.js"></script>
+  <script src="js/archive-search.js"></script>
+  <script src="js/family-tree.js"></script>
+</body>
+
+</html>

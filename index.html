@@ -6,6 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Kallmer Family Archive</title>
 
+    <meta
+        name="description"
+        content="Explore the people, relationships, migrations, photographs, and stories preserved in the Kallmer Family Archive."
+    >
+
+    <meta property="og:title" content="The Kallmer Family Archive">
+    <meta
+        property="og:description"
+        content="Explore the people, relationships, migrations, photographs, and stories preserved in the Kallmer Family Archive."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ticotexas.github.io/kallmer-family-tree/">
+    <meta property="og:image" content="https://ticotexas.github.io/kallmer-family-tree/images/kallmer-archive-logo.png">
+    <meta
+        property="og:image:alt"
+        content="The Kallmer Family Archive"
+    >
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Kallmer Family Archive">
+    <meta
+        name="twitter:description"
+        content="Explore the people, relationships, migrations, photographs, and stories preserved in the Kallmer Family Archive."
+    >
+    <meta name="twitter:image" content="https://ticotexas.github.io/kallmer-family-tree/images/kallmer-archive-logo.png">
+    <meta
+        name="twitter:image:alt"
+        content="The Kallmer Family Archive"
+    >
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -32,8 +65,20 @@
         .hero {
             max-width: 900px;
             margin: 0 auto;
-            padding: 70px 30px;
+            padding: 30px 30px 70px;
             text-align: center;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         h1 {
@@ -51,6 +96,7 @@
 
         .stats {
             font-family: "IBM Plex Mono", monospace;
+            margin-top: 15px;
             margin-bottom: 30px;
             color: var(--prairie-sage);
         }
@@ -60,12 +106,29 @@
             text-decoration: none;
             padding: 14px 28px;
             border: 2px solid var(--homestead-clay);
-            color: var(--homestead-clay);
+            background: var(--homestead-clay);
+            color: var(--prairie-wheat);
             border-radius: 4px;
             transition: 0.2s;
         }
 
         .button:hover {
+            background: transparent;
+            color: var(--homestead-clay);
+        }
+
+        .featured-profile-button {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 10px 22px;
+            border: 2px solid var(--homestead-clay);
+            color: var(--homestead-clay);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .featured-profile-button:hover {
             background: var(--homestead-clay);
             color: white;
         }
@@ -80,7 +143,36 @@
         .archive-logo {
             max-width: 560px;
             width: 100%;
-            margin: 0 auto 25px;
+            margin: 0 auto 5px;
+        }
+
+        .featured-person-image {
+            max-width: 280px;
+            margin: 20px auto 12px;
+        }
+
+        .featured-person-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .featured-person {
+            margin-bottom: 30px;
+        }
+
+        .featured-person h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+            color: var(--prairie-sage);
+        }
+
+        .featured-person-caption {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--prairie-sage);
         }
 
         @media (max-width: 700px) {
@@ -102,7 +194,9 @@
 
 <body>
 
-    <div class="hero">
+    <main class="hero">
+
+        <h1 class="visually-hidden">The Kallmer Family Archive</h1>
 
         <img src="images/kallmer-archive-logo.png" alt="The Kallmer Family Archive" class="archive-logo">
 
@@ -110,6 +204,14 @@
             Tracing the lives, migrations, and stories of the families who journeyed from Sweden and Germany to the
             American prairie — and the generations that followed.
         </p>
+
+        <section class="featured-person" id="featured-person">
+            <h2>From the Archive</h2>
+            <div id="featured-person-image"></div>
+            <div id="featured-person-content">
+                Loading featured person...
+            </div>
+        </section>
 
         <div class="stats" id="archive-stats">
             Loading archive stats...
@@ -119,15 +221,20 @@
             Begin Your Journey
         </a>
 
-    </div>
+    </main>
 
     <footer class="site-footer">
-        Version 1.1 • July 2026
+        <div>Version 1.0 • July 2026</div>
+        <div><strong>We inherit history by accident. We preserve it by choice.</strong></div>
     </footer>
 
 
 
+    <script src="js/archive-dates.js"></script>
+
     <script>
+        const featuredPersonId = "I0013";
+
         fetch("public-data/family.json?v=" + Date.now())
             .then(response => response.json())
             .then(data => {
@@ -136,6 +243,57 @@
 
                 document.getElementById("archive-stats").textContent =
                     `${peopleCount} individuals • ${familyCount} families • 8 generations`;
+
+                const featuredPerson = data.people.find(
+                    person => person.id === featuredPersonId
+                );
+
+                if (featuredPerson) {
+                    const archiveDates = new ArchiveDates();
+
+                    const birthYear = archiveDates.extractYear(featuredPerson.birth);
+                    const deathYear = archiveDates.extractYear(featuredPerson.death);
+
+                    const age =
+                        birthYear !== null && deathYear !== null
+                            ? deathYear - birthYear
+                            : null;
+
+                    document.getElementById("featured-person-content").innerHTML =
+                        `<strong>${featuredPerson.name}</strong><br>
+                         ${birthYear}${deathYear ? " – " + deathYear : ""}${age ? " (" + age + " years)" : ""}<br>
+                         <a class="featured-profile-button" href="tree.html?person=${featuredPerson.id}">View Profile</a>`;
+
+                    fetch("photos/index.json?v=" + Date.now())
+                        .then(response => response.json())
+                        .then(photoFolders => {
+                            const folder = photoFolders[featuredPerson.id];
+
+                            if (!folder) {
+                                return;
+                            }
+
+                            return fetch(`photos/${folder}/index.json?v=${Date.now()}`)
+                                .then(response => response.json())
+                                .then(photos => {
+                                    const portrait =
+                                        photos.find(photo => photo.file === "portrait.png") ||
+                                        photos[0];
+
+                                    if (!portrait) {
+                                        return;
+                                    }
+
+                                    document.getElementById("featured-person-image").innerHTML =
+                                        `<div class="featured-person-image">
+                                             <img src="photos/${folder}/${portrait.file}"
+                                                  alt="${portrait.alt || featuredPerson.name}">
+                                             ${portrait.caption ? `<div class="featured-person-caption">${portrait.caption}</div>` : ""}
+                                         </div>`;
+                                });
+                        })
+                        .catch(() => {});
+                }
             })
             .catch(() => {
                 document.getElementById("archive-stats").textContent =
