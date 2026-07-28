@@ -1723,19 +1723,23 @@
           return `Born ${birthName}`;
         }
 
-        function showDetails(person) {
+        function showDetails(person, historyMode = "push") {
 
           closePhotoLightbox();
 
-          const url = new URL(window.location);
+          if (historyMode !== "none") {
+            const url = new URL(window.location);
 
-          url.searchParams.set("person", person.id);
+            url.searchParams.set("person", person.id);
 
-          history.replaceState(
-            null,
-            "",
-            url
-          );
+            const state = { personId: person.id };
+
+            if (historyMode === "replace") {
+              history.replaceState(state, "", url);
+            } else {
+              history.pushState(state, "", url);
+            }
+          }
 
           const treeViewLink = document.getElementById("tree-view-link");
           treeViewLink.href =
@@ -1781,18 +1785,25 @@
           attachPersonLinkHandlers();
         }
 
-        mediaFolderMapsReady.then(() => {
-          setupSearch();
-
+        function personFromCurrentUrl() {
           const params = new URLSearchParams(window.location.search);
           const personId = params.get("person");
 
-          const startPerson =
+          return (
             (personId && peopleById[personId]) ||
             peopleById["I0000"] ||
-            data.people[0];
+            data.people[0]
+          );
+        }
 
-          showDetails(startPerson);
+        window.addEventListener("popstate", () => {
+          showDetails(personFromCurrentUrl(), "none");
+        });
+
+        mediaFolderMapsReady.then(() => {
+          setupSearch();
+
+          showDetails(personFromCurrentUrl(), "replace");
         });
       });
   </script>
