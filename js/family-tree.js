@@ -211,14 +211,12 @@ function drawPersonCard(person, x, y, options = {}) {
       ? "person-card-group placeholder-card-group"
       : "person-card-group",
     transform: `translate(${x} ${y})`,
-    ...(isPlaceholder
+    ...(isPlaceholder || selected
       ? {}
       : {
           tabindex: "0",
           role: "button",
-          "aria-label": selected
-            ? `${person.name}, selected. Recenter tree.`
-            : `${person.name}. Recenter tree around this person.`,
+          "aria-label": `${person.name}. Recenter tree around this person.`,
         }),
   });
 
@@ -323,7 +321,7 @@ function drawPersonCard(person, x, y, options = {}) {
     group.append(profileLink);
   }
 
-  if (!isPlaceholder) {
+  if (!isPlaceholder && !selected) {
     const recenter = () => selectPerson(person.id);
 
     group.addEventListener("click", recenter);
