@@ -656,3 +656,159 @@ Investigated the source GEDCOM and confirmed that adoption is represented as fam
 1 FAMC @F0022@
 2 PEDI adopted
 ```
+
+## 2026-07-28 — Relationship Presentation & Browser History Polish
+
+### Summary
+
+Focused on release-readiness refinement rather than new capabilities. Two user-facing inconsistencies were identified and corrected.
+
+### Relationship Presentation
+
+Implemented consistent presentation of exceptional parent-child relationships throughout the archive.
+
+Changes:
+
+- Children lists now display family-specific relationship labels (Adopted, Foster, Step) where applicable.
+- Current Family cards in the pedigree now display exceptional parent relationships for the selected individual.
+- Person Details now displays exceptional parent relationships beneath the Parents section.
+- Relationship labels use restrained archival styling (italic IBM Plex Mono, muted sage) so they remain informative without competing with primary genealogical information.
+
+Result:
+
+Relationship metadata is now presented consistently across:
+
+- Interactive Tree
+- Pedigree Current Family
+- Person Details
+- Children lists
+
+### Browser History
+
+Restored proper browser history behavior for Person Details.
+
+Implemented three navigation modes:
+
+- push — user navigation
+- replace — initial page load
+- none — browser Back/Forward restoration
+
+Added:
+
+- URL-based person resolver
+- popstate handler
+- correct pushState/replaceState separation
+
+Result:
+
+- Back/Forward navigation now mirrors Interactive Tree behavior.
+- Direct URLs continue to work.
+- Reload preserves the current individual.
+- Navigation no longer rewrites a single history entry.
+
+### Notes
+
+These changes continue the Release Readiness phase by improving consistency, correctness, and expected browser behavior without changing the underlying archive architecture.
+
+## 2026-07-28 — Release Readiness: Accessibility and Interaction Consistency
+
+Continued Release Readiness with two focused usability improvements.
+
+### Keyboard Accessibility
+
+Improved keyboard navigation within the Interactive Tree.
+
+Changes:
+
+- Removed the currently selected person card from the keyboard tab order.
+- Preserved keyboard navigation for all non-selected person cards.
+- Kept the selected card's "View Profile" action as the primary keyboard target.
+- Added a visible focus indicator to the Details View button while preserving existing hover behavior.
+
+This eliminates a redundant keyboard stop and produces a clearer, more logical navigation sequence.
+
+### Interaction Consistency
+
+Unified person-selection transitions between the Interactive Tree and Details View.
+
+Implemented:
+
+- Matching 170 ms fade transition.
+- Shared reduced-motion behavior using `prefers-reduced-motion`.
+- Protection against interrupted rapid transitions.
+- Initial page load remains immediate without animation.
+
+The archive now presents a consistent interaction language when navigating between people across both primary views.
+
+No architectural changes were made.
+
+## 2026-07-28 — Mobile Interactive Tree Readiness
+
+Continued release-readiness work on the interactive tree with a focus on mobile usability.
+
+### Investigation
+
+Performed responsive testing at approximately 390 px viewport width. The existing SVG correctly displayed the entire family unit but reduced the tree enough that person names and dates became difficult to read. An initial attempt to solve this by computing a reduced "primary family" viewBox improved framing but did not materially improve readability and was discarded rather than committed.
+
+### Final Implementation
+
+Adopted a readability-first mobile strategy instead of a fit-everything strategy.
+
+Implemented:
+
+- Mobile-only readable SVG rendering scale.
+- Automatic centering of the selected person after rendering.
+- Scrollable mobile tree viewport.
+- Pointer drag panning for mouse and touch devices.
+- Drag threshold to avoid accidental person selection while panning.
+- Preservation of ordinary click behavior when not dragging.
+- Additional bottom scroll space to ensure the lowest generation remains reachable.
+
+Desktop behavior, layout, and presentation remain unchanged.
+
+### Validation
+
+Verified:
+
+- JavaScript syntax (`node --check`).
+- Mobile rendering at phone-sized viewport.
+- Readable card typography.
+- Horizontal and vertical panning.
+- Automatic recentering after selecting another individual.
+- View Profile links remain functional.
+- Browser history behavior preserved.
+- Desktop presentation unchanged.
+
+Committed:
+
+43d8905 Improve mobile family tree navigation
+
+This substantially improves usability for phones without altering the established desktop presentation.
+
+## 2026-07-28 — Release Candidate Age Accuracy and Privacy
+
+Completed the final release-candidate correction discovered during public-site QA.
+
+### Issue
+
+The Person Details view calculated ages by subtracting birth year from death year or the current year.
+
+This produced incorrect results when the person had not yet reached their birthday during the relevant year.
+
+Examples discovered during QA:
+
+- Dorcas McPherrin displayed as age 100 rather than 99.
+- Timothy Kallmer displayed as age 57 rather than 56 before his October birthday.
+
+The public archive intentionally exposes only birth years for living people, so the browser did not have enough information to calculate exact living ages.
+
+### Exporter Solution
+
+Updated `tools/gedcom_to_json.py` to calculate exact ages for living people while the full private birth date is still available during conversion.
+
+The public record now includes a privacy-safe numeric field such as:
+
+```json
+"birth": "1969",
+"age": 56
+```

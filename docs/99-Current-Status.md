@@ -682,3 +682,319 @@ Exceptional parent-child relationships are exported as family-specific metadata:
   "type": "adopted"
 }
 ```
+
+## Release Readiness Progress
+
+### Completed
+
+Relationship presentation has been unified across archive views.
+
+Exceptional parent-child relationships now appear consistently in:
+
+- Interactive Tree
+- Pedigree Current Family
+- Person Details
+- Children lists
+
+Presentation intentionally remains understated and only appears for exceptional relationships.
+
+---
+
+Browser history behavior for Person Details has been corrected.
+
+Implemented navigation model:
+
+- pushState for user navigation
+- replaceState for initial load
+- popstate restoration
+
+Behavior now matches Interactive Tree:
+
+- Back
+- Forward
+- Reload
+- Direct URLs
+
+---
+
+### Current Phase
+
+The project has transitioned from feature implementation to Release Readiness.
+
+Primary objective:
+
+Polish the archive into a cohesive public-facing experience while preserving the architecture completed during the Interactive Tree and Family Unit Layout phases.
+
+Remaining work should prioritize:
+
+- consistency
+- visual refinement
+- interaction polish
+- accessibility
+- edge cases
+- public presentation quality
+
+Avoid introducing new architectural work unless a release-blocking issue is discovered.
+
+# Release Readiness Audit
+
+## Status
+
+The Family Unit Layout milestone is complete.
+
+The Interactive Tree architecture is considered stable.
+
+Relationship presentation is complete across both the Interactive Tree and Person Details.
+
+Browser history and direct person URLs function correctly.
+
+The project has transitioned from architectural development into **Release Readiness**.
+
+The objective is no longer to add major capabilities. The objective is to refine the existing archive until it presents as a polished, cohesive public release.
+
+---
+
+## Release Readiness Principles
+
+During this phase:
+
+- preserve established architecture;
+- avoid speculative refactoring;
+- avoid feature expansion unless required by a discovered release issue;
+- make one small, verifiable improvement per commit;
+- preserve the archive's restrained visual language;
+- review the site as a first-time visitor rather than as the developer.
+
+The Engineering Guide and Canonical Edit Cycle remain mandatory for every implementation.
+
+---
+
+## Audit Sequence
+
+### 1. Homepage
+
+Review:
+
+- typography
+- spacing
+- visual hierarchy
+- featured ancestor presentation
+- statistics
+- footer
+- responsive behavior
+
+Goal:
+
+Improve clarity and first impression without redesign.
+
+---
+
+### 2. Interactive Tree
+
+Review:
+
+- composition
+- connector polish
+- presentation of large families
+- scrolling behavior
+- selection behavior
+- subtle animation opportunities
+- responsive layout
+- accessibility
+- consistency of spacing and typography
+
+Goal:
+
+Eliminate small inconsistencies while preserving the completed Family Unit architecture.
+
+---
+
+### 3. Person Details
+
+Review:
+
+- spacing
+- typography
+- section hierarchy
+- portrait presentation
+- stories
+- relationship presentation
+- birth-name presentation
+- handling of empty states
+- consistency with the archive's visual language
+
+Goal:
+
+Ensure each profile feels like a finished archival exhibit.
+
+---
+
+### 4. Search
+
+Review:
+
+- discoverability
+- result presentation
+- keyboard behavior
+- empty-result handling
+- consistency with profile navigation
+
+---
+
+### 5. Cross-Application Consistency
+
+Review:
+
+- typography
+- spacing
+- buttons
+- color usage
+- terminology
+- navigation
+- visual rhythm
+
+Goal:
+
+Ensure the Homepage, Interactive Tree, Search, and Person Details feel like one cohesive archive.
+
+---
+
+### 6. Release Quality
+
+Before public release:
+
+- verify desktop and mobile presentation
+- verify browser history
+- verify direct URLs
+- verify accessibility
+- verify privacy behavior
+- verify representative large-family examples
+- remove remaining visual rough edges
+- eliminate unfinished wording or placeholder content
+
+---
+
+## Working Method
+
+This phase intentionally avoids large architectural changes.
+
+Each improvement should:
+
+- solve one clearly identified issue;
+- preserve existing behavior unless intentionally changed;
+- be independently testable;
+- produce a focused commit;
+- leave the archive slightly more polished than before.
+
+The release audit concludes only when no remaining issue materially detracts from the archive's presentation or usability.
+
+### Release Readiness Progress
+
+Completed:
+
+- Keyboard accessibility improvements.
+  - Selected tree card removed from keyboard navigation.
+  - Non-selected cards remain keyboard accessible.
+  - Details View button now presents a clear keyboard focus indicator.
+
+- Interaction consistency improvements.
+  - Details View now uses the same restrained person-change transition as the Interactive Tree.
+  - Both views honor `prefers-reduced-motion`.
+  - Rapid interaction protection implemented for both transition systems.
+
+Animation work is considered complete for the public release.
+
+## Remaining Release Readiness
+
+Priority order:
+
+1. Responsive QA
+2. Interaction QA
+3. Genealogy edge-case validation
+4. Consistency audit
+5. Final public release checklist
+
+No additional architectural work is planned.
+
+## Mobile Interactive Tree
+
+### Completed
+
+Interactive tree now includes mobile-specific navigation improvements.
+
+Features:
+
+- Readable mobile rendering scale.
+- Automatic centering on selected person.
+- Drag-to-pan navigation.
+- Scrollable viewport.
+- Bottom scroll padding for deep descendant generations.
+
+Desktop behavior is intentionally unchanged.
+
+### Release Impact
+
+This resolves the largest remaining usability issue discovered during responsive QA.
+
+The interactive tree is now practical to use on phone-sized displays while preserving the archival desktop presentation.
+
+---
+
+# `99-Current-Status.md` append
+
+````md
+## Release Candidate Status — 2026-07-28
+
+### Current State
+
+The current public archive implementation is considered feature-complete for Version 1.0.
+
+The Family Unit architecture is stable.
+
+Release-readiness work has now addressed:
+
+- homepage presentation;
+- interactive tree composition and navigation;
+- mobile tree usability;
+- person-detail presentation;
+- relationship metadata;
+- adoption and divorce presentation;
+- browser history and direct URLs;
+- search behavior;
+- keyboard accessibility;
+- reduced-motion support;
+- interaction consistency;
+- error and invalid-person handling;
+- public metadata and crawler files;
+- browser titles and favicon;
+- custom 404 handling;
+- public version labeling;
+- living-person age privacy and accuracy.
+
+No known architectural or visual release blocker remains.
+
+### Final Age Behavior
+
+Living-person ages are calculated during public-data export from the private full birth date and written as a privacy-safe numeric `age` field.
+
+The public JSON continues to expose only the birth year for living people.
+
+The interface:
+
+- displays exported exact ages for living people when available;
+- calculates deceased ages from full public birth and death dates;
+- does not estimate ages from year-only dates.
+
+Implemented in:
+
+- `73d3b24 Export privacy-safe ages for living people`
+- `a0b4465 Display accurate public ages`
+
+### Repository State
+
+Latest verified commit:
+
+```text
+a0b4465 Display accurate public ages
+```
+````
