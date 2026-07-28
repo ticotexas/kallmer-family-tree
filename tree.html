@@ -706,11 +706,34 @@
     }
 
     .link-dates,
-    .link-age {
+    .link-age,
+    .link-relationship {
       display: block;
       color: #b7c69f;
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.88rem;
+    }
+
+    .link-relationship,
+    .pedigree-relationship,
+    .detail-relationship {
+      color: #b7c69f;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      font-style: italic;
+    }
+
+    .link-relationship {
+      margin-top: 0.18rem;
+      text-decoration: none;
+    }
+
+    .pedigree-relationship {
+      margin-top: 3px;
+    }
+
+    .detail-relationship {
+      margin-top: 0.35rem;
     }
 
 
@@ -1078,7 +1101,7 @@
         }
 
 
-        function personButton(person) {
+        function personButton(person, relationshipLabel = "") {
           const dates = lifeDates(person);
           const ageMatch = dates.match(/\(\d+\)$/);
 
@@ -1090,6 +1113,9 @@
       <span class="link-name">${person.name}</span>
       <span class="link-dates">${dateOnly}</span>
       ${age ? `<span class="link-age">${age}</span>` : ""}
+      ${relationshipLabel
+        ? `<span class="link-relationship">${relationshipLabel}</span>`
+        : ""}
     </button>
   `;
         }
@@ -1100,14 +1126,12 @@
           return ids
             .map(id => peopleById[id])
             .filter(Boolean)
-            .map(personButton)
+            .map(person => personButton(person))
             .join("<br>");
         }
 
-        function namesFromIdsOldestFirst(ids) {
-          if (!ids || ids.length === 0) return "None listed";
-
-          return ids
+        function peopleFromIdsOldestFirst(ids) {
+          return (ids || [])
             .map(id => peopleById[id])
             .filter(Boolean)
             .sort((a, b) => {
@@ -1120,8 +1144,75 @@
               }
 
               return a.name.localeCompare(b.name);
-            })
-            .map(personButton)
+            });
+        }
+
+        function namesFromIdsOldestFirst(ids) {
+          if (!ids || ids.length === 0) return "None listed";
+
+          return peopleFromIdsOldestFirst(ids)
+            .map(person => personButton(person))
+            .join("<br>");
+        }
+
+        function relationshipTypeLabel(type) {
+          switch (type) {
+            case "adopted":
+              return "Adopted";
+            case "foster":
+              return "Foster";
+            case "step":
+              return "Step";
+            default:
+              return "";
+          }
+        }
+
+        function childRelationshipLabel(parentId, child) {
+          const family = data.families.find(
+            entry =>
+              (entry.husband === parentId || entry.wife === parentId) &&
+              Array.isArray(entry.children) &&
+              entry.children.includes(child.id)
+          );
+
+          if (!family) return "";
+
+          const relationship = child.parent_relationships?.find(
+            entry => entry.family === family.id
+          );
+
+          return relationshipTypeLabel(relationship?.type);
+        }
+
+        function exceptionalParentRelationshipLabel(child) {
+          if (!Array.isArray(child.parent_relationships)) {
+            return "";
+          }
+
+          for (const relationship of child.parent_relationships) {
+            const label = relationshipTypeLabel(relationship.type);
+
+            if (label) {
+              return label;
+            }
+          }
+
+          return "";
+        }
+
+        function childNamesOldestFirst(parent) {
+          if (!parent.children || parent.children.length === 0) {
+            return "None listed";
+          }
+
+          return peopleFromIdsOldestFirst(parent.children)
+            .map(child =>
+              personButton(
+                child,
+                childRelationshipLabel(parent.id, child)
+              )
+            )
             .join("<br>");
         }
 
@@ -1192,7 +1283,7 @@
           }).filter(Boolean);
         }
 
-        function pedigreePersonLine(person) {
+        function pedigreePersonLine(person, relationshipLabel = "") {
           if (!person) return `<div class="mono">Unknown</div>`;
 
           const dates = lifeDates(person);
@@ -1211,6 +1302,9 @@
 
             <div class="mono pedigree-dates">${dateOnly}</div>
             <div class="mono pedigree-age">${age || "&nbsp;"}</div>
+            ${relationshipLabel
+              ? `<div class="pedigree-relationship">${relationshipLabel}</div>`
+              : ""}
          `;
         }
         function pedigreeCoupleCard(couple, isCurrent = false) {
@@ -1219,8 +1313,13 @@
 
           return `
             <div class="pedigree-couple ${isCurrent ? "current" : ""}">
-              ${pedigreePersonLine(personA)}
-              ${personB ? `<div class="couple-divider">and</div>${pedigreePersonLine(personB)}` : ""}
+              ${pedigreePersonLine(
+                personA,
+                couple.personARelationshipLabel || ""
+              )}
+              ${personB
+                ? `<div class="couple-divider">and</div>${pedigreePersonLine(personB)}`
+                : ""}
             </div>
           `;
         }
@@ -1271,7 +1370,15 @@
 
               <div class="generation-row">
                 <div class="generation-label">Current family</div>
-                ${pedigreeCoupleCard({ personA: person, personB: getPrimarySpouse(person) }, true)}
+                ${pedigreeCoupleCard(
+                  {
+                    personA: person,
+                    personB: getPrimarySpouse(person),
+                    personARelationshipLabel:
+                      exceptionalParentRelationshipLabel(person)
+                  },
+                  true
+                )}
               </div>
             </div>
           `;
@@ -1655,12 +1762,15 @@
 
             <h3>Parents</h3>
             <p>${namesFromIds(person.parents)}</p>
+            ${exceptionalParentRelationshipLabel(person)
+              ? `<p class="detail-relationship">${exceptionalParentRelationshipLabel(person)}</p>`
+              : ""}
 
             <h3>Spouse / Marriage</h3>
             <p>${marriageText(person) || namesFromIds(person.spouses)}</p>
 
             <h3>Children</h3>
-            <p>${namesFromIdsOldestFirst(person.children)}</p>
+            <p>${childNamesOldestFirst(person)}</p>
 
             <h3>Siblings</h3>
             <p>${namesFromIdsOldestFirst(person.siblings)}</p>
