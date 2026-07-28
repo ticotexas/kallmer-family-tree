@@ -145,6 +145,13 @@
       max-width: 390px;
       box-sizing: border-box;
       box-shadow: 0 8px 22px rgba(31, 46, 69, 0.22);
+      opacity: 1;
+      transition: opacity 170ms ease;
+    }
+
+    #details.details-panel-exiting,
+    #details.details-panel-entering {
+      opacity: 0.38;
     }
 
     #details h2 {
@@ -655,6 +662,12 @@
     .story-content strong {
       font-weight: 600;
       color: var(--paper);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #details {
+        transition: none;
+      }
     }
 
     @media (max-width: 900px) {
@@ -1723,7 +1736,14 @@
           return `Born ${birthName}`;
         }
 
+        let detailTransitionId = 0;
+
         function showDetails(person, historyMode = "push") {
+          const transitionId = ++detailTransitionId;
+          const detailsElement = document.getElementById("details");
+          const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+          ).matches;
 
           closePhotoLightbox();
 
@@ -1741,48 +1761,78 @@
             }
           }
 
-          const treeViewLink = document.getElementById("tree-view-link");
-          treeViewLink.href =
-            `family-tree.html?person=${encodeURIComponent(person.id)}`;
+          const render = () => {
+            if (transitionId !== detailTransitionId) {
+              return;
+            }
 
-          searchInput.value = person.name;
+            const treeViewLink = document.getElementById("tree-view-link");
+            treeViewLink.href =
+              `family-tree.html?person=${encodeURIComponent(person.id)}`;
 
-          renderPedigree(person);
+            searchInput.value = person.name;
 
-          loadPhotoGallery(person);
+            renderPedigree(person);
 
-          document.getElementById("detail-name").textContent = person.name;
+            loadPhotoGallery(person);
 
-          const birthNameElement = document.getElementById("detail-birth-name");
-          const birthNameText = birthNameLabel(person);
-          birthNameElement.textContent = birthNameText;
-          birthNameElement.style.display = birthNameText ? "block" : "none";
+            document.getElementById("detail-name").textContent = person.name;
 
-          document.getElementById("detail-dates").textContent = lifeDates(person);
-          const place = displayPlace(birthPlace(person));
+            const birthNameElement = document.getElementById("detail-birth-name");
+            const birthNameText = birthNameLabel(person);
+            birthNameElement.textContent = birthNameText;
+            birthNameElement.style.display = birthNameText ? "block" : "none";
 
-          document.getElementById("detail-place").innerHTML = `
-            ${place ? `<p class="mono">Born: ${place}</p>` : ""}
+            document.getElementById("detail-dates").textContent = lifeDates(person);
+            const place = displayPlace(birthPlace(person));
 
-            <h3>Parents</h3>
-            <p>${namesFromIds(person.parents)}</p>
-            ${exceptionalParentRelationshipLabel(person)
-              ? `<p class="detail-relationship">${exceptionalParentRelationshipLabel(person)}</p>`
-              : ""}
+            document.getElementById("detail-place").innerHTML = `
+              ${place ? `<p class="mono">Born: ${place}</p>` : ""}
 
-            <h3>Spouse / Marriage</h3>
-            <p>${marriageText(person) || namesFromIds(person.spouses)}</p>
+              <h3>Parents</h3>
+              <p>${namesFromIds(person.parents)}</p>
+              ${exceptionalParentRelationshipLabel(person)
+                ? `<p class="detail-relationship">${exceptionalParentRelationshipLabel(person)}</p>`
+                : ""}
 
-            <h3>Children</h3>
-            <p>${childNamesOldestFirst(person)}</p>
+              <h3>Spouse / Marriage</h3>
+              <p>${marriageText(person) || namesFromIds(person.spouses)}</p>
 
-            <h3>Siblings</h3>
-            <p>${namesFromIdsOldestFirst(person.siblings)}</p>
-          `;
+              <h3>Children</h3>
+              <p>${childNamesOldestFirst(person)}</p>
 
-          loadStory(person);
+              <h3>Siblings</h3>
+              <p>${namesFromIdsOldestFirst(person.siblings)}</p>
+            `;
 
-          attachPersonLinkHandlers();
+            loadStory(person);
+
+            attachPersonLinkHandlers();
+
+            detailsElement.dataset.personId = person.id;
+            detailsElement.classList.remove("details-panel-exiting");
+
+            if (!prefersReducedMotion) {
+              detailsElement.classList.add("details-panel-entering");
+
+              window.requestAnimationFrame(() => {
+                window.requestAnimationFrame(() => {
+                  if (transitionId === detailTransitionId) {
+                    detailsElement.classList.remove("details-panel-entering");
+                  }
+                });
+              });
+            }
+          };
+
+          if (prefersReducedMotion || !detailsElement.dataset.personId) {
+            render();
+            return;
+          }
+
+          detailsElement.classList.remove("details-panel-entering");
+          detailsElement.classList.add("details-panel-exiting");
+          window.setTimeout(render, 170);
         }
 
         function personFromCurrentUrl() {
