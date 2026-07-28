@@ -843,7 +843,15 @@
     const archiveDates = new ArchiveDates();
 
     fetch("public-data/family.json?v=" + Date.now())
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Family data request failed with status ${response.status}.`
+          );
+        }
+
+        return response.json();
+      })
       .then((data) => {
         const tree = document.getElementById("tree");
         const searchInput = document.getElementById("person-search");
@@ -1923,6 +1931,47 @@
 
           showPersonFromCurrentUrl("replace");
         });
+      })
+      .catch((error) => {
+        console.error("Unable to load family archive:", error);
+
+        const detailsElement = document.getElementById("details");
+        const treeViewLink = document.getElementById("tree-view-link");
+        const searchInput = document.getElementById("person-search");
+
+        document.getElementById("tree").innerHTML = "";
+        document.getElementById("detail-name").textContent =
+          "Unable to Load Archive";
+        document.getElementById("detail-birth-name").textContent = "";
+        document.getElementById("detail-birth-name").style.display = "none";
+        document.getElementById("detail-dates").textContent = "";
+        document.getElementById("detail-photo").innerHTML = "";
+        document.getElementById("detail-place").innerHTML = `
+          <p>
+            The family archive could not be loaded.
+          </p>
+          <p>
+            Refresh the page or try again later.
+          </p>
+        `;
+        document.getElementById("detail-story").innerHTML = "";
+
+        if (searchInput) {
+          searchInput.value = "";
+          searchInput.disabled = true;
+        }
+
+        if (treeViewLink) {
+          treeViewLink.href = "family-tree.html";
+        }
+
+        if (detailsElement) {
+          delete detailsElement.dataset.personId;
+          detailsElement.classList.remove(
+            "details-panel-exiting",
+            "details-panel-entering"
+          );
+        }
       });
   </script>
 
