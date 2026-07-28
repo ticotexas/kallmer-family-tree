@@ -1491,6 +1491,9 @@ function selectPerson(personId, options = {}) {
     return;
   }
 
+  searchInput.value = person.name;
+  hideSearchResults();
+
   pedigreeLink.href = `tree.html?person=${encodeURIComponent(person.id)}`;
 
   renderFamilyView(person);
