@@ -1235,11 +1235,30 @@
           return person.marriages.map(m => {
             const spouse = peopleById[m.spouse];
             const spouseName = spouse ? personButton(spouse) : m.spouse;
-            const details = [m.date, displayPlace(m.place)].filter(Boolean).join(" — ");
+            const marriageDetails = [
+              m.date || m.marriage_date,
+              displayPlace(m.place || m.marriage_place)
+            ].filter(Boolean).join(" — ");
+            const divorceDetails = [
+              m.divorce_date,
+              displayPlace(m.divorce_place)
+            ].filter(Boolean).join(" — ");
 
-            return details
-              ? `${spouseName}<br><span class="mono">${details}</span>`
-              : spouseName;
+            const lines = [spouseName];
+
+            if (marriageDetails) {
+              lines.push(`<span class="mono">${marriageDetails}</span>`);
+            }
+
+            if (m.divorced) {
+              lines.push(
+                `<span class="mono">Divorced${divorceDetails
+                  ? ` ${divorceDetails}`
+                  : ""}</span>`
+              );
+            }
+
+            return lines.join("<br>");
           }).join("<br><br>");
         }
 
