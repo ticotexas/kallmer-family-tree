@@ -34,7 +34,8 @@
           "divorce_date": "",
           "divorce_place": ""
         }
-      ]
+      ],
+      "age": 56
     },
     {
       "id": "I0001",
@@ -77,7 +78,8 @@
           "divorce_date": "",
           "divorce_place": ""
         }
-      ]
+      ],
+      "age": 83
     },
     {
       "id": "I0002",
@@ -124,7 +126,8 @@
           "divorce_date": "",
           "divorce_place": ""
         }
-      ]
+      ],
+      "age": 82
     },
     {
       "id": "I0003",
@@ -243,7 +246,8 @@
           "divorce_date": "",
           "divorce_place": ""
         }
-      ]
+      ],
+      "age": 52
     },
     {
       "id": "I0006",
@@ -284,7 +288,8 @@
           "divorce_date": "",
           "divorce_place": ""
         }
-      ]
+      ],
+      "age": 55
     },
     {
       "id": "I0007",
@@ -323,7 +328,8 @@
           "divorce_date": "",
           "divorce_place": ""
         }
-      ]
+      ],
+      "age": 55
     },
     {
       "id": "I0008",
@@ -347,7 +353,8 @@
         "I0009",
         "I0010"
       ],
-      "marriages": []
+      "marriages": [],
+      "age": 17
     },
     {
       "id": "I0009",
@@ -371,7 +378,8 @@
         "I0008",
         "I0010"
       ],
-      "marriages": []
+      "marriages": [],
+      "age": 14
     },
     {
       "id": "I0010",
@@ -395,7 +403,8 @@
         "I0008",
         "I0009"
       ],
-      "marriages": []
+      "marriages": [],
+      "age": 14
     },
     {
       "id": "I0011",
@@ -731,7 +740,8 @@
           "divorce_date": "",
           "divorce_place": ""
         }
-      ]
+      ],
+      "age": 85
     },
     {
       "id": "I0018",
@@ -899,7 +909,8 @@
           "divorce_date": "1991",
           "divorce_place": "Apache Junction, Arizona"
         }
-      ]
+      ],
+      "age": 75
     },
     {
       "id": "I0021",
@@ -2708,7 +2719,8 @@
           "divorce_date": "",
           "divorce_place": ""
         }
-      ]
+      ],
+      "age": 54
     },
     {
       "id": "I0068",
@@ -2800,6 +2812,7 @@
       "children": [],
       "siblings": [],
       "marriages": [],
+      "age": 38,
       "parent_relationships": [
         {
           "family": "F0022",
@@ -5690,7 +5703,8 @@
           "divorce_date": "1992",
           "divorce_place": "Omaha, Nebraska"
         }
-      ]
+      ],
+      "age": 88
     },
     {
       "id": "I0152",
@@ -6764,7 +6778,8 @@
           "divorce_date": "",
           "divorce_place": ""
         }
-      ]
+      ],
+      "age": 58
     },
     {
       "id": "I0175",
@@ -6795,7 +6810,8 @@
           "divorce_date": "",
           "divorce_place": ""
         }
-      ]
+      ],
+      "age": 57
     },
     {
       "id": "I0176",

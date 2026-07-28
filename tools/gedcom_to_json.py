@@ -2,6 +2,7 @@
 import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
 
 if len(sys.argv) not in {2, 3}:
@@ -29,6 +30,41 @@ def clean_xref(value):
 def year_from_date(date_text):
     match = re.search(r"\b(1[5-9]\d{2}|20\d{2})\b", date_text or "")
     return match.group(1) if match else ""
+
+def age_from_full_date(date_text, endpoint=None):
+    match = re.fullmatch(
+        r"\s*([0-2]?\d|3[01])\s+"
+        r"(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\s+"
+        r"(1[5-9]\d{2}|20\d{2})\s*",
+        str(date_text or "").upper()
+    )
+
+    if not match:
+        return None
+
+    months = {
+        "JAN": 1, "FEB": 2, "MAR": 3, "APR": 4,
+        "MAY": 5, "JUN": 6, "JUL": 7, "AUG": 8,
+        "SEP": 9, "OCT": 10, "NOV": 11, "DEC": 12
+    }
+
+    try:
+        birth_date = date(
+            int(match.group(3)),
+            months[match.group(2)],
+            int(match.group(1))
+        )
+    except ValueError:
+        return None
+
+    endpoint = endpoint or date.today()
+
+    age = endpoint.year - birth_date.year
+
+    if (endpoint.month, endpoint.day) < (birth_date.month, birth_date.day):
+        age -= 1
+
+    return age
 
 def simplify_place(place):
     if not place:
@@ -441,6 +477,12 @@ def public_person_record(person):
         "siblings": sorted_list(person["siblings"]),
         "marriages": [public_marriage_record(person, marriage) for marriage in person["marriages"]],
     }
+
+    if living:
+        age = age_from_full_date(person["birth_date"])
+
+        if age is not None and 0 <= age < 125:
+            record["age"] = age
 
     if person["parent_relationships"]:
         record["parent_relationships"] = person["parent_relationships"]
