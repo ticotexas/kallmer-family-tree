@@ -805,8 +805,22 @@
       ></div>
 
       <div id="search-area">
-        <input type="text" id="person-search" aria-label="Search family members" placeholder="Search for a person..." autocomplete="off" />
-        <div id="search-results"></div>
+        <label for="person-search" class="search-label">Search Archive</label>
+
+        <div class="search-control">
+          <input
+            type="text"
+            id="person-search"
+            aria-describedby="person-search-help"
+            placeholder="Search for a person..."
+            autocomplete="off"
+          />
+          <div id="search-results"></div>
+        </div>
+
+        <div id="person-search-help" class="search-help">
+          Enter at least 2 characters to search another person.
+        </div>
       </div>
     </div>
 
