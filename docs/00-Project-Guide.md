@@ -16,21 +16,27 @@ This file is required reading at the beginning of every substantial development 
 
 ## Documentation Map
 
-| Task | Read |
-|---|---|
-| Understand the project’s purpose and design values | `01-Constitution.md` |
-| Understand the software and data architecture | `02-Architecture.md` |
-| Make or review code changes | `03-Engineering-Guide.md` |
-| Understand how and why the project evolved | `04-Journal.md` |
-| Resume the current milestone | `99-Current-Status.md` |
+| Task                                                      | Read                      |
+| --------------------------------------------------------- | ------------------------- |
+| Understand the project's purpose and governing principles | `01-Constitution.md`      |
+| Understand the software architecture                      | `02-Architecture.md`      |
+| Make or review code changes                               | `03-Engineering-Guide.md` |
+| Understand the project's history                          | `04-Journal.md`           |
+| Understand the archive's visual philosophy                | `05-Visual-Language.md`   |
+| Understand the archive's long-term direction              | `06-Version-2-Roadmap.md` |
+| Resume current work                                       | `99-Current-Status.md`    |
 
-Read only what the task requires. The Journal is reference material, not mandatory reading for routine code work.
+Read only the documents required for the task. The Journal serves as historical reference and is not required reading for routine development.
 
 ## Core Identity
 
 The archive is not intended to imitate Ancestry, FamilySearch, or Gramps. Those systems are primarily genealogy databases and research tools.
 
 The Kallmer Family Archive is a curated presentation layer for one family’s history.
+
+The archive exists to preserve historical understanding rather than simply genealogical facts.
+
+Genealogy provides the organizational framework, but the archive's purpose is to connect visitors with the people, places, relationships, documents, and stories that give those facts historical meaning.
 
 The site should feel like a quiet, well-organized museum archive:
 
@@ -39,6 +45,17 @@ The site should feel like a quiet, well-organized museum archive:
 - clear rather than dense;
 - historically respectful rather than nostalgic or melodramatic;
 - visually coherent rather than feature-heavy.
+
+## Historical Perspective
+
+Version 2 expands the archive through four complementary lenses:
+
+- People
+- Relationships
+- Places
+- Time
+
+Together these perspectives seek to answer not only **who** the family is, but **how the family became what it is**.
 
 ## Established Decisions
 
@@ -67,6 +84,10 @@ These decisions should not be casually reopened.
 9. **Stable visual behavior is preserved during architectural work.**
 
 10. **Changes are small, verified, reversible, and committed separately.**
+
+11. **The archive follows the museum metaphor throughout the visitor experience.**
+
+12. **Historical authenticity is always preferred over visual novelty.**
 
 ## Project Quality Standard
 
@@ -100,6 +121,8 @@ At the end of a milestone:
 3. Update Architecture only when the system itself changed.
 4. Update the Constitution only when a foundational principle changed.
 5. Update the Engineering Guide only when the working method improved.
+6. Update the Visual Language only when permanent visual semantics change.
+7. Update the Version 2 Roadmap only when long-term direction changes.
 
 ## Document Status Vocabulary
 
@@ -111,6 +134,6 @@ At the end of a milestone:
 
 ## Final Orientation
 
-When uncertain, choose the approach that makes the archive easier to understand six months from now.
+When uncertain, choose the approach that makes the archive easier to understand, maintain, and preserve many years from now.
 
-The project is successful when a visitor can move naturally from family structure to a particular person, and from that person to the evidence and stories that make a life recognizable.
+The project succeeds when visitors naturally move from family structure to individual lives, and from those lives to the photographs, documents, places, relationships, and stories that reveal a family's history.

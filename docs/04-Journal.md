@@ -812,3 +812,45 @@ The public record now includes a privacy-safe numeric field such as:
 "birth": "1969",
 "age": 56
 ```
+
+---
+
+## Era V — Version 1 Public Release
+
+## Version 1 Complete
+
+The Kallmer Family Archive reached its first public release milestone.
+
+Highlights included:
+
+- Public genealogy archive
+- Interactive family tree
+- Responsive layout improvements
+- Archive search
+- Relationship presentation refinements
+- Photo galleries
+- Privacy-aware handling of living individuals
+- Documentation and engineering workflow maturation
+
+## Transition to Version 2
+
+Planning now shifts from feature completion to long-term archival
+vision.
+
+Major themes include:
+
+- Places and migration
+- Richer archival profiles
+- Historical documents
+- Storytelling
+- Museum-inspired design language
+- Continued architectural refinement
+
+A dedicated Version 2 roadmap has been established to keep future work
+curated rather than accumulating in the status document.
+
+### Historical Significance
+
+Version 1 represents the conclusion of the archive's formative engineering era. The central challenge is no longer proving that a privacy-aware genealogy database can power a coherent public archive. That objective has been achieved.
+
+Future work shifts from feature accumulation toward long-term archival curation, editorial refinement, and historical interpretation. Version 2 expands the archive through the complementary lenses of **People, Relationships, Places, and Time**, with the guiding objective of explaining not only who the family members were, but how the family became what it is.

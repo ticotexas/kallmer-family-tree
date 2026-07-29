@@ -1,18 +1,46 @@
 # The Kallmer Family Archive Engineering Guide
 
-## 1. Purpose
+---
 
-This guide defines the working method for changing the Kallmer Family Archive safely and coherently.
+# 1. Purpose
 
-It is not a generic style guide. It records the development process that has proven reliable for this repository and this collaboration.
+This guide defines the engineering practices used to develop the Kallmer Family Archive safely, predictably, and incrementally.
 
-## 2. Primary Rule
+It is not a generic programming guide. It records the working methods that have proven reliable for this repository and this collaboration.
 
-**Always work from the user’s current local files.**
+The Engineering Guide explains **how changes are made**.
 
-Uploaded files, prior chat excerpts, documentation examples, and remembered code may be stale.
+The Constitution explains **why**.
 
-Before directing a structural edit, inspect the exact current local block.
+The Architecture explains **where responsibilities belong**.
+
+---
+
+# 2. Engineering Principles
+
+Every engineering decision should preserve the archive's long-term stability.
+
+Established principles:
+
+- Always work from the user's current local repository.
+- Preserve stable visitor behavior whenever practical.
+- Make one meaningful change per commit.
+- Prefer small, reversible improvements.
+- Verify every change before continuing.
+- Separate architectural work from visual polish whenever possible.
+- Preserve institutional knowledge through documentation.
+
+Engineering should improve maintainability without unnecessarily changing the visitor experience.
+
+---
+
+# 3. Primary Rule
+
+**Always work from the user's current local files.**
+
+Uploaded files, previous conversations, remembered code, and documentation examples may all be stale.
+
+Before modifying code, inspect the exact current implementation from the user's repository.
 
 Example:
 
@@ -20,65 +48,109 @@ Example:
 sed -n '/function buildLayout/,/function drawCards/p' js/family-tree.js
 ```
 
-The printed local code is authoritative for that edit.
+The printed local source is authoritative.
 
-## 3. Change Size
+---
 
-Make one meaningful change at a time.
+# 4. Change Scope
 
-A meaningful change may be:
+Each commit should implement one meaningful idea.
+
+Examples include:
 
 - extracting one responsibility;
-- changing one layout behavior;
+- improving one layout behavior;
 - adding one data field;
 - correcting one rendering rule;
-- adjusting one coherent visual system.
+- improving one coherent visual system.
 
-Do not combine:
+Avoid combining unrelated work such as:
 
-- architecture work;
-- unrelated photograph additions;
+- architecture;
+- photographs;
 - regenerated data;
-- broad styling changes;
+- unrelated styling;
 - speculative cleanup.
 
-Small changes improve diagnosis, review, reversal, and Git history.
+Focused commits improve review, diagnosis, reversal, and project history.
 
-## 4. Guarded Edit Pattern
+---
 
-For exact JavaScript or text replacements, use a guarded Python script.
+# 5. Canonical Development Workflow
+
+Every implementation follows the same engineering cycle.
+
+---
+
+## Step 1 — Capture Current Source
+
+Never edit from memory.
+
+Capture the current local implementation.
+
+Preferred workflow:
 
 ```bash
-python3 - <<'PY'
+id="descriptive-operation"
+
+{
+  sed -n '/START_PATTERN/,/END_PATTERN/p' path/to/file
+} | tee /tmp/${id}.txt | xclip -selection clipboard
+```
+
+For numbered excerpts:
+
+```bash
+id="descriptive-operation"
+
+{
+  nl -ba path/to/file | sed -n '420,620p'
+} | tee /tmp/${id}.txt | xclip -selection clipboard
+```
+
+This workflow guarantees that:
+
+- ChatGPT reviews the exact current implementation;
+- `/tmp` preserves an identical snapshot;
+- the clipboard contains the same text for immediate pasting.
+
+---
+
+## Step 2 — Guarded Replacement
+
+Generate guarded Python replacements using `pathlib`.
+
+Every replacement should:
+
+- read the current file;
+- match the captured source exactly;
+- stop if the expected block is absent;
+- replace only once;
+- write the updated file.
+
+Example:
+
+```python
 from pathlib import Path
 
 path = Path("js/family-tree.js")
 text = path.read_text()
 
-old = '''EXACT CURRENT BLOCK'''
-new = '''EXACT REPLACEMENT BLOCK'''
+old = """CURRENT BLOCK"""
+new = """REPLACEMENT BLOCK"""
 
 if old not in text:
-    raise SystemExit("Stopped: expected block did not match.")
+    raise SystemExit("Stopped: expected block not found.")
 
 text = text.replace(old, new, 1)
 path.write_text(text)
-
-print("Completed requested edit.")
-PY
 ```
 
-This pattern is preferred because it:
+Guarded replacements are preferred because they fail safely.
 
-- works from a visible, verified block;
-- stops safely when the local code differs;
-- replaces only once;
-- avoids imprecise manual editing;
-- creates a reviewable diff.
+---
 
-Do not use an unguarded broad replacement when an exact block can be used.
-
-## 5. JavaScript Verification Cycle
+## Step 3 — Verify
 
 After every JavaScript edit:
 
@@ -86,51 +158,39 @@ After every JavaScript edit:
 node --check js/family-tree.js
 ```
 
-Silent output means the syntax is valid.
-
-Then inspect the exact diff:
+Then inspect only the intended changes:
 
 ```bash
 git --no-pager diff -- js/family-tree.js
 ```
 
-`--no-pager` prints the diff directly into the terminal instead of opening Git’s pager. This avoids the `q` exit step and leaves the output in terminal scrollback for copying.
+Review before opening the browser.
 
-Equivalent alternatives include:
+---
 
-```bash
-GIT_PAGER=cat git diff -- js/family-tree.js
-git --no-pager diff --stat
-```
+## Step 4 — Browser Review
 
-Only after syntax and diff review should the browser be tested.
+For visible changes:
 
-## 6. Browser Verification
-
-For visual or interaction changes:
-
-1. Keep the local server running in a dedicated terminal.
-2. Hard-refresh with `Ctrl+Shift+R`.
-3. Test the intended family or person.
-4. Verify the requested change.
-5. Verify that unrelated appearance and behavior remain unchanged.
-6. Test direct URL behavior when relevant.
-7. Test at least one difficult real family example.
-8. Check desktop and mobile when the change affects layout or fit.
+1. Hard refresh.
+2. Verify the requested behavior.
+3. Verify unrelated behavior remains unchanged.
+4. Test direct URLs when appropriate.
+5. Test at least one difficult real family example.
+6. Test desktop and mobile when layout changes.
 
 Review one category at a time:
 
 - geometry;
 - typography;
-- color;
 - connectors;
 - interaction;
 - data;
 - privacy.
 
-Avoid diagnosing every category simultaneously.
+---
 
-## 7. Git Discipline
+## Step 5 — Commit
 
 Before staging:
 
@@ -141,317 +201,193 @@ git --no-pager diff
 
 Stage only intended files.
 
-Example:
+Prefer:
 
 ```bash
-git add js/family-tree.js
+git add specific-file
 ```
 
-Do not use:
+rather than:
 
 ```bash
 git add .
 ```
 
-unless the entire working tree has been deliberately reviewed and is intended for one commit. The default project rule is not to use it.
+unless every modified file belongs in the commit.
 
-After committing and pushing:
+Each commit should describe one complete, reviewable idea.
 
-```bash
-git status --short
-```
+Examples:
 
-A code commit should not accidentally include:
+- Extract family-unit measurement from layout
+- Improve mobile tree fit
+- Group children by marriage
+- Add unknown-parent placeholders
 
-- new photographs;
-- photo index changes;
-- generated family data;
-- unrelated HTML or CSS;
-- editor artifacts.
+Avoid vague commit messages.
 
-## 8. Commit Design
+---
 
-Each commit should describe one completed, testable idea.
+# 6. Architectural Refactoring
 
-Good examples:
+During architectural work:
 
-- `Extract family-unit measurement from layout`
-- `Group children by marriage in profile view`
-- `Add faded unknown-parent placeholders`
-- `Improve initial mobile tree fit`
-
-Avoid commits that merely say:
-
-- `updates`
-- `fixes`
-- `more work`
-- `phase changes`
-
-The commit message should remain useful when read months later.
-
-## 9. Architectural Refactoring
-
-During a refactor:
-
-- preserve visual behavior unless a visible change is explicitly part of the task;
-- do not tune pixels while responsibilities are moving;
-- move one responsibility at a time;
+- preserve visual behavior unless intentional;
+- avoid pixel tuning while responsibilities move;
+- extract one responsibility at a time;
 - keep the browser working after every step;
-- stop extracting when ownership is clear;
-- do not create helpers solely to shorten functions.
+- stop extracting once ownership is clear.
 
-A compact coordinator is desirable only when the extracted components have real responsibilities.
+Extract helpers because they establish responsibility—not simply because functions become shorter.
 
-## 10. Visual Work
+---
 
-The archive’s established visual contract includes:
+# 7. Visual Development
 
-- parchment background;
-- restrained archival palette;
+The archive's established visual contract includes:
+
+- restrained archival appearance;
+- parchment backgrounds;
+- calm typography;
 - minimal person cards;
 - muted gender or neutral accents;
-- selected-card emphasis without visual loudness;
 - light relationship lines;
-- direct profile navigation;
-- calm typography.
+- direct profile navigation.
 
-When changing architecture, preserve this contract.
+When modifying visuals:
 
-When changing visuals:
+- identify one clear objective;
+- change the smallest responsible rule;
+- compare against the current successful presentation;
+- preserve the archive's visual language.
 
-- identify the exact visual objective;
-- modify the smallest responsible CSS or drawing rule;
-- compare against the current successful view;
-- avoid phase-specific override stylesheets as a permanent solution;
-- keep interactive-tree styling consolidated in `css/family-tree.css`.
+Interactive tree styling belongs in `css/family-tree.css`.
 
-## 11. Data Pipeline Work
+---
 
-When changing the converter:
+# 8. Data and Media
 
-1. Inspect the exact current converter code.
-2. Make one schema or privacy change at a time.
-3. Compile the script.
-4. Regenerate output intentionally.
-5. Inspect representative public and private records.
-6. Confirm living-person privacy.
-7. Review the generated diff.
-8. Keep regenerated data in the same commit only when it is the direct result of the converter change.
+## Converter Work
 
-Do not hand-edit generated JSON as a substitute for fixing the pipeline, except for a deliberately designed override system.
+When modifying the converter:
 
-## 12. Media Work
+1. inspect the current source;
+2. make one schema or privacy change;
+3. verify compilation;
+4. regenerate intentionally;
+5. inspect representative records;
+6. confirm public privacy;
+7. review generated diffs.
 
-Photograph, story, and document changes should be grouped logically.
+Generated JSON should not be hand-edited except as part of an intentionally designed override system.
 
-Before committing media:
+---
 
-- verify folder naming;
-- verify person ID;
-- verify index order;
-- verify captions;
-- verify portrait selection;
-- verify public appropriateness;
-- check for duplicate or accidental files.
+## Media
 
-Do not mix large media additions with layout-engine changes.
+Photographs, stories, and historical documents should be committed in coherent groups.
 
-## 13. Research-to-Archive Boundary
+Verify:
 
-Research notes are not automatically publication-ready.
+- folder naming;
+- person identifiers;
+- index ordering;
+- captions;
+- portrait selection;
+- public suitability.
 
-Before research becomes site content:
+Avoid combining media work with layout-engine development.
 
-- distinguish record from inference;
-- verify names and dates;
-- preserve uncertainty;
-- choose a restrained editorial form;
-- decide whether the content belongs in genealogy data, a story, a document exhibit, photo metadata, or research notes.
+---
 
-Do not force narrative findings into the genealogy schema when a story or exhibit is the better home.
+## Research
 
-## 14. Debugging Principles
+Research should become archival content only after distinguishing:
 
-When a page is blank or broken:
+- documented facts;
+- inference;
+- family recollection;
+- unresolved questions.
 
-1. check JavaScript syntax;
-2. inspect the browser console;
-3. confirm the server is serving the expected file;
-4. verify paths and filenames;
-5. confirm the current editor tab matches the served file;
-6. reduce to the most recent change.
+Choose the appropriate destination:
 
-When layout is wrong:
+- genealogy;
+- story;
+- document exhibit;
+- photograph metadata;
+- research notes.
 
-1. identify whether the problem is in data, measurement, placement, routing, or rendering;
+---
+
+# 9. Debugging
+
+When pages fail:
+
+1. verify syntax;
+2. inspect browser console;
+3. verify the server;
+4. verify filenames;
+5. confirm the edited file matches the served file;
+6. isolate the most recent change.
+
+When layout fails:
+
+1. determine whether the issue belongs to data, measurement, placement, routing, or rendering;
 2. inspect one real family example;
-3. avoid coordinate nudges until responsibility is clear;
-4. correct the smallest responsible layer.
+3. avoid coordinate adjustments before identifying responsibility.
 
-## 15. Session Handoff
+Debug the smallest responsible layer.
 
-At the end of a milestone, update:
+---
 
-- `99-Current-Status.md` with current branch, status, next action, and risks;
-- `04-Journal.md` with what changed and why.
+# 10. Documentation Responsibilities
 
-Update permanent documents only when necessary:
+At the conclusion of a milestone:
 
-- Constitution: foundational values or settled design decisions;
-- Architecture: system responsibilities or stable pipelines;
-- Engineering Guide: proven improvements to the working method.
+- update **99-Current-Status.md** for operational state;
+- update **04-Journal.md** for historical milestones.
 
-## 16. Definition of Done
+Update permanent documents only when permanent knowledge changes:
 
-A change is complete when:
+- **01-Constitution.md** — enduring principles.
+- **02-Architecture.md** — system responsibilities.
+- **03-Engineering-Guide.md** — proven workflow improvements.
+- **05-Visual-Language.md** — established visual language.
+- **06-Version-2-Roadmap.md** — long-term direction.
 
-- the intended local file was changed;
-- syntax or compilation checks pass;
+---
+
+# 11. Definition of Done
+
+A change is complete only when:
+
+- the intended source file changed;
+- syntax or compilation succeeds;
 - the diff contains only intended work;
 - browser behavior is verified;
 - privacy remains correct;
 - unrelated behavior is preserved;
-- the commit is focused;
-- the working tree status is understood;
-- current status documentation is updated when the milestone warrants it.
+- the commit represents one coherent idea;
+- repository status is understood;
+- documentation has been updated when appropriate.
 
-## ChatGPT Development Workflow
+Completion means the repository is safer, clearer, and easier to maintain than before the work began.
 
-This project follows a disciplined ChatGPT collaboration workflow to reduce context drift and make each change auditable.
+---
 
-### Capture the current implementation
+# 12. Workflow Enforcement
 
-Before modifying any function, ask the user to print the current implementation from their local working copy rather than relying on reconstructed examples.
+Before proposing implementation changes, this Engineering Guide should be followed.
 
-Preferred pattern:
+Implementation work is incomplete if it skips the established engineering process:
 
-```bash
-id="abcd1234"
+1. capture the current local implementation;
+2. use guarded replacements whenever practical;
+3. verify syntax;
+4. review the diff;
+5. verify browser behavior;
+6. produce a focused commit.
 
-{
-  sed -n '/function buildLayout/,/function drawCards/p' js/family-tree.js
-} | tee /tmp/buildLayout-${id}.txt | xclip -selection clipboard
-```
+The purpose of this workflow is not bureaucracy.
 
-For numbered excerpts:
-
-```bash
-id="abcd1234"
-
-{
-  nl -ba js/family-tree.js | sed -n '420,620p'
-} | tee /tmp/layout-${id}.txt | xclip -selection clipboard
-```
-
-Why this pattern:
-
-- `tee` preserves an exact snapshot under `/tmp` for reference.
-- `xclip` places the same output on the clipboard for immediate pasting into ChatGPT.
-- The snapshot and clipboard always contain identical content.
-
-### Development discipline
-
-1. Work from the user's current local files.
-2. Make one meaningful architectural change per commit.
-3. Run `node --check js/family-tree.js` after every JavaScript edit.
-4. Review the `git diff`.
-5. Hard-refresh the browser.
-6. Verify there are no unintended visual regressions.
-7. Commit only the intended files.
-
-## 16. Canonical Edit Cycle (Required)
-
-All implementation work follows the Canonical Edit Cycle. This workflow is mandatory for every coding session and supersedes generic editing habits.
-
-### Step 1 — Capture the Current Local Source
-
-Never edit from memory, uploaded files, or previous chat history.
-
-Request the exact current local block from the user using the project's clipboard workflow.
-
-Example:
-
-```bash
-id="descriptive-operation-name"
-
-{
-  sed -n '/START_PATTERN/,/END_PATTERN/p' path/to/file
-} | tee /tmp/${id}.txt | xclip -selection clipboard
-```
-
-The clipboard output becomes the authoritative source for the next edit.
-
-### Step 2 — Perform a Guarded Replacement
-
-Do not ask the user to edit manually.
-
-Generate a guarded Python replacement using `pathlib` that:
-
-- reads the current file;
-- matches the exact captured text;
-- aborts if the expected block is not found;
-- replaces only the intended block;
-- writes the updated file.
-
-Every guarded replacement must fail safely rather than risking unintended edits.
-
-### Step 3 — Verify
-
-After every JavaScript change:
-
-```bash
-node --check path/to/file.js
-```
-
-Then inspect only the intended changes:
-
-```bash
-git --no-pager diff -- path/to/file.js
-```
-
-### Step 4 — Capture Verification
-
-Verification should also use the clipboard workflow.
-
-Example:
-
-```bash
-id="descriptive-verification-name"
-
-{
-  echo "NODE CHECK"
-  echo "=========="
-  node --check path/to/file.js
-
-  echo
-  echo "DIFF"
-  echo "===="
-  git --no-pager diff -- path/to/file.js
-} | tee /tmp/${id}.txt | xclip -selection clipboard
-```
-
-The clipboard output becomes the review artifact for the next discussion.
-
-### Step 5 — Continue Incrementally
-
-Only after verification should the next implementation step begin.
-
-Each cycle should accomplish one meaningful architectural or behavioral improvement.
-
-Avoid combining unrelated work into a single edit.
-
-## 17. Workflow Enforcement
-
-Before proposing any code modification, ChatGPT must first read this Engineering Guide and follow the Canonical Edit Cycle.
-
-If ChatGPT proposes code edits without:
-
-1. capturing the current local source,
-2. using a guarded replacement,
-3. verifying with `node --check`,
-4. reviewing with `git --no-pager diff`, and
-5. capturing verification output,
-
-then the proposal should be considered invalid and restarted using this workflow.
-
-The Canonical Edit Cycle exists to ensure that every implementation is based on the user's current local files, minimizes accidental edits, produces reproducible verification, and keeps every commit focused and reviewable.
+It exists to ensure that every implementation is based on the user's current repository, minimizes accidental edits, produces reproducible verification, and creates a clear, reviewable project history.

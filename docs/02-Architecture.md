@@ -1,23 +1,49 @@
 # The Kallmer Family Archive Architecture
 
-## 1. System Overview
+---
 
-The project is a static family archive generated from genealogical source data and enriched with curated media and narrative content.
+# 1. System Overview
 
-The principal system layers are:
+The Kallmer Family Archive is a static digital family archive generated from genealogical source data and enriched with curated historical content.
 
-1. **Source genealogy**
-2. **Conversion and privacy pipeline**
-3. **Public structured data**
-4. **Curated media and stories**
-5. **Static web presentation**
-6. **Interactive family navigation**
+Its architecture intentionally separates genealogy, data transformation, editorial content, presentation, and interaction into distinct responsibilities. This separation allows each layer to evolve independently while preserving long-term maintainability.
 
-The architecture intentionally separates genealogical data preparation from browser rendering.
+The principal architectural layers are:
 
-## 2. Repository Structure
+1. Source genealogy
+2. Conversion and privacy pipeline
+3. Public structured data
+4. Curated media and narrative content
+5. Static web presentation
+6. Interactive family navigation
 
-The exact repository should be inspected before work begins. The established major areas include:
+---
+
+# 2. Architecture Philosophy
+
+The architecture exists to separate long-lived responsibilities.
+
+Each major layer should have one clear purpose and one primary owner.
+
+Whenever practical:
+
+- genealogy editing belongs in genealogy tools;
+- data transformation belongs in converter scripts;
+- historical curation belongs in archival content;
+- presentation belongs in the browser;
+- visual appearance belongs in CSS.
+
+Each component should know only what it must know to fulfill its own responsibility.
+
+This separation minimizes coupling, improves maintainability, and allows individual layers to evolve independently without forcing unnecessary changes throughout the system.
+
+---
+
+# 3. Repository Structure
+
+The exact repository should always be verified before work begins. The current local repository is authoritative.
+
+The established project organization is:
 
 ```text
 kallmer-family-tree/
@@ -42,33 +68,34 @@ kallmer-family-tree/
     ├── 02-Architecture.md
     ├── 03-Engineering-Guide.md
     ├── 04-Journal.md
+    ├── 05-Visual-Language.md
+    ├── 06-Version-2-Roadmap.md
     └── 99-Current-Status.md
 ```
 
-Some file names or locations may evolve. The current local tree remains authoritative.
+Individual filenames may change over time, but the architectural responsibilities of these areas should remain stable.
 
-## 3. Data Pipeline
+---
 
-### 3.1 Source of Truth
+# 4. Data Pipeline
 
-Gramps is the primary genealogy authoring environment.
+## 4.1 Source of Truth
 
-GEDCOM is used as an interchange format, but it may not preserve every relationship nuance needed by the archive.
+Gramps is the project's genealogy authoring environment.
 
-Known example:
+GEDCOM serves as the interchange format between genealogy editing and the archive.
 
-- adoption information entered in Gramps may export through GEDCOM as a birth relationship.
+GEDCOM does not preserve every genealogical nuance required by the archive. Certain relationship semantics may require project-owned interpretation or supplemental metadata.
 
-This limitation may eventually require either:
+Genealogical editing belongs in Gramps rather than browser code.
 
-- an improved export path; or
-- a project-owned override file.
+---
 
-### 3.2 Converter
+## 4.2 Converter
 
 `tools/gedcom_to_json.py` converts genealogy data into browser-ready JSON.
 
-The converter is responsible for:
+The converter owns:
 
 - people;
 - families;
@@ -79,82 +106,78 @@ The converter is responsible for:
 - preferred display names;
 - birth and death information;
 - marriage records;
-- divorce status and events;
-- family identifiers attached to unions;
-- children attached to the correct family union;
+- divorce events;
+- family identifiers;
 - public privacy reduction;
-- private full-data output.
+- private full-data generation.
+
+Privacy decisions belong in the converter rather than in browser code.
 
 The converter should compile successfully before regenerated data is trusted.
 
-### 3.3 Public and Private Output
+---
 
-`public-data/family.json` is safe for public presentation according to the current privacy rules.
+## 4.3 Public and Private Output
 
-`data/family-private.json` may preserve fuller information for private use.
+Two independent outputs are generated.
 
-Public privacy rules have included:
+**Public**
 
-- living people receive reduced date detail;
-- marriage detail is reduced when living people are involved;
-- deceased people may receive fuller dates and places;
-- selected geographic detail may be omitted;
-- public and private output are generated separately.
+`public-data/family.json`
 
-The converter, not the browser, should enforce these boundaries.
+contains information suitable for public presentation.
 
-## 4. Media Architecture
+**Private**
 
-### 4.1 Photographs
+`data/family-private.json`
+
+may preserve fuller historical information.
+
+The browser should consume already-prepared data rather than performing privacy decisions during rendering.
+
+---
+
+# 5. Media Architecture
+
+## 5.1 Photographs
 
 Photographs are organized by person.
 
-The project supports person-specific folders and generated indexes. Current folder naming may include both the person ID and a readable name.
+Each person may contain a dedicated folder together with a generated index.
 
-Example:
+Typical structure:
 
 ```text
 photos/
 └── I0013--Floyd-Frederick-Kallmer/
     ├── portrait.png
-    ├── Floyd in football uniform.png
+    ├── football-uniform.png
     └── index.json
 ```
 
-Photo indexes support multiple images and captions.
+Photo indexes allow multiple images together with captions and optional metadata.
 
-Proposed metadata may include optional:
+The portrait remains the distinguished representative image whenever appropriate.
 
-- date;
-- location;
-- source;
-- notes.
+---
 
-The portrait remains a distinguished image where appropriate, while galleries may contain multiple historical views.
+## 5.2 Stories
 
-### 4.2 Stories
+Stories remain independent of genealogy records.
 
-Stories are stored outside the genealogy JSON and linked by person ID.
+Narrative content is stored separately and connected through person identifiers.
 
-Example:
+This separation allows biographies and historical writing to evolve without increasing the complexity of genealogy data.
 
-```text
-stories/
-└── I0013--Floyd-Frederick-Kallmer/
-    ├── 01-life-sketch.md
-    ├── 02-obituary.md
-    └── index.json
-```
+---
 
-This separation allows narrative material to grow without overloading genealogy records.
+## 5.3 Historical Documents
 
-### 4.3 Historical Documents
+Historical documents represent their own archival layer.
 
-Historical document support is a planned archival layer.
+Documents are treated as exhibits rather than ordinary images.
 
-Documents should be treated as exhibits with metadata rather than as ordinary photographs when their documentary character matters.
-
-Likely metadata includes:
+Metadata may include:
 
 - title;
 - document type;
@@ -165,65 +188,59 @@ Likely metadata includes:
 - transcription;
 - notes.
 
-## 5. Web Presentation
+---
 
-### 5.1 Homepage
+# 6. Presentation Architecture
+
+## Homepage
 
 `index.html` serves as the museum lobby.
 
-It presents the archive’s identity, statistics, and principal entry points.
+It introduces the archive, establishes tone, and provides the primary entry points.
 
-### 5.2 Profile and Pedigree Experience
+---
 
-`tree.html` is the current canonical person-profile implementation. It provides person-oriented archival detail and pedigree context.
+## Profile Experience
 
-The profile experience is expected to keep evolving into the archive’s centerpiece. A future redesign may change its internal structure or eventually introduce a clearer filename, but the existing `tree.html?person=...` URLs should remain supported unless a deliberate migration and compatibility plan is adopted.
+`tree.html` provides the canonical archival profile.
 
-Direct URLs currently use:
+The profile is the archive's principal destination and presents the historical life of one individual together with family relationships and supporting archival material.
 
-```text
+Stable direct URLs remain an important architectural contract.
+
+```
 tree.html?person=Ixxxx
 ```
 
-The page supports:
+---
 
-- person search;
-- normalized diacritic matching;
-- life dates and places;
-- portraits and galleries;
-- stories;
-- parents;
-- spouses and marriages;
-- children grouped by union;
-- siblings;
-- relationship history;
-- browser history and shareable person links.
+## Interactive Tree
 
-### 5.3 Interactive Family Tree
+`family-tree.html`
 
-`family-tree.html`, `js/family-tree.js`, and `css/family-tree.css` provide a zoomable SVG family view.
+`js/family-tree.js`
 
-The interactive tree loads `public-data/family.json`, builds a family-centered model, calculates card and relationship geometry, draws the tree, and handles person selection.
+`css/family-tree.css`
 
-### 5.4 Stylesheet Direction
+together provide the interactive family tree.
 
-The site should move away from large inline style blocks, but not toward one monolithic stylesheet.
+The tree consumes prepared JSON, constructs presentation models, calculates layout, routes relationships, and renders SVG.
 
-The preferred eventual structure is:
+---
 
-```text
-css/
-├── archive.css       # shared palette, typography, page shell, header, buttons
-├── home.css          # homepage-specific composition
-├── profile.css       # person profile and pedigree presentation
-└── family-tree.css   # interactive SVG tree
-```
+## Presentation Layers
 
-Shared visual tokens and common components belong in `archive.css`. Page-specific layout and behavior remain in focused stylesheets.
+The presentation architecture separates shared visual language from page-specific composition.
 
-This transition should happen incrementally and without visual redesign. The current local HTML must be inspected before each extraction.
+Shared visual tokens belong in shared stylesheets.
 
-## 6. Interactive Tree Pipeline
+Page composition belongs in page-specific stylesheets.
+
+This separation minimizes duplication while preserving independence among the archive's major experiences.
+
+---
+
+# 7. Interactive Tree Pipeline
 
 The established layout pipeline is:
 
@@ -248,170 +265,154 @@ drawCards()
 drawRelationshipLines()
 ```
 
-### 6.1 View Model
+---
 
-`buildFamilyViewModel(person)` gathers the selected person and the records needed for display, including:
+## View Model
 
-- parents;
-- spouse families;
-- spouses;
-- children;
-- supporting family records.
+The view model gathers family information required for presentation without making layout decisions.
 
-The view model describes the family context without drawing it.
+---
 
-### 6.2 Family Units
+## Family Units
 
-`buildFamilyUnits(person, unions)` converts spouse or partnership records into explicit family units.
+Family units organize one partnership together with its children.
 
-Established conceptual shape:
+Family units are the fundamental layout objects.
 
-```js
-{
-  id,
-  union,
-  primaryPerson,
-  spouse,
-  children,
-  isPrimary,
-  measurements
-}
-```
+---
 
-A family unit is the primary layout object for a union and its children.
+## Measurement
 
-### 6.3 Measurement
+Measurement determines required space.
 
-`measureFamilyUnit(unit)` calculates the space required by one unit.
+Measurement never determines placement.
 
-`measureFamilyUnits(units)` applies measurement across all units and stores those measurements with the units.
+---
 
-Measurement should remain separate from placement.
+## Placement
 
-### 6.4 Placement
+Placement determines card positions while respecting family structure.
 
-`layoutPrimaryFamily(model)` places:
+---
 
-- the selected person;
-- the selected person’s parents;
-- the main ancestry axis;
-- measured family units needed for descendant placement.
+## Output Models
 
-`layoutFamilyUnit(...)` places one spouse and that union’s children.
+Card models describe positioned people.
 
-`layoutFamilyUnits(...)` orchestrates placement across all units.
+Relationship models describe semantic relationships independently of rendering.
 
-### 6.5 Output Models
+---
 
-`buildCardModel(...)` returns the final set of positioned cards.
+## Rendering
 
-`buildRelationshipModel(...)` returns relationship definitions independent of rendering.
+Rendering consumes completed geometry.
 
-`calculateLayoutBounds(...)` computes the SVG viewBox from the positioned card model.
+Rendering should never perform layout decisions.
 
-`buildLayout(model)` remains a coordinator rather than a geometry monolith.
+---
 
-### 6.6 Rendering
+# 8. Relationship Routing
 
-`drawCards(cards)` renders person cards.
+Relationship routing communicates family structure.
 
-`drawRelationshipLines(cards, relationships)` renders relationship paths.
+Its purpose is understanding rather than geometric efficiency.
 
-Rendering should consume geometry already decided by the layout and routing layers.
+Established principles:
 
-## 7. Relationship Routing
+- connectors communicate relationship semantics;
+- parent, spouse, and child relationships remain visually distinct;
+- children descend from a union anchor;
+- multiple unions never create ambiguous routing;
+- connector crossings never imply relationships;
+- relationship routing exists to communicate family structure rather than minimize line length.
 
-### Established
+Rendering draws paths already determined by the routing layer.
 
-- Connectors communicate relationship semantics.
-- Parent, spouse, and child connections must remain visually distinguishable.
-- Children descend from a union anchor.
-- Multiple unions must not share ambiguous descendant routing.
-- Connector crossings must not imply relationship.
+---
 
-### Deferred: Family Routing Nodes
+# 9. Unknown Relationships
 
-A future routing architecture may introduce one routing node per family unit.
+Missing historical information is represented through explicit placeholder records.
 
-A routing node would own:
+Placeholder records participate fully in layout calculations even when they intentionally represent absent historical information.
 
-- union center;
-- junction point;
-- vertical trunk;
-- elbow locations;
-- final path geometry.
+Placeholders should remain:
 
-The intended separation is:
-
-```text
-Cards determine positions.
-Routing nodes determine connector geometry.
-Rendering draws supplied paths.
-```
-
-This is deferred until layout behavior is stable enough for a dedicated connector-polish milestone.
-
-## 8. Unknown Relationships
-
-Unknown ancestors or spouses should be represented through explicit placeholder records in the presentation model rather than improvised labels in drawing code.
-
-The current code includes an unknown-ancestor creation path. Future work should ensure that placeholders remain:
-
-- visually faded;
-- outlined with a restrained dashed border;
+- visually restrained;
 - structurally meaningful;
-- non-clickable or clearly distinguished where appropriate;
-- consistent across parent and spouse roles.
+- clearly distinguished from real people;
+- consistent throughout the archive.
 
-## 9. URL and Interaction Contract
+---
 
-The interactive and profile experiences preserve direct person selection through URL query parameters.
+# 10. URL and Interaction Contract
+
+The archive preserves stable direct URLs through person query parameters.
 
 Expected behavior includes:
 
-- initial person selection from `?person=`;
-- click-to-center or select;
-- browser-history integration;
-- shareable direct URLs;
-- graceful fallback for invalid or missing person IDs.
+- initial selection from `?person=`;
+- browser history integration;
+- direct sharing of person URLs;
+- graceful fallback for invalid identifiers.
 
-This behavior is part of the stable visual and interaction contract during internal refactors.
+Stable visitor behavior should be preserved during architectural refactoring whenever practical.
 
-## 10. Architectural Boundaries
+---
 
-The architecture should preserve these responsibilities:
+# 11. Architectural Boundaries
 
-- **Gramps** owns genealogical editing.
-- **Converter scripts** own translation and public privacy.
+Each architectural layer owns a distinct responsibility.
+
+- **Gramps** owns genealogy editing.
+- **Converter scripts** own translation and privacy.
 - **JSON** owns browser-consumable structured data.
-- **Media indexes** own curated media order and metadata.
-- **View models** own display context.
+- **Media indexes** own curated media organization.
+- **View models** own presentation context.
 - **Family units** own layout grouping.
 - **Measurement** owns required space.
-- **Layout** owns card positions.
+- **Layout** owns positioning.
 - **Routing** owns connector geometry.
-- **Rendering** owns SVG and DOM output.
-- **CSS** owns presentation.
+- **Rendering** owns SVG and DOM generation.
+- **CSS** owns visual presentation.
+- **Documentation** owns institutional knowledge.
 
-When a change crosses several boundaries, divide it into staged, independently verifiable changes.
+Whenever a change crosses multiple responsibilities, it should be divided into smaller independently verifiable changes.
 
-## 11. Known Architectural Risks
+---
 
-- GEDCOM may omit relationship semantics such as adoption.
-- Public gender accents currently depend on inferred family roles when sex or gender is absent from public JSON.
-- Multiple marriages and large descendant groups stress both placement and routing.
-- Mobile fit requires behavior beyond simply shrinking the desktop canvas.
-- Historical document metadata still lacks a finalized schema.
-- Curated media and generated indexes must remain synchronized with people and folder names.
+# 12. Architectural Principles
 
-## 12. Architecture Change Policy
+The architecture favors:
 
-Update this document when:
+- explicit responsibilities;
+- predictable data flow;
+- small composable components;
+- separation of genealogy from editorial content;
+- separation of layout from rendering;
+- backward-compatible public URLs whenever practical;
+- evolutionary refactoring rather than wholesale replacement.
 
-- a new major layer is introduced;
+Architectural improvements should preserve stable visitor behavior whenever possible.
+
+---
+
+# 13. Architecture Change Policy
+
+Update this document only when:
+
+- a major architectural layer is introduced;
 - responsibility moves between components;
-- a data schema changes materially;
-- a stable pipeline changes;
-- a provisional architecture becomes established or is rejected.
+- a stable data schema changes materially;
+- an established pipeline changes;
+- a new architectural responsibility becomes permanent.
 
-Do not update it for minor styling, ordinary bug fixes, or one-time research findings.
+Do not update this document for:
+
+- routine bug fixes;
+- styling adjustments;
+- temporary implementation details;
+- release status;
+- future feature planning.
+
+Those belong in the Journal, Current Status, or Version 2 Roadmap, as appropriate.
