@@ -20,7 +20,7 @@
   "I0020": "I0020--Paul-Vernon-Huffey",
   "I0022": "I0022--Margaret-Mary-Kallmer",
   "I0032": "I0032--Bernice-Mae-Satterlee",
-  "I0039": "I0039--Katherine-Dinges",
+  "I0039": "I0039--Katharina-Dinges",
   "I0044": "I0044--Charles-Ernst-Satterlee",
   "I0048": "I0048--Ellen-Steele",
   "I0057": "I0057--Oscar-Albin-Steele",
@@ -28,6 +28,7 @@
   "I0059": "I0059--Nelly-Steele",
   "I0062": "I0062--Selma-Idalia-Steele",
   "I0069": "I0069--Kelly-Athena",
+  "I0088": "I0088--Ellen-Miranda-Huffey",
   "I0151": "I0151--Walter-Robert-Urban",
   "I0152": "I0152--Joanne-Pauline-Urban",
   "I0161": "I0161--Helen-Christine-McGrail",
@@ -41,5 +42,8 @@
   "I0214": "I0214--Charles-Ebon-Satterlee",
   "I0273": "I0273--Jane-Adeline-Hutchins",
   "I0274": "I0274--Merle-Hutchins",
-  "I0314": "I0314--James-P-McGrail"
+  "I0314": "I0314--James-P-McGrail",
+  "I0340": "I0340--Angus-Gordon",
+  "I0346": "I0346--James-Gordon",
+  "I0347": "I0347--Catherine-Gordon"
 }

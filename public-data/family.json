@@ -1015,7 +1015,10 @@
         "I0026",
         "I0027",
         "I0028",
-        "I0029"
+        "I0029",
+        "I0360",
+        "I0361",
+        "I0362"
       ],
       "marriages": [
         {
@@ -1062,7 +1065,10 @@
         "I0026",
         "I0027",
         "I0028",
-        "I0029"
+        "I0029",
+        "I0360",
+        "I0361",
+        "I0362"
       ],
       "siblings": [],
       "marriages": [
@@ -1075,7 +1081,10 @@
             "I0026",
             "I0027",
             "I0028",
-            "I0029"
+            "I0029",
+            "I0360",
+            "I0361",
+            "I0362"
           ],
           "marriage_date": "3 JAN 1869",
           "marriage_place": "Sublette Township, Lee, Illinois",
@@ -1087,16 +1096,21 @@
     },
     {
       "id": "I0025",
-      "name": "Julia Koehler",
-      "birth_name": "",
-      "alternate_names": [],
+      "name": "Julia Mary Koehler",
+      "birth_name": "Julia Mary Dinges",
+      "alternate_names": [
+        {
+          "name": "Julia Mary Dinges",
+          "type": "birth"
+        }
+      ],
       "gender": "F",
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
+      "birth": "3 JUL 1877",
+      "death": "18 JUN 1930",
+      "place": "Sterling, Logan, Colorado",
+      "birth_place": "Sublette Township, Lee, Illinois",
+      "death_place": "Sterling, Logan, Colorado",
       "parents": [
         "I0024",
         "I0039"
@@ -1108,22 +1122,25 @@
         "I0026",
         "I0027",
         "I0028",
-        "I0029"
+        "I0029",
+        "I0360",
+        "I0361",
+        "I0362"
       ],
       "marriages": []
     },
     {
       "id": "I0026",
-      "name": "Joseph Dinges",
-      "birth_name": "Joseph Dinges",
+      "name": "Joseph Albert Dinges",
+      "birth_name": "Joseph Albert Dinges",
       "alternate_names": [],
       "gender": "M",
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
+      "birth": "15 DEC 1869",
+      "death": "17 FEB 1926",
+      "place": "Odebolt, Sac, Iowa",
+      "birth_place": "Sublette Township, Lee, Illinois",
+      "death_place": "Odebolt, Sac, Iowa",
       "parents": [
         "I0024",
         "I0039"
@@ -1135,22 +1152,25 @@
         "I0025",
         "I0027",
         "I0028",
-        "I0029"
+        "I0029",
+        "I0360",
+        "I0361",
+        "I0362"
       ],
       "marriages": []
     },
     {
       "id": "I0027",
-      "name": "John Dinges Jr.",
-      "birth_name": "John Dinges Jr.",
+      "name": "John William Dinges Jr.",
+      "birth_name": "John William Dinges Jr.",
       "alternate_names": [],
       "gender": "M",
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
+      "birth": "28 JAN 1872",
+      "death": "18 NOV 1956",
+      "place": "Lake, South Dakota",
+      "birth_place": "Sublette Township, Lee, Illinois",
+      "death_place": "Lake, South Dakota",
       "parents": [
         "I0024",
         "I0039"
@@ -1162,22 +1182,25 @@
         "I0025",
         "I0026",
         "I0028",
-        "I0029"
+        "I0029",
+        "I0360",
+        "I0361",
+        "I0362"
       ],
       "marriages": []
     },
     {
       "id": "I0028",
-      "name": "Pete Dinges",
-      "birth_name": "Pete Dinges",
+      "name": "Peter Henry Dinges",
+      "birth_name": "Peter Henry Dinges",
       "alternate_names": [],
       "gender": "M",
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
+      "birth": "31 JAN 1874",
+      "death": "7 FEB 1950",
+      "place": "Carroll, Carroll, Iowa",
+      "birth_place": "Mendota, LaSalle",
+      "death_place": "Carroll, Carroll, Iowa",
       "parents": [
         "I0024",
         "I0039"
@@ -1189,22 +1212,25 @@
         "I0025",
         "I0026",
         "I0027",
-        "I0029"
+        "I0029",
+        "I0360",
+        "I0361",
+        "I0362"
       ],
       "marriages": []
     },
     {
       "id": "I0029",
-      "name": "Fred Dinges",
-      "birth_name": "Fred Dinges",
+      "name": "Godfred John Dinges",
+      "birth_name": "Godfred John Dinges",
       "alternate_names": [],
       "gender": "M",
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
+      "birth": "4 OCT 1879",
+      "death": "29 OCT 1959",
+      "place": "Sac City, Sac, Iowa",
+      "birth_place": "Sac, Iowa",
+      "death_place": "Sac City, Sac, Iowa",
       "parents": [
         "I0024",
         "I0039"
@@ -1216,7 +1242,10 @@
         "I0025",
         "I0026",
         "I0027",
-        "I0028"
+        "I0028",
+        "I0360",
+        "I0361",
+        "I0362"
       ],
       "marriages": []
     },
@@ -1616,7 +1645,7 @@
     },
     {
       "id": "I0039",
-      "name": "Katherine Dinges",
+      "name": "Katharina Dinges",
       "birth_name": "Catherina Beitz",
       "alternate_names": [
         {
@@ -1626,6 +1655,14 @@
         {
           "name": "Catherine Dinges",
           "type": "aka"
+        },
+        {
+          "name": "Katharina Beitz",
+          "type": "aka"
+        },
+        {
+          "name": "Katherine Dinges",
+          "type": "married"
         }
       ],
       "gender": "F",
@@ -1648,7 +1685,10 @@
         "I0026",
         "I0027",
         "I0028",
-        "I0029"
+        "I0029",
+        "I0360",
+        "I0361",
+        "I0362"
       ],
       "siblings": [],
       "marriages": [
@@ -1661,7 +1701,10 @@
             "I0026",
             "I0027",
             "I0028",
-            "I0029"
+            "I0029",
+            "I0360",
+            "I0361",
+            "I0362"
           ],
           "marriage_date": "3 JAN 1869",
           "marriage_place": "Sublette Township, Lee, Illinois",
@@ -3155,10 +3198,10 @@
       "alternate_names": [],
       "gender": "M",
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
+      "birth": "2 JUL 1867",
+      "death": "27 APR 1952",
+      "place": "Iowa",
+      "birth_place": "Iowa",
       "death_place": "",
       "parents": [],
       "spouses": [
@@ -3197,15 +3240,20 @@
     },
     {
       "id": "I0080",
-      "name": "Inger Johanna Kaasa",
+      "name": "Inger Johanna Olson",
       "birth_name": "Inger Johanna Kaasa",
-      "alternate_names": [],
+      "alternate_names": [
+        {
+          "name": "Inger Johanna Kaasa",
+          "type": "birth"
+        }
+      ],
       "gender": "F",
       "living": false,
-      "birth": "?",
-      "death": "?",
-      "place": "",
-      "birth_place": "",
+      "birth": "22 FEB 1867",
+      "death": "27 DEC 1955",
+      "place": "Decorah Township, Winneshiek, Iowa",
+      "birth_place": "Decorah Township, Winneshiek, Iowa",
       "death_place": "",
       "parents": [],
       "spouses": [
@@ -3419,8 +3467,8 @@
       "living": false,
       "birth": "1866",
       "death": "?",
-      "place": "",
-      "birth_place": "",
+      "place": "Richland, Wisconsin",
+      "birth_place": "Richland, Wisconsin",
       "death_place": "",
       "parents": [
         "I0092",
@@ -3456,17 +3504,25 @@
     },
     {
       "id": "I0088",
-      "name": "Ellen Miranda Gordon",
+      "name": "Ellen Miranda Huffey",
       "birth_name": "Ellen Miranda Gordon",
-      "alternate_names": [],
+      "alternate_names": [
+        {
+          "name": "Ellen Miranda Gordon",
+          "type": "birth"
+        }
+      ],
       "gender": "F",
       "living": false,
-      "birth": "1864",
-      "death": "1964",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
-      "parents": [],
+      "birth": "28 NOV 1864",
+      "death": "5 FEB 1964",
+      "place": "Santa Clara, Santa Clara, California",
+      "birth_place": "Post Township, Allamakee, Iowa",
+      "death_place": "Santa Clara, Santa Clara, California",
+      "parents": [
+        "I0340",
+        "I0341"
+      ],
       "spouses": [
         "I0087"
       ],
@@ -3476,7 +3532,16 @@
         "I0090",
         "I0091"
       ],
-      "siblings": [],
+      "siblings": [
+        "I0342",
+        "I0343",
+        "I0344",
+        "I0345",
+        "I0348",
+        "I0349",
+        "I0350",
+        "I0351"
+      ],
       "marriages": [
         {
           "family": "F0024",
@@ -7135,9 +7200,14 @@
     },
     {
       "id": "I0183",
-      "name": "Margaret Owens",
+      "name": "Margaret Breese",
       "birth_name": "Margaret Owens",
-      "alternate_names": [],
+      "alternate_names": [
+        {
+          "name": "Margaret Owens",
+          "type": "birth"
+        }
+      ],
       "gender": "F",
       "living": false,
       "birth": "17 MAR 1830",
@@ -12360,6 +12430,840 @@
       "children": [],
       "siblings": [],
       "marriages": []
+    },
+    {
+      "id": "I0340",
+      "name": "Angus Gordon",
+      "birth_name": "Angus Gordon",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "30 OCT 1836",
+      "death": "3 APR 1922",
+      "place": "Postville, Allamakee, Iowa",
+      "birth_place": "Québec, Canada",
+      "death_place": "Postville, Allamakee, Iowa",
+      "parents": [
+        "I0346",
+        "I0347"
+      ],
+      "spouses": [
+        "I0341"
+      ],
+      "children": [
+        "I0088",
+        "I0342",
+        "I0343",
+        "I0344",
+        "I0345",
+        "I0348",
+        "I0349",
+        "I0350",
+        "I0351"
+      ],
+      "siblings": [
+        "I0352",
+        "I0353",
+        "I0354",
+        "I0355",
+        "I0356",
+        "I0357",
+        "I0358",
+        "I0359"
+      ],
+      "marriages": [
+        {
+          "family": "F0116",
+          "spouse": "I0341",
+          "children": [
+            "I0088",
+            "I0342",
+            "I0343",
+            "I0344",
+            "I0345",
+            "I0348",
+            "I0349",
+            "I0350",
+            "I0351"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0341",
+      "name": "Nancy E Gordon",
+      "birth_name": "Nancy E Hardin",
+      "alternate_names": [
+        {
+          "name": "Nancy E Hardin",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "1841",
+      "death": "1901",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0340"
+      ],
+      "children": [
+        "I0088",
+        "I0342",
+        "I0343",
+        "I0344",
+        "I0345",
+        "I0348",
+        "I0349",
+        "I0350",
+        "I0351"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0116",
+          "spouse": "I0340",
+          "children": [
+            "I0088",
+            "I0342",
+            "I0343",
+            "I0344",
+            "I0345",
+            "I0348",
+            "I0349",
+            "I0350",
+            "I0351"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0342",
+      "name": "Katherine E. Jeppson",
+      "birth_name": "Katherine E. Gordon",
+      "alternate_names": [
+        {
+          "name": "Catherine E. Gordon",
+          "type": "aka"
+        },
+        {
+          "name": "Katherine E. Gordon",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "1872",
+      "death": "1965",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0340",
+        "I0341"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0088",
+        "I0343",
+        "I0344",
+        "I0345",
+        "I0348",
+        "I0349",
+        "I0350",
+        "I0351"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0343",
+      "name": "Elizabeth A. Gordon",
+      "birth_name": "Elizabeth Gordon",
+      "alternate_names": [
+        {
+          "name": "Elizabeth Gordon",
+          "type": "birth"
+        },
+        {
+          "name": "Elizabeth A. Kilgore Davis",
+          "type": "married"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "1868",
+      "death": "1902",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0340",
+        "I0341"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0088",
+        "I0342",
+        "I0344",
+        "I0345",
+        "I0348",
+        "I0349",
+        "I0350",
+        "I0351"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0344",
+      "name": "Grace J. Bellows",
+      "birth_name": "Grace J. Gordon",
+      "alternate_names": [
+        {
+          "name": "Grace J. Gordon",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "1880",
+      "death": "1946",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0340",
+        "I0341"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0088",
+        "I0342",
+        "I0343",
+        "I0345",
+        "I0348",
+        "I0349",
+        "I0350",
+        "I0351"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0345",
+      "name": "Cynthia L. Gordon",
+      "birth_name": "Cynthia L. Gordon",
+      "alternate_names": [],
+      "gender": "F",
+      "living": false,
+      "birth": "1883",
+      "death": "1901",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0340",
+        "I0341"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0088",
+        "I0342",
+        "I0343",
+        "I0344",
+        "I0348",
+        "I0349",
+        "I0350",
+        "I0351"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0346",
+      "name": "James Gordon",
+      "birth_name": "James Gordon",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "18 JAN 1802",
+      "death": "5 MAR 1887",
+      "place": "Saint-André-d'Argenteuil, Argenteuil, Laurentides, Québec, Canada",
+      "birth_place": "Scotland",
+      "death_place": "Saint-André-d'Argenteuil, Argenteuil, Laurentides, Québec, Canada",
+      "parents": [],
+      "spouses": [
+        "I0347"
+      ],
+      "children": [
+        "I0340",
+        "I0352",
+        "I0353",
+        "I0354",
+        "I0355",
+        "I0356",
+        "I0357",
+        "I0358",
+        "I0359"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0117",
+          "spouse": "I0347",
+          "children": [
+            "I0340",
+            "I0352",
+            "I0353",
+            "I0354",
+            "I0355",
+            "I0356",
+            "I0357",
+            "I0358",
+            "I0359"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0347",
+      "name": "Catherine Gordon",
+      "birth_name": "Catherine McMartin",
+      "alternate_names": [
+        {
+          "name": "Catherine McMartin",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "1 MAR 1807",
+      "death": "27 JAN 1886",
+      "place": "Scotland",
+      "birth_place": "Scotland",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0346"
+      ],
+      "children": [
+        "I0340",
+        "I0352",
+        "I0353",
+        "I0354",
+        "I0355",
+        "I0356",
+        "I0357",
+        "I0358",
+        "I0359"
+      ],
+      "siblings": [],
+      "marriages": [
+        {
+          "family": "F0117",
+          "spouse": "I0346",
+          "children": [
+            "I0340",
+            "I0352",
+            "I0353",
+            "I0354",
+            "I0355",
+            "I0356",
+            "I0357",
+            "I0358",
+            "I0359"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0348",
+      "name": "Benton Gordon",
+      "birth_name": "Benton Gordon",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1875",
+      "death": "1946",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0340",
+        "I0341"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0088",
+        "I0342",
+        "I0343",
+        "I0344",
+        "I0345",
+        "I0349",
+        "I0350",
+        "I0351"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0349",
+      "name": "Charles Franklin Gordon",
+      "birth_name": "Charles Franklin Gordon",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1861",
+      "death": "1936",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0340",
+        "I0341"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0088",
+        "I0342",
+        "I0343",
+        "I0344",
+        "I0345",
+        "I0348",
+        "I0350",
+        "I0351"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0350",
+      "name": "James A. Gordon",
+      "birth_name": "James A. Gordon",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1863",
+      "death": "1918",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0340",
+        "I0341"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0088",
+        "I0342",
+        "I0343",
+        "I0344",
+        "I0345",
+        "I0348",
+        "I0349",
+        "I0351"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0351",
+      "name": "Frederick Enoch Gordon",
+      "birth_name": "Frederick Enoch Gordon",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1878",
+      "death": "1948",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0340",
+        "I0341"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0088",
+        "I0342",
+        "I0343",
+        "I0344",
+        "I0345",
+        "I0348",
+        "I0349",
+        "I0350"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0352",
+      "name": "James Gordon",
+      "birth_name": "James Gordon",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1828",
+      "death": "1900",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0346",
+        "I0347"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0340",
+        "I0353",
+        "I0354",
+        "I0355",
+        "I0356",
+        "I0357",
+        "I0358",
+        "I0359"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0353",
+      "name": "John Gordon",
+      "birth_name": "John Gordon",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1829",
+      "death": "1898",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0346",
+        "I0347"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0340",
+        "I0352",
+        "I0354",
+        "I0355",
+        "I0356",
+        "I0357",
+        "I0358",
+        "I0359"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0354",
+      "name": "Catherine Walker",
+      "birth_name": "Catherine Gordon",
+      "alternate_names": [
+        {
+          "name": "Catherine Gordon",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "1831",
+      "death": "1904",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0346",
+        "I0347"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0340",
+        "I0352",
+        "I0353",
+        "I0355",
+        "I0356",
+        "I0357",
+        "I0358",
+        "I0359"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0355",
+      "name": "Helen McGregor",
+      "birth_name": "Helen Gordon",
+      "alternate_names": [
+        {
+          "name": "Helen Gordon",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "1838",
+      "death": "1926",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0346",
+        "I0347"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0340",
+        "I0352",
+        "I0353",
+        "I0354",
+        "I0356",
+        "I0357",
+        "I0358",
+        "I0359"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0356",
+      "name": "Mary Jane Morrin",
+      "birth_name": "Mary Jane Gordon",
+      "alternate_names": [
+        {
+          "name": "Mary Jane Gordon",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "1840",
+      "death": "1915",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0346",
+        "I0347"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0340",
+        "I0352",
+        "I0353",
+        "I0354",
+        "I0355",
+        "I0357",
+        "I0358",
+        "I0359"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0357",
+      "name": "Elizabeth Gordon",
+      "birth_name": "Elizabeth Gordon",
+      "alternate_names": [],
+      "gender": "F",
+      "living": false,
+      "birth": "1844",
+      "death": "1912",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0346",
+        "I0347"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0340",
+        "I0352",
+        "I0353",
+        "I0354",
+        "I0355",
+        "I0356",
+        "I0358",
+        "I0359"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0358",
+      "name": "Thomas Gordon",
+      "birth_name": "Thomas Gordon",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1847",
+      "death": "1937",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0346",
+        "I0347"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0340",
+        "I0352",
+        "I0353",
+        "I0354",
+        "I0355",
+        "I0356",
+        "I0357",
+        "I0359"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0359",
+      "name": "William Gordon",
+      "birth_name": "William Gordon",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1849",
+      "death": "1933",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0346",
+        "I0347"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0340",
+        "I0352",
+        "I0353",
+        "I0354",
+        "I0355",
+        "I0356",
+        "I0357",
+        "I0358"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0360",
+      "name": "Baby Dinges",
+      "birth_name": "Baby Dinges",
+      "alternate_names": [],
+      "gender": "",
+      "living": false,
+      "birth": "1872",
+      "death": "1872",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0024",
+        "I0039"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0022",
+        "I0025",
+        "I0026",
+        "I0027",
+        "I0028",
+        "I0029",
+        "I0361",
+        "I0362"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0361",
+      "name": "Baby Girl Dinges",
+      "birth_name": "Baby Girl Dinges",
+      "alternate_names": [],
+      "gender": "F",
+      "living": false,
+      "birth": "4 NOV 1881",
+      "death": "6 NOV 1881",
+      "place": "Sac, Iowa",
+      "birth_place": "Sac, Iowa",
+      "death_place": "Sac, Iowa",
+      "parents": [
+        "I0024",
+        "I0039"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0022",
+        "I0025",
+        "I0026",
+        "I0027",
+        "I0028",
+        "I0029",
+        "I0360",
+        "I0362"
+      ],
+      "marriages": []
+    },
+    {
+      "id": "I0362",
+      "name": "Katherine Mary Dinges",
+      "birth_name": "Katherine Mary Dinges",
+      "alternate_names": [],
+      "gender": "F",
+      "living": false,
+      "birth": "7 APR 1884",
+      "death": "28 JUN 1969",
+      "place": "Odebolt, Sac, Iowa",
+      "birth_place": "Richland Township, Sac, Iowa",
+      "death_place": "Odebolt, Sac, Iowa",
+      "parents": [
+        "I0024",
+        "I0039"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0022",
+        "I0025",
+        "I0026",
+        "I0027",
+        "I0028",
+        "I0029",
+        "I0360",
+        "I0361"
+      ],
+      "marriages": []
     }
   ],
   "families": [
@@ -12493,7 +13397,10 @@
         "I0026",
         "I0027",
         "I0028",
-        "I0029"
+        "I0029",
+        "I0360",
+        "I0361",
+        "I0362"
       ],
       "marriage_date": "3 JAN 1869",
       "marriage_place": "Sublette Township, Lee, Illinois",
@@ -13922,6 +14829,48 @@
       "husband": "I0335",
       "wife": "I0273",
       "children": [],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0116",
+      "husband": "I0340",
+      "wife": "I0341",
+      "children": [
+        "I0088",
+        "I0342",
+        "I0343",
+        "I0344",
+        "I0345",
+        "I0348",
+        "I0349",
+        "I0350",
+        "I0351"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0117",
+      "husband": "I0346",
+      "wife": "I0347",
+      "children": [
+        "I0340",
+        "I0352",
+        "I0353",
+        "I0354",
+        "I0355",
+        "I0356",
+        "I0357",
+        "I0358",
+        "I0359"
+      ],
       "marriage_date": "",
       "marriage_place": "",
       "divorced": false,
