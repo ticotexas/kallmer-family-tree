@@ -697,6 +697,46 @@
       color: var(--paper);
     }
 
+    .story-content h5 {
+      margin: 16px 0 8px;
+      color: var(--brass);
+      font-size: 0.95rem;
+    }
+
+    .story-content ul,
+    .story-content ol {
+      margin: 0.8rem 0 1rem;
+      padding-left: 1.6rem;
+    }
+
+    .story-content li {
+      margin: 0.35rem 0;
+      padding-left: 0.15rem;
+      line-height: 1.55;
+    }
+
+    .story-content li::marker {
+      color: var(--brass);
+    }
+
+    .story-content hr {
+      width: 42%;
+      margin: 1.5rem auto;
+      border: 0;
+      border-top: 1px solid rgba(176, 141, 63, 0.55);
+    }
+
+    .story-content a {
+      color: var(--paper);
+      text-decoration-color: var(--brass);
+      text-underline-offset: 0.16em;
+    }
+
+    .story-content a:hover,
+    .story-content a:focus {
+      color: var(--homestead-clay);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       #details {
         transition: none;
@@ -1538,11 +1578,158 @@
           });
         }
 
+        function escapeStoryHtml(text) {
+          const characters = {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+          };
+
+          return text.replace(/[&<>"']/g, character => characters[character]);
+        }
+
+        function safeStoryLink(url) {
+          const trimmedUrl = url.trim();
+
+          if (
+            /^(https?:\/\/|mailto:|#|\/(?!\/)|\.{1,2}\/)/i.test(trimmedUrl)
+          ) {
+            return trimmedUrl;
+          }
+
+          return "";
+        }
+
         function formatInlineMarkdown(text) {
-          return text
+          return escapeStoryHtml(text)
+            .replace(
+              /\[([^\]]+)\]\(([^)\s]+)\)/g,
+              (match, label, url) => {
+                const safeUrl = safeStoryLink(url);
+
+                if (!safeUrl) {
+                  return match;
+                }
+
+                const externalAttributes = /^https?:\/\//i.test(safeUrl)
+                  ? ' target="_blank" rel="noopener noreferrer"'
+                  : "";
+
+                return `<a href="${safeUrl}"${externalAttributes}>${label}</a>`;
+              }
+            )
             .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
             .replace(/\*(.+?)\*/g, "<em>$1</em>")
             .replace(/\n/g, "<br>");
+        }
+
+        function renderStoryList(lines, ordered = false) {
+          const tag = ordered ? "ol" : "ul";
+          const markerPattern = ordered
+            ? /^\d+\.\s+/
+            : /^[-+*]\s+/;
+
+          const items = lines
+            .map(line => line.trim())
+            .filter(Boolean)
+            .map(line => {
+              const item = line.replace(markerPattern, "");
+              return `<li>${formatInlineMarkdown(item)}</li>`;
+            })
+            .join("");
+
+          return `<${tag}>${items}</${tag}>`;
+        }
+
+        function renderStoryBlock(block) {
+          const paragraph = block.trim();
+
+          if (!paragraph) {
+            return "";
+          }
+
+          if (/^---+$/.test(paragraph)) {
+            return "<hr>";
+          }
+
+          if (paragraph.startsWith("### ")) {
+            return `<h5>${formatInlineMarkdown(paragraph.substring(4))}</h5>`;
+          }
+
+          if (paragraph.startsWith("## ")) {
+            return `<h4>${formatInlineMarkdown(paragraph.substring(3))}</h4>`;
+          }
+
+          if (paragraph.startsWith("# ")) {
+            return `<h3>${formatInlineMarkdown(paragraph.substring(2))}</h3>`;
+          }
+
+          if (paragraph.startsWith("> ")) {
+            const quote = paragraph
+              .split("\n")
+              .map(line => line.replace(/^>\s?/, ""))
+              .join("\n");
+
+            return `<blockquote>${formatInlineMarkdown(quote)}</blockquote>`;
+          }
+
+          const lines = paragraph.split("\n");
+          const unorderedPattern = /^[-+*]\s+/;
+          const orderedPattern = /^\d+\.\s+/;
+
+          const unorderedStart = lines.findIndex(line =>
+            unorderedPattern.test(line.trim())
+          );
+
+          if (
+            unorderedStart >= 0 &&
+            lines
+              .slice(unorderedStart)
+              .every(line => unorderedPattern.test(line.trim()))
+          ) {
+            const introduction = lines
+              .slice(0, unorderedStart)
+              .join("\n")
+              .trim();
+
+            const introductionHtml = introduction
+              ? `<p>${formatInlineMarkdown(introduction)}</p>`
+              : "";
+
+            return (
+              introductionHtml +
+              renderStoryList(lines.slice(unorderedStart))
+            );
+          }
+
+          const orderedStart = lines.findIndex(line =>
+            orderedPattern.test(line.trim())
+          );
+
+          if (
+            orderedStart >= 0 &&
+            lines
+              .slice(orderedStart)
+              .every(line => orderedPattern.test(line.trim()))
+          ) {
+            const introduction = lines
+              .slice(0, orderedStart)
+              .join("\n")
+              .trim();
+
+            const introductionHtml = introduction
+              ? `<p>${formatInlineMarkdown(introduction)}</p>`
+              : "";
+
+            return (
+              introductionHtml +
+              renderStoryList(lines.slice(orderedStart), true)
+            );
+          }
+
+          return `<p>${formatInlineMarkdown(paragraph)}</p>`;
         }
 
         async function loadStory(person) {
@@ -1605,32 +1792,7 @@
                 contentDiv.innerHTML =
                   md
                     .split(/\n\s*\n/)
-                    .map(block => {
-                      const paragraph = block.trim();
-
-                      if (!paragraph) {
-                        return "";
-                      }
-
-                      if (paragraph.startsWith("## ")) {
-                        return `<h4>${formatInlineMarkdown(paragraph.substring(3))}</h4>`;
-                      }
-
-                      if (paragraph.startsWith("# ")) {
-                        return `<h3>${formatInlineMarkdown(paragraph.substring(2))}</h3>`;
-                      }
-
-                      if (paragraph.startsWith("> ")) {
-                        const quote = paragraph
-                          .split("\n")
-                          .map(line => line.replace(/^>\s?/, ""))
-                          .join("\n");
-
-                        return `<blockquote>${formatInlineMarkdown(quote)}</blockquote>`;
-                      }
-
-                      return `<p>${formatInlineMarkdown(paragraph)}</p>`;
-                    })
+                    .map(renderStoryBlock)
                     .join("");
               };
 
