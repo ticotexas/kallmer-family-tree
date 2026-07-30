@@ -233,6 +233,31 @@ connection.
 
 No connector should make one spouse appear connected to another spouse.
 
+## 9.1 Family Unit Anchoring
+
+Chronological ordering and visual emphasis are intentionally separate concepts.
+
+Family Units always appear in the chronological order recorded by Gramps.
+
+When determining horizontal placement beneath the selected person, the
+renderer follows these canonical rules:
+
+1. If one or more Family Units contain descendants, the first
+   chronological Family Unit containing children is centered beneath the
+   selected person.
+2. If no Family Unit contains descendants, the final chronological
+   Family Unit is centered.
+3. Earlier Family Units extend to the left.
+4. Later Family Units extend to the right.
+5. All spouse cards remain on a common generation row regardless of
+   divorce, widowhood, or other relationship outcomes.
+
+This convention emphasizes the continuation of the family while
+preserving the historical order of relationships.
+
+The centered Family Unit is a presentation decision only. It does not
+designate a "primary marriage" within the underlying genealogy.
+
 ## 10. Connector Language
 
 Connectors represent genealogical structure.
