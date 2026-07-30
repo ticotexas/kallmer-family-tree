@@ -23,6 +23,19 @@ class ArchiveRelationships {
   }
 
   findSpouseFamilies(personId) {
+    const person = this.archiveData.peopleById.get(personId);
+    const orderedFamilyIds = person?.families_as_spouse;
+
+    if (Array.isArray(orderedFamilyIds) && orderedFamilyIds.length > 0) {
+      const orderedFamilies = orderedFamilyIds
+        .map((familyId) => this.archiveData.familiesById.get(familyId))
+        .filter(Boolean);
+
+      if (orderedFamilies.length > 0) {
+        return orderedFamilies;
+      }
+    }
+
     return [...this.archiveData.familiesById.values()].filter(
       (family) =>
         family.husband === personId || family.wife === personId,

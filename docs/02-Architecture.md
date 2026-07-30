@@ -279,6 +279,53 @@ Family units organize one partnership together with its children.
 
 Family units are the fundamental layout objects.
 
+### Family Unit Order
+
+The chronological order of multiple Family Units is authoritative data,
+not a rendering heuristic.
+
+The archive preserves the explicit family order maintained in Gramps
+through every stage of the pipeline:
+
+```text
+Gramps
+    ↓
+Ordered FAMS references
+    ↓
+GEDCOM
+    ↓
+gedcom_to_json.py
+    ↓
+family.json
+    ↓
+archive-data.js
+    ↓
+Relationship layer
+    ↓
+Family Tree renderer
+```
+
+The exporter preserves the ordered `FAMS` references exactly as written
+by Gramps. The relationship layer and renderer consume those ordered
+references directly when constructing Family Units.
+
+No chronological inference is performed from:
+
+- Family record identifiers;
+- marriage dates;
+- creation order; or
+- other heuristics.
+
+Historical corrections should therefore be made in Gramps by adjusting
+the person's Family order. Once exported, the archive reproduces that
+order faithfully without additional interpretation.
+
+This separation of responsibilities is intentional:
+
+- Gramps owns genealogy.
+- The exporter preserves genealogy.
+- The renderer presents genealogy.
+
 ---
 
 ## Measurement

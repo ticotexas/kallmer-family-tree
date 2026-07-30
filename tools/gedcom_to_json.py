@@ -128,7 +128,7 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
                 "spouses": set(),
                 "children": set(),
                 "siblings": set(),
-                "families_as_spouse": set(),
+                "families_as_spouse": [],
                 "families_as_child": set(),
                 "parent_relationships": [],
                 "marriages": []
@@ -180,7 +180,10 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
                 person["living"] = False
 
             elif tag == "FAMS":
-                person["families_as_spouse"].add(clean_xref(value))
+                family_id = clean_xref(value)
+
+                if family_id not in person["families_as_spouse"]:
+                    person["families_as_spouse"].append(family_id)
 
             elif tag == "FAMC":
                 family_id = clean_xref(value)
@@ -440,6 +443,20 @@ def name_metadata(person):
     return preferred_name, birth_name, alternate_names
 
 
+def ordered_marriages(person):
+    family_order = {
+        family_id: index
+        for index, family_id in enumerate(person["families_as_spouse"])
+    }
+
+    return sorted(
+        person["marriages"],
+        key=lambda marriage: family_order.get(
+            marriage.get("family", ""),
+            len(family_order)
+        )
+    )
+
 def public_person_record(person):
     living = is_public_living(person)
     preferred_name, birth_name, alternate_names = name_metadata(person)
@@ -475,7 +492,11 @@ def public_person_record(person):
         "spouses": sorted_list(person["spouses"]),
         "children": sorted_list(person["children"]),
         "siblings": sorted_list(person["siblings"]),
-        "marriages": [public_marriage_record(person, marriage) for marriage in person["marriages"]],
+        "families_as_spouse": list(person["families_as_spouse"]),
+        "marriages": [
+            public_marriage_record(person, marriage)
+            for marriage in ordered_marriages(person)
+        ],
     }
 
     if living:
@@ -513,9 +534,9 @@ def private_person_record(person):
         "spouses": sorted_list(person["spouses"]),
         "children": sorted_list(person["children"]),
         "siblings": sorted_list(person["siblings"]),
-        "families_as_spouse": sorted_list(person["families_as_spouse"]),
+        "families_as_spouse": list(person["families_as_spouse"]),
         "families_as_child": sorted_list(person["families_as_child"]),
-        "marriages": person["marriages"],
+        "marriages": ordered_marriages(person),
     }
 
     if person["parent_relationships"]:
