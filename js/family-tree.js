@@ -565,9 +565,6 @@ function layoutFamilyUnit(
   });
 
   const unitCenterX = unitLeft + measurements.unitWidth / 2;
-  const spouseSeparation = union.family?.divorced
-    ? measurements.divorcedUnionSeparation
-    : 0;
 
   const spouseCard = {
     key: `spouse-${unitIndex}`,
@@ -575,7 +572,7 @@ function layoutFamilyUnit(
     union,
     selected: false,
     x: unitCenterX - measurements.spouseWidth / 2,
-    y: spouseY + spouseSeparation,
+    y: spouseY,
     width: measurements.spouseWidth,
     height: measurements.spouseHeight,
   };
@@ -847,47 +844,109 @@ function layoutFamilyUnits(
     return [];
   }
 
-  const familyUnitGap = layoutUnits[0].measurements.familyUnitGap;
+  const familyUnitGap =
+    layoutUnits[0].measurements.familyUnitGap;
+
   const singleMarriageTopGap = 46;
   const additionalMarriageClearance = 16;
+
   const familyUnitsTopGap =
     singleMarriageTopGap +
     Math.max(0, layoutUnits.length - 1) *
       additionalMarriageClearance;
 
-  const familyUnitsWidth =
-    layoutUnits.reduce(
-      (total, unit) => total + unit.measurements.unitWidth,
-      0,
-    ) +
-    familyUnitGap * (layoutUnits.length - 1);
-
   const selectedCenterX =
     selectedCard.x + selectedCard.width / 2;
 
-  let nextUnitLeft =
-    selectedCenterX - familyUnitsWidth / 2;
+  let displayAnchorIndex =
+    layoutUnits.findIndex(
+      (unit) => unit.children.length > 0,
+    );
+
+  if (displayAnchorIndex === -1) {
+    displayAnchorIndex = layoutUnits.length - 1;
+  }
+
+  const unitLefts = new Array(layoutUnits.length);
+
+  const anchorUnit = layoutUnits[displayAnchorIndex];
+  const anchorUnitWidth =
+    anchorUnit.measurements.unitWidth;
+  const anchorSpouseWidth =
+    anchorUnit.measurements.spouseWidth;
+
+  const anchorUnitLeft =
+    selectedCenterX - anchorUnitWidth / 2;
+  const anchorUnitRight =
+    selectedCenterX + anchorUnitWidth / 2;
+  const anchorSpouseLeft =
+    selectedCenterX - anchorSpouseWidth / 2;
+  const anchorSpouseRight =
+    selectedCenterX + anchorSpouseWidth / 2;
+
+  unitLefts[displayAnchorIndex] = anchorUnitLeft;
+
+  let previousRight = anchorSpouseLeft;
+
+  for (
+    let i = displayAnchorIndex - 1;
+    i >= 0;
+    i--
+  ) {
+    const unit = layoutUnits[i];
+
+    if (unit.children.length > 0) {
+      previousRight = Math.min(
+        previousRight,
+        anchorUnitLeft,
+      );
+    }
+
+    unitLefts[i] =
+      previousRight -
+      familyUnitGap -
+      unit.measurements.unitWidth;
+
+    previousRight = unitLefts[i];
+  }
+
+  let nextLeft = anchorSpouseRight;
+
+  for (
+    let i = displayAnchorIndex + 1;
+    i < layoutUnits.length;
+    i++
+  ) {
+    const unit = layoutUnits[i];
+
+    if (unit.children.length > 0) {
+      nextLeft = Math.max(
+        nextLeft,
+        anchorUnitRight,
+      );
+    }
+
+    unitLefts[i] = nextLeft + familyUnitGap;
+
+    nextLeft =
+      unitLefts[i] +
+      unit.measurements.unitWidth;
+  }
 
   const spouseY =
     selectedY +
     selectedCard.height +
     familyUnitsTopGap;
 
-  return layoutUnits.map((unit, unitIndex) => {
-    const layout = layoutFamilyUnit(
+  return layoutUnits.map((unit, index) =>
+    layoutFamilyUnit(
       unit,
-      unitIndex,
+      index,
       selectedCard,
-      nextUnitLeft,
+      unitLefts[index],
       spouseY,
-    );
-
-    nextUnitLeft +=
-      unit.measurements.unitWidth +
-      unit.measurements.familyUnitGap;
-
-    return layout;
-  });
+    ),
+  );
 }
 
 function buildLayout(model) {
