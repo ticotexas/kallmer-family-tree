@@ -8047,15 +8047,15 @@
     },
     {
       "id": "I0187",
-      "name": "Nellie G Lathrop",
-      "birth_name": "Nellie G Milhous",
+      "name": "Nellie G. Lathrop",
+      "birth_name": "Nellie G. Milhous",
       "alternate_names": [
         {
           "name": "Nellie Millhouse",
           "type": "aka"
         },
         {
-          "name": "Nellie G Milhous",
+          "name": "Nellie G. Milhous",
           "type": "birth"
         }
       ],
@@ -15040,8 +15040,8 @@
       "living": true,
       "birth": "1939",
       "death": "",
-      "place": "",
-      "birth_place": "",
+      "place": "Osage, Iowa",
+      "birth_place": "Osage, Mitchell, Iowa",
       "death_place": "",
       "parents": [
         "I0386",
@@ -15106,7 +15106,7 @@
       "birth": "4 APR 1940",
       "death": "15 NOV 1993",
       "place": "Omaha, Douglas, Nebraska",
-      "birth_place": "Loup City, Sherman, Nebraska",
+      "birth_place": "Loup, Sherman, Nebraska",
       "death_place": "Omaha, Douglas, Nebraska",
       "parents": [
         "I0406",
@@ -15959,14 +15959,24 @@
       "place": "Omaha, Douglas, Nebraska",
       "birth_place": "",
       "death_place": "Omaha, Douglas, Nebraska",
-      "parents": [],
+      "parents": [
+        "I0501",
+        "I0502"
+      ],
       "spouses": [
         "I0406"
       ],
       "children": [
         "I0385"
       ],
-      "siblings": [],
+      "siblings": [
+        "I0503",
+        "I0504",
+        "I0505",
+        "I0506",
+        "I0507",
+        "I0508"
+      ],
       "families_as_spouse": [
         "F0133"
       ],
@@ -19404,6 +19414,285 @@
       ],
       "families_as_spouse": [],
       "marriages": []
+    },
+    {
+      "id": "I0501",
+      "name": "Clarence Russel Fisher",
+      "birth_name": "Clarence Russel Fisher",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "9 AUG 1873",
+      "death": "26 MAY 1927",
+      "place": "Comstock, Custer, Nebraska",
+      "birth_place": "Emmitsburg, Frederick, Maryland",
+      "death_place": "Comstock, Custer, Nebraska",
+      "parents": [],
+      "spouses": [
+        "I0502"
+      ],
+      "children": [
+        "I0407",
+        "I0503",
+        "I0504",
+        "I0505",
+        "I0506",
+        "I0507",
+        "I0508"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0154"
+      ],
+      "marriages": [
+        {
+          "family": "F0154",
+          "spouse": "I0502",
+          "children": [
+            "I0407",
+            "I0503",
+            "I0504",
+            "I0505",
+            "I0506",
+            "I0507",
+            "I0508"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0502",
+      "name": "Mary Jane Fisher",
+      "birth_name": "Mary Jane Stone",
+      "alternate_names": [
+        {
+          "name": "Mary Jane Stone",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "15 NOV 1875",
+      "death": "1952",
+      "place": "Comstock, Custer, Nebraska",
+      "birth_place": "South Wales, Wales, United Kingdom",
+      "death_place": "Comstock, Custer, Nebraska",
+      "parents": [],
+      "spouses": [
+        "I0501"
+      ],
+      "children": [
+        "I0407",
+        "I0503",
+        "I0504",
+        "I0505",
+        "I0506",
+        "I0507",
+        "I0508"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0154"
+      ],
+      "marriages": [
+        {
+          "family": "F0154",
+          "spouse": "I0501",
+          "children": [
+            "I0407",
+            "I0503",
+            "I0504",
+            "I0505",
+            "I0506",
+            "I0507",
+            "I0508"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0503",
+      "name": "George Russell Fisher",
+      "birth_name": "George Russell Fisher",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1902",
+      "death": "1956",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0501",
+        "I0502"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0407",
+        "I0504",
+        "I0505",
+        "I0506",
+        "I0507",
+        "I0508"
+      ],
+      "families_as_spouse": [],
+      "marriages": []
+    },
+    {
+      "id": "I0504",
+      "name": "Edmond H Fisher",
+      "birth_name": "Edmond H Fisher",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1903",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0501",
+        "I0502"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0407",
+        "I0503",
+        "I0505",
+        "I0506",
+        "I0507",
+        "I0508"
+      ],
+      "families_as_spouse": [],
+      "marriages": []
+    },
+    {
+      "id": "I0505",
+      "name": "Paul S Fisher",
+      "birth_name": "Paul S Fisher",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1907",
+      "death": "1908",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0501",
+        "I0502"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0407",
+        "I0503",
+        "I0504",
+        "I0506",
+        "I0507",
+        "I0508"
+      ],
+      "families_as_spouse": [],
+      "marriages": []
+    },
+    {
+      "id": "I0506",
+      "name": "Pauline E Fisher",
+      "birth_name": "Pauline E Fisher",
+      "alternate_names": [],
+      "gender": "F",
+      "living": false,
+      "birth": "1911",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0501",
+        "I0502"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0407",
+        "I0503",
+        "I0504",
+        "I0505",
+        "I0507",
+        "I0508"
+      ],
+      "families_as_spouse": [],
+      "marriages": []
+    },
+    {
+      "id": "I0507",
+      "name": "John Ernest Fisher",
+      "birth_name": "John Ernest Fisher",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1914",
+      "death": "1984",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0501",
+        "I0502"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0407",
+        "I0503",
+        "I0504",
+        "I0505",
+        "I0506",
+        "I0508"
+      ],
+      "families_as_spouse": [],
+      "marriages": []
+    },
+    {
+      "id": "I0508",
+      "name": "Edna Helene Fisher",
+      "birth_name": "Edna Helene Fisher",
+      "alternate_names": [],
+      "gender": "F",
+      "living": false,
+      "birth": "1919",
+      "death": "1976",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0501",
+        "I0502"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [
+        "I0407",
+        "I0503",
+        "I0504",
+        "I0505",
+        "I0506",
+        "I0507"
+      ],
+      "families_as_spouse": [],
+      "marriages": []
     }
   ],
   "families": [
@@ -21503,6 +21792,25 @@
         "I0498",
         "I0499",
         "I0500"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0154",
+      "husband": "I0501",
+      "wife": "I0502",
+      "children": [
+        "I0407",
+        "I0503",
+        "I0504",
+        "I0505",
+        "I0506",
+        "I0507",
+        "I0508"
       ],
       "marriage_date": "",
       "marriage_place": "",
