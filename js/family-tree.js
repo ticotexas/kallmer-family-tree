@@ -386,28 +386,15 @@ function createUnknownSpouse(familyId) {
 }
 
 function buildFamilyUnits(person, unions) {
-  return unions
-    .map((union, originalIndex) => ({
-      union,
-      originalIndex,
-      marriageYear:
-        archiveDates.extractYear(union.family?.marriage_date) ??
-        Number.POSITIVE_INFINITY,
-    }))
-    .sort(
-      (a, b) =>
-        a.marriageYear - b.marriageYear ||
-        a.originalIndex - b.originalIndex,
-    )
-    .map(({ union }, unionIndex) => ({
-      id: union.family.id,
-      union,
-      primaryPerson: person,
-      spouse: union.spouse,
-      children: union.children,
-      isPrimary: unionIndex === 0,
-      marriageOrder: unionIndex,
-    }));
+  return unions.map((union, unionIndex) => ({
+    id: union.family.id,
+    union,
+    primaryPerson: person,
+    spouse: union.spouse,
+    children: union.children,
+    isPrimary: unionIndex === 0,
+    marriageOrder: unionIndex,
+  }));
 }
 
 function buildFamilyViewModel(person) {
