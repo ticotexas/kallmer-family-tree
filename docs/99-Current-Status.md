@@ -1,6 +1,6 @@
 # 99 — Current Status
 
-**Updated:** July 2026
+**Updated:** August 3, 2026
 
 ---
 
@@ -154,5 +154,3 @@ For future direction:
 
 - **05-Visual-Language.md**
 - **06-Version-2-Roadmap.md**
-
-I intentionally preserved the long-term plans that still define the project's direction (Places & Migration, timelines, museum presentation, shared infrastructure, and editorial refinement) while moving historical narrative and completed implementation work out of the status document. That keeps `99` concise without losing the vision.

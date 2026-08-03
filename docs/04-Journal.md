@@ -169,7 +169,7 @@ The new pipeline introduced:
 
 - `buildFamilyUnits`;
 - `measureFamilyUnit`;
-- `measureFamilyUnits`;
+- `prepareFamilyUnitLayouts`;
 - `layoutPrimaryFamily`;
 - `layoutFamilyUnit`;
 - `layoutFamilyUnits`;

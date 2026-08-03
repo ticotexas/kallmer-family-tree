@@ -204,6 +204,8 @@ It introduces the archive, establishes tone, and provides the primary entry poin
 
 `tree.html` provides the canonical archival profile.
 
+The filename is a Version 1 legacy name. The page functions as the Person Detail view; renaming it to `details.html` is a Version 2 candidate, not a current architectural change.
+
 The profile is the archive's principal destination and presents the historical life of one individual together with family relationships and supporting archival material.
 
 Stable direct URLs remain an important architectural contract.
@@ -249,7 +251,9 @@ buildFamilyViewModel()
         ↓
 buildFamilyUnits()
         ↓
-measureFamilyUnits()
+measureFamilyUnit()
+        ↓
+prepareFamilyUnitLayouts()
         ↓
 layoutPrimaryFamily()
         ↓
