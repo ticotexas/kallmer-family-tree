@@ -924,10 +924,13 @@
     </div>
   </div>
 
+  <script src="js/archive-data.js"></script>
   <script src="js/archive-dates.js"></script>
   <script src="js/archive-search.js"></script>
   <script>
+    const archiveData = new ArchiveData();
     const archiveDates = new ArchiveDates();
+    const archiveSearch = new ArchiveSearch();
 
     fetch("public-data/family.json?v=" + Date.now())
       .then((response) => {
@@ -1023,10 +1026,7 @@
           }
         });
 
-        const peopleById = {};
-        data.people.forEach(person => {
-          peopleById[person.id] = person;
-        });
+        archiveData.setData(data);
 
         const detailArchiveStatus =
           document.getElementById("detail-archive-status");
@@ -1061,46 +1061,7 @@
         }
 
 
-        function normalizeText(text) {
-          return (text || "")
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[̀-ͯ]/g, "")
-            .replace(/ł/g, "l")
-            .replace(/ø/g, "o")
-            .replace(/æ/g, "ae")
-            .replace(/œ/g, "oe")
-            .replace(/ð/g, "d")
-            .replace(/þ/g, "th");
-        }
-
-        function alternateNameTexts(person) {
-          const names = [];
-
-          if (person.birth_name) {
-            names.push(person.birth_name);
-          }
-
-          if (Array.isArray(person.alternate_names)) {
-            person.alternate_names.forEach(entry => {
-              if (typeof entry === "string") {
-                names.push(entry);
-              } else if (entry && entry.name) {
-                names.push(entry.name);
-              }
-            });
-          }
-
-          return names;
-        }
-
-        const searchablePeople = data.people.map(person => ({
-          person,
-          searchName: normalizeText([
-            person.name,
-            ...alternateNameTexts(person)
-          ].filter(Boolean).join(" "))
-        }));
+        archiveSearch.setPeople(data.people);
 
         function hideSearchResults() {
           searchResults.style.display = "none";
@@ -1114,7 +1075,7 @@
             return;
           }
 
-          searchResults.innerHTML = matches.map(({ person }) => `
+          searchResults.innerHTML = matches.map(person => `
             <button class="search-result" data-person-id="${person.id}">
               <span class="search-result-name">${person.name}</span>
               <span class="mono search-result-dates">${lifeDates(person)}</span>
@@ -1125,7 +1086,8 @@
 
           searchResults.querySelectorAll(".search-result").forEach(button => {
             button.onclick = () => {
-              const selectedPerson = peopleById[button.dataset.personId];
+              const selectedPerson =
+                archiveData.getPerson(button.dataset.personId);
               if (selectedPerson) {
                 showDetails(selectedPerson);
                 searchInput.value = selectedPerson.name;
@@ -1137,18 +1099,14 @@
 
         function setupSearch() {
           searchInput.addEventListener("input", () => {
-            const query = normalizeText(searchInput.value.trim());
+            const query = searchInput.value.trim();
 
-            if (query.length < 2) {
+            if (archiveSearch.normalizeText(query).length < 2) {
               hideSearchResults();
               return;
             }
 
-            const matches = searchablePeople
-              .filter(({ searchName }) => searchName.includes(query))
-              .slice(0, 12);
-
-            renderSearchResults(matches);
+            renderSearchResults(archiveSearch.search(query, 12));
           });
 
           searchInput.addEventListener("keydown", event => {
@@ -1275,7 +1233,7 @@
           if (!ids || ids.length === 0) return "None listed";
 
           return ids
-            .map(id => peopleById[id])
+            .map(id => archiveData.getPerson(id))
             .filter(Boolean)
             .map(person => personButton(person))
             .join("<br>");
@@ -1283,7 +1241,7 @@
 
         function peopleFromIdsOldestFirst(ids) {
           return (ids || [])
-            .map(id => peopleById[id])
+            .map(id => archiveData.getPerson(id))
             .filter(Boolean)
             .sort((a, b) => {
               const dateDifference =
@@ -1371,7 +1329,7 @@
           if (!person.marriages || person.marriages.length === 0) return "";
 
           return person.marriages.map(m => {
-            const spouse = peopleById[m.spouse];
+            const spouse = archiveData.getPerson(m.spouse);
             const spouseName = spouse ? personButton(spouse) : m.spouse;
             const marriageDetails = [
               m.date || m.marriage_date,
@@ -1402,13 +1360,13 @@
 
         function getParents(person) {
           return (person.parents || [])
-            .map(id => peopleById[id])
+            .map(id => archiveData.getPerson(id))
             .filter(Boolean);
         }
 
         function getPrimarySpouse(person) {
           if (!person || !person.spouses || person.spouses.length === 0) return null;
-          return peopleById[person.spouses[0]] || null;
+          return archiveData.getPerson(person.spouses[0]);
         }
 
         function coupleKey(personA, personB) {
@@ -1559,7 +1517,8 @@
         function attachPedigreeHandlers() {
           document.querySelectorAll(".pedigree-person-name").forEach(button => {
             button.onclick = () => {
-              const nextPerson = peopleById[button.dataset.personId];
+              const nextPerson =
+                archiveData.getPerson(button.dataset.personId);
               if (nextPerson) {
                 showDetails(nextPerson);
               }
@@ -1570,7 +1529,8 @@
         function attachPersonLinkHandlers() {
           document.querySelectorAll(".person-link").forEach(button => {
             button.onclick = () => {
-              const nextPerson = peopleById[button.dataset.personId];
+              const nextPerson =
+                archiveData.getPerson(button.dataset.personId);
               if (nextPerson) {
                 showDetails(nextPerson);
               }
@@ -2008,7 +1968,11 @@
           const birthName = String(person && person.birth_name || "").trim();
           const preferredName = String(person && person.name || "").trim();
 
-          if (!birthName || normalizeText(birthName) === normalizeText(preferredName)) {
+          if (
+            !birthName ||
+            archiveSearch.normalizeText(birthName) ===
+              archiveSearch.normalizeText(preferredName)
+          ) {
             return "";
           }
 
@@ -2157,10 +2121,14 @@
           const personId = params.get("person");
 
           if (personId) {
-            return peopleById[personId] || null;
+            return archiveData.getPerson(personId);
           }
 
-          return peopleById["I0000"] || data.people[0] || null;
+          return (
+            archiveData.getPerson("I0000") ||
+            archiveData.people[0] ||
+            null
+          );
         }
 
         function showPersonFromCurrentUrl(historyMode = "none") {
