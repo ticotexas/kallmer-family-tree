@@ -145,6 +145,50 @@
             margin: 20px auto 12px;
         }
 
+        .featured-exhibit-placeholder {
+            width: 180px;
+            height: 235px;
+            margin: 20px auto 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(176, 141, 63, 0.38);
+            border-radius: 6px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 250, 240, 0.34),
+                    rgba(31, 46, 69, 0.035)
+                );
+            box-shadow:
+                inset 0 0 0 6px rgba(255, 250, 240, 0.18),
+                inset 0 0 0 25px rgba(255, 255, 255, 0.055);
+        }
+
+        .featured-exhibit-placeholder-label {
+            color: rgba(107, 124, 90, 0.2);
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 0.58rem;
+            line-height: 1.55;
+            letter-spacing: 0.16em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .archive-loading-label {
+            color: var(--prairie-sage);
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+        }
+
+        .archive-stats-loading {
+            min-height: 2.1em;
+            margin-top: 0.75rem;
+            font-size: 0.72rem;
+            opacity: 0.75;
+        }
+
         .featured-person-image img {
             width: 100%;
             height: auto;
@@ -201,14 +245,33 @@
 
         <section class="featured-person" id="featured-person">
             <h2>From the Archive</h2>
-            <div id="featured-person-image"></div>
-            <div id="featured-person-content">
-                Loading featured person...
+            <div id="featured-person-image">
+                <div
+                    class="featured-exhibit-placeholder"
+                    aria-hidden="true"
+                >
+                    <span class="featured-exhibit-placeholder-label">
+                        Featured<br>Exhibit
+                    </span>
+                </div>
+            </div>
+            <div
+                id="featured-person-content"
+                class="archive-loading-label"
+                role="status"
+                aria-live="polite"
+            >
+                Preparing Featured Exhibit
             </div>
         </section>
 
-        <div class="stats" id="archive-stats">
-            Loading archive stats...
+        <div
+            class="stats archive-loading-label archive-stats-loading"
+            id="archive-stats"
+            role="status"
+            aria-live="polite"
+        >
+            Retrieving archival records…
         </div>
 
         <a href="tree.html" class="button">
@@ -244,6 +307,15 @@
 
                 if (featuredPerson) {
                     const archiveDates = new ArchiveDates();
+                    const featuredPersonImage =
+                        document.getElementById("featured-person-image");
+                    const featuredPersonContent =
+                        document.getElementById("featured-person-content");
+
+                    featuredPersonImage.innerHTML = "";
+                    featuredPersonContent.classList.remove(
+                        "archive-loading-label"
+                    );
 
                     const birthYear = archiveDates.extractYear(featuredPerson.birth);
                     const deathYear = archiveDates.extractYear(featuredPerson.death);
@@ -253,7 +325,7 @@
                             ? deathYear - birthYear
                             : null;
 
-                    document.getElementById("featured-person-content").innerHTML =
+                    featuredPersonContent.innerHTML =
                         `<strong>${featuredPerson.name}</strong><br>
                          ${birthYear}${deathYear ? " – " + deathYear : ""}${age ? " (" + age + " years)" : ""}<br>
                          <a class="featured-profile-button" href="tree.html?person=${featuredPerson.id}">View Profile</a>`;
