@@ -925,10 +925,12 @@
   </div>
 
   <script src="js/archive-data.js"></script>
+  <script src="js/archive-relationships.js"></script>
   <script src="js/archive-dates.js"></script>
   <script src="js/archive-search.js"></script>
   <script>
     const archiveData = new ArchiveData();
+    const archiveRelationships = new ArchiveRelationships(archiveData);
     const archiveDates = new ArchiveDates();
     const archiveSearch = new ArchiveSearch();
 
@@ -1278,12 +1280,11 @@
         }
 
         function childRelationshipLabel(parentId, child) {
-          const family = data.families.find(
-            entry =>
-              (entry.husband === parentId || entry.wife === parentId) &&
-              Array.isArray(entry.children) &&
-              entry.children.includes(child.id)
-          );
+          const family =
+            archiveRelationships.findFamilyForParentAndChild(
+              parentId,
+              child.id
+            );
 
           if (!family) return "";
 

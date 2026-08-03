@@ -22,6 +22,15 @@ class ArchiveRelationships {
     );
   }
 
+  findFamilyForParentAndChild(parentId, childId) {
+    return [...this.archiveData.familiesById.values()].find(
+      (family) =>
+        (family.husband === parentId || family.wife === parentId) &&
+        Array.isArray(family.children) &&
+        family.children.includes(childId),
+    );
+  }
+
   findSpouseFamilies(personId) {
     const person = this.archiveData.peopleById.get(personId);
     const orderedFamilyIds = person?.families_as_spouse;
