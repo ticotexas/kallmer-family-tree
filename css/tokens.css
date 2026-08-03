@@ -1,0 +1,13 @@
+/*
+ * Kallmer Family Archive
+ * Shared visual design tokens.
+ */
+
+:root {
+  --ledger-ink: #1f2e45;
+  --prairie-wheat: #e8dcc3;
+  --homestead-clay: #a8552e;
+  --prairie-sage: #6b7c5a;
+  --brass: #b08d3f;
+  --paper: #fffaf0;
+}

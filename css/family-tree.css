@@ -1,12 +1,6 @@
 /* Interactive Family Tree — Phase 4 starting point */
 
 :root {
-  --ledger-ink: #1f2e45;
-  --prairie-wheat: #e8dcc3;
-  --homestead-clay: #a8552e;
-  --prairie-sage: #6b7c5a;
-  --brass: #b08d3f;
-  --paper: #fffaf0;
   --canvas: #f5eddb;
 
   /* Muted archival gender accents */
