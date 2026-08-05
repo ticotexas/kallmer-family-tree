@@ -873,6 +873,7 @@
 
     <div id="details">
       <h2 id="detail-name">Select a Person</h2>
+      <p id="detail-nickname" class="detail-birth-name"></p>
       <p id="detail-birth-name" class="detail-birth-name"></p>
       <p class="mono" id="detail-dates"></p>
       <div id="detail-photo"></div>
@@ -1962,6 +1963,14 @@
           renderPhoto();
         }
 
+        function nicknameLabel(person) {
+          const nickname = String(
+            person && person.nickname || "",
+          ).trim().replace(/^["“”]+|["“”]+$/g, "");
+
+          return nickname ? `Known as “${nickname}”` : "";
+        }
+
         function birthNameLabel(person) {
           const birthName = String(person && person.birth_name || "").trim();
           const preferredName = String(person && person.name || "").trim();
@@ -2019,7 +2028,15 @@
 
             document.getElementById("detail-name").textContent = person.name;
 
-            const birthNameElement = document.getElementById("detail-birth-name");
+            const nicknameElement =
+              document.getElementById("detail-nickname");
+            const nicknameText = nicknameLabel(person);
+            nicknameElement.textContent = nicknameText;
+            nicknameElement.style.display =
+              nicknameText ? "block" : "none";
+
+            const birthNameElement =
+              document.getElementById("detail-birth-name");
             const birthNameText = birthNameLabel(person);
             birthNameElement.textContent = birthNameText;
             birthNameElement.style.display = birthNameText ? "block" : "none";
@@ -2078,7 +2095,10 @@
 
         function showPersonNotFound() {
           const detailsElement = document.getElementById("details");
-          const birthNameElement = document.getElementById("detail-birth-name");
+          const nicknameElement =
+            document.getElementById("detail-nickname");
+          const birthNameElement =
+            document.getElementById("detail-birth-name");
 
           ++detailTransitionId;
           closePhotoLightbox();
@@ -2086,6 +2106,9 @@
           document.getElementById("tree").innerHTML = "";
           document.getElementById("detail-name").textContent =
             "Person Not Found";
+
+          nicknameElement.textContent = "";
+          nicknameElement.style.display = "none";
 
           birthNameElement.textContent = "";
           birthNameElement.style.display = "none";
@@ -2160,6 +2183,8 @@
         document.getElementById("tree").innerHTML = "";
         document.getElementById("detail-name").textContent =
           "Unable to Load Archive";
+        document.getElementById("detail-nickname").textContent = "";
+        document.getElementById("detail-nickname").style.display = "none";
         document.getElementById("detail-birth-name").textContent = "";
         document.getElementById("detail-birth-name").style.display = "none";
         document.getElementById("detail-dates").textContent = "";

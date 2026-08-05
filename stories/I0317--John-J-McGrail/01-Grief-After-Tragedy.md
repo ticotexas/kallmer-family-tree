@@ -1,0 +1,1 @@
+Following the deaths of his son, James McGrail, and daughter-in-law, Helen (Urban) McGrail, in an automobile collision near Omaha on September 9, 1932, newspaper reports stated that the grief may have hastened the death of John's father, John J. McGrail. John, a longtime Lincoln resident, died later that month at the age of 73 after living in Nebraska for 53 years.

@@ -3,6 +3,7 @@
     {
       "id": "I0000",
       "name": "Timothy Layne Kallmer",
+      "nickname": "Tim",
       "birth_name": "Timothy Layne Kallmer",
       "alternate_names": [],
       "gender": "M",
@@ -43,6 +44,7 @@
     {
       "id": "I0001",
       "name": "William Frederick Kallmer",
+      "nickname": "Bill",
       "birth_name": "William Frederick Kallmer",
       "alternate_names": [],
       "gender": "M",
@@ -90,6 +92,7 @@
     {
       "id": "I0002",
       "name": "LaDon Raye Kallmer",
+      "nickname": "",
       "birth_name": "LaDon Raye Huffey",
       "alternate_names": [
         {
@@ -141,6 +144,7 @@
     {
       "id": "I0003",
       "name": "Håkan Svensson",
+      "nickname": "",
       "birth_name": "Håkan Svensson",
       "alternate_names": [],
       "gender": "M",
@@ -179,6 +183,7 @@
     {
       "id": "I0004",
       "name": "Ingeborg Persdotter",
+      "nickname": "",
       "birth_name": "Ingeborg Persdotter",
       "alternate_names": [],
       "gender": "F",
@@ -217,6 +222,7 @@
     {
       "id": "I0005",
       "name": "Cherlyn Janel Humburg",
+      "nickname": "",
       "birth_name": "Cherlyn Janel Kallmer",
       "alternate_names": [
         {
@@ -270,6 +276,7 @@
     {
       "id": "I0006",
       "name": "Sunny Lynn Kallmer",
+      "nickname": "",
       "birth_name": "Sunny Lynn Urban",
       "alternate_names": [
         {
@@ -315,6 +322,7 @@
     {
       "id": "I0007",
       "name": "Brent Paul Humburg",
+      "nickname": "",
       "birth_name": "Brent Paul Humburg",
       "alternate_names": [],
       "gender": "M",
@@ -358,6 +366,7 @@
     {
       "id": "I0008",
       "name": "Reed Jayden Humburg",
+      "nickname": "",
       "birth_name": "Reed Jayden Humburg",
       "alternate_names": [],
       "gender": "M",
@@ -384,6 +393,7 @@
     {
       "id": "I0009",
       "name": "Brielle Logan Humburg",
+      "nickname": "",
       "birth_name": "Brielle Logan Humburg",
       "alternate_names": [],
       "gender": "F",
@@ -410,6 +420,7 @@
     {
       "id": "I0010",
       "name": "Cole Brayden Humburg",
+      "nickname": "",
       "birth_name": "Cole Brayden Humburg",
       "alternate_names": [],
       "gender": "M",
@@ -436,6 +447,7 @@
     {
       "id": "I0011",
       "name": "Vernon LeVere Huffey",
+      "nickname": "",
       "birth_name": "Vernon LeVere Huffey",
       "alternate_names": [],
       "gender": "M",
@@ -489,6 +501,7 @@
     {
       "id": "I0012",
       "name": "Marian Elizabeth Huffey",
+      "nickname": "",
       "birth_name": "Marian Elizabeth Lepa",
       "alternate_names": [
         {
@@ -545,6 +558,7 @@
     {
       "id": "I0013",
       "name": "Floyd Frederick Kallmer",
+      "nickname": "Stub",
       "birth_name": "Floyd Frederick Kallmer",
       "alternate_names": [],
       "gender": "M",
@@ -608,6 +622,7 @@
     {
       "id": "I0014",
       "name": "Edith Linnea Kallmer",
+      "nickname": "",
       "birth_name": "Edith Linnea Steele",
       "alternate_names": [
         {
@@ -669,6 +684,7 @@
     {
       "id": "I0015",
       "name": "Dorcas Kallmer",
+      "nickname": "",
       "birth_name": "Dorcas McPherrin",
       "alternate_names": [
         {
@@ -708,6 +724,7 @@
     {
       "id": "I0016",
       "name": "Robert Clyde Kallmer",
+      "nickname": "",
       "birth_name": "Robert Clyde Kallmer",
       "alternate_names": [],
       "gender": "M",
@@ -748,6 +765,7 @@
     {
       "id": "I0017",
       "name": "James Steele Kallmer",
+      "nickname": "",
       "birth_name": "James Steele Kallmer",
       "alternate_names": [],
       "gender": "M",
@@ -795,6 +813,7 @@
     {
       "id": "I0018",
       "name": "Walter Angus Huffey",
+      "nickname": "",
       "birth_name": "Walter Angus Huffey",
       "alternate_names": [],
       "gender": "M",
@@ -858,6 +877,7 @@
     {
       "id": "I0019",
       "name": "Matilda Boletta Huffey",
+      "nickname": "Tilda",
       "birth_name": "Tilda Boletta Olson",
       "alternate_names": [
         {
@@ -929,6 +949,7 @@
     {
       "id": "I0020",
       "name": "Paul Vernon Huffey",
+      "nickname": "",
       "birth_name": "Paul Vernon Huffey",
       "alternate_names": [],
       "gender": "M",
@@ -973,6 +994,7 @@
     {
       "id": "I0021",
       "name": "Andrew Christ Kallmer",
+      "nickname": "A. C.",
       "birth_name": "Andrew Christ Kallmer",
       "alternate_names": [],
       "gender": "M",
@@ -1043,6 +1065,7 @@
     {
       "id": "I0022",
       "name": "Margaret Mary Kallmer",
+      "nickname": "Maggie",
       "birth_name": "Margaret Mary Dinges",
       "alternate_names": [
         {
@@ -1108,6 +1131,7 @@
     {
       "id": "I0024",
       "name": "John William Dinges Sr.",
+      "nickname": "",
       "birth_name": "John William Dinges Sr.",
       "alternate_names": [],
       "gender": "M",
@@ -1175,6 +1199,7 @@
     {
       "id": "I0025",
       "name": "Julia Mary Koehler",
+      "nickname": "",
       "birth_name": "Julia Mary Dinges",
       "alternate_names": [
         {
@@ -1226,6 +1251,7 @@
     {
       "id": "I0026",
       "name": "Joseph Albert Dinges Sr.",
+      "nickname": "",
       "birth_name": "Joseph Albert Dinges Sr.",
       "alternate_names": [],
       "gender": "M",
@@ -1294,6 +1320,7 @@
     {
       "id": "I0027",
       "name": "John William Dinges Jr.",
+      "nickname": "",
       "birth_name": "John William Dinges Jr.",
       "alternate_names": [],
       "gender": "M",
@@ -1325,6 +1352,7 @@
     {
       "id": "I0028",
       "name": "Peter Henry Dinges",
+      "nickname": "Pete",
       "birth_name": "Peter Henry Dinges",
       "alternate_names": [],
       "gender": "M",
@@ -1356,6 +1384,7 @@
     {
       "id": "I0029",
       "name": "Godfred John Dinges",
+      "nickname": "Fred",
       "birth_name": "Godfred John Dinges",
       "alternate_names": [],
       "gender": "M",
@@ -1387,6 +1416,7 @@
     {
       "id": "I0030",
       "name": "Jöns Persson",
+      "nickname": "",
       "birth_name": "Jöns Persson",
       "alternate_names": [],
       "gender": "M",
@@ -1435,6 +1465,7 @@
     {
       "id": "I0031",
       "name": "Isabel Bernhardt",
+      "nickname": "",
       "birth_name": "Isabell Kallmer",
       "alternate_names": [
         {
@@ -1497,6 +1528,7 @@
     {
       "id": "I0032",
       "name": "Bernice Mae Satterlee",
+      "nickname": "",
       "birth_name": "Bernice Mae Kallmer",
       "alternate_names": [
         {
@@ -1551,6 +1583,7 @@
     {
       "id": "I0033",
       "name": "Hazel Catherine Lynch",
+      "nickname": "",
       "birth_name": "Hazel Catherine Kallmer",
       "alternate_names": [
         {
@@ -1605,6 +1638,7 @@
     {
       "id": "I0034",
       "name": "Baby Boy Kallmer",
+      "nickname": "",
       "birth_name": "Baby Boy Kallmer",
       "alternate_names": [],
       "gender": "M",
@@ -1633,6 +1667,7 @@
     {
       "id": "I0035",
       "name": "Leslie Jacob Kallmer",
+      "nickname": "",
       "birth_name": "Leslie Jacob Kallmer",
       "alternate_names": [],
       "gender": "M",
@@ -1660,8 +1695,9 @@
     },
     {
       "id": "I0036",
-      "name": "Jacobus Kallmer",
-      "birth_name": "Jacob Calmer",
+      "name": "Jacob Kallmer",
+      "nickname": "Jacob",
+      "birth_name": "Jacob Kallmer",
       "alternate_names": [
         {
           "name": "Jacob Kalmer",
@@ -1672,8 +1708,8 @@
           "type": "birth"
         },
         {
-          "name": "Jacob Kallmer",
-          "type": "birth"
+          "name": "Jacobus Kallmer",
+          "type": "aka"
         }
       ],
       "gender": "M",
@@ -1715,15 +1751,16 @@
           ],
           "marriage_date": "10 MAY 1857",
           "marriage_place": "",
-          "divorced": false,
-          "divorce_date": "",
-          "divorce_place": ""
+          "divorced": true,
+          "divorce_date": "25 OCT 1906",
+          "divorce_place": "Sac City, Sac, Iowa"
         }
       ]
     },
     {
       "id": "I0037",
-      "name": "Marie K Kallmer",
+      "name": "Marie K. Kallmer",
+      "nickname": "",
       "birth_name": "",
       "alternate_names": [],
       "gender": "F",
@@ -1746,6 +1783,7 @@
     {
       "id": "I0038",
       "name": "Caroline Kallmer",
+      "nickname": "",
       "birth_name": "Caroline Jacobson",
       "alternate_names": [
         {
@@ -1803,15 +1841,16 @@
           ],
           "marriage_date": "10 MAY 1857",
           "marriage_place": "",
-          "divorced": false,
-          "divorce_date": "",
-          "divorce_place": ""
+          "divorced": true,
+          "divorce_date": "25 OCT 1906",
+          "divorce_place": "Sac City, Sac, Iowa"
         }
       ]
     },
     {
       "id": "I0039",
       "name": "Katharina Dinges",
+      "nickname": "Katie",
       "birth_name": "Catherina Beitz",
       "alternate_names": [
         {
@@ -1886,6 +1925,7 @@
     {
       "id": "I0040",
       "name": "Johann Wilhelm William Dinges",
+      "nickname": "John",
       "birth_name": "Johann Wilhelm William Dinges",
       "alternate_names": [
         {
@@ -1900,7 +1940,10 @@
       "place": "",
       "birth_place": "",
       "death_place": "",
-      "parents": [],
+      "parents": [
+        "I0550",
+        "I0551"
+      ],
       "spouses": [
         "I0041"
       ],
@@ -1947,6 +1990,7 @@
     {
       "id": "I0041",
       "name": "Christina Dinges",
+      "nickname": "",
       "birth_name": "Christina Port",
       "alternate_names": [
         {
@@ -1965,7 +2009,10 @@
       "place": "",
       "birth_place": "",
       "death_place": "",
-      "parents": [],
+      "parents": [
+        "I0552",
+        "I0553"
+      ],
       "spouses": [
         "I0040"
       ],
@@ -2011,8 +2058,9 @@
     },
     {
       "id": "I0042",
-      "name": "A Albertson",
-      "birth_name": "A Albertson",
+      "name": "A. Albertson",
+      "nickname": "",
+      "birth_name": "A. Albertson",
       "alternate_names": [],
       "gender": "M",
       "living": false,
@@ -2049,8 +2097,9 @@
     },
     {
       "id": "I0043",
-      "name": "H Anderson",
-      "birth_name": "H Anderson",
+      "name": "H. Anderson",
+      "nickname": "",
+      "birth_name": "H. Anderson",
       "alternate_names": [],
       "gender": "F",
       "living": false,
@@ -2088,6 +2137,7 @@
     {
       "id": "I0044",
       "name": "Charles Ernst Satterlee",
+      "nickname": "",
       "birth_name": "Charles Ernst Satterlee",
       "alternate_names": [],
       "gender": "M",
@@ -2128,6 +2178,7 @@
     {
       "id": "I0045",
       "name": "Roy Edward Lynch",
+      "nickname": "",
       "birth_name": "Roy Edward Lynch",
       "alternate_names": [],
       "gender": "M",
@@ -2168,6 +2219,7 @@
     {
       "id": "I0046",
       "name": "Diana Christine Kallmer",
+      "nickname": "",
       "birth_name": "Diana Christine Bodaken",
       "alternate_names": [
         {
@@ -2213,6 +2265,7 @@
     {
       "id": "I0047",
       "name": "Sven Magni Steele",
+      "nickname": "",
       "birth_name": "Sven Magni Magnusson",
       "alternate_names": [
         {
@@ -2280,6 +2333,7 @@
     {
       "id": "I0048",
       "name": "Ellen Steele",
+      "nickname": "",
       "birth_name": "Elin Jonsdotter",
       "alternate_names": [
         {
@@ -2348,6 +2402,7 @@
     {
       "id": "I0049",
       "name": "Magnus Håkansson",
+      "nickname": "",
       "birth_name": "Magnus Håkansson",
       "alternate_names": [],
       "gender": "M",
@@ -2397,6 +2452,7 @@
     {
       "id": "I0050",
       "name": "Pernilla Svensdotter",
+      "nickname": "",
       "birth_name": "Pernilla Svensdotter",
       "alternate_names": [],
       "gender": "F",
@@ -2446,6 +2502,7 @@
     {
       "id": "I0051",
       "name": "Sven Nilsson",
+      "nickname": "",
       "birth_name": "Sven Nilsson",
       "alternate_names": [],
       "gender": "M",
@@ -2484,6 +2541,7 @@
     {
       "id": "I0052",
       "name": "Elna Persdotter",
+      "nickname": "",
       "birth_name": "Elna Persdotter",
       "alternate_names": [],
       "gender": "F",
@@ -2522,6 +2580,7 @@
     {
       "id": "I0053",
       "name": "Ida Magnusdotter",
+      "nickname": "",
       "birth_name": "Ida Magnusdotter",
       "alternate_names": [],
       "gender": "F",
@@ -2549,6 +2608,7 @@
     {
       "id": "I0054",
       "name": "Peter Johan Magnusson",
+      "nickname": "",
       "birth_name": "Peter Johan Magnusson",
       "alternate_names": [],
       "gender": "M",
@@ -2576,6 +2636,7 @@
     {
       "id": "I0055",
       "name": "Emma Christina Magnusdotter",
+      "nickname": "",
       "birth_name": "Emma Christina Magnusdotter",
       "alternate_names": [],
       "gender": "F",
@@ -2603,6 +2664,7 @@
     {
       "id": "I0056",
       "name": "Christina Magnusdotter",
+      "nickname": "",
       "birth_name": "Christina Magnusdotter",
       "alternate_names": [],
       "gender": "F",
@@ -2630,6 +2692,7 @@
     {
       "id": "I0057",
       "name": "Oscar Albin Steele",
+      "nickname": "",
       "birth_name": "Oskar Albin Stål",
       "alternate_names": [
         {
@@ -2691,6 +2754,7 @@
     {
       "id": "I0058",
       "name": "Helga Elida Hanson",
+      "nickname": "",
       "birth_name": "Helga Elida Stål",
       "alternate_names": [
         {
@@ -2758,6 +2822,7 @@
     {
       "id": "I0059",
       "name": "Nelly Steele",
+      "nickname": "",
       "birth_name": "Nelly Stål",
       "alternate_names": [
         {
@@ -2792,6 +2857,7 @@
     {
       "id": "I0060",
       "name": "Alma Idalia Stål",
+      "nickname": "",
       "birth_name": "Alma Idalia Stål",
       "alternate_names": [],
       "gender": "F",
@@ -2821,6 +2887,7 @@
     {
       "id": "I0061",
       "name": "Edvin Julius Stål",
+      "nickname": "",
       "birth_name": "Edvin Julius Stål",
       "alternate_names": [],
       "gender": "M",
@@ -2850,6 +2917,7 @@
     {
       "id": "I0062",
       "name": "Selma Idalia Steele",
+      "nickname": "",
       "birth_name": "Selma Idalia Stål",
       "alternate_names": [
         {
@@ -2884,6 +2952,7 @@
     {
       "id": "I0063",
       "name": "Ingrid Aronsdotter",
+      "nickname": "",
       "birth_name": "Ingrid Aronsdotter",
       "alternate_names": [],
       "gender": "F",
@@ -2932,6 +3001,7 @@
     {
       "id": "I0064",
       "name": "Fred Bernhardt",
+      "nickname": "",
       "birth_name": "Fred Bernhardt",
       "alternate_names": [],
       "gender": "M",
@@ -2980,6 +3050,7 @@
     {
       "id": "I0065",
       "name": "Arlene Margaret Grundmeier",
+      "nickname": "",
       "birth_name": "Arlene Margaret Bernhardt",
       "alternate_names": [
         {
@@ -3038,6 +3109,7 @@
     {
       "id": "I0066",
       "name": "Manilat Ramsin",
+      "nickname": "",
       "birth_name": "Manilat Ramsin",
       "alternate_names": [],
       "gender": "F",
@@ -3072,6 +3144,7 @@
     {
       "id": "I0067",
       "name": "Jonathan Kallmer",
+      "nickname": "Josh",
       "birth_name": "Jonathan Kallmer",
       "alternate_names": [],
       "gender": "M",
@@ -3118,6 +3191,7 @@
     {
       "id": "I0068",
       "name": "Brent Kallmer",
+      "nickname": "",
       "birth_name": "Brent Kallmer",
       "alternate_names": [],
       "gender": "M",
@@ -3142,6 +3216,7 @@
     {
       "id": "I0069",
       "name": "Kelly Athena",
+      "nickname": "",
       "birth_name": "Kelly Parnum",
       "alternate_names": [
         {
@@ -3192,6 +3267,7 @@
     {
       "id": "I0070",
       "name": "Christopher Huffey",
+      "nickname": "Chris",
       "birth_name": "Christopher Huffey",
       "alternate_names": [],
       "gender": "M",
@@ -3221,6 +3297,7 @@
     {
       "id": "I0071",
       "name": "Lloyd Leland Huffey",
+      "nickname": "",
       "birth_name": "Lloyd Leland Huffey",
       "alternate_names": [],
       "gender": "M",
@@ -3253,6 +3330,7 @@
     {
       "id": "I0072",
       "name": "Vinton Earl Huffey",
+      "nickname": "",
       "birth_name": "Vinton Earl Huffey",
       "alternate_names": [],
       "gender": "M",
@@ -3300,6 +3378,7 @@
     {
       "id": "I0073",
       "name": "Shirley Geraldine Brown",
+      "nickname": "",
       "birth_name": "Shirley Geraldine Huffey",
       "alternate_names": [
         {
@@ -3368,6 +3447,7 @@
     {
       "id": "I0074",
       "name": "Merle Arleen Schultz",
+      "nickname": "",
       "birth_name": "Merle Arleen Huffey",
       "alternate_names": [
         {
@@ -3405,6 +3485,7 @@
     {
       "id": "I0075",
       "name": "Gretta Jean Lockhart",
+      "nickname": "",
       "birth_name": "Gretta Jean Huffey",
       "alternate_names": [
         {
@@ -3442,6 +3523,7 @@
     {
       "id": "I0076",
       "name": "George Waymer Huffey",
+      "nickname": "",
       "birth_name": "George Waymer Huffey",
       "alternate_names": [],
       "gender": "M",
@@ -3474,6 +3556,7 @@
     {
       "id": "I0077",
       "name": "Esther Naomi Enyart",
+      "nickname": "",
       "birth_name": "Esther Naomi Huffey",
       "alternate_names": [
         {
@@ -3511,6 +3594,7 @@
     {
       "id": "I0078",
       "name": "Lotus Wenona Bulman",
+      "nickname": "",
       "birth_name": "Lotus Wenona Huffey",
       "alternate_names": [
         {
@@ -3563,6 +3647,7 @@
     {
       "id": "I0079",
       "name": "George Benjamin Olson",
+      "nickname": "",
       "birth_name": "George Benjamin Olson",
       "alternate_names": [],
       "gender": "M",
@@ -3613,6 +3698,7 @@
     {
       "id": "I0080",
       "name": "Inger Johanna Olson",
+      "nickname": "",
       "birth_name": "Inger Johanna Kaasa",
       "alternate_names": [
         {
@@ -3668,6 +3754,7 @@
     {
       "id": "I0081",
       "name": "Percival Wilhelm Olson",
+      "nickname": "Percy",
       "birth_name": "Percival Wilhelm Olson",
       "alternate_names": [],
       "gender": "M",
@@ -3697,6 +3784,7 @@
     {
       "id": "I0082",
       "name": "Gunda Elvira Olson",
+      "nickname": "",
       "birth_name": "Gunda Elvira Olson",
       "alternate_names": [],
       "gender": "F",
@@ -3726,6 +3814,7 @@
     {
       "id": "I0083",
       "name": "Hjalmar Bernhard Olson",
+      "nickname": "",
       "birth_name": "Hjalmar Bernhard Olson",
       "alternate_names": [],
       "gender": "M",
@@ -3755,6 +3844,7 @@
     {
       "id": "I0084",
       "name": "Inga Genette Olson",
+      "nickname": "",
       "birth_name": "Inga Genette Olson",
       "alternate_names": [],
       "gender": "F",
@@ -3784,6 +3874,7 @@
     {
       "id": "I0085",
       "name": "Evelyn Benoni Olson",
+      "nickname": "",
       "birth_name": "Evelyn Benoni Olson",
       "alternate_names": [],
       "gender": "F",
@@ -3813,6 +3904,7 @@
     {
       "id": "I0086",
       "name": "Clara Amanda Olson",
+      "nickname": "",
       "birth_name": "Clara Amanda Olson",
       "alternate_names": [],
       "gender": "F",
@@ -3842,6 +3934,7 @@
     {
       "id": "I0087",
       "name": "William Angus Huffey",
+      "nickname": "Will",
       "birth_name": "William Angus Huffey",
       "alternate_names": [],
       "gender": "M",
@@ -3889,6 +3982,7 @@
     {
       "id": "I0088",
       "name": "Ellen Miranda Huffey",
+      "nickname": "Ella",
       "birth_name": "Ellen Miranda Gordon",
       "alternate_names": [
         {
@@ -3950,6 +4044,7 @@
     {
       "id": "I0089",
       "name": "Fred Parker Haffa",
+      "nickname": "",
       "birth_name": "Fred Parker Haffa",
       "alternate_names": [],
       "gender": "M",
@@ -3976,6 +4071,7 @@
     {
       "id": "I0090",
       "name": "Harriet Nancy Huffey",
+      "nickname": "Hattie",
       "birth_name": "Harriet Nancy Huffey",
       "alternate_names": [],
       "gender": "F",
@@ -4002,6 +4098,7 @@
     {
       "id": "I0091",
       "name": "Harry Clarence Huffey",
+      "nickname": "",
       "birth_name": "Harry Clarence Huffey",
       "alternate_names": [],
       "gender": "M",
@@ -4028,6 +4125,7 @@
     {
       "id": "I0092",
       "name": "John Haffa",
+      "nickname": "",
       "birth_name": "John Haffa",
       "alternate_names": [],
       "gender": "M",
@@ -4066,6 +4164,7 @@
     {
       "id": "I0093",
       "name": "Harriet Parker",
+      "nickname": "",
       "birth_name": "Harriet Parker",
       "alternate_names": [],
       "gender": "F",
@@ -4107,6 +4206,7 @@
     {
       "id": "I0094",
       "name": "William Gordon Parker",
+      "nickname": "",
       "birth_name": "William Gordon Parker",
       "alternate_names": [],
       "gender": "M",
@@ -4148,6 +4248,7 @@
     {
       "id": "I0095",
       "name": "Emily Heaton McKinney",
+      "nickname": "",
       "birth_name": "Emily Heaton McKinney",
       "alternate_names": [],
       "gender": "F",
@@ -4185,8 +4286,9 @@
     },
     {
       "id": "I0096",
-      "name": "William C Parker",
-      "birth_name": "William C Parker",
+      "name": "William C. Parker",
+      "nickname": "",
+      "birth_name": "William C. Parker",
       "alternate_names": [],
       "gender": "M",
       "living": false,
@@ -4224,6 +4326,7 @@
     {
       "id": "I0097",
       "name": "Sarah Hartwell",
+      "nickname": "",
       "birth_name": "Sarah Hartwell",
       "alternate_names": [],
       "gender": "F",
@@ -4265,6 +4368,7 @@
     {
       "id": "I0098",
       "name": "Ephraim Hartwell",
+      "nickname": "",
       "birth_name": "Ephraim Hartwell",
       "alternate_names": [],
       "gender": "M",
@@ -4303,6 +4407,7 @@
     {
       "id": "I0099",
       "name": "Clarissa Wright",
+      "nickname": "",
       "birth_name": "Clarissa Wright",
       "alternate_names": [],
       "gender": "F",
@@ -4344,6 +4449,7 @@
     {
       "id": "I0100",
       "name": "Abijah Wright",
+      "nickname": "",
       "birth_name": "Abijah Wright",
       "alternate_names": [],
       "gender": "M",
@@ -4385,6 +4491,7 @@
     {
       "id": "I0101",
       "name": "Hannah Dickinson",
+      "nickname": "",
       "birth_name": "Hannah Dickinson",
       "alternate_names": [],
       "gender": "F",
@@ -4423,6 +4530,7 @@
     {
       "id": "I0102",
       "name": "Thomas Wright",
+      "nickname": "",
       "birth_name": "Thomas Wright",
       "alternate_names": [],
       "gender": "M",
@@ -4461,6 +4569,7 @@
     {
       "id": "I0103",
       "name": "Esther Andrus",
+      "nickname": "",
       "birth_name": "Esther Andrus",
       "alternate_names": [],
       "gender": "F",
@@ -4502,6 +4611,7 @@
     {
       "id": "I0104",
       "name": "Caleb Andrus",
+      "nickname": "",
       "birth_name": "Caleb Andrus",
       "alternate_names": [],
       "gender": "M",
@@ -4540,6 +4650,7 @@
     {
       "id": "I0105",
       "name": "Mary Gillett",
+      "nickname": "",
       "birth_name": "Mary Gillett",
       "alternate_names": [],
       "gender": "F",
@@ -4581,6 +4692,7 @@
     {
       "id": "I0106",
       "name": "Joseph Gillett",
+      "nickname": "",
       "birth_name": "Joseph Gillett",
       "alternate_names": [],
       "gender": "M",
@@ -4619,6 +4731,7 @@
     {
       "id": "I0107",
       "name": "Mary Griswold",
+      "nickname": "",
       "birth_name": "Mary Griswold",
       "alternate_names": [],
       "gender": "F",
@@ -4660,6 +4773,7 @@
     {
       "id": "I0108",
       "name": "Joseph Griswold",
+      "nickname": "",
       "birth_name": "Joseph Griswold",
       "alternate_names": [],
       "gender": "M",
@@ -4698,6 +4812,7 @@
     {
       "id": "I0109",
       "name": "Mary Gaylord",
+      "nickname": "",
       "birth_name": "Mary Gaylord",
       "alternate_names": [],
       "gender": "F",
@@ -4739,6 +4854,7 @@
     {
       "id": "I0110",
       "name": "Samuel Gaylord",
+      "nickname": "",
       "birth_name": "Samuel Gaylord",
       "alternate_names": [],
       "gender": "M",
@@ -4777,6 +4893,7 @@
     {
       "id": "I0111",
       "name": "Elizabeth Hull",
+      "nickname": "",
       "birth_name": "Elizabeth Hull",
       "alternate_names": [],
       "gender": "F",
@@ -4818,6 +4935,7 @@
     {
       "id": "I0112",
       "name": "George Hull",
+      "nickname": "",
       "birth_name": "George Hull",
       "alternate_names": [],
       "gender": "M",
@@ -4856,6 +4974,7 @@
     {
       "id": "I0113",
       "name": "Thamzen Mitchell",
+      "nickname": "",
       "birth_name": "Thamzen Mitchell",
       "alternate_names": [],
       "gender": "F",
@@ -4897,6 +5016,7 @@
     {
       "id": "I0114",
       "name": "Robert Mitchell",
+      "nickname": "",
       "birth_name": "Robert Mitchell",
       "alternate_names": [],
       "gender": "M",
@@ -4938,6 +5058,7 @@
     {
       "id": "I0115",
       "name": "Margaret Anne Bates",
+      "nickname": "",
       "birth_name": "Margaret Anne Bates",
       "alternate_names": [],
       "gender": "F",
@@ -4976,6 +5097,7 @@
     {
       "id": "I0116",
       "name": "John Mitchell",
+      "nickname": "",
       "birth_name": "John Mitchell",
       "alternate_names": [],
       "gender": "M",
@@ -5014,6 +5136,7 @@
     {
       "id": "I0117",
       "name": "Jane Killigrew",
+      "nickname": "",
       "birth_name": "Jane Killigrew",
       "alternate_names": [],
       "gender": "F",
@@ -5055,6 +5178,7 @@
     {
       "id": "I0118",
       "name": "John Killigrew of Arwenack",
+      "nickname": "",
       "birth_name": "John Killigrew of Arwenack",
       "alternate_names": [],
       "gender": "M",
@@ -5096,6 +5220,7 @@
     {
       "id": "I0119",
       "name": "Elizabeth Mary Trewinnard",
+      "nickname": "",
       "birth_name": "Elizabeth Mary Trewinnard",
       "alternate_names": [],
       "gender": "F",
@@ -5134,6 +5259,7 @@
     {
       "id": "I0120",
       "name": "John Killigrew",
+      "nickname": "",
       "birth_name": "John Killigrew",
       "alternate_names": [],
       "gender": "M",
@@ -5172,6 +5298,7 @@
     {
       "id": "I0121",
       "name": "Jane Petit",
+      "nickname": "",
       "birth_name": "Jane Petit",
       "alternate_names": [],
       "gender": "F",
@@ -5213,6 +5340,7 @@
     {
       "id": "I0122",
       "name": "Valentine Pettit",
+      "nickname": "",
       "birth_name": "Valentine Pettit",
       "alternate_names": [],
       "gender": "M",
@@ -5254,6 +5382,7 @@
     {
       "id": "I0123",
       "name": "Jane Anthorne",
+      "nickname": "",
       "birth_name": "Jane Anthorne",
       "alternate_names": [],
       "gender": "F",
@@ -5292,6 +5421,7 @@
     {
       "id": "I0124",
       "name": "John Mychell Petit",
+      "nickname": "",
       "birth_name": "John Mychell Petit",
       "alternate_names": [],
       "gender": "M",
@@ -5330,6 +5460,7 @@
     {
       "id": "I0125",
       "name": "Margaret de Trenoweth",
+      "nickname": "",
       "birth_name": "Margaret de Trenoweth",
       "alternate_names": [],
       "gender": "F",
@@ -5371,6 +5502,7 @@
     {
       "id": "I0126",
       "name": "Ralph Trenoweth",
+      "nickname": "",
       "birth_name": "Ralph Trenoweth",
       "alternate_names": [],
       "gender": "M",
@@ -5409,6 +5541,7 @@
     {
       "id": "I0127",
       "name": "Joan Basset",
+      "nickname": "",
       "birth_name": "Joan Basset",
       "alternate_names": [],
       "gender": "F",
@@ -5450,6 +5583,7 @@
     {
       "id": "I0128",
       "name": "William Basset",
+      "nickname": "",
       "birth_name": "William Basset",
       "alternate_names": [],
       "gender": "M",
@@ -5491,6 +5625,7 @@
     {
       "id": "I0129",
       "name": "Margaret le Fleming",
+      "nickname": "",
       "birth_name": "Margaret le Fleming",
       "alternate_names": [],
       "gender": "F",
@@ -5529,6 +5664,7 @@
     {
       "id": "I0130",
       "name": "William Basset",
+      "nickname": "",
       "birth_name": "William Basset",
       "alternate_names": [],
       "gender": "M",
@@ -5567,6 +5703,7 @@
     {
       "id": "I0131",
       "name": "Johanna de Botreaux",
+      "nickname": "",
       "birth_name": "Johanna de Botreaux",
       "alternate_names": [],
       "gender": "F",
@@ -5608,6 +5745,7 @@
     {
       "id": "I0132",
       "name": "William de Botreaux",
+      "nickname": "",
       "birth_name": "William de Botreaux",
       "alternate_names": [],
       "gender": "M",
@@ -5646,6 +5784,7 @@
     {
       "id": "I0133",
       "name": "Dionisia de Champernowne",
+      "nickname": "",
       "birth_name": "Dionisia de Champernowne",
       "alternate_names": [],
       "gender": "F",
@@ -5687,6 +5826,7 @@
     {
       "id": "I0134",
       "name": "William de Champernowne",
+      "nickname": "",
       "birth_name": "William de Champernowne",
       "alternate_names": [],
       "gender": "M",
@@ -5725,6 +5865,7 @@
     {
       "id": "I0135",
       "name": "Joan de Ferrers",
+      "nickname": "",
       "birth_name": "Joan de Ferrers",
       "alternate_names": [],
       "gender": "F",
@@ -5765,6 +5906,7 @@
     {
       "id": "I0136",
       "name": "William de Ferrers",
+      "nickname": "",
       "birth_name": "William de Ferrers",
       "alternate_names": [],
       "gender": "M",
@@ -5791,6 +5933,7 @@
     {
       "id": "I0137",
       "name": "Reginald de Ferrières I, of Bere",
+      "nickname": "",
       "birth_name": "Reginald de Ferrières I, of Bere",
       "alternate_names": [],
       "gender": "M",
@@ -5829,6 +5972,7 @@
     {
       "id": "I0138",
       "name": "Agnes of Chester",
+      "nickname": "",
       "birth_name": "Agnes of Chester",
       "alternate_names": [],
       "gender": "F",
@@ -5870,6 +6014,7 @@
     {
       "id": "I0139",
       "name": "Hugh de Cyfeiliog",
+      "nickname": "",
       "birth_name": "Hugh de Cyfeiliog",
       "alternate_names": [],
       "gender": "M",
@@ -5911,6 +6056,7 @@
     {
       "id": "I0140",
       "name": "Bertrade de Montfort",
+      "nickname": "",
       "birth_name": "Bertrade de Montfort",
       "alternate_names": [],
       "gender": "F",
@@ -5949,6 +6095,7 @@
     {
       "id": "I0141",
       "name": "Ranulph fitz Ranulf",
+      "nickname": "",
       "birth_name": "Ranulph fitz Ranulf",
       "alternate_names": [],
       "gender": "M",
@@ -5987,6 +6134,7 @@
     {
       "id": "I0142",
       "name": "Maud of Gloucester",
+      "nickname": "",
       "birth_name": "Maud of Gloucester",
       "alternate_names": [],
       "gender": "F",
@@ -6028,6 +6176,7 @@
     {
       "id": "I0143",
       "name": "Robert FitzRoy",
+      "nickname": "",
       "birth_name": "Robert FitzRoy",
       "alternate_names": [],
       "gender": "M",
@@ -6068,6 +6217,7 @@
     {
       "id": "I0144",
       "name": "Mabel FitzRobert",
+      "nickname": "",
       "birth_name": "Mabel FitzRobert",
       "alternate_names": [],
       "gender": "F",
@@ -6106,6 +6256,7 @@
     {
       "id": "I0145",
       "name": "Henry  I, King of England",
+      "nickname": "",
       "birth_name": "Henry  I, King of England",
       "alternate_names": [],
       "gender": "M",
@@ -6132,6 +6283,7 @@
     {
       "id": "I0146",
       "name": "William  I, King of England",
+      "nickname": "the Conqueror",
       "birth_name": "William  I, King of England",
       "alternate_names": [],
       "gender": "M",
@@ -6170,6 +6322,7 @@
     {
       "id": "I0147",
       "name": "Matilda of Flanders",
+      "nickname": "",
       "birth_name": "Matilda of Flanders",
       "alternate_names": [],
       "gender": "F",
@@ -6208,6 +6361,7 @@
     {
       "id": "I0148",
       "name": "Dylana Blum",
+      "nickname": "",
       "birth_name": "Dylana Blum",
       "alternate_names": [],
       "gender": "F",
@@ -6248,6 +6402,7 @@
     {
       "id": "I0149",
       "name": "Nadia Kallmer",
+      "nickname": "",
       "birth_name": "Nadia Kallmer",
       "alternate_names": [],
       "gender": "F",
@@ -6272,6 +6427,7 @@
     {
       "id": "I0150",
       "name": "Mira Kallmer",
+      "nickname": "",
       "birth_name": "Mira Kallmer",
       "alternate_names": [],
       "gender": "F",
@@ -6296,6 +6452,7 @@
     {
       "id": "I0151",
       "name": "Walter Robert Urban",
+      "nickname": "Bob",
       "birth_name": "Walter Robert Urban",
       "alternate_names": [],
       "gender": "M",
@@ -6352,6 +6509,7 @@
     {
       "id": "I0152",
       "name": "Joanne Pauline Urban",
+      "nickname": "",
       "birth_name": "Joanne Pauline Urban",
       "alternate_names": [
         {
@@ -6400,6 +6558,7 @@
     {
       "id": "I0153",
       "name": "Walter Carl Urban",
+      "nickname": "",
       "birth_name": "Walter Carl Urban",
       "alternate_names": [],
       "gender": "M",
@@ -6450,6 +6609,7 @@
     {
       "id": "I0154",
       "name": "Zella Louise Urban",
+      "nickname": "",
       "birth_name": "Zella Louise Ullstrom",
       "alternate_names": [
         {
@@ -6502,6 +6662,7 @@
     {
       "id": "I0155",
       "name": "John Christ Urban",
+      "nickname": "",
       "birth_name": "John Christ Urban",
       "alternate_names": [
         {
@@ -6564,6 +6725,7 @@
     {
       "id": "I0156",
       "name": "Anna Elizabeth Urban",
+      "nickname": "",
       "birth_name": "Anna Elizabeth Schmidt",
       "alternate_names": [
         {
@@ -6638,6 +6800,7 @@
     {
       "id": "I0157",
       "name": "John W. Urban",
+      "nickname": "",
       "birth_name": "John W. Urban",
       "alternate_names": [],
       "gender": "M",
@@ -6688,6 +6851,7 @@
     {
       "id": "I0158",
       "name": "Herman Fredrich Urban",
+      "nickname": "",
       "birth_name": "Herman Fredrich Urban",
       "alternate_names": [],
       "gender": "M",
@@ -6719,6 +6883,7 @@
     {
       "id": "I0159",
       "name": "Chris A. Urban",
+      "nickname": "",
       "birth_name": "Chris A. Urban",
       "alternate_names": [
         {
@@ -6755,6 +6920,7 @@
     {
       "id": "I0160",
       "name": "Mabel M. Smith",
+      "nickname": "",
       "birth_name": "Mabel M. Urban",
       "alternate_names": [
         {
@@ -6806,6 +6972,7 @@
     {
       "id": "I0161",
       "name": "Helen Christine McGrail",
+      "nickname": "",
       "birth_name": "Helen Christine Urban",
       "alternate_names": [
         {
@@ -6857,6 +7024,7 @@
     {
       "id": "I0162",
       "name": "Ella Margaret Hemmer",
+      "nickname": "",
       "birth_name": "Ella Margaret Urban",
       "alternate_names": [
         {
@@ -6908,6 +7076,7 @@
     {
       "id": "I0163",
       "name": "Minna Helena Hood",
+      "nickname": "",
       "birth_name": "Minna Helena Urban",
       "alternate_names": [
         {
@@ -6959,6 +7128,7 @@
     {
       "id": "I0164",
       "name": "August Harry Urban",
+      "nickname": "",
       "birth_name": "August Harry Urban",
       "alternate_names": [],
       "gender": "M",
@@ -7009,6 +7179,7 @@
     {
       "id": "I0165",
       "name": "Andrew Lewis Ullstrom",
+      "nickname": "",
       "birth_name": "Andrew Lewis Ullstrom",
       "alternate_names": [],
       "gender": "M",
@@ -7066,6 +7237,7 @@
     {
       "id": "I0166",
       "name": "Ida Louise Ullstrom",
+      "nickname": "",
       "birth_name": "Ida Louise Ullstrom",
       "alternate_names": [
         {
@@ -7128,6 +7300,7 @@
     {
       "id": "I0167",
       "name": "Clara Mae Imlay",
+      "nickname": "",
       "birth_name": "Clara Mae Ullstrom",
       "alternate_names": [
         {
@@ -7176,6 +7349,7 @@
     {
       "id": "I0168",
       "name": "Crystal Fern Wagner",
+      "nickname": "",
       "birth_name": "Crystal Fern Ullstrom",
       "alternate_names": [
         {
@@ -7228,6 +7402,7 @@
     {
       "id": "I0169",
       "name": "Richard Raymond Ullstrom",
+      "nickname": "",
       "birth_name": "Richard Raymond Ullstrom",
       "alternate_names": [],
       "gender": "M",
@@ -7271,6 +7446,7 @@
     {
       "id": "I0170",
       "name": "Carl Herbert Ullstrom",
+      "nickname": "",
       "birth_name": "Carl Herbert Ullstrom",
       "alternate_names": [],
       "gender": "M",
@@ -7314,6 +7490,7 @@
     {
       "id": "I0171",
       "name": "Elmer Theodore Ullstrom",
+      "nickname": "Tug",
       "birth_name": "Elmer Theodore Ullstrom",
       "alternate_names": [],
       "gender": "M",
@@ -7356,8 +7533,9 @@
     },
     {
       "id": "I0172",
-      "name": "Kenneth E Hutchins",
-      "birth_name": "Kenneth E Hutchins",
+      "name": "Kenneth E. Hutchins",
+      "nickname": "",
+      "birth_name": "Kenneth E. Hutchins",
       "alternate_names": [],
       "gender": "M",
       "living": false,
@@ -7401,6 +7579,7 @@
     {
       "id": "I0173",
       "name": "Pauline Vivian Hutchins",
+      "nickname": "",
       "birth_name": "Pauline V Haser",
       "alternate_names": [
         {
@@ -7452,6 +7631,7 @@
     {
       "id": "I0174",
       "name": "Sheri Ann Urban",
+      "nickname": "",
       "birth_name": "Sheri Ann Urban",
       "alternate_names": [],
       "gender": "F",
@@ -7492,6 +7672,7 @@
     {
       "id": "I0175",
       "name": "Kurtis Jon Foster",
+      "nickname": "",
       "birth_name": "Kurtis Jon Foster",
       "alternate_names": [],
       "gender": "M",
@@ -7527,6 +7708,7 @@
     {
       "id": "I0176",
       "name": "Edward Elliot Hutchins",
+      "nickname": "",
       "birth_name": "Edward Elliot Hutchins",
       "alternate_names": [],
       "gender": "M",
@@ -7573,15 +7755,16 @@
     },
     {
       "id": "I0177",
-      "name": "Edna A Hutchins",
-      "birth_name": "Edna A Rounds",
+      "name": "Edna A. Hutchins",
+      "nickname": "",
+      "birth_name": "Edna A. Rounds",
       "alternate_names": [
         {
-          "name": "Edna A Brown",
+          "name": "Edna A. Brown",
           "type": "aka"
         },
         {
-          "name": "Edna A Rounds",
+          "name": "Edna A. Rounds",
           "type": "birth"
         }
       ],
@@ -7628,6 +7811,7 @@
     {
       "id": "I0178",
       "name": "Pauline Rose Haser",
+      "nickname": "",
       "birth_name": "Pauline R. Bibalo",
       "alternate_names": [
         {
@@ -7687,6 +7871,7 @@
     {
       "id": "I0179",
       "name": "Albert George Haser",
+      "nickname": "",
       "birth_name": "Albert George Haser",
       "alternate_names": [],
       "gender": "M",
@@ -7752,6 +7937,7 @@
     {
       "id": "I0180",
       "name": "Oney Thomas Rounds",
+      "nickname": "",
       "birth_name": "Oney Thomas Rounds",
       "alternate_names": [],
       "gender": "M",
@@ -7790,9 +7976,15 @@
     },
     {
       "id": "I0181",
-      "name": "Martha Jane Breese",
+      "name": "Martha Jane Rounds",
+      "nickname": "Mattie",
       "birth_name": "Martha Jane Breese",
-      "alternate_names": [],
+      "alternate_names": [
+        {
+          "name": "Martha Jane Breese",
+          "type": "birth"
+        }
+      ],
       "gender": "F",
       "living": false,
       "birth": "19 OCT 1866",
@@ -7831,8 +8023,9 @@
     },
     {
       "id": "I0182",
-      "name": "Isaac J Breese",
-      "birth_name": "Isaac J Breese",
+      "name": "Isaac J. Breese",
+      "nickname": "",
+      "birth_name": "Isaac J. Breese",
       "alternate_names": [],
       "gender": "M",
       "living": false,
@@ -7870,6 +8063,7 @@
     {
       "id": "I0183",
       "name": "Margaret Breese",
+      "nickname": "",
       "birth_name": "Margaret Owens",
       "alternate_names": [
         {
@@ -7913,6 +8107,7 @@
     {
       "id": "I0184",
       "name": "Pearl Lucille Lepa",
+      "nickname": "",
       "birth_name": "Pearl Lucille Lathrop",
       "alternate_names": [
         {
@@ -7978,6 +8173,7 @@
     {
       "id": "I0185",
       "name": "James David Lepa",
+      "nickname": "",
       "birth_name": "James David Lepa",
       "alternate_names": [],
       "gender": "M",
@@ -8030,6 +8226,7 @@
     {
       "id": "I0186",
       "name": "Lewis Franklin Lathrop",
+      "nickname": "",
       "birth_name": "Lewis Franklin Lathrop",
       "alternate_names": [
         {
@@ -8113,6 +8310,7 @@
     {
       "id": "I0187",
       "name": "Nellie G. Lathrop",
+      "nickname": "",
       "birth_name": "Nellie G. Milhous",
       "alternate_names": [
         {
@@ -8177,6 +8375,7 @@
     {
       "id": "I0188",
       "name": "John Lawrence Lepa",
+      "nickname": "",
       "birth_name": "John Lawrence Lepa",
       "alternate_names": [],
       "gender": "M",
@@ -8207,6 +8406,7 @@
     {
       "id": "I0189",
       "name": "Lawrence James Lepa",
+      "nickname": "",
       "birth_name": "Lawrence James Lepa",
       "alternate_names": [],
       "gender": "M",
@@ -8237,6 +8437,7 @@
     {
       "id": "I0190",
       "name": "Lucile Arline Lepa",
+      "nickname": "",
       "birth_name": "Lucile Arline Lepa",
       "alternate_names": [],
       "gender": "F",
@@ -8267,6 +8468,7 @@
     {
       "id": "I0191",
       "name": "Dorothy Marie Lepa",
+      "nickname": "",
       "birth_name": "Dorothy Marie Lepa",
       "alternate_names": [],
       "gender": "F",
@@ -8297,6 +8499,7 @@
     {
       "id": "I0192",
       "name": "Dale Raymond Lepa",
+      "nickname": "Bud",
       "birth_name": "Dale Raymond Lepa",
       "alternate_names": [],
       "gender": "M",
@@ -8327,6 +8530,7 @@
     {
       "id": "I0193",
       "name": "James Roger Lepa",
+      "nickname": "",
       "birth_name": "James Roger Lepa",
       "alternate_names": [],
       "gender": "M",
@@ -8356,8 +8560,9 @@
     },
     {
       "id": "I0194",
-      "name": "Olive A Lathrop",
-      "birth_name": "Olive A Lathrop",
+      "name": "Olive A. Lathrop",
+      "nickname": "",
+      "birth_name": "Olive A. Lathrop",
       "alternate_names": [],
       "gender": "F",
       "living": false,
@@ -8383,6 +8588,7 @@
     {
       "id": "I0195",
       "name": "Elmer Roy Lathrop",
+      "nickname": "",
       "birth_name": "Elmer Roy Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -8409,6 +8615,7 @@
     {
       "id": "I0196",
       "name": "Floyd Lathrop",
+      "nickname": "",
       "birth_name": "Floyd Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -8435,6 +8642,7 @@
     {
       "id": "I0197",
       "name": "Baby Boy Lepa",
+      "nickname": "John",
       "birth_name": "Baby Boy Lepa",
       "alternate_names": [],
       "gender": "M",
@@ -8464,17 +8672,21 @@
     },
     {
       "id": "I0198",
-      "name": "Peter Lewis Beitz Sr",
-      "birth_name": "Peter Lewis Beitz Sr",
+      "name": "Peter Lewis Beitz Sr.",
+      "nickname": "",
+      "birth_name": "Peter Lewis Beitz Sr.",
       "alternate_names": [],
       "gender": "M",
       "living": false,
-      "birth": "1805",
-      "death": "1882",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
-      "parents": [],
+      "birth": "8 DEC 1805",
+      "death": "18 DEC 1882",
+      "place": "Bridgewater, Adair, Iowa",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "Bridgewater, Adair, Iowa",
+      "parents": [
+        "I0554",
+        "I0555"
+      ],
       "spouses": [
         "I0199"
       ],
@@ -8503,16 +8715,20 @@
     {
       "id": "I0199",
       "name": "Anna Margaretha Beitz",
+      "nickname": "",
       "birth_name": "Anna Margaretha Beitz",
       "alternate_names": [],
       "gender": "F",
       "living": false,
-      "birth": "1799",
-      "death": "1882",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
-      "parents": [],
+      "birth": "9 OCT 1799",
+      "death": "27 DEC 1882",
+      "place": "West Brooklyn, Lee, Illinois",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "West Brooklyn, Lee, Illinois",
+      "parents": [
+        "I0556",
+        "I0557"
+      ],
       "spouses": [
         "I0198"
       ],
@@ -8540,11 +8756,12 @@
     },
     {
       "id": "I0200",
-      "name": "Anna C Perry",
-      "birth_name": "Anna C Kallmer",
+      "name": "Anna C. Perry",
+      "nickname": "Annie",
+      "birth_name": "Anna C. Kallmer",
       "alternate_names": [
         {
-          "name": "Anna C Kallmer",
+          "name": "Anna C. Kallmer",
           "type": "birth"
         }
       ],
@@ -8602,6 +8819,7 @@
     {
       "id": "I0201",
       "name": "Johanna Margaretha Warneke",
+      "nickname": "Hannah",
       "birth_name": "Johannah Margaretha Kallmer",
       "alternate_names": [
         {
@@ -8651,6 +8869,7 @@
     {
       "id": "I0202",
       "name": "Lena Kallmer",
+      "nickname": "",
       "birth_name": "Lena Kallmer",
       "alternate_names": [],
       "gender": "F",
@@ -8680,6 +8899,7 @@
     {
       "id": "I0203",
       "name": "Rosa Louise Kallmer",
+      "nickname": "",
       "birth_name": "Rosa Louise Kallmer",
       "alternate_names": [],
       "gender": "F",
@@ -8709,6 +8929,7 @@
     {
       "id": "I0204",
       "name": "C. C. Perry",
+      "nickname": "",
       "birth_name": "C. C. Perry",
       "alternate_names": [],
       "gender": "M",
@@ -8743,6 +8964,7 @@
     {
       "id": "I0205",
       "name": "Henry Friedrich Warneke",
+      "nickname": "",
       "birth_name": "Henry Friedrich Warneke",
       "alternate_names": [],
       "gender": "M",
@@ -8776,8 +8998,9 @@
     },
     {
       "id": "I0206",
-      "name": "Lizi C Kallmer",
-      "birth_name": "Lizi C Kallmer",
+      "name": "Lizi C. Kallmer",
+      "nickname": "",
+      "birth_name": "Lizi C. Kallmer",
       "alternate_names": [],
       "gender": "F",
       "living": false,
@@ -8806,14 +9029,15 @@
     {
       "id": "I0207",
       "name": "Hans Jacobson",
+      "nickname": "",
       "birth_name": "Hans Jacobson",
       "alternate_names": [],
       "gender": "M",
       "living": false,
-      "birth": "1800",
+      "birth": "ABT 1800",
       "death": "?",
-      "place": "",
-      "birth_place": "",
+      "place": "Schleswig-Holstein, Germany",
+      "birth_place": "Schleswig-Holstein, Germany",
       "death_place": "",
       "parents": [],
       "spouses": [
@@ -8844,6 +9068,7 @@
     {
       "id": "I0208",
       "name": "Lissel Jochinson",
+      "nickname": "",
       "birth_name": "Lissel Jochinson",
       "alternate_names": [],
       "gender": "F",
@@ -8882,6 +9107,7 @@
     {
       "id": "I0209",
       "name": "Isabel Kallmer",
+      "nickname": "",
       "birth_name": "Isabel Kallmer",
       "alternate_names": [],
       "gender": "F",
@@ -8910,7 +9136,8 @@
     },
     {
       "id": "I0210",
-      "name": "Laura E Kallmer",
+      "name": "Laura E. Kallmer",
+      "nickname": "",
       "birth_name": "",
       "alternate_names": [],
       "gender": "F",
@@ -8945,6 +9172,7 @@
     {
       "id": "I0211",
       "name": "Herman Jacobe",
+      "nickname": "",
       "birth_name": "Herman Jacobe",
       "alternate_names": [],
       "gender": "M",
@@ -8979,6 +9207,7 @@
     {
       "id": "I0212",
       "name": "Barton Bulman",
+      "nickname": "",
       "birth_name": "Barton Bulman",
       "alternate_names": [],
       "gender": "M",
@@ -9013,6 +9242,7 @@
     {
       "id": "I0213",
       "name": "Donnabelle Margaret Satterlee",
+      "nickname": "",
       "birth_name": "Donnabelle Margaret Satterlee",
       "alternate_names": [],
       "gender": "F",
@@ -9037,6 +9267,7 @@
     {
       "id": "I0214",
       "name": "Charles Ebon Satterlee",
+      "nickname": "Buzzy",
       "birth_name": "Charles Ebon Satterlee",
       "alternate_names": [],
       "gender": "M",
@@ -9061,6 +9292,7 @@
     {
       "id": "I0215",
       "name": "Magnus Jönsson",
+      "nickname": "",
       "birth_name": "Magnus Jönsson",
       "alternate_names": [],
       "gender": "M",
@@ -9089,6 +9321,7 @@
     {
       "id": "I0216",
       "name": "Johan Jönsson",
+      "nickname": "",
       "birth_name": "Johan Jönsson",
       "alternate_names": [],
       "gender": "M",
@@ -9117,6 +9350,7 @@
     {
       "id": "I0217",
       "name": "Gustaf Jönsson",
+      "nickname": "",
       "birth_name": "Gustaf Jönsson",
       "alternate_names": [],
       "gender": "M",
@@ -9145,6 +9379,7 @@
     {
       "id": "I0218",
       "name": "Signild Jönsdotter",
+      "nickname": "",
       "birth_name": "Signild Jönsdotter",
       "alternate_names": [],
       "gender": "F",
@@ -9173,6 +9408,7 @@
     {
       "id": "I0219",
       "name": "Christina Jönsdotter",
+      "nickname": "",
       "birth_name": "Christina Jönsdotter",
       "alternate_names": [],
       "gender": "F",
@@ -9201,6 +9437,7 @@
     {
       "id": "I0220",
       "name": "Margaret Mary Sins",
+      "nickname": "",
       "birth_name": "Margaret Mary Sins",
       "alternate_names": [
         {
@@ -9240,6 +9477,7 @@
     {
       "id": "I0221",
       "name": "Erna Rollins Smith",
+      "nickname": "",
       "birth_name": "Erna Rollins Smith",
       "alternate_names": [],
       "gender": "F",
@@ -9274,6 +9512,7 @@
     {
       "id": "I0222",
       "name": "LuVerne Ordell Brown",
+      "nickname": "",
       "birth_name": "LuVerne Ordell Brown",
       "alternate_names": [],
       "gender": "M",
@@ -9324,6 +9563,7 @@
     {
       "id": "I0223",
       "name": "Jacquelyn Clemen",
+      "nickname": "",
       "birth_name": "Jacquelyn Brown",
       "alternate_names": [
         {
@@ -9358,6 +9598,7 @@
     {
       "id": "I0224",
       "name": "Janet Hagen",
+      "nickname": "",
       "birth_name": "Janet Brown",
       "alternate_names": [
         {
@@ -9392,6 +9633,7 @@
     {
       "id": "I0225",
       "name": "Jeanne Downer",
+      "nickname": "",
       "birth_name": "Jeanne Brown",
       "alternate_names": [
         {
@@ -9426,6 +9668,7 @@
     {
       "id": "I0226",
       "name": "Lyndon Brown",
+      "nickname": "",
       "birth_name": "Lyndon Brown",
       "alternate_names": [],
       "gender": "M",
@@ -9455,6 +9698,7 @@
     {
       "id": "I0227",
       "name": "Leatrice McEvilly",
+      "nickname": "",
       "birth_name": "Leatrice Huffey",
       "alternate_names": [
         {
@@ -9492,6 +9736,7 @@
     {
       "id": "I0228",
       "name": "Ronald Wayne Brown",
+      "nickname": "",
       "birth_name": "Ronald Wayne Brown",
       "alternate_names": [],
       "gender": "M",
@@ -9521,6 +9766,7 @@
     {
       "id": "I0229",
       "name": "Sharon Roseanne Paulsen",
+      "nickname": "",
       "birth_name": "Sharon Roseanne Brown",
       "alternate_names": [
         {
@@ -9555,6 +9801,7 @@
     {
       "id": "I0230",
       "name": "Richard Eugene Brown",
+      "nickname": "",
       "birth_name": "Richard Eugene Brown",
       "alternate_names": [],
       "gender": "M",
@@ -9599,6 +9846,7 @@
     {
       "id": "I0231",
       "name": "Lillian Bertha Huffey",
+      "nickname": "",
       "birth_name": "Lillian Bertha Huffey",
       "alternate_names": [
         {
@@ -9637,11 +9885,12 @@
     },
     {
       "id": "I0232",
-      "name": "Mildred M Santella",
-      "birth_name": "Mildred M Haser",
+      "name": "Mildred M. Santella",
+      "nickname": "",
+      "birth_name": "Mildred M. Haser",
       "alternate_names": [
         {
-          "name": "Mildred M Haser",
+          "name": "Mildred M. Haser",
           "type": "birth"
         }
       ],
@@ -9693,6 +9942,7 @@
     {
       "id": "I0233",
       "name": "Alyce Agnes Sharpe",
+      "nickname": "",
       "birth_name": "Alyce Agnes Haser",
       "alternate_names": [
         {
@@ -9774,6 +10024,7 @@
     {
       "id": "I0234",
       "name": "Margaret Heil",
+      "nickname": "",
       "birth_name": "Margaret Haser",
       "alternate_names": [
         {
@@ -9805,11 +10056,12 @@
     },
     {
       "id": "I0235",
-      "name": "Betty E Haser",
-      "birth_name": "Betty E Smith",
+      "name": "Betty E. Haser",
+      "nickname": "",
+      "birth_name": "Betty E. Smith",
       "alternate_names": [
         {
-          "name": "Betty E Smith",
+          "name": "Betty E. Smith",
           "type": "birth"
         }
       ],
@@ -9845,6 +10097,7 @@
     {
       "id": "I0236",
       "name": "Augusta Christina Haser",
+      "nickname": "",
       "birth_name": "Augusta Christina Peiffer",
       "alternate_names": [
         {
@@ -9916,6 +10169,7 @@
     {
       "id": "I0237",
       "name": "Edward William Haser",
+      "nickname": "",
       "birth_name": "Edward William Haser",
       "alternate_names": [],
       "gender": "M",
@@ -9942,6 +10196,7 @@
     {
       "id": "I0238",
       "name": "Anna Louise Schafer",
+      "nickname": "",
       "birth_name": "Anna Louise Haser",
       "alternate_names": [
         {
@@ -9973,6 +10228,7 @@
     {
       "id": "I0239",
       "name": "Emma F. Haser",
+      "nickname": "",
       "birth_name": "Emma F. Haser",
       "alternate_names": [],
       "gender": "F",
@@ -9999,6 +10255,7 @@
     {
       "id": "I0240",
       "name": "Silas James Sheerer",
+      "nickname": "",
       "birth_name": "Silas James Sheerer",
       "alternate_names": [],
       "gender": "M",
@@ -10035,8 +10292,9 @@
     },
     {
       "id": "I0241",
-      "name": "Jeremiah E Sheerer",
-      "birth_name": "Jeremiah E Sheerer",
+      "name": "Jeremiah E. Sheerer",
+      "nickname": "",
+      "birth_name": "Jeremiah E. Sheerer",
       "alternate_names": [],
       "gender": "M",
       "living": false,
@@ -10074,6 +10332,7 @@
     {
       "id": "I0242",
       "name": "Bernice Elizabeth Sheerer",
+      "nickname": "",
       "birth_name": "Bernice Elizabeth Nelson",
       "alternate_names": [
         {
@@ -10112,8 +10371,9 @@
     },
     {
       "id": "I0243",
-      "name": "Henry J Haser",
-      "birth_name": "Henry J Haser",
+      "name": "Henry J. Haser",
+      "nickname": "",
+      "birth_name": "Henry J. Haser",
       "alternate_names": [],
       "gender": "M",
       "living": false,
@@ -10156,8 +10416,9 @@
     },
     {
       "id": "I0244",
-      "name": "Christian W Puffe",
-      "birth_name": "Christian W Puffe",
+      "name": "Christian W. Puffe",
+      "nickname": "",
+      "birth_name": "Christian W. Puffe",
       "alternate_names": [
         {
           "name": "Christina Wilhelminia Ploffe",
@@ -10200,6 +10461,7 @@
     {
       "id": "I0245",
       "name": "Christina Wilhelminia Puffe",
+      "nickname": "",
       "birth_name": "Christina W Schilling",
       "alternate_names": [
         {
@@ -10251,6 +10513,7 @@
     {
       "id": "I0246",
       "name": "Albert Haser Jr.",
+      "nickname": "Sonny",
       "birth_name": "Albert Haser Jr.",
       "alternate_names": [],
       "gender": "M",
@@ -10278,6 +10541,7 @@
     {
       "id": "I0247",
       "name": "Pauline D. Ullstrom",
+      "nickname": "Pat",
       "birth_name": "Pauline D. Davis",
       "alternate_names": [
         {
@@ -10317,6 +10581,7 @@
     {
       "id": "I0248",
       "name": "Fred William Wagner",
+      "nickname": "",
       "birth_name": "Fred William Wagner",
       "alternate_names": [],
       "gender": "M",
@@ -10355,6 +10620,7 @@
     {
       "id": "I0249",
       "name": "William H Imlay",
+      "nickname": "",
       "birth_name": "William H Imlay",
       "alternate_names": [],
       "gender": "M",
@@ -10389,6 +10655,7 @@
     {
       "id": "I0250",
       "name": "Ethel S. Ullstrom",
+      "nickname": "Midge",
       "birth_name": "Ethel Smith",
       "alternate_names": [
         {
@@ -10428,6 +10695,7 @@
     {
       "id": "I0251",
       "name": "Janet Dargen",
+      "nickname": "",
       "birth_name": "Janet Wagner",
       "alternate_names": [
         {
@@ -10455,6 +10723,7 @@
     {
       "id": "I0252",
       "name": "Frank Lohry",
+      "nickname": "",
       "birth_name": "Frank Lohry",
       "alternate_names": [],
       "gender": "M",
@@ -10503,6 +10772,7 @@
     {
       "id": "I0253",
       "name": "Augusta Louise Lohry",
+      "nickname": "",
       "birth_name": "Augusta Louise Ziegenbein",
       "alternate_names": [
         {
@@ -10556,6 +10826,7 @@
     {
       "id": "I0254",
       "name": "Joe Lohry",
+      "nickname": "",
       "birth_name": "Joe Lohry",
       "alternate_names": [],
       "gender": "M",
@@ -10584,6 +10855,7 @@
     {
       "id": "I0255",
       "name": "Carl Lohry",
+      "nickname": "",
       "birth_name": "Carl Lohry",
       "alternate_names": [],
       "gender": "M",
@@ -10612,6 +10884,7 @@
     {
       "id": "I0256",
       "name": "Frank Lohry",
+      "nickname": "",
       "birth_name": "Frank Lohry",
       "alternate_names": [],
       "gender": "M",
@@ -10640,6 +10913,7 @@
     {
       "id": "I0257",
       "name": "Mary McInerney",
+      "nickname": "",
       "birth_name": "Mary Lohry",
       "alternate_names": [
         {
@@ -10673,6 +10947,7 @@
     {
       "id": "I0258",
       "name": "Fredrick H. Lohry",
+      "nickname": "",
       "birth_name": "Fredrick H. Lohry",
       "alternate_names": [],
       "gender": "M",
@@ -10701,6 +10976,7 @@
     {
       "id": "I0259",
       "name": "John Peter Ullstrom",
+      "nickname": "",
       "birth_name": "John Peter Ullstrom",
       "alternate_names": [],
       "gender": "M",
@@ -10748,11 +11024,12 @@
     },
     {
       "id": "I0260",
-      "name": "Louisa L Ullstrom",
-      "birth_name": "Louisa L Latting",
+      "name": "Louisa L. Ullstrom",
+      "nickname": "",
+      "birth_name": "Louisa L. Latting",
       "alternate_names": [
         {
-          "name": "Louisa L Latting",
+          "name": "Louisa L. Latting",
           "type": "birth"
         }
       ],
@@ -10802,6 +11079,7 @@
     {
       "id": "I0261",
       "name": "Albert Ullstrom",
+      "nickname": "",
       "birth_name": "Albert Ullstrom",
       "alternate_names": [],
       "gender": "M",
@@ -10830,6 +11108,7 @@
     {
       "id": "I0262",
       "name": "Charles Ullstrom",
+      "nickname": "",
       "birth_name": "Charles Ullstrom",
       "alternate_names": [],
       "gender": "M",
@@ -10858,6 +11137,7 @@
     {
       "id": "I0263",
       "name": "Wilmer Ullstrom",
+      "nickname": "",
       "birth_name": "Wilmer Ullstrom",
       "alternate_names": [],
       "gender": "M",
@@ -10905,6 +11185,7 @@
     {
       "id": "I0264",
       "name": "LeRoy Ullstrom",
+      "nickname": "",
       "birth_name": "LeRoy Ullstrom",
       "alternate_names": [],
       "gender": "M",
@@ -10933,6 +11214,7 @@
     {
       "id": "I0265",
       "name": "Nettie Scott",
+      "nickname": "",
       "birth_name": "Nettie Scott",
       "alternate_names": [
         {
@@ -10966,6 +11248,7 @@
     {
       "id": "I0266",
       "name": "Lola Anna Ullstrom",
+      "nickname": "",
       "birth_name": "Lola Anna Hendricks",
       "alternate_names": [
         {
@@ -11009,6 +11292,7 @@
     {
       "id": "I0267",
       "name": "Wilmer Bertin Ullstrom",
+      "nickname": "",
       "birth_name": "Wilmer Bertin Ullstrom",
       "alternate_names": [],
       "gender": "M",
@@ -11031,6 +11315,7 @@
     {
       "id": "I0268",
       "name": "Violet E. Ullstrom",
+      "nickname": "Vi",
       "birth_name": "Violet E. Scott",
       "alternate_names": [
         {
@@ -11070,6 +11355,7 @@
     {
       "id": "I0269",
       "name": "Donald Andrew Lynch",
+      "nickname": "",
       "birth_name": "Donald Andrew Lynch",
       "alternate_names": [],
       "gender": "M",
@@ -11094,6 +11380,7 @@
     {
       "id": "I0270",
       "name": "Nadine Margaret Lynch",
+      "nickname": "",
       "birth_name": "Nadine Margaret Lynch",
       "alternate_names": [],
       "gender": "F",
@@ -11118,6 +11405,7 @@
     {
       "id": "I0271",
       "name": "Oscar Hutchins",
+      "nickname": "",
       "birth_name": "Oscar Hutchins",
       "alternate_names": [],
       "gender": "M",
@@ -11167,6 +11455,7 @@
     {
       "id": "I0272",
       "name": "Cora E. Snyder",
+      "nickname": "",
       "birth_name": "Cora E. Snyder",
       "alternate_names": [
         {
@@ -11224,6 +11513,7 @@
     {
       "id": "I0273",
       "name": "Jane Adeline Hutchins",
+      "nickname": "",
       "birth_name": "Jane Adeline Hutchins",
       "alternate_names": [],
       "gender": "F",
@@ -11264,6 +11554,7 @@
     {
       "id": "I0274",
       "name": "Merle Hutchins",
+      "nickname": "",
       "birth_name": "Merle Hutchins",
       "alternate_names": [],
       "gender": "M",
@@ -11289,6 +11580,7 @@
     {
       "id": "I0275",
       "name": "Hazel Amanda Hutchins",
+      "nickname": "",
       "birth_name": "Hazel Amanda Hutchins",
       "alternate_names": [],
       "gender": "F",
@@ -11313,6 +11605,7 @@
     {
       "id": "I0276",
       "name": "Samuel Hutchins",
+      "nickname": "",
       "birth_name": "Samuel Hutchins",
       "alternate_names": [],
       "gender": "M",
@@ -11322,7 +11615,10 @@
       "place": "Jermyn, Lackawanna, Pennsylvania",
       "birth_place": "Connecticut",
       "death_place": "Jermyn, Lackawanna, Pennsylvania",
-      "parents": [],
+      "parents": [
+        "I0566",
+        "I0567"
+      ],
       "spouses": [
         "I0277"
       ],
@@ -11361,6 +11657,7 @@
     {
       "id": "I0277",
       "name": "Lydia Adeline Hutchins",
+      "nickname": "",
       "birth_name": "Lydia Adeline Burdick",
       "alternate_names": [
         {
@@ -11375,7 +11672,10 @@
       "place": "Clifford, Susquehanna, Pennsylvania",
       "birth_place": "Clifford, Susquehanna, Pennsylvania",
       "death_place": "Clifford, Susquehanna, Pennsylvania",
-      "parents": [],
+      "parents": [
+        "I0568",
+        "I0569"
+      ],
       "spouses": [
         "I0276"
       ],
@@ -11414,6 +11714,7 @@
     {
       "id": "I0278",
       "name": "George Little Hutchins",
+      "nickname": "",
       "birth_name": "George Little Hutchins",
       "alternate_names": [],
       "gender": "M",
@@ -11442,6 +11743,7 @@
     {
       "id": "I0279",
       "name": "Joseph Coolidge Hutchins",
+      "nickname": "",
       "birth_name": "Joseph Coolidge Hutchins",
       "alternate_names": [],
       "gender": "M",
@@ -11470,6 +11772,7 @@
     {
       "id": "I0280",
       "name": "Charles L. Hutchins",
+      "nickname": "",
       "birth_name": "Charles L. Hutchins",
       "alternate_names": [],
       "gender": "M",
@@ -11498,6 +11801,7 @@
     {
       "id": "I0281",
       "name": "Judson Hutchins",
+      "nickname": "",
       "birth_name": "Judson Hutchins",
       "alternate_names": [],
       "gender": "M",
@@ -11526,6 +11830,7 @@
     {
       "id": "I0282",
       "name": "Emily M. Hutchins",
+      "nickname": "",
       "birth_name": "Emily M. Hutchins",
       "alternate_names": [],
       "gender": "F",
@@ -11554,6 +11859,7 @@
     {
       "id": "I0283",
       "name": "Levi C. Snyder",
+      "nickname": "",
       "birth_name": "Levi C. Snyder",
       "alternate_names": [],
       "gender": "M",
@@ -11608,6 +11914,7 @@
     {
       "id": "I0284",
       "name": "Amanda M. Snyder",
+      "nickname": "",
       "birth_name": "Amanda M. Snyder",
       "alternate_names": [
         {
@@ -11667,6 +11974,7 @@
     {
       "id": "I0285",
       "name": "Louis Henry Snyder",
+      "nickname": "",
       "birth_name": "Louis Henry Snyder",
       "alternate_names": [],
       "gender": "M",
@@ -11698,6 +12006,7 @@
     {
       "id": "I0286",
       "name": "Eva M. Snyder",
+      "nickname": "",
       "birth_name": "Eva M. Snyder",
       "alternate_names": [],
       "gender": "F",
@@ -11729,6 +12038,7 @@
     {
       "id": "I0287",
       "name": "Irving Levi Snyder",
+      "nickname": "",
       "birth_name": "Irving Levi Snyder",
       "alternate_names": [],
       "gender": "M",
@@ -11760,6 +12070,7 @@
     {
       "id": "I0288",
       "name": "Content A. Snyder",
+      "nickname": "",
       "birth_name": "Content A. Snyder",
       "alternate_names": [],
       "gender": "F",
@@ -11791,6 +12102,7 @@
     {
       "id": "I0289",
       "name": "Ira C. Snyder",
+      "nickname": "",
       "birth_name": "Ira C. Snyder",
       "alternate_names": [],
       "gender": "M",
@@ -11822,6 +12134,7 @@
     {
       "id": "I0290",
       "name": "Charles Herbert Snyder",
+      "nickname": "",
       "birth_name": "Charles Herbert Snyder",
       "alternate_names": [],
       "gender": "M",
@@ -11853,6 +12166,7 @@
     {
       "id": "I0291",
       "name": "Harriett T. Snyder",
+      "nickname": "",
       "birth_name": "Harriett T. Snyder",
       "alternate_names": [],
       "gender": "F",
@@ -11884,6 +12198,7 @@
     {
       "id": "I0292",
       "name": "Maud D. Snyder",
+      "nickname": "",
       "birth_name": "Maud D. Snyder",
       "alternate_names": [],
       "gender": "F",
@@ -11915,6 +12230,7 @@
     {
       "id": "I0293",
       "name": "Charles H. MacQuesten",
+      "nickname": "",
       "birth_name": "Charles H. MacQuesten",
       "alternate_names": [],
       "gender": "M",
@@ -11963,6 +12279,7 @@
     {
       "id": "I0294",
       "name": "David Sharpe",
+      "nickname": "",
       "birth_name": "David Sharpe",
       "alternate_names": [],
       "gender": "M",
@@ -11997,6 +12314,7 @@
     {
       "id": "I0295",
       "name": "Charlyce Walsh",
+      "nickname": "",
       "birth_name": "Charlyce MacQuesten",
       "alternate_names": [
         {
@@ -12030,6 +12348,7 @@
     {
       "id": "I0296",
       "name": "Jane Destross",
+      "nickname": "",
       "birth_name": "Jane MacQuesten",
       "alternate_names": [
         {
@@ -12063,6 +12382,7 @@
     {
       "id": "I0297",
       "name": "Norma Albright-Glaze",
+      "nickname": "",
       "birth_name": "Norma MacQuesten",
       "alternate_names": [
         {
@@ -12096,6 +12416,7 @@
     {
       "id": "I0298",
       "name": "Linda Medina",
+      "nickname": "",
       "birth_name": "Linda MacQuesten",
       "alternate_names": [
         {
@@ -12129,6 +12450,7 @@
     {
       "id": "I0299",
       "name": "Sue Ellen Kosmas",
+      "nickname": "",
       "birth_name": "Sue Ellen MacQuesten",
       "alternate_names": [
         {
@@ -12162,6 +12484,7 @@
     {
       "id": "I0300",
       "name": "Mary Eileen Kobane",
+      "nickname": "",
       "birth_name": "Mary Eileen MacQuesten",
       "alternate_names": [
         {
@@ -12195,6 +12518,7 @@
     {
       "id": "I0301",
       "name": "Guido J. Santella Sr.",
+      "nickname": "",
       "birth_name": "Guido J. Santella Sr.",
       "alternate_names": [],
       "gender": "M",
@@ -12237,6 +12561,7 @@
     {
       "id": "I0302",
       "name": "Guido J. Santella Jr.",
+      "nickname": "",
       "birth_name": "Guido J. Santella Jr.",
       "alternate_names": [],
       "gender": "M",
@@ -12262,6 +12587,7 @@
     {
       "id": "I0303",
       "name": "Lorraine Keith",
+      "nickname": "",
       "birth_name": "Lorraine Santella",
       "alternate_names": [
         {
@@ -12292,6 +12618,7 @@
     {
       "id": "I0304",
       "name": "Robert John Santella",
+      "nickname": "",
       "birth_name": "Robert John Santella",
       "alternate_names": [],
       "gender": "M",
@@ -12317,6 +12644,7 @@
     {
       "id": "I0305",
       "name": "Agnes Crom Urban",
+      "nickname": "",
       "birth_name": "Agnes Crom Urban",
       "alternate_names": [
         {
@@ -12369,6 +12697,7 @@
     {
       "id": "I0306",
       "name": "Jeane Agnes Schorle",
+      "nickname": "",
       "birth_name": "Jeane Agnes Urban",
       "alternate_names": [
         {
@@ -12411,6 +12740,7 @@
     {
       "id": "I0307",
       "name": "William Franklin Dague Sr.",
+      "nickname": "",
       "birth_name": "William Franklin Dague Sr.",
       "alternate_names": [],
       "gender": "M",
@@ -12459,6 +12789,7 @@
     {
       "id": "I0308",
       "name": "William Francis Dague Jr.",
+      "nickname": "",
       "birth_name": "William Francis Dague Jr.",
       "alternate_names": [],
       "gender": "M",
@@ -12487,6 +12818,7 @@
     {
       "id": "I0309",
       "name": "Doris Merryfield",
+      "nickname": "",
       "birth_name": "Doris Dague",
       "alternate_names": [
         {
@@ -12520,6 +12852,7 @@
     {
       "id": "I0310",
       "name": "Mary Marguerite Brondell",
+      "nickname": "",
       "birth_name": "Mary Marguerite Dague",
       "alternate_names": [
         {
@@ -12553,6 +12886,7 @@
     {
       "id": "I0311",
       "name": "Myrtle Maybrook Dague",
+      "nickname": "",
       "birth_name": "Myrtle Maybrook Crom",
       "alternate_names": [
         {
@@ -12606,6 +12940,7 @@
     {
       "id": "I0312",
       "name": "Donald William Dague",
+      "nickname": "",
       "birth_name": "Donald William Dague",
       "alternate_names": [],
       "gender": "M",
@@ -12634,6 +12969,7 @@
     {
       "id": "I0313",
       "name": "Anna Irene Dague",
+      "nickname": "",
       "birth_name": "Anna Irene Dague",
       "alternate_names": [],
       "gender": "F",
@@ -12662,6 +12998,7 @@
     {
       "id": "I0314",
       "name": "James P. McGrail",
+      "nickname": "",
       "birth_name": "James P. McGrail",
       "alternate_names": [],
       "gender": "M",
@@ -12698,6 +13035,7 @@
     {
       "id": "I0315",
       "name": "Anna C. Urban",
+      "nickname": "",
       "birth_name": "Anna C. Kriebel",
       "alternate_names": [
         {
@@ -12741,6 +13079,7 @@
     {
       "id": "I0316",
       "name": "Arthur Olie Smith",
+      "nickname": "",
       "birth_name": "Arthur Olie Smith",
       "alternate_names": [],
       "gender": "M",
@@ -12774,15 +13113,16 @@
     },
     {
       "id": "I0317",
-      "name": "John J McGrail",
-      "birth_name": "John J McGrail",
+      "name": "John J. McGrail",
+      "nickname": "",
+      "birth_name": "John J. McGrail",
       "alternate_names": [],
       "gender": "M",
       "living": false,
-      "birth": "?",
+      "birth": "8 SEP 1859",
       "death": "11 MAR 1932",
-      "place": "",
-      "birth_place": "",
+      "place": "Illinois",
+      "birth_place": "Illinois",
       "death_place": "",
       "parents": [],
       "spouses": [],
@@ -12798,6 +13138,7 @@
     {
       "id": "I0318",
       "name": "Charles H. Hood",
+      "nickname": "",
       "birth_name": "Charles H. Hood",
       "alternate_names": [],
       "gender": "M",
@@ -12832,6 +13173,7 @@
     {
       "id": "I0319",
       "name": "E. M. Parnum",
+      "nickname": "Sam",
       "birth_name": "E. M. Parnum",
       "alternate_names": [],
       "gender": "M",
@@ -12870,6 +13212,7 @@
     {
       "id": "I0320",
       "name": "Val Lawrence",
+      "nickname": "",
       "birth_name": "",
       "alternate_names": [],
       "gender": "F",
@@ -12908,6 +13251,7 @@
     {
       "id": "I0321",
       "name": "Ruth Ann Urban",
+      "nickname": "",
       "birth_name": "Ruth Ann Urban",
       "alternate_names": [],
       "gender": "F",
@@ -12930,6 +13274,7 @@
     {
       "id": "I0322",
       "name": "Christian Friedrich Urban",
+      "nickname": "",
       "birth_name": "Christian Friedrich Urban",
       "alternate_names": [],
       "gender": "M",
@@ -12971,6 +13316,7 @@
     {
       "id": "I0323",
       "name": "Margaretha Urban",
+      "nickname": "",
       "birth_name": "Margaretha Urban",
       "alternate_names": [
         {
@@ -13017,6 +13363,7 @@
     {
       "id": "I0324",
       "name": "Johann Urban",
+      "nickname": "",
       "birth_name": "Johann Urban",
       "alternate_names": [],
       "gender": "M",
@@ -13055,6 +13402,7 @@
     {
       "id": "I0325",
       "name": "Anna Dorothea Urban",
+      "nickname": "",
       "birth_name": "Anna Dorothea Eggers",
       "alternate_names": [
         {
@@ -13098,6 +13446,7 @@
     {
       "id": "I0326",
       "name": "Claus Moeller",
+      "nickname": "",
       "birth_name": "Claus Moeller",
       "alternate_names": [],
       "gender": "M",
@@ -13136,6 +13485,7 @@
     {
       "id": "I0327",
       "name": "Margaretha Moeller",
+      "nickname": "",
       "birth_name": "Margaretha Groth",
       "alternate_names": [
         {
@@ -13179,6 +13529,7 @@
     {
       "id": "I0328",
       "name": "Obert A. Hemmer",
+      "nickname": "",
       "birth_name": "Obert A. Hemmer",
       "alternate_names": [],
       "gender": "M",
@@ -13213,6 +13564,7 @@
     {
       "id": "I0329",
       "name": "August Schmidt",
+      "nickname": "",
       "birth_name": "August Schmidt",
       "alternate_names": [],
       "gender": "M",
@@ -13257,6 +13609,7 @@
     {
       "id": "I0330",
       "name": "Wilhelmina Schmidt",
+      "nickname": "",
       "birth_name": "",
       "alternate_names": [],
       "gender": "F",
@@ -13301,6 +13654,7 @@
     {
       "id": "I0331",
       "name": "Ella Daeman",
+      "nickname": "",
       "birth_name": "Ella Schmidt",
       "alternate_names": [
         {
@@ -13332,6 +13686,7 @@
     {
       "id": "I0332",
       "name": "Mathilda Dixon",
+      "nickname": "",
       "birth_name": "Mathilda Schmidt",
       "alternate_names": [
         {
@@ -13363,6 +13718,7 @@
     {
       "id": "I0333",
       "name": "Helen Mason",
+      "nickname": "",
       "birth_name": "Helen Schmidt",
       "alternate_names": [
         {
@@ -13394,6 +13750,7 @@
     {
       "id": "I0334",
       "name": "Jack Schorle",
+      "nickname": "",
       "birth_name": "Jack Schorle",
       "alternate_names": [],
       "gender": "M",
@@ -13428,6 +13785,7 @@
     {
       "id": "I0335",
       "name": "Burt",
+      "nickname": "",
       "birth_name": "Burt",
       "alternate_names": [],
       "gender": "M",
@@ -13462,6 +13820,7 @@
     {
       "id": "I0340",
       "name": "Angus Gordon",
+      "nickname": "",
       "birth_name": "Angus Gordon",
       "alternate_names": [],
       "gender": "M",
@@ -13527,11 +13886,12 @@
     },
     {
       "id": "I0341",
-      "name": "Nancy E Gordon",
-      "birth_name": "Nancy E Hardin",
+      "name": "Nancy E. Gordon",
+      "nickname": "",
+      "birth_name": "Nancy E. Hardin",
       "alternate_names": [
         {
-          "name": "Nancy E Hardin",
+          "name": "Nancy E. Hardin",
           "type": "birth"
         }
       ],
@@ -13587,6 +13947,7 @@
     {
       "id": "I0342",
       "name": "Katherine E. Jeppson",
+      "nickname": "Kate",
       "birth_name": "Katherine E. Gordon",
       "alternate_names": [
         {
@@ -13627,6 +13988,7 @@
     {
       "id": "I0343",
       "name": "Elizabeth A. Gordon",
+      "nickname": "Lizzie",
       "birth_name": "Elizabeth Gordon",
       "alternate_names": [
         {
@@ -13667,6 +14029,7 @@
     {
       "id": "I0344",
       "name": "Grace J. Bellows",
+      "nickname": "",
       "birth_name": "Grace J. Gordon",
       "alternate_names": [
         {
@@ -13703,6 +14066,7 @@
     {
       "id": "I0345",
       "name": "Cynthia L. Gordon",
+      "nickname": "",
       "birth_name": "Cynthia L. Gordon",
       "alternate_names": [],
       "gender": "F",
@@ -13734,6 +14098,7 @@
     {
       "id": "I0346",
       "name": "James Gordon",
+      "nickname": "",
       "birth_name": "James Gordon",
       "alternate_names": [],
       "gender": "M",
@@ -13788,6 +14153,7 @@
     {
       "id": "I0347",
       "name": "Catherine Gordon",
+      "nickname": "",
       "birth_name": "Catherine McMartin",
       "alternate_names": [
         {
@@ -13847,6 +14213,7 @@
     {
       "id": "I0348",
       "name": "Benton Gordon",
+      "nickname": "",
       "birth_name": "Benton Gordon",
       "alternate_names": [],
       "gender": "M",
@@ -13878,6 +14245,7 @@
     {
       "id": "I0349",
       "name": "Charles Franklin Gordon",
+      "nickname": "",
       "birth_name": "Charles Franklin Gordon",
       "alternate_names": [],
       "gender": "M",
@@ -13909,6 +14277,7 @@
     {
       "id": "I0350",
       "name": "James A. Gordon",
+      "nickname": "",
       "birth_name": "James A. Gordon",
       "alternate_names": [],
       "gender": "M",
@@ -13940,6 +14309,7 @@
     {
       "id": "I0351",
       "name": "Frederick Enoch Gordon",
+      "nickname": "Fred",
       "birth_name": "Frederick Enoch Gordon",
       "alternate_names": [],
       "gender": "M",
@@ -13971,6 +14341,7 @@
     {
       "id": "I0352",
       "name": "James Gordon",
+      "nickname": "",
       "birth_name": "James Gordon",
       "alternate_names": [],
       "gender": "M",
@@ -14002,6 +14373,7 @@
     {
       "id": "I0353",
       "name": "John Gordon",
+      "nickname": "",
       "birth_name": "John Gordon",
       "alternate_names": [],
       "gender": "M",
@@ -14033,6 +14405,7 @@
     {
       "id": "I0354",
       "name": "Catherine Walker",
+      "nickname": "",
       "birth_name": "Catherine Gordon",
       "alternate_names": [
         {
@@ -14069,6 +14442,7 @@
     {
       "id": "I0355",
       "name": "Helen McGregor",
+      "nickname": "",
       "birth_name": "Helen Gordon",
       "alternate_names": [
         {
@@ -14105,6 +14479,7 @@
     {
       "id": "I0356",
       "name": "Mary Jane Morrin",
+      "nickname": "",
       "birth_name": "Mary Jane Gordon",
       "alternate_names": [
         {
@@ -14141,6 +14516,7 @@
     {
       "id": "I0357",
       "name": "Elizabeth Gordon",
+      "nickname": "Lizzie",
       "birth_name": "Elizabeth Gordon",
       "alternate_names": [],
       "gender": "F",
@@ -14172,6 +14548,7 @@
     {
       "id": "I0358",
       "name": "Thomas Gordon",
+      "nickname": "",
       "birth_name": "Thomas Gordon",
       "alternate_names": [],
       "gender": "M",
@@ -14203,6 +14580,7 @@
     {
       "id": "I0359",
       "name": "William Gordon",
+      "nickname": "",
       "birth_name": "William Gordon",
       "alternate_names": [],
       "gender": "M",
@@ -14234,6 +14612,7 @@
     {
       "id": "I0360",
       "name": "Baby Dinges",
+      "nickname": "",
       "birth_name": "Baby Dinges",
       "alternate_names": [],
       "gender": "",
@@ -14265,6 +14644,7 @@
     {
       "id": "I0361",
       "name": "Baby Girl Dinges",
+      "nickname": "",
       "birth_name": "Baby Girl Dinges",
       "alternate_names": [],
       "gender": "F",
@@ -14296,6 +14676,7 @@
     {
       "id": "I0362",
       "name": "Katherine Mary Reis",
+      "nickname": "",
       "birth_name": "Katherine Mary Dinges",
       "alternate_names": [
         {
@@ -14347,6 +14728,7 @@
     {
       "id": "I0363",
       "name": "Peter Dinges",
+      "nickname": "",
       "birth_name": "Peter Dinges",
       "alternate_names": [],
       "gender": "M",
@@ -14394,6 +14776,7 @@
     {
       "id": "I0365",
       "name": "Gertrude Giers",
+      "nickname": "",
       "birth_name": "Gertrude Dinges",
       "alternate_names": [
         {
@@ -14450,6 +14833,7 @@
     {
       "id": "I0366",
       "name": "Godfred Dinges",
+      "nickname": "Frederick",
       "birth_name": "Gottfried Dinges",
       "alternate_names": [
         {
@@ -14506,6 +14890,7 @@
     {
       "id": "I0367",
       "name": "Caroline Henrich",
+      "nickname": "",
       "birth_name": "Caroline Dinges",
       "alternate_names": [
         {
@@ -14574,6 +14959,7 @@
     {
       "id": "I0368",
       "name": "Mary Burkhardt",
+      "nickname": "",
       "birth_name": "Mary Dinges",
       "alternate_names": [
         {
@@ -14611,6 +14997,7 @@
     {
       "id": "I0369",
       "name": "Joseph A. Dinges",
+      "nickname": "",
       "birth_name": "Joseph A. Dinges",
       "alternate_names": [],
       "gender": "M",
@@ -14670,6 +15057,7 @@
     {
       "id": "I0370",
       "name": "J. A. Koehler",
+      "nickname": "",
       "birth_name": "J. A. Koehler",
       "alternate_names": [],
       "gender": "M",
@@ -14704,6 +15092,7 @@
     {
       "id": "I0371",
       "name": "Anthony Reis",
+      "nickname": "",
       "birth_name": "Anthony Reis",
       "alternate_names": [],
       "gender": "M",
@@ -14738,6 +15127,7 @@
     {
       "id": "I0372",
       "name": "Katherine Dinges",
+      "nickname": "",
       "birth_name": "Katherine Reis",
       "alternate_names": [
         {
@@ -14799,6 +15189,7 @@
     {
       "id": "I0373",
       "name": "Alfred Dinges",
+      "nickname": "",
       "birth_name": "Alfred Dinges",
       "alternate_names": [],
       "gender": "M",
@@ -14831,6 +15222,7 @@
     {
       "id": "I0374",
       "name": "Pearl Elizabeth Landgraf",
+      "nickname": "",
       "birth_name": "Pearl Elizabeth Dinges",
       "alternate_names": [
         {
@@ -14868,6 +15260,7 @@
     {
       "id": "I0375",
       "name": "Edward Godfredus Dinges",
+      "nickname": "",
       "birth_name": "Edward Godfredus Dinges",
       "alternate_names": [],
       "gender": "M",
@@ -14900,6 +15293,7 @@
     {
       "id": "I0376",
       "name": "Romaine Jacob Dinges",
+      "nickname": "",
       "birth_name": "Romaine Jacob Dinges",
       "alternate_names": [],
       "gender": "M",
@@ -14932,6 +15326,7 @@
     {
       "id": "I0377",
       "name": "Irma Margaret Bengford",
+      "nickname": "",
       "birth_name": "Irma Margaret Dinges",
       "alternate_names": [
         {
@@ -14969,6 +15364,7 @@
     {
       "id": "I0378",
       "name": "George Norbert Dinges",
+      "nickname": "",
       "birth_name": "George Norbert Dinges",
       "alternate_names": [],
       "gender": "M",
@@ -15016,6 +15412,7 @@
     {
       "id": "I0379",
       "name": "Marie Saterlee",
+      "nickname": "",
       "birth_name": "Marie Dinges",
       "alternate_names": [
         {
@@ -15053,6 +15450,7 @@
     {
       "id": "I0380",
       "name": "Bernard Dinges",
+      "nickname": "",
       "birth_name": "Bernard Dinges",
       "alternate_names": [],
       "gender": "M",
@@ -15085,6 +15483,7 @@
     {
       "id": "I0381",
       "name": "Joseph Dinges Jr.",
+      "nickname": "",
       "birth_name": "Joseph Dinges Jr.",
       "alternate_names": [],
       "gender": "M",
@@ -15117,6 +15516,7 @@
     {
       "id": "I0382",
       "name": "Baby Dinges",
+      "nickname": "",
       "birth_name": "Baby Dinges",
       "alternate_names": [],
       "gender": "",
@@ -15149,6 +15549,7 @@
     {
       "id": "I0383",
       "name": "Kathleen Dinges",
+      "nickname": "",
       "birth_name": "Kathleen Ratigan",
       "alternate_names": [
         {
@@ -15188,6 +15589,7 @@
     {
       "id": "I0384",
       "name": "Lorraine Marjorie Urban",
+      "nickname": "",
       "birth_name": "Lorraine Margorie Proett",
       "alternate_names": [
         {
@@ -15262,6 +15664,7 @@
     {
       "id": "I0385",
       "name": "William Lee Patton",
+      "nickname": "",
       "birth_name": "William Lee Patton",
       "alternate_names": [],
       "gender": "M",
@@ -15309,6 +15712,7 @@
     {
       "id": "I0386",
       "name": "Donald Anton Proett",
+      "nickname": "Don",
       "birth_name": "Donald Anton Proett",
       "alternate_names": [],
       "gender": "M",
@@ -15371,6 +15775,7 @@
     {
       "id": "I0387",
       "name": "Marjorie Eusebia Proett",
+      "nickname": "",
       "birth_name": "Margorie Eusebia Turner",
       "alternate_names": [
         {
@@ -15429,6 +15834,7 @@
     {
       "id": "I0388",
       "name": "Michael Lee Patton",
+      "nickname": "",
       "birth_name": "Michael Lee Patton",
       "alternate_names": [],
       "gender": "M",
@@ -15476,6 +15882,7 @@
     {
       "id": "I0389",
       "name": "Gina Patton",
+      "nickname": "",
       "birth_name": "Gina Thomasen",
       "alternate_names": [
         {
@@ -15521,6 +15928,7 @@
     {
       "id": "I0390",
       "name": "Dustin Hunter Patton",
+      "nickname": "",
       "birth_name": "Dustin Hunter Patton",
       "alternate_names": [],
       "gender": "M",
@@ -15546,6 +15954,7 @@
     {
       "id": "I0391",
       "name": "Clayton Gunnar Patton",
+      "nickname": "",
       "birth_name": "Clayton Gunnar Patton",
       "alternate_names": [],
       "gender": "M",
@@ -15571,6 +15980,7 @@
     {
       "id": "I0392",
       "name": "Dena Maria Talmadge",
+      "nickname": "",
       "birth_name": "Dena Maria Patton",
       "alternate_names": [
         {
@@ -15626,6 +16036,7 @@
     {
       "id": "I0393",
       "name": "Eric Joseph Talmadge",
+      "nickname": "",
       "birth_name": "Eric Joseph Talmadge",
       "alternate_names": [],
       "gender": "M",
@@ -15668,6 +16079,7 @@
     {
       "id": "I0394",
       "name": "Danielle Nicole Talmadge",
+      "nickname": "",
       "birth_name": "Danielle Nicole Talmadge",
       "alternate_names": [],
       "gender": "F",
@@ -15694,6 +16106,7 @@
     {
       "id": "I0395",
       "name": "Alexa Rae Talmadge",
+      "nickname": "",
       "birth_name": "Alexa Rae Talmadge",
       "alternate_names": [],
       "gender": "F",
@@ -15720,6 +16133,7 @@
     {
       "id": "I0396",
       "name": "Caitlyn Jean Talmadge",
+      "nickname": "",
       "birth_name": "Caitlyn Jean Talmadge",
       "alternate_names": [],
       "gender": "F",
@@ -15746,6 +16160,7 @@
     {
       "id": "I0397",
       "name": "Michelle Lorraine Buchanan",
+      "nickname": "",
       "birth_name": "Michelle Lorraine Patton",
       "alternate_names": [
         {
@@ -15803,6 +16218,7 @@
     {
       "id": "I0398",
       "name": "Tobin Lee Buchanan",
+      "nickname": "",
       "birth_name": "Tobin Lee Buchanan",
       "alternate_names": [],
       "gender": "M",
@@ -15846,6 +16262,7 @@
     {
       "id": "I0399",
       "name": "William Lee Buchanan",
+      "nickname": "",
       "birth_name": "William Lee Buchanan",
       "alternate_names": [],
       "gender": "M",
@@ -15872,6 +16289,7 @@
     {
       "id": "I0400",
       "name": "Beau Brian Buchanan",
+      "nickname": "",
       "birth_name": "Beau Brian Buchanan",
       "alternate_names": [],
       "gender": "M",
@@ -15898,6 +16316,7 @@
     {
       "id": "I0401",
       "name": "Benjamin Wallace Buchanan",
+      "nickname": "",
       "birth_name": "Benjamin Wallace Buchanan",
       "alternate_names": [],
       "gender": "M",
@@ -15924,6 +16343,7 @@
     {
       "id": "I0402",
       "name": "Sara Jane Sanford",
+      "nickname": "",
       "birth_name": "Sara Jane Patton",
       "alternate_names": [
         {
@@ -15977,6 +16397,7 @@
     {
       "id": "I0403",
       "name": "Justin Scott Sanford",
+      "nickname": "",
       "birth_name": "Justin Scott Sanford",
       "alternate_names": [],
       "gender": "M",
@@ -16017,6 +16438,7 @@
     {
       "id": "I0404",
       "name": "Jeremiah Michael Sanford",
+      "nickname": "",
       "birth_name": "Jeremiah Michael Sanford",
       "alternate_names": [],
       "gender": "M",
@@ -16042,6 +16464,7 @@
     {
       "id": "I0405",
       "name": "Joel Scott Sanford",
+      "nickname": "",
       "birth_name": "Joel Scott Sanford",
       "alternate_names": [],
       "gender": "M",
@@ -16067,6 +16490,7 @@
     {
       "id": "I0406",
       "name": "William George Patton",
+      "nickname": "",
       "birth_name": "William George Patton",
       "alternate_names": [],
       "gender": "M",
@@ -16108,6 +16532,7 @@
     {
       "id": "I0407",
       "name": "Ellen M. Patton",
+      "nickname": "",
       "birth_name": "Ellen M. Fisher",
       "alternate_names": [
         {
@@ -16161,6 +16586,7 @@
     {
       "id": "I0408",
       "name": "Samuel Robert Patton",
+      "nickname": "",
       "birth_name": "Samuel Robert Patton",
       "alternate_names": [],
       "gender": "M",
@@ -16199,6 +16625,7 @@
     {
       "id": "I0409",
       "name": "Mary Mariah Patton",
+      "nickname": "Rye",
       "birth_name": "Mary Mariah Bowman",
       "alternate_names": [
         {
@@ -16242,6 +16669,7 @@
     {
       "id": "I0410",
       "name": "Anton Frederick Proett",
+      "nickname": "",
       "birth_name": "Anton Frederick Proett",
       "alternate_names": [],
       "gender": "M",
@@ -16304,6 +16732,7 @@
     {
       "id": "I0411",
       "name": "Dena Louisa Frederica Proett",
+      "nickname": "",
       "birth_name": "Dena Louisa Frederica Frerking",
       "alternate_names": [
         {
@@ -16371,6 +16800,7 @@
     {
       "id": "I0412",
       "name": "Dorothy Mills",
+      "nickname": "",
       "birth_name": "Dorothy Proett",
       "alternate_names": [
         {
@@ -16418,6 +16848,7 @@
     {
       "id": "I0413",
       "name": "Judd Mills",
+      "nickname": "",
       "birth_name": "Judd Mills",
       "alternate_names": [],
       "gender": "M",
@@ -16452,6 +16883,7 @@
     {
       "id": "I0414",
       "name": "Naomi Proett",
+      "nickname": "",
       "birth_name": "Naomi Proett",
       "alternate_names": [],
       "gender": "F",
@@ -16479,6 +16911,7 @@
     {
       "id": "I0415",
       "name": "Donald T. Proett",
+      "nickname": "",
       "birth_name": "Donald T. Proett",
       "alternate_names": [],
       "gender": "M",
@@ -16506,6 +16939,7 @@
     {
       "id": "I0416",
       "name": "Alois F. Proett",
+      "nickname": "",
       "birth_name": "Alois F. Proett",
       "alternate_names": [],
       "gender": "M",
@@ -16533,6 +16967,7 @@
     {
       "id": "I0417",
       "name": "Ernest Roland Frerking Proett",
+      "nickname": "",
       "birth_name": "Ernest Roland Frerking Proett",
       "alternate_names": [],
       "gender": "M",
@@ -16568,6 +17003,7 @@
     {
       "id": "I0418",
       "name": "Milton Arthur Proett",
+      "nickname": "",
       "birth_name": "Milton Arthur Proett",
       "alternate_names": [],
       "gender": "M",
@@ -16603,6 +17039,7 @@
     {
       "id": "I0419",
       "name": "Robert Orville Proett",
+      "nickname": "Bob",
       "birth_name": "Robert Orville Proett",
       "alternate_names": [],
       "gender": "M",
@@ -16638,6 +17075,7 @@
     {
       "id": "I0420",
       "name": "Rodney Odean Proett",
+      "nickname": "Bud",
       "birth_name": "Rodney Odean Proett",
       "alternate_names": [],
       "gender": "M",
@@ -16673,6 +17111,7 @@
     {
       "id": "I0421",
       "name": "Daryl Marlin Proett",
+      "nickname": "",
       "birth_name": "Daryl Marlin Proett",
       "alternate_names": [],
       "gender": "M",
@@ -16708,6 +17147,7 @@
     {
       "id": "I0422",
       "name": "Violet Virginia Stock",
+      "nickname": "",
       "birth_name": "Violet Proett",
       "alternate_names": [
         {
@@ -16748,6 +17188,7 @@
     {
       "id": "I0423",
       "name": "Nicholas John Turner",
+      "nickname": "",
       "birth_name": "Nicholas John Turner",
       "alternate_names": [],
       "gender": "M",
@@ -16792,6 +17233,7 @@
     {
       "id": "I0424",
       "name": "Mary Eusebia Turner",
+      "nickname": "",
       "birth_name": "Mary Eusebia Mitchell",
       "alternate_names": [
         {
@@ -16841,6 +17283,7 @@
     {
       "id": "I0425",
       "name": "Harold James David Turner",
+      "nickname": "",
       "birth_name": "Harold James David Turner",
       "alternate_names": [],
       "gender": "M",
@@ -16867,6 +17310,7 @@
     {
       "id": "I0426",
       "name": "Elwin Nicholas Turner",
+      "nickname": "",
       "birth_name": "Elwin Nicholas Turner",
       "alternate_names": [],
       "gender": "M",
@@ -16893,6 +17337,7 @@
     {
       "id": "I0427",
       "name": "Mary Angeline Turner",
+      "nickname": "",
       "birth_name": "Mary Angeline Turner",
       "alternate_names": [],
       "gender": "F",
@@ -16919,6 +17364,7 @@
     {
       "id": "I0428",
       "name": "Oliver Burton Proett",
+      "nickname": "",
       "birth_name": "Oliver Burton Proett",
       "alternate_names": [],
       "gender": "M",
@@ -16954,6 +17400,7 @@
     {
       "id": "I0429",
       "name": "Elinor Wilma Menke",
+      "nickname": "",
       "birth_name": "Elinor Wilma Proett",
       "alternate_names": [
         {
@@ -16994,6 +17441,7 @@
     {
       "id": "I0430",
       "name": "Eunice Evelyn Proett",
+      "nickname": "",
       "birth_name": "Eunice Evelyn Proett",
       "alternate_names": [],
       "gender": "F",
@@ -17029,6 +17477,7 @@
     {
       "id": "I0431",
       "name": "Hampton Donald Proett",
+      "nickname": "",
       "birth_name": "Hampton Donald Proett",
       "alternate_names": [],
       "gender": "M",
@@ -17064,6 +17513,7 @@
     {
       "id": "I0432",
       "name": "Dorothy C. Proett",
+      "nickname": "",
       "birth_name": "Dorothy C. Proett",
       "alternate_names": [],
       "gender": "F",
@@ -17099,6 +17549,7 @@
     {
       "id": "I0433",
       "name": "Dwayne Llewellen Proett",
+      "nickname": "Duey",
       "birth_name": "Dwayne Llewellen Proett",
       "alternate_names": [],
       "gender": "M",
@@ -17134,6 +17585,7 @@
     {
       "id": "I0434",
       "name": "Anton Hjalmar Hansson",
+      "nickname": "",
       "birth_name": "Anton Hjalmar Hansson",
       "alternate_names": [],
       "gender": "M",
@@ -17181,6 +17633,7 @@
     {
       "id": "I0435",
       "name": "Gunnar William Hanson",
+      "nickname": "Bill",
       "birth_name": "Gunnar William Hanson",
       "alternate_names": [],
       "gender": "M",
@@ -17207,6 +17660,7 @@
     {
       "id": "I0436",
       "name": "Lilian Violet Johnson",
+      "nickname": "",
       "birth_name": "Lilian Violet Hanson",
       "alternate_names": [
         {
@@ -17257,6 +17711,7 @@
     {
       "id": "I0437",
       "name": "Helen Margurite Lease",
+      "nickname": "",
       "birth_name": "Helen Margurite Hanson",
       "alternate_names": [
         {
@@ -17309,6 +17764,7 @@
     {
       "id": "I0438",
       "name": "Glenn M. Hanson",
+      "nickname": "",
       "birth_name": "Glenn M. Hanson",
       "alternate_names": [],
       "gender": "M",
@@ -17335,6 +17791,7 @@
     {
       "id": "I0439",
       "name": "Alva Leonard Lease",
+      "nickname": "Al",
       "birth_name": "Alva Leonard Lease",
       "alternate_names": [],
       "gender": "M",
@@ -17381,6 +17838,7 @@
     {
       "id": "I0440",
       "name": "Craig Lease",
+      "nickname": "",
       "birth_name": "Craig Lease",
       "alternate_names": [],
       "gender": "M",
@@ -17421,6 +17879,7 @@
     {
       "id": "I0441",
       "name": "Karen Braesch",
+      "nickname": "",
       "birth_name": "Karen Lease",
       "alternate_names": [
         {
@@ -17466,6 +17925,7 @@
     {
       "id": "I0442",
       "name": "Carl Emil Johnson",
+      "nickname": "",
       "birth_name": "Carl Emil Johnson",
       "alternate_names": [],
       "gender": "M",
@@ -17504,6 +17964,7 @@
     {
       "id": "I0443",
       "name": "Dennis Ray Johnson",
+      "nickname": "",
       "birth_name": "Dennis Ray Johnson",
       "alternate_names": [],
       "gender": "M",
@@ -17526,6 +17987,7 @@
     {
       "id": "I0444",
       "name": "Jacob Leonard Lease",
+      "nickname": "",
       "birth_name": "Jacob Leonard Lease",
       "alternate_names": [],
       "gender": "M",
@@ -17575,6 +18037,7 @@
     {
       "id": "I0445",
       "name": "Margaret Anne Leas",
+      "nickname": "Anna",
       "birth_name": "Margaret Anne Myers",
       "alternate_names": [
         {
@@ -17624,6 +18087,7 @@
     {
       "id": "I0446",
       "name": "Jacob King Leas",
+      "nickname": "",
       "birth_name": "Jacob King Leas",
       "alternate_names": [],
       "gender": "M",
@@ -17674,6 +18138,7 @@
     {
       "id": "I0447",
       "name": "John Ephraim Leas",
+      "nickname": "",
       "birth_name": "John Ephraim Leas",
       "alternate_names": [],
       "gender": "M",
@@ -17716,6 +18181,7 @@
     {
       "id": "I0448",
       "name": "Amanda Leas",
+      "nickname": "",
       "birth_name": "Amanda Myers",
       "alternate_names": [
         {
@@ -17763,6 +18229,7 @@
     {
       "id": "I0449",
       "name": "Roy King Leas",
+      "nickname": "",
       "birth_name": "Roy King Leas",
       "alternate_names": [],
       "gender": "M",
@@ -17789,6 +18256,7 @@
     {
       "id": "I0450",
       "name": "Elizabeth Burgard",
+      "nickname": "",
       "birth_name": "Elizabeth Leas",
       "alternate_names": [
         {
@@ -17819,6 +18287,7 @@
     {
       "id": "I0451",
       "name": "Denton Myers Leas",
+      "nickname": "",
       "birth_name": "Denton Myers Leas",
       "alternate_names": [],
       "gender": "M",
@@ -17844,6 +18313,7 @@
     {
       "id": "I0452",
       "name": "Phyllis Lease",
+      "nickname": "",
       "birth_name": "",
       "alternate_names": [],
       "gender": "F",
@@ -17878,6 +18348,7 @@
     {
       "id": "I0453",
       "name": "Tom Braesch",
+      "nickname": "",
       "birth_name": "Tom Braesch",
       "alternate_names": [],
       "gender": "M",
@@ -17912,6 +18383,7 @@
     {
       "id": "I0454",
       "name": "Edith Marie Lease",
+      "nickname": "",
       "birth_name": "Edith Marie Finno",
       "alternate_names": [
         {
@@ -17959,6 +18431,7 @@
     {
       "id": "I0455",
       "name": "Nettie A. Leas",
+      "nickname": "",
       "birth_name": "Nettie A. Leas",
       "alternate_names": [],
       "gender": "F",
@@ -17985,6 +18458,7 @@
     {
       "id": "I0456",
       "name": "Florence Pearl Leas",
+      "nickname": "",
       "birth_name": "Florence Pearl Leas",
       "alternate_names": [],
       "gender": "F",
@@ -18011,6 +18485,7 @@
     {
       "id": "I0457",
       "name": "Abbie Lease",
+      "nickname": "",
       "birth_name": "Abbie Lease",
       "alternate_names": [],
       "gender": "M",
@@ -18036,6 +18511,7 @@
     {
       "id": "I0458",
       "name": "Glenn Richard Lease",
+      "nickname": "",
       "birth_name": "Glenn Richard Lease",
       "alternate_names": [],
       "gender": "M",
@@ -18061,6 +18537,7 @@
     {
       "id": "I0459",
       "name": "Hans Peter Nilsson",
+      "nickname": "",
       "birth_name": "Hans Peter Nilsson",
       "alternate_names": [],
       "gender": "M",
@@ -18099,6 +18576,7 @@
     {
       "id": "I0460",
       "name": "Helena Olsdotter",
+      "nickname": "",
       "birth_name": "Helena Olsdotter",
       "alternate_names": [],
       "gender": "F",
@@ -18137,6 +18615,7 @@
     {
       "id": "I0461",
       "name": "Benita Kay Brown",
+      "nickname": "",
       "birth_name": "Benita Kay Wildebour",
       "alternate_names": [
         {
@@ -18176,6 +18655,7 @@
     {
       "id": "I0462",
       "name": "Viola M. Lathrop",
+      "nickname": "",
       "birth_name": "Viola M. Kizer",
       "alternate_names": [
         {
@@ -18227,6 +18707,7 @@
     {
       "id": "I0463",
       "name": "Mary Elizabeth Pugh",
+      "nickname": "Bessie",
       "birth_name": "Mary Elizabeth Lathrop",
       "alternate_names": [
         {
@@ -18259,6 +18740,7 @@
     {
       "id": "I0464",
       "name": "Millard W. Lathrop",
+      "nickname": "Bud",
       "birth_name": "Millard W. Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -18286,6 +18768,7 @@
     {
       "id": "I0465",
       "name": "George Jack Lathrop",
+      "nickname": "",
       "birth_name": "George Jack Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -18313,6 +18796,7 @@
     {
       "id": "I0466",
       "name": "Albert E. Lathrop",
+      "nickname": "",
       "birth_name": "Albert E. Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -18340,6 +18824,7 @@
     {
       "id": "I0467",
       "name": "Francis Edward Lathrop",
+      "nickname": "",
       "birth_name": "Francis Edward Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -18367,6 +18852,7 @@
     {
       "id": "I0468",
       "name": "Zachariah Taylor Lathrop",
+      "nickname": "",
       "birth_name": "Zachariah Taylor Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -18419,6 +18905,7 @@
     {
       "id": "I0469",
       "name": "Sara Margaret Lathrop",
+      "nickname": "",
       "birth_name": "Sara Margaret Burklow",
       "alternate_names": [
         {
@@ -18476,6 +18963,7 @@
     {
       "id": "I0470",
       "name": "Adolphus Lathrop",
+      "nickname": "",
       "birth_name": "Adolphus Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -18506,6 +18994,7 @@
     {
       "id": "I0471",
       "name": "Minnie Myrtle Lathrop",
+      "nickname": "",
       "birth_name": "Minnie Myrtle Lathrop",
       "alternate_names": [],
       "gender": "F",
@@ -18536,6 +19025,7 @@
     {
       "id": "I0472",
       "name": "Baby Boy Lathrop",
+      "nickname": "",
       "birth_name": "Baby Boy Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -18566,6 +19056,7 @@
     {
       "id": "I0473",
       "name": "Arlando F. Lathrop",
+      "nickname": "",
       "birth_name": "Arlando F. Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -18596,6 +19087,7 @@
     {
       "id": "I0474",
       "name": "Lenard Lathrop",
+      "nickname": "",
       "birth_name": "Lenard Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -18626,6 +19118,7 @@
     {
       "id": "I0475",
       "name": "Robert Allen Lathrop",
+      "nickname": "",
       "birth_name": "Robert Allen Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -18656,6 +19149,7 @@
     {
       "id": "I0476",
       "name": "Frederick Lathrop",
+      "nickname": "",
       "birth_name": "Frederick Lathrop",
       "alternate_names": [],
       "gender": "M",
@@ -18686,6 +19180,7 @@
     {
       "id": "I0477",
       "name": "William Henry Taylor Millhouse",
+      "nickname": "",
       "birth_name": "William Henry Taylor Millhouse",
       "alternate_names": [],
       "gender": "M",
@@ -18751,6 +19246,7 @@
     {
       "id": "I0478",
       "name": "Rose Ann Millhouse",
+      "nickname": "",
       "birth_name": "Rose Ann McCune",
       "alternate_names": [
         {
@@ -18808,6 +19304,7 @@
     {
       "id": "I0479",
       "name": "David William Millhouse",
+      "nickname": "",
       "birth_name": "David William Millhouse",
       "alternate_names": [],
       "gender": "M",
@@ -18838,6 +19335,7 @@
     {
       "id": "I0480",
       "name": "Serelda Anna Millhouse",
+      "nickname": "",
       "birth_name": "Serelda Anna Millhouse",
       "alternate_names": [],
       "gender": "F",
@@ -18868,6 +19366,7 @@
     {
       "id": "I0481",
       "name": "Ernest Claud Millhouse",
+      "nickname": "",
       "birth_name": "Ernest Claud Millhouse",
       "alternate_names": [],
       "gender": "M",
@@ -18921,6 +19420,7 @@
     {
       "id": "I0482",
       "name": "Harlan C. Millhouse",
+      "nickname": "",
       "birth_name": "Harlan C. Millhouse",
       "alternate_names": [],
       "gender": "M",
@@ -18951,6 +19451,7 @@
     {
       "id": "I0483",
       "name": "Raymond Earl Millhouse",
+      "nickname": "",
       "birth_name": "Raymond Earl Millhouse",
       "alternate_names": [],
       "gender": "M",
@@ -18981,6 +19482,7 @@
     {
       "id": "I0484",
       "name": "Carrie Eda Millhouse",
+      "nickname": "",
       "birth_name": "Carrie Eda Millhouse",
       "alternate_names": [],
       "gender": "F",
@@ -19011,6 +19513,7 @@
     {
       "id": "I0485",
       "name": "Mabel Rosetta Dyer",
+      "nickname": "Etta",
       "birth_name": "Mabel Rosetta Millhouse",
       "alternate_names": [
         {
@@ -19046,6 +19549,7 @@
     {
       "id": "I0486",
       "name": "William Henry Harrison Millhouse",
+      "nickname": "",
       "birth_name": "William Henry Harrison Millhouse",
       "alternate_names": [],
       "gender": "M",
@@ -19102,6 +19606,7 @@
     {
       "id": "I0487",
       "name": "Emeline Millhouse",
+      "nickname": "",
       "birth_name": "Emeline Miner",
       "alternate_names": [
         {
@@ -19171,6 +19676,7 @@
     {
       "id": "I0488",
       "name": "Martha Patsy L. Millhouse",
+      "nickname": "",
       "birth_name": "Martha Patsy L. Millhouse",
       "alternate_names": [],
       "gender": "F",
@@ -19203,6 +19709,7 @@
     {
       "id": "I0489",
       "name": "Robert Millhouse",
+      "nickname": "",
       "birth_name": "Robert Millhouse",
       "alternate_names": [],
       "gender": "M",
@@ -19235,6 +19742,7 @@
     {
       "id": "I0490",
       "name": "Francis Marion Millhouse",
+      "nickname": "",
       "birth_name": "Francis Marion Millhouse",
       "alternate_names": [],
       "gender": "M",
@@ -19267,6 +19775,7 @@
     {
       "id": "I0491",
       "name": "Lorenzo Dow Millhouse",
+      "nickname": "",
       "birth_name": "Lorenzo Dow Millhouse",
       "alternate_names": [],
       "gender": "M",
@@ -19299,6 +19808,7 @@
     {
       "id": "I0492",
       "name": "Louisa Millhouse Millhouse",
+      "nickname": "",
       "birth_name": "Louisa Millhouse Millhouse",
       "alternate_names": [],
       "gender": "F",
@@ -19331,6 +19841,7 @@
     {
       "id": "I0493",
       "name": "Mary Millhouse Millhouse",
+      "nickname": "",
       "birth_name": "Mary Millhouse Millhouse",
       "alternate_names": [],
       "gender": "F",
@@ -19363,6 +19874,7 @@
     {
       "id": "I0494",
       "name": "Zerelda Ann Millhouse",
+      "nickname": "",
       "birth_name": "Zerelda Ann Millhouse",
       "alternate_names": [],
       "gender": "F",
@@ -19395,6 +19907,7 @@
     {
       "id": "I0495",
       "name": "Racheal Evaline Millhouse",
+      "nickname": "",
       "birth_name": "Racheal Evaline Millhouse",
       "alternate_names": [],
       "gender": "F",
@@ -19427,6 +19940,7 @@
     {
       "id": "I0496",
       "name": "Alice Isabel Millhouse",
+      "nickname": "",
       "birth_name": "Alice Isabel Millhouse",
       "alternate_names": [],
       "gender": "F",
@@ -19459,6 +19973,7 @@
     {
       "id": "I0497",
       "name": "Grace Evelyn Millhouse",
+      "nickname": "",
       "birth_name": "Grace Evelyn Utterback",
       "alternate_names": [
         {
@@ -19506,6 +20021,7 @@
     {
       "id": "I0498",
       "name": "Claude Abner Millhouse",
+      "nickname": "",
       "birth_name": "Claude Abner Millhouse",
       "alternate_names": [],
       "gender": "M",
@@ -19531,6 +20047,7 @@
     {
       "id": "I0499",
       "name": "Dallas H. Millhouse Sr.",
+      "nickname": "",
       "birth_name": "Dallas H. Millhouse Sr.",
       "alternate_names": [],
       "gender": "M",
@@ -19556,6 +20073,7 @@
     {
       "id": "I0500",
       "name": "Oscar C. Millhouse",
+      "nickname": "",
       "birth_name": "Oscar C. Millhouse",
       "alternate_names": [],
       "gender": "M",
@@ -19581,6 +20099,7 @@
     {
       "id": "I0501",
       "name": "Clarence Russel Fisher",
+      "nickname": "",
       "birth_name": "Clarence Russel Fisher",
       "alternate_names": [],
       "gender": "M",
@@ -19631,6 +20150,7 @@
     {
       "id": "I0502",
       "name": "Mary Jane Fisher",
+      "nickname": "",
       "birth_name": "Mary Jane Stone",
       "alternate_names": [
         {
@@ -19686,6 +20206,7 @@
     {
       "id": "I0503",
       "name": "George Russell Fisher",
+      "nickname": "",
       "birth_name": "George Russell Fisher",
       "alternate_names": [],
       "gender": "M",
@@ -19714,8 +20235,9 @@
     },
     {
       "id": "I0504",
-      "name": "Edmond H Fisher",
-      "birth_name": "Edmond H Fisher",
+      "name": "Edmond H. Fisher",
+      "nickname": "",
+      "birth_name": "Edmond H. Fisher",
       "alternate_names": [],
       "gender": "M",
       "living": false,
@@ -19743,8 +20265,9 @@
     },
     {
       "id": "I0505",
-      "name": "Paul S Fisher",
-      "birth_name": "Paul S Fisher",
+      "name": "Paul S. Fisher",
+      "nickname": "",
+      "birth_name": "Paul S. Fisher",
       "alternate_names": [],
       "gender": "M",
       "living": false,
@@ -19772,8 +20295,9 @@
     },
     {
       "id": "I0506",
-      "name": "Pauline E Fisher",
-      "birth_name": "Pauline E Fisher",
+      "name": "Pauline E. Fisher",
+      "nickname": "",
+      "birth_name": "Pauline E. Fisher",
       "alternate_names": [],
       "gender": "F",
       "living": false,
@@ -19802,6 +20326,7 @@
     {
       "id": "I0507",
       "name": "John Ernest Fisher",
+      "nickname": "",
       "birth_name": "John Ernest Fisher",
       "alternate_names": [],
       "gender": "M",
@@ -19831,6 +20356,7 @@
     {
       "id": "I0508",
       "name": "Edna Helene Fisher",
+      "nickname": "",
       "birth_name": "Edna Helene Fisher",
       "alternate_names": [],
       "gender": "F",
@@ -19860,6 +20386,7 @@
     {
       "id": "I0509",
       "name": "Art Grundmeier",
+      "nickname": "",
       "birth_name": "Art Grundmeier",
       "alternate_names": [],
       "gender": "M",
@@ -19904,6 +20431,7 @@
     {
       "id": "I0510",
       "name": "Ann Grundmeier",
+      "nickname": "",
       "birth_name": "Ann Grundmeier",
       "alternate_names": [],
       "gender": "F",
@@ -19930,6 +20458,7 @@
     {
       "id": "I0511",
       "name": "Barbara Jorgensen",
+      "nickname": "",
       "birth_name": "Barbara Grundmeier",
       "alternate_names": [
         {
@@ -19976,6 +20505,7 @@
     {
       "id": "I0512",
       "name": "Carol Grundmeier",
+      "nickname": "",
       "birth_name": "Carol Grundmeier",
       "alternate_names": [],
       "gender": "F",
@@ -20002,6 +20532,7 @@
     {
       "id": "I0513",
       "name": "Dennis Grundmeier",
+      "nickname": "",
       "birth_name": "Dennis Grundmeier",
       "alternate_names": [],
       "gender": "M",
@@ -20043,6 +20574,7 @@
     {
       "id": "I0514",
       "name": "Rich Jorgensen",
+      "nickname": "",
       "birth_name": "Rich Jorgensen",
       "alternate_names": [],
       "gender": "M",
@@ -20077,6 +20609,7 @@
     {
       "id": "I0515",
       "name": "Sharmin Grundmeier",
+      "nickname": "",
       "birth_name": "",
       "alternate_names": [],
       "gender": "F",
@@ -20111,6 +20644,7 @@
     {
       "id": "I0516",
       "name": "Richard Bernhardt",
+      "nickname": "",
       "birth_name": "Richard Bernhardt",
       "alternate_names": [],
       "gender": "M",
@@ -20154,6 +20688,7 @@
     {
       "id": "I0517",
       "name": "Margaret Bernhardt",
+      "nickname": "",
       "birth_name": "",
       "alternate_names": [],
       "gender": "F",
@@ -20188,6 +20723,7 @@
     {
       "id": "I0518",
       "name": "LaDon Bernhardt",
+      "nickname": "",
       "birth_name": "LaDon Bernhardt",
       "alternate_names": [],
       "gender": "M",
@@ -20231,6 +20767,7 @@
     {
       "id": "I0519",
       "name": "Norma Bernhardt",
+      "nickname": "",
       "birth_name": "",
       "alternate_names": [],
       "gender": "F",
@@ -20265,6 +20802,7 @@
     {
       "id": "I0520",
       "name": "Bob Bernhardt",
+      "nickname": "",
       "birth_name": "Bob Bernhardt",
       "alternate_names": [],
       "gender": "M",
@@ -20308,6 +20846,7 @@
     {
       "id": "I0521",
       "name": "Jim Bernhardt",
+      "nickname": "",
       "birth_name": "Jim Bernhardt",
       "alternate_names": [],
       "gender": "M",
@@ -20336,6 +20875,7 @@
     {
       "id": "I0522",
       "name": "Wes Bernhardt",
+      "nickname": "",
       "birth_name": "Wes Bernhardt",
       "alternate_names": [],
       "gender": "M",
@@ -20379,6 +20919,7 @@
     {
       "id": "I0523",
       "name": "Allie Bernhardt",
+      "nickname": "",
       "birth_name": "",
       "alternate_names": [],
       "gender": "F",
@@ -20413,6 +20954,7 @@
     {
       "id": "I0524",
       "name": "Lois Bernhardt",
+      "nickname": "",
       "birth_name": "",
       "alternate_names": [],
       "gender": "F",
@@ -20447,6 +20989,7 @@
     {
       "id": "I0525",
       "name": "Christina Dinges",
+      "nickname": "",
       "birth_name": "Christina Schaub",
       "alternate_names": [
         {
@@ -20486,6 +21029,7 @@
     {
       "id": "I0527",
       "name": "Elizabeth Dinges",
+      "nickname": "",
       "birth_name": "Elizabeth Burkhardt",
       "alternate_names": [
         {
@@ -20525,6 +21069,7 @@
     {
       "id": "I0528",
       "name": "John Alexander Giers",
+      "nickname": "Alec",
       "birth_name": "John Alexander Giers",
       "alternate_names": [],
       "gender": "M",
@@ -20559,6 +21104,7 @@
     {
       "id": "I0529",
       "name": "Valentine Henrich",
+      "nickname": "",
       "birth_name": "Valentine Henrich",
       "alternate_names": [],
       "gender": "M",
@@ -20609,6 +21155,7 @@
     {
       "id": "I0530",
       "name": "Christina Roeder",
+      "nickname": "",
       "birth_name": "Christina Henrich",
       "alternate_names": [
         {
@@ -20658,6 +21205,7 @@
     {
       "id": "I0531",
       "name": "Peter Roeder Jr.",
+      "nickname": "",
       "birth_name": "Peter Roeder Jr.",
       "alternate_names": [],
       "gender": "M",
@@ -20692,6 +21240,7 @@
     {
       "id": "I0532",
       "name": "Mary Caroline Ziegmann",
+      "nickname": "",
       "birth_name": "Mary Caroline Henrich",
       "alternate_names": [
         {
@@ -20741,6 +21290,7 @@
     {
       "id": "I0533",
       "name": "John Ziegmann Jr.",
+      "nickname": "",
       "birth_name": "John Ziegmann Jr.",
       "alternate_names": [],
       "gender": "M",
@@ -20775,6 +21325,7 @@
     {
       "id": "I0534",
       "name": "Peter John Henrich",
+      "nickname": "",
       "birth_name": "Peter John Henrich",
       "alternate_names": [],
       "gender": "M",
@@ -20819,6 +21370,7 @@
     {
       "id": "I0535",
       "name": "Elizabeth Agnes Loew",
+      "nickname": "",
       "birth_name": "Elizabeth Agnes Miller",
       "alternate_names": [
         {
@@ -20874,6 +21426,7 @@
     {
       "id": "I0536",
       "name": "Stephen Loew",
+      "nickname": "Steve",
       "birth_name": "Stephen Loew",
       "alternate_names": [],
       "gender": "M",
@@ -20908,6 +21461,7 @@
     {
       "id": "I0537",
       "name": "John William Henrich",
+      "nickname": "",
       "birth_name": "John William Henrich",
       "alternate_names": [],
       "gender": "M",
@@ -20952,6 +21506,7 @@
     {
       "id": "I0538",
       "name": "Katherine Carolyn Henrich",
+      "nickname": "",
       "birth_name": "Katherine Carolyn Konradi",
       "alternate_names": [
         {
@@ -20991,6 +21546,7 @@
     {
       "id": "I0539",
       "name": "Josephine C. Henrich",
+      "nickname": "",
       "birth_name": "Josephine C. Henrich",
       "alternate_names": [],
       "gender": "F",
@@ -21035,6 +21591,7 @@
     {
       "id": "I0540",
       "name": "William Earl Mandernach",
+      "nickname": "",
       "birth_name": "William Earl Mandernach",
       "alternate_names": [],
       "gender": "M",
@@ -21069,6 +21626,7 @@
     {
       "id": "I0541",
       "name": "Joseph Martin Henrich",
+      "nickname": "",
       "birth_name": "Joseph Martin Henrich",
       "alternate_names": [],
       "gender": "M",
@@ -21113,6 +21671,7 @@
     {
       "id": "I0542",
       "name": "Elizabeth Agnes Reis",
+      "nickname": "",
       "birth_name": "Elizabeth Agnes Reis",
       "alternate_names": [],
       "gender": "F",
@@ -21147,6 +21706,7 @@
     {
       "id": "I0543",
       "name": "Gertrude Elizabeth Schramm",
+      "nickname": "",
       "birth_name": "Gertrude Elizabeth Henrich",
       "alternate_names": [
         {
@@ -21196,6 +21756,7 @@
     {
       "id": "I0544",
       "name": "Gustav Jacob Schramm",
+      "nickname": "",
       "birth_name": "Gustav Jacob Schramm",
       "alternate_names": [],
       "gender": "M",
@@ -21230,6 +21791,7 @@
     {
       "id": "I0545",
       "name": "Wilhelmina C. Dinges",
+      "nickname": "",
       "birth_name": "Wilhelmina C. Auchstetter",
       "alternate_names": [
         {
@@ -21269,6 +21831,7 @@
     {
       "id": "I0546",
       "name": "Elizabeth Landgraf-Dinges",
+      "nickname": "",
       "birth_name": "Elizabeth Kaiser",
       "alternate_names": [
         {
@@ -21316,6 +21879,7 @@
     {
       "id": "I0547",
       "name": "Rachel Dinges",
+      "nickname": "",
       "birth_name": "Rachel Dinges",
       "alternate_names": [],
       "gender": "F",
@@ -21348,6 +21912,7 @@
     {
       "id": "I0548",
       "name": "Mary Anna Dinges",
+      "nickname": "",
       "birth_name": "Mary Anna Dinges",
       "alternate_names": [],
       "gender": "F",
@@ -21380,6 +21945,7 @@
     {
       "id": "I0549",
       "name": "Elisabeth Dinges",
+      "nickname": "",
       "birth_name": "Elisabeth Dinges",
       "alternate_names": [],
       "gender": "F",
@@ -21408,6 +21974,843 @@
       ],
       "families_as_spouse": [],
       "marriages": []
+    },
+    {
+      "id": "I0550",
+      "name": "Johann Dönges",
+      "nickname": "",
+      "birth_name": "Johann Dönges",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "15 APR 1781",
+      "death": "12 MAY 1847",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "parents": [
+        "I0562",
+        "I0563"
+      ],
+      "spouses": [
+        "I0551"
+      ],
+      "children": [
+        "I0040"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0176"
+      ],
+      "marriages": [
+        {
+          "family": "F0176",
+          "spouse": "I0551",
+          "children": [
+            "I0040"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0551",
+      "name": "Anna Katharina Dönges",
+      "nickname": "",
+      "birth_name": "Anna Katharina Beitz",
+      "alternate_names": [
+        {
+          "name": "Anna Katharina Beitz",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "12 FEB 1781",
+      "death": "23 OCT 1852",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "parents": [],
+      "spouses": [
+        "I0550"
+      ],
+      "children": [
+        "I0040"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0176"
+      ],
+      "marriages": [
+        {
+          "family": "F0176",
+          "spouse": "I0550",
+          "children": [
+            "I0040"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0552",
+      "name": "Ignatz Port",
+      "nickname": "",
+      "birth_name": "Ignatz Port",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1798",
+      "death": "?",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0553"
+      ],
+      "children": [
+        "I0041"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0177"
+      ],
+      "marriages": [
+        {
+          "family": "F0177",
+          "spouse": "I0553",
+          "children": [
+            "I0041"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0553",
+      "name": "Anna Maria Port",
+      "nickname": "",
+      "birth_name": "Anna Maria Reul",
+      "alternate_names": [
+        {
+          "name": "Anna Maria Reul",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "1798",
+      "death": "?",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "",
+      "parents": [
+        "I0560",
+        "I0561"
+      ],
+      "spouses": [
+        "I0552"
+      ],
+      "children": [
+        "I0041"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0177"
+      ],
+      "marriages": [
+        {
+          "family": "F0177",
+          "spouse": "I0552",
+          "children": [
+            "I0041"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0554",
+      "name": "Johannes George Beitz",
+      "nickname": "",
+      "birth_name": "Johannes George Beitz",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "11 JUN 1765",
+      "death": "20 NOV 1813",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "parents": [],
+      "spouses": [
+        "I0555"
+      ],
+      "children": [
+        "I0198"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0178"
+      ],
+      "marriages": [
+        {
+          "family": "F0178",
+          "spouse": "I0555",
+          "children": [
+            "I0198"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0555",
+      "name": "Anne Margaretha Beitz",
+      "nickname": "",
+      "birth_name": "Anne Margaretha Rieth",
+      "alternate_names": [
+        {
+          "name": "Anne Margaretha Rieth",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "23 DEC 1770",
+      "death": "?",
+      "place": "Germany",
+      "birth_place": "Germany",
+      "death_place": "Germany",
+      "parents": [],
+      "spouses": [
+        "I0554"
+      ],
+      "children": [
+        "I0198"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0178"
+      ],
+      "marriages": [
+        {
+          "family": "F0178",
+          "spouse": "I0554",
+          "children": [
+            "I0198"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0556",
+      "name": "Johann Heinrich Beitz",
+      "nickname": "",
+      "birth_name": "Johann Heinrich Beitz",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "6 OCT 1761",
+      "death": "13 MAR 1814",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "parents": [],
+      "spouses": [
+        "I0557"
+      ],
+      "children": [
+        "I0199"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0179"
+      ],
+      "marriages": [
+        {
+          "family": "F0179",
+          "spouse": "I0557",
+          "children": [
+            "I0199"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0557",
+      "name": "Eva Katharina Beitz",
+      "nickname": "",
+      "birth_name": "Eva Katharina Haub",
+      "alternate_names": [
+        {
+          "name": "Eva Katharina Haub",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "13 NOV 1774",
+      "death": "4 FEB 1828",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "parents": [
+        "I0558",
+        "I0559"
+      ],
+      "spouses": [
+        "I0556"
+      ],
+      "children": [
+        "I0199"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0179"
+      ],
+      "marriages": [
+        {
+          "family": "F0179",
+          "spouse": "I0556",
+          "children": [
+            "I0199"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0558",
+      "name": "Johann Peter Haub",
+      "nickname": "",
+      "birth_name": "Johann Peter Haub",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "17 NOV 1734",
+      "death": "10 OCT 1800",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "parents": [],
+      "spouses": [
+        "I0559"
+      ],
+      "children": [
+        "I0557"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0180"
+      ],
+      "marriages": [
+        {
+          "family": "F0180",
+          "spouse": "I0559",
+          "children": [
+            "I0557"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0559",
+      "name": "Anna K. Haub",
+      "nickname": "",
+      "birth_name": "Anna K. Kempf",
+      "alternate_names": [
+        {
+          "name": "Anna K. Kempf",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "1734",
+      "death": "1803",
+      "place": "Germany",
+      "birth_place": "Germany",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0558"
+      ],
+      "children": [
+        "I0557"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0180"
+      ],
+      "marriages": [
+        {
+          "family": "F0180",
+          "spouse": "I0558",
+          "children": [
+            "I0557"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0560",
+      "name": "Philipp Reul",
+      "nickname": "",
+      "birth_name": "Philipp Reul",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1745",
+      "death": "24 APR 1819",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0561"
+      ],
+      "children": [
+        "I0553"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0181"
+      ],
+      "marriages": [
+        {
+          "family": "F0181",
+          "spouse": "I0561",
+          "children": [
+            "I0553"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0561",
+      "name": "Anna Maria Burk",
+      "nickname": "",
+      "birth_name": "Anna Maria Burk",
+      "alternate_names": [],
+      "gender": "F",
+      "living": false,
+      "birth": "1748",
+      "death": "?",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0560"
+      ],
+      "children": [
+        "I0553"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0181"
+      ],
+      "marriages": [
+        {
+          "family": "F0181",
+          "spouse": "I0560",
+          "children": [
+            "I0553"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0562",
+      "name": "Johannes Dinges",
+      "nickname": "",
+      "birth_name": "Johannes Dinges",
+      "alternate_names": [
+        {
+          "name": "Johannes Dönges",
+          "type": "birth"
+        }
+      ],
+      "gender": "M",
+      "living": false,
+      "birth": "22 APR 1734",
+      "death": "3 NOV 1813",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "parents": [
+        "I0564",
+        "I0565"
+      ],
+      "spouses": [
+        "I0563"
+      ],
+      "children": [
+        "I0550"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0182"
+      ],
+      "marriages": [
+        {
+          "family": "F0182",
+          "spouse": "I0563",
+          "children": [
+            "I0550"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0563",
+      "name": "Maria Catharina Dinges",
+      "nickname": "",
+      "birth_name": "Maria Catharina Weis",
+      "alternate_names": [
+        {
+          "name": "Maria Catharina Weis",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "17 APR 1739",
+      "death": "30 DEC 1804",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "parents": [],
+      "spouses": [
+        "I0562"
+      ],
+      "children": [
+        "I0550"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0182"
+      ],
+      "marriages": [
+        {
+          "family": "F0182",
+          "spouse": "I0562",
+          "children": [
+            "I0550"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0564",
+      "name": "Johann Nikolaus Dönges",
+      "nickname": "",
+      "birth_name": "Johann Nikolaus Dönges",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "27 APR 1698",
+      "death": "4 DEC 1774",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "parents": [],
+      "spouses": [
+        "I0565"
+      ],
+      "children": [
+        "I0562"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0183"
+      ],
+      "marriages": [
+        {
+          "family": "F0183",
+          "spouse": "I0565",
+          "children": [
+            "I0562"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0565",
+      "name": "Anna Maria Dönges",
+      "nickname": "",
+      "birth_name": "Anna Maria Conradi",
+      "alternate_names": [
+        {
+          "name": "Anna Maria Conradi",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "8 DEC 1705",
+      "death": "15 APR 1747",
+      "place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "birth_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "death_place": "Oberhöchstadt, Kronberg im Taunus, Hochtaunuskreis, Hessen, Germany",
+      "parents": [],
+      "spouses": [
+        "I0564"
+      ],
+      "children": [
+        "I0562"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0183"
+      ],
+      "marriages": [
+        {
+          "family": "F0183",
+          "spouse": "I0564",
+          "children": [
+            "I0562"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0566",
+      "name": "Joseph Hutchins",
+      "nickname": "",
+      "birth_name": "Joseph Hutchins",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "1796",
+      "death": "?",
+      "place": "Connecticut",
+      "birth_place": "Connecticut",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0567"
+      ],
+      "children": [
+        "I0276"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0184"
+      ],
+      "marriages": [
+        {
+          "family": "F0184",
+          "spouse": "I0567",
+          "children": [
+            "I0276"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0567",
+      "name": "Susanna Hutchins",
+      "nickname": "",
+      "birth_name": "",
+      "alternate_names": [],
+      "gender": "F",
+      "living": false,
+      "birth": "1795",
+      "death": "?",
+      "place": "Connecticut",
+      "birth_place": "Connecticut",
+      "death_place": "",
+      "parents": [],
+      "spouses": [
+        "I0566"
+      ],
+      "children": [
+        "I0276"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0184"
+      ],
+      "marriages": [
+        {
+          "family": "F0184",
+          "spouse": "I0566",
+          "children": [
+            "I0276"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0568",
+      "name": "Thomas Burdick",
+      "nickname": "",
+      "birth_name": "Thomas Burdick",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "16 AUG 1791",
+      "death": "5 JAN 1853",
+      "place": "Clifford, Susquehanna, Pennsylvania",
+      "birth_place": "Hopkinton, Washington, Rhode Island",
+      "death_place": "Clifford, Susquehanna, Pennsylvania",
+      "parents": [],
+      "spouses": [
+        "I0569"
+      ],
+      "children": [
+        "I0277"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0185"
+      ],
+      "marriages": [
+        {
+          "family": "F0185",
+          "spouse": "I0569",
+          "children": [
+            "I0277"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
+    },
+    {
+      "id": "I0569",
+      "name": "Martha Burdick",
+      "nickname": "",
+      "birth_name": "Martha Burns",
+      "alternate_names": [
+        {
+          "name": "Martha Burns",
+          "type": "birth"
+        }
+      ],
+      "gender": "F",
+      "living": false,
+      "birth": "29 JUN 1799",
+      "death": "27 JAN 1877",
+      "place": "Clifford, Susquehanna, Pennsylvania",
+      "birth_place": "Orange, New York",
+      "death_place": "Clifford, Susquehanna, Pennsylvania",
+      "parents": [],
+      "spouses": [
+        "I0568"
+      ],
+      "children": [
+        "I0277"
+      ],
+      "siblings": [],
+      "families_as_spouse": [
+        "F0185"
+      ],
+      "marriages": [
+        {
+          "family": "F0185",
+          "spouse": "I0568",
+          "children": [
+            "I0277"
+          ],
+          "marriage_date": "",
+          "marriage_place": "",
+          "divorced": false,
+          "divorce_date": "",
+          "divorce_place": ""
+        }
+      ]
     }
   ],
   "families": [
@@ -21567,9 +22970,9 @@
       ],
       "marriage_date": "10 MAY 1857",
       "marriage_place": "",
-      "divorced": false,
-      "divorce_date": "",
-      "divorce_place": ""
+      "divorced": true,
+      "divorce_date": "25 OCT 1906",
+      "divorce_place": "Sac City, Sac, Iowa"
     },
     {
       "id": "F0010",
@@ -23778,6 +25181,136 @@
       "husband": "I0369",
       "wife": "I0546",
       "children": [],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0176",
+      "husband": "I0550",
+      "wife": "I0551",
+      "children": [
+        "I0040"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0177",
+      "husband": "I0552",
+      "wife": "I0553",
+      "children": [
+        "I0041"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0178",
+      "husband": "I0554",
+      "wife": "I0555",
+      "children": [
+        "I0198"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0179",
+      "husband": "I0556",
+      "wife": "I0557",
+      "children": [
+        "I0199"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0180",
+      "husband": "I0558",
+      "wife": "I0559",
+      "children": [
+        "I0557"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0181",
+      "husband": "I0560",
+      "wife": "I0561",
+      "children": [
+        "I0553"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0182",
+      "husband": "I0562",
+      "wife": "I0563",
+      "children": [
+        "I0550"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0183",
+      "husband": "I0564",
+      "wife": "I0565",
+      "children": [
+        "I0562"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0184",
+      "husband": "I0566",
+      "wife": "I0567",
+      "children": [
+        "I0276"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0185",
+      "husband": "I0568",
+      "wife": "I0569",
+      "children": [
+        "I0277"
+      ],
       "marriage_date": "",
       "marriage_place": "",
       "divorced": false,

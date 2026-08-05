@@ -116,6 +116,7 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
                 "id": current_id,
                 "name": "",
                 "names": [],
+                "nickname": "",
                 "birth_date": "",
                 "birth_year": "",
                 "birth_place": "",
@@ -199,6 +200,8 @@ for raw in ged_path.read_text(encoding="utf-8", errors="replace").splitlines():
             if current_event == "NAME":
                 if tag == "TYPE" and person["names"]:
                     person["names"][-1]["type"] = value.strip()
+                elif tag == "NICK":
+                    person["nickname"] = value.strip()
 
             elif current_event == "BIRT":
                 if tag == "DATE":
@@ -479,6 +482,7 @@ def public_person_record(person):
     record = {
         "id": person["id"],
         "name": preferred_name,
+        "nickname": person.get("nickname", ""),
         "birth_name": birth_name,
         "alternate_names": alternate_names,
         "gender": person["gender"],
@@ -517,6 +521,7 @@ def private_person_record(person):
     record = {
         "id": person["id"],
         "name": preferred_name,
+        "nickname": person.get("nickname", ""),
         "birth_name": birth_name,
         "alternate_names": alternate_names,
         "gender": person["gender"],

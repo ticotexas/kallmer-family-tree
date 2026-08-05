@@ -29,6 +29,10 @@ class ArchiveSearch {
   getSearchableNameText(person) {
     const names = [person.name];
 
+    if (person.nickname) {
+      names.push(person.nickname);
+    }
+
     if (person.birth_name) {
       names.push(person.birth_name);
     }
