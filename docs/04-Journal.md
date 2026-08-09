@@ -854,3 +854,83 @@ curated rather than accumulating in the status document.
 Version 1 represents the conclusion of the archive's formative engineering era. The central challenge is no longer proving that a privacy-aware genealogy database can power a coherent public archive. That objective has been achieved.
 
 Future work shifts from feature accumulation toward long-term archival curation, editorial refinement, and historical interpretation. Version 2 expands the archive through the complementary lenses of **People, Relationships, Places, and Time**, with the guiding objective of explaining not only who the family members were, but how the family became what it is.
+
+## 2026-08-09 — Catalog-Native Media Architecture
+
+Established the archive's permanent catalog-native media system.
+
+### Architectural Decision
+
+Separated archival custody from website publication.
+
+`Genealogy_Media` is the canonical museum vault. The website `photos/` structure is the published exhibit.
+
+Each media object now uses one permanent `M######` identity regardless of whether the object is a photograph, document, gravestone, artifact, or place image.
+
+The decision was made not to use type-specific identifiers such as `P`, `G`, or `D`. Media type is classification metadata rather than identity. An object's permanent identifier therefore remains stable if its category is corrected later.
+
+Person association is also independent of publication. A cataloged object may be associated with one or more people while remaining unpublished.
+
+Shared media remain one archival object even when they appear in multiple person exhibits.
+
+### Catalog-Native Workflow
+
+Implemented:
+
+- permanent M-number assignment;
+- SHA-256 media identity;
+- canonical vault paths;
+- catalog-native inbox planning and import;
+- explicit person associations;
+- publish and unpublish operations;
+- SHA verification;
+- generated website publication metadata;
+- legacy website-file bridging;
+- category-aware person gallery indexes.
+
+Publishing creates website exhibit copies without modifying the vault master.
+
+Unpublishing removes website copies while preserving the master and its person associations.
+
+### Person Detail Presentation
+
+Reworked person media presentation into collapsible category sections.
+
+Current presentation supports:
+
+- Photos;
+- Documents & Records;
+- Gravestones;
+- Artifacts;
+- Places.
+
+Only populated categories appear.
+
+Opening one section closes the previously open section, allowing the narrow person-detail panel to hold richer archival material without excessive scrolling.
+
+Birth information remains with the person's identity information above the media accordion. Genealogical relationships remain below it.
+
+### Validation
+
+Ellen Steele provided the principal legacy-media test case.
+
+Her seven existing website images were resolved through catalog metadata as:
+
+- five Photos;
+- one Gravestone;
+- one Place.
+
+No legacy image rename was required for the category bridge.
+
+Greta Jean Lockhart provided the catalog-native document test case.
+
+Her birth certificate was imported as `M000268`, associated with her record, published to the website, verified by matching SHA-256 hashes, displayed under Documents & Records, and successfully unpublished without altering the vault master or person association.
+
+Archive-wide validation found 43 published non-photo entries with zero category mismatches between generated website indexes and the media catalog.
+
+### Commits
+
+- `3b192e7` — Build catalog-native genealogy media system
+- `1de125f` — Add media catalog migration and audit tools
+
+This milestone changes the archive from a collection of image files organized primarily by website location into a media system in which archival identity, classification, person association, and publication are explicit independent concepts.

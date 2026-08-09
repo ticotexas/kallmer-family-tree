@@ -60,6 +60,10 @@ The following architectural decisions should be considered established unless a 
 - Reciprocal Tree and Person Detail views.
 - Shared visual language across the archive.
 - Static-site deployment using generated public data.
+- Catalog-native media architecture with permanent `M######` identities.
+- Separation of the canonical media vault from website publication.
+- Independent media classification, person association, and publication state.
+- Category-aware person exhibits for Photos, Documents & Records, Gravestones, Artifacts, and Places.
 
 Implementation details are documented in **02-Architecture.md**.
 
@@ -78,6 +82,8 @@ Every implementation should:
 5. Review the diff.
 6. Commit only the intended files.
 7. Update documentation when enduring decisions are made.
+
+Media work additionally follows a plan-before-apply workflow. New media enter through the catalog-native inbox process, receive permanent identity in the canonical vault, and are published to the website intentionally rather than being manually copied into person folders.
 
 Detailed procedures are maintained in **03-Engineering-Guide.md**.
 
@@ -122,10 +128,11 @@ Future work should continue to prioritize historical understanding over feature 
 
 Current work focuses on:
 
-1. Curating and strengthening the project documentation.
-2. Refining the archive's editorial quality.
-3. Planning Version 2 using the established roadmap.
-4. Preserving the long-term architectural and design philosophy established during Version 1.
+1. Using the new catalog-native workflow for incoming genealogy media.
+2. Continuing migration and cleanup of legacy media as needed without unnecessary filename churn.
+3. Expanding person exhibits with documents, gravestones, places, artifacts, and photographs through catalog metadata.
+4. Refining the archive's editorial quality and historical storytelling.
+5. Continuing Version 2 development using the established roadmap while preserving the architectural and design principles established during Version 1.
 
 ---
 

@@ -298,6 +298,35 @@ Verify:
 
 Avoid combining media work with layout-engine development.
 
+### Catalog-Native Media Workflow
+
+The canonical media vault and the website exhibit must be treated as separate layers.
+
+New media should enter through the catalog-native inbox workflow rather than being manually copied into person website folders.
+
+The normal sequence is:
+
+1. Place new material in `Genealogy_Media/00-Inbox/To_Process`.
+2. Run `tools/media_inbox.py` in its default read-only planning mode.
+3. Review the proposed M-number, category, person associations, SHA-256 hash, and vault destination.
+4. Use `--apply` only after the exact plan is accepted.
+5. Verify the resulting canonical vault object and catalog record.
+6. Publish intentionally with `tools/media_publish.py`.
+7. Rebuild or verify generated website indexes.
+8. Verify the person's exhibit in the browser.
+
+Media imports and publication operations should preserve SHA-256 identity.
+
+Publishing and unpublishing are website-state operations. They must not silently alter the canonical vault master or remove person associations.
+
+Generated person media indexes should not be hand-maintained when the required metadata can be derived from the permanent media catalog.
+
+Legacy website filenames should be bridged through catalog publication metadata until intentionally migrated.
+
+Read-only planning should precede destructive or state-changing media operations whenever practical.
+
+Terminal review output intended for immediate inspection in ChatGPT should continue to use `tee` together with `xclip -selection clipboard`.
+
 ---
 
 ## Research

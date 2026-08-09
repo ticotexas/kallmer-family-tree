@@ -159,9 +159,47 @@ Photo indexes allow multiple images together with captions and optional metadata
 
 The portrait remains the distinguished representative image whenever appropriate.
 
+## 5.2 Catalog-Native Media
+
+The archive uses a catalog-native media architecture that separates archival custody from website publication.
+
+The canonical media vault is:
+
+    ~/Documents/Genealogy_Work/Genealogy_Media/
+
+The website repository is the published exhibit rather than the archival master.
+
+Each cataloged media object receives one permanent identifier: `M######`.
+
+The `M` identifier represents media, not media type. Photographs, documents, gravestones, artifacts, and places therefore share one permanent identifier namespace. Category is metadata and may be corrected without changing the object's identity.
+
+The canonical media catalog is:
+
+    Genealogy_Media/90-Metadata/media_catalog.json
+
+A catalog record may describe the permanent media ID, SHA-256 identity, canonical vault path, category, associated people, publication state, website copies, and legacy website copies.
+
+Person association and website publication are separate concepts. A media object may be associated with one or more people while remaining unpublished.
+
+Publishing creates website exhibit copies and generated website metadata. Unpublishing removes those exhibit copies without removing the vault master or the genealogical associations.
+
+Shared media remain one catalog object even when published for multiple people. The archive does not create a new archival identity merely because the same object appears in multiple person exhibits.
+
+Website gallery indexes receive catalog metadata during generation. Catalog-native filenames expose their M-number directly; legacy website filenames are resolved through explicit publication metadata in the catalog. This permits gradual migration without unnecessary renaming of established website files.
+
+Website presentation groups media by category:
+
+- People → Photos
+- Documents → Documents & Records
+- Gravestones
+- Artifacts
+- Places
+
+The person-detail interface presents populated categories as collapsible exhibit sections rather than treating every image file as an ordinary photograph.
+
 ---
 
-## 5.2 Stories
+## 5.3 Stories
 
 Stories remain independent of genealogy records.
 
@@ -171,7 +209,7 @@ This separation allows biographies and historical writing to evolve without incr
 
 ---
 
-## 5.3 Historical Documents
+## 5.4 Historical Documents
 
 Historical documents represent their own archival layer.
 
