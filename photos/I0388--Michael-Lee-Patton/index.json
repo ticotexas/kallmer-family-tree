@@ -2,11 +2,15 @@
   {
     "file": "Michael as young adult.png",
     "caption": "Michael As Young Adult",
-    "alt": "Michael Lee Patton"
+    "alt": "Michael Lee Patton",
+    "media_id": "M000100",
+    "category": "People"
   },
   {
     "file": "Michael wearing a sombrero.png",
     "caption": "Michael Wearing A Sombrero",
-    "alt": "Michael Lee Patton"
+    "alt": "Michael Lee Patton",
+    "media_id": "M000182",
+    "category": "People"
   }
 ]

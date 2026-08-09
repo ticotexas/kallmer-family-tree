@@ -2,11 +2,36 @@
   {
     "file": "portrait.png",
     "caption": "Joanne As Young Adult",
-    "alt": "Joanne Hutchins"
+    "alt": "Joanne Hutchins",
+    "media_id": "M000238",
+    "category": "People"
+  },
+  {
+    "file": "Joanne as a girl.png",
+    "caption": "Joanne As A Girl",
+    "alt": "Joanne Pauline Urban",
+    "media_id": "M000135",
+    "category": "People"
+  },
+  {
+    "file": "Joanne as young adult.png",
+    "caption": "Joanne As Young Adult",
+    "alt": "Joanne Pauline Urban",
+    "media_id": "M000254",
+    "category": "People"
+  },
+  {
+    "file": "Joanne c. Summer 1965.png",
+    "caption": "Joanne C. Summer 1965",
+    "alt": "Joanne Pauline Urban",
+    "media_id": "M000109",
+    "category": "People"
   },
   {
     "file": "Joanne in middle life.png",
     "caption": "Joanne In Middle Life",
-    "alt": "Joanne Hutchins"
+    "alt": "Joanne Hutchins",
+    "media_id": "M000007",
+    "category": "People"
   }
 ]

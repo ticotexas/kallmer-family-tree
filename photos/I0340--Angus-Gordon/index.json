@@ -2,21 +2,29 @@
   {
     "file": "portrait.png",
     "caption": "Portrait",
-    "alt": "Angus Gordon"
+    "alt": "Angus Gordon",
+    "media_id": "M000013",
+    "category": "People"
   },
   {
     "file": "Angus and Nancy.png",
     "caption": "Angus And Nancy",
-    "alt": "Angus Gordon"
+    "alt": "Angus Gordon",
+    "media_id": "M000052",
+    "category": "People"
   },
   {
     "file": "Angus_Gordon_gravestone_01.jpg",
     "caption": "Angus Gordon Gravestone 01",
-    "alt": "Angus Gordon"
+    "alt": "Angus Gordon",
+    "media_id": "M000144",
+    "category": "Gravestones"
   },
   {
     "file": "Angus_Gordon_gravestone_02.jpg",
     "caption": "Angus Gordon Gravestone 02",
-    "alt": "Angus Gordon"
+    "alt": "Angus Gordon",
+    "media_id": "M000223",
+    "category": "Gravestones"
   }
 ]

@@ -2,56 +2,78 @@
   {
     "file": "portrait.png",
     "caption": "Edith Steele, Circa 1919",
-    "alt": "Edith Linnea Steele"
+    "alt": "Edith Linnea Steele",
+    "media_id": "M000084",
+    "category": "People"
   },
   {
     "file": "Edith age 18.png",
     "caption": "Edith, Age 18",
-    "alt": "Edith Linnea Steele"
+    "alt": "Edith Linnea Steele",
+    "media_id": "M000020",
+    "category": "People"
   },
   {
     "file": "Edith as young adult.png",
     "caption": "Edith Steele As Young Adult",
-    "alt": "Edith Linnea Steele"
+    "alt": "Edith Linnea Steele",
+    "media_id": "M000092",
+    "category": "People"
   },
   {
     "file": "Edith circa 1926.png",
     "caption": "Edith Steele, Circa 1926",
-    "alt": "Edith Linnea Steele"
+    "alt": "Edith Linnea Steele",
+    "media_id": "M000068",
+    "category": "People"
   },
   {
     "file": "Edith Ellen and Catherine.png",
     "caption": "Edith Ellen And Catherine",
-    "alt": "Edith Linnea Steele"
+    "alt": "Edith Linnea Steele",
+    "media_id": "M000014",
+    "category": "People"
   },
   {
     "file": "Edith Steele in middle life.png",
     "caption": "Edith Steele In Middle Life",
-    "alt": "Edith Linnea Steele"
+    "alt": "Edith Linnea Steele",
+    "media_id": "M000069",
+    "category": "People"
   },
   {
     "file": "Edith wearing a hat.png",
     "caption": "Edith Steele Wearing A Hat",
-    "alt": "Edith Linnea Steele"
+    "alt": "Edith Linnea Steele",
+    "media_id": "M000107",
+    "category": "People"
   },
   {
     "file": "Ediths high school diploma.png",
     "caption": "Edith's High School Diploma",
-    "alt": "Edith Linnea Steele"
+    "alt": "Edith Linnea Steele",
+    "media_id": "M000112",
+    "category": "Documents"
   },
   {
     "file": "Ediths postcard to Selma July 14 1953.png",
     "caption": "Ediths Postcard To Selma July 14 1953",
-    "alt": "Edith Linnea Steele"
+    "alt": "Edith Linnea Steele",
+    "media_id": "M000134",
+    "category": "Documents"
   },
   {
     "file": "Floyd and Edith, August 28th 1934.png",
     "caption": "Floyd And Edith, August 28th 1934",
-    "alt": "Edith Linnea Steele"
+    "alt": "Edith Linnea Steele",
+    "media_id": "M000243",
+    "category": "People"
   },
   {
     "file": "Selma Ellen Edith and Helga.png",
     "caption": "Selma, Ellen, Edith, And Helga",
-    "alt": "Edith Linnea Steele"
+    "alt": "Edith Linnea Steele",
+    "media_id": "M000176",
+    "category": "People"
   }
 ]

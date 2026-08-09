@@ -2,36 +2,50 @@
   {
     "file": "portrait.png",
     "caption": "Ellen, Circa 1931",
-    "alt": "Ellen Steele"
+    "alt": "Ellen Steele",
+    "media_id": "M000104",
+    "category": "People"
   },
   {
     "file": "Edith Ellen and Catherine.png",
     "caption": "Edith, Ellen, And Catherine",
-    "alt": "Ellen Steele"
+    "alt": "Ellen Steele",
+    "media_id": "M000014",
+    "category": "People"
   },
   {
     "file": "Ellen Helga Nelly Selma Edith clockwise from left.png",
     "caption": "Ellen, Helga, Nelly, Selma, And Edith (Clockwise From Left)",
-    "alt": "Ellen Steele"
+    "alt": "Ellen Steele",
+    "media_id": "M000002",
+    "category": "People"
   },
   {
     "file": "Ellen Steele later in life.png",
     "caption": "Ellen Steele Later In Life",
-    "alt": "Ellen Steele"
+    "alt": "Ellen Steele",
+    "media_id": "M000140",
+    "category": "People"
   },
   {
     "file": "Ellen Steeles house in Alta.png",
     "caption": "Ellen Steele's House In Alta",
-    "alt": "Ellen Steele"
+    "alt": "Ellen Steele",
+    "media_id": "M000128",
+    "category": "Places"
   },
   {
-    "file": "Ellen Steels headstone.png",
-    "caption": "Ellen Steel's Headstone",
-    "alt": "Ellen Steele"
+    "file": "Ellen_Steele_gravestone.png",
+    "caption": "Ellen Steele Gravestone",
+    "alt": "Ellen Steele",
+    "media_id": "M000058",
+    "category": "Gravestones"
   },
   {
     "file": "Selma Ellen Edith and Helga.png",
     "caption": "Selma, Ellen, Edith, And Helga",
-    "alt": "Ellen Steele"
+    "alt": "Ellen Steele",
+    "media_id": "M000176",
+    "category": "People"
   }
 ]

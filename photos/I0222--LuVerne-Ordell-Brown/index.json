@@ -2,6 +2,15 @@
   {
     "file": "portrait.png",
     "caption": "Portrait",
-    "alt": "LuVerne Brown"
+    "alt": "LuVerne Brown",
+    "media_id": "M000066",
+    "category": "People"
+  },
+  {
+    "file": "LuVerne_Brown_gravestone.jpg",
+    "caption": "Luverne Brown Gravestone",
+    "alt": "LuVerne Ordell Brown",
+    "media_id": "M000015",
+    "category": "Gravestones"
   }
 ]

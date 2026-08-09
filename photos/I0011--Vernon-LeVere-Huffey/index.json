@@ -2,21 +2,29 @@
   {
     "file": "portrait.png",
     "caption": "Vernon As Young Adult",
-    "alt": "Vernon Levere Huffey"
+    "alt": "Vernon Levere Huffey",
+    "media_id": "M000198",
+    "category": "People"
   },
   {
     "file": "Vernon and Marian in later life.png",
     "caption": "Vernon And Marian In Later Life",
-    "alt": "Vernon LeVere Huffey"
+    "alt": "Vernon LeVere Huffey",
+    "media_id": "M000050",
+    "category": "People"
   },
   {
     "file": "Vernon in later life.png",
     "caption": "Vernon In Later Life",
-    "alt": "Vernon LeVere Huffey"
+    "alt": "Vernon LeVere Huffey",
+    "media_id": "M000257",
+    "category": "People"
   },
   {
     "file": "Vernon in middle life.png",
     "caption": "Vernon In Middle Life",
-    "alt": "Vernon Levere Huffey"
+    "alt": "Vernon Levere Huffey",
+    "media_id": "M000159",
+    "category": "People"
   }
 ]

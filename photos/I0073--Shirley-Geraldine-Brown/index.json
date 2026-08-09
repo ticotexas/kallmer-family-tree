@@ -2,6 +2,15 @@
   {
     "file": "portrait.png",
     "caption": "Portrait",
-    "alt": "Shirley Geraldine Brown"
+    "alt": "Shirley Geraldine Brown",
+    "media_id": "M000191",
+    "category": "People"
+  },
+  {
+    "file": "Shirley_Brown_gravestone.jpg",
+    "caption": "Shirley Brown Gravestone",
+    "alt": "Shirley Geraldine Brown",
+    "media_id": "M000015",
+    "category": "Gravestones"
   }
 ]

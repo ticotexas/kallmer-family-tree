@@ -2,11 +2,15 @@
   {
     "file": "portrait.png",
     "caption": "Portrait",
-    "alt": "Donald Anton Proett"
+    "alt": "Donald Anton Proett",
+    "media_id": "M000188",
+    "category": "People"
   },
   {
-    "file": "Donald_Proett_headstone.jpg",
-    "caption": "Donald Proett Headstone",
-    "alt": "Donald Anton Proett"
+    "file": "Donald_Proett_gravestone.jpg",
+    "caption": "Donald Proett Gravestone",
+    "alt": "Donald Anton Proett",
+    "media_id": "M000157",
+    "category": "Gravestones"
   }
 ]

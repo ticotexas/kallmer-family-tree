@@ -2,6 +2,15 @@
   {
     "file": "portrait.png",
     "caption": "Portrait",
-    "alt": "Catherine Gordon"
+    "alt": "Catherine Gordon",
+    "media_id": "M000047",
+    "category": "People"
+  },
+  {
+    "file": "Catherine_Gordon_gravestone.jpg",
+    "caption": "Catherine Gordon Gravestone",
+    "alt": "Catherine Gordon",
+    "media_id": "M000001",
+    "category": "Gravestones"
   }
 ]

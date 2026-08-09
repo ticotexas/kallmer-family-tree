@@ -2,11 +2,15 @@
   {
     "file": "portrait.png",
     "caption": "Portrait",
-    "alt": "Helen Urban"
+    "alt": "Helen Urban",
+    "media_id": "M000051",
+    "category": "People"
   },
   {
     "file": "Helen_McGrail_gravestone.jpg",
     "caption": "Helen McGrail Gravestone",
-    "alt": "Helen Christine McGrail"
+    "alt": "Helen Christine McGrail",
+    "media_id": "M000018",
+    "category": "Gravestones"
   }
 ]

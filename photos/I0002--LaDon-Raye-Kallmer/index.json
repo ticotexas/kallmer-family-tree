@@ -2,21 +2,29 @@
   {
     "file": "portrait.png",
     "caption": "LaDon In Senior Picture",
-    "alt": "LaDon Raye Huffey"
+    "alt": "LaDon Raye Huffey",
+    "media_id": "M000230",
+    "category": "People"
   },
   {
     "file": "Bill LaDon Tim and Cherlyn 1978.png",
     "caption": "Bill, LaDon, Tim, And Cherlyn, 1978",
-    "alt": "LaDon Raye Kallmer"
+    "alt": "LaDon Raye Kallmer",
+    "media_id": "M000136",
+    "category": "People"
   },
   {
     "file": "LaDon as young adult.png",
     "caption": "Ladon As Young Adult",
-    "alt": "LaDon Raye Huffey"
+    "alt": "LaDon Raye Huffey",
+    "media_id": "M000071",
+    "category": "People"
   },
   {
     "file": "Tim LaDon and Bill Christmas 1969.png",
     "caption": "Tim Ladon And Bill Christmas 1969",
-    "alt": "LaDon Raye Kallmer"
+    "alt": "LaDon Raye Kallmer",
+    "media_id": "M000139",
+    "category": "People"
   }
 ]

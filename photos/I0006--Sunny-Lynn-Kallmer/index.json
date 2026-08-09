@@ -2,31 +2,43 @@
   {
     "file": "portrait.png",
     "caption": "Portrait",
-    "alt": "Sunny Lynn Urban"
+    "alt": "Sunny Lynn Urban",
+    "media_id": "M000025",
+    "category": "People"
   },
   {
     "file": "Sunny as young adult (2).png",
     "caption": "Sunny As Young Adult (2)",
-    "alt": "Sunny Lynn Urban"
+    "alt": "Sunny Lynn Urban",
+    "media_id": "M000215",
+    "category": "People"
   },
   {
     "file": "Sunny as young adult.png",
     "caption": "Sunny As Young Adult",
-    "alt": "Sunny Lynn Urban"
+    "alt": "Sunny Lynn Urban",
+    "media_id": "M000120",
+    "category": "People"
   },
   {
     "file": "Sunny in senior picture (2).png",
     "caption": "Sunny In Senior Picture (2)",
-    "alt": "Sunny Lynn Kallmer"
+    "alt": "Sunny Lynn Kallmer",
+    "media_id": "M000186",
+    "category": "People"
   },
   {
     "file": "Sunny in senior picture.png",
     "caption": "Sunny In Senior Picture",
-    "alt": "Sunny Lynn Urban"
+    "alt": "Sunny Lynn Urban",
+    "media_id": "M000160",
+    "category": "People"
   },
   {
     "file": "Sunny wedding photo.png",
     "caption": "Sunny Wedding Photo",
-    "alt": "Sunny Lynn Urban"
+    "alt": "Sunny Lynn Urban",
+    "media_id": "M000085",
+    "category": "People"
   }
 ]

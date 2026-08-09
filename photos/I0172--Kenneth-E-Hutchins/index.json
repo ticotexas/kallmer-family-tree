@@ -2,11 +2,15 @@
   {
     "file": "Kenneth employee profile, circa 1969.png",
     "caption": "Kenneth Employee Profile, Circa 1969",
-    "alt": "Kenneth E Hutchins"
+    "alt": "Kenneth E Hutchins",
+    "media_id": "M000079",
+    "category": "Documents"
   },
   {
-    "file": "Kenneth_gravestone.jpeg",
+    "file": "Kenneth_gravestone.jpg",
     "caption": "Kenneth Gravestone",
-    "alt": "Kenneth E Hutchins"
+    "alt": "Kenneth E. Hutchins",
+    "media_id": "M000151",
+    "category": "Gravestones"
   }
 ]

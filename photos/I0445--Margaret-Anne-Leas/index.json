@@ -2,11 +2,15 @@
   {
     "file": "Anna_Leas_gravestone_01.jpg",
     "caption": "Anna Leas Gravestone 01",
-    "alt": "Margaret Anne Leas"
+    "alt": "Margaret Anne Leas",
+    "media_id": "M000227",
+    "category": "Gravestones"
   },
   {
     "file": "Anna_Leas_gravestone_02.jpg",
     "caption": "Anna Leas Gravestone 02",
-    "alt": "Margaret Anne Leas"
+    "alt": "Margaret Anne Leas",
+    "media_id": "M000065",
+    "category": "Gravestones"
   }
 ]

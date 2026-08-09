@@ -2,16 +2,22 @@
   {
     "file": "portrait as young adult.png",
     "caption": "Portrait As Young Adult",
-    "alt": "Marian Elizabeth Lepa"
+    "alt": "Marian Elizabeth Lepa",
+    "media_id": "M000090",
+    "category": "People"
   },
   {
     "file": "Marian in later life.png",
     "caption": "Marian Later In Life",
-    "alt": "Marian Elizabeth Lepa"
+    "alt": "Marian Elizabeth Lepa",
+    "media_id": "M000201",
+    "category": "People"
   },
   {
     "file": "Vernon and Marian in later life.png",
     "caption": "Vernon And Marian In Later Life",
-    "alt": "Marian Elizabeth Huffey"
+    "alt": "Marian Elizabeth Huffey",
+    "media_id": "M000050",
+    "category": "People"
   }
 ]

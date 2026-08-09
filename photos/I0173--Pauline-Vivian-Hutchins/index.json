@@ -2,11 +2,29 @@
   {
     "file": "portrait.png",
     "caption": "Pauline Later In Life",
-    "alt": "Pauline V Haser"
+    "alt": "Pauline V Haser",
+    "media_id": "M000220",
+    "category": "People"
   },
   {
-    "file": "pauline_gravestone.jpeg",
+    "file": "Pauline as young adult.png",
+    "caption": "Pauline As Young Adult",
+    "alt": "Pauline Vivian Hutchins",
+    "media_id": "M000054",
+    "category": "People"
+  },
+  {
+    "file": "Pauline in later life.png",
+    "caption": "Pauline In Later Life",
+    "alt": "Pauline Vivian Hutchins",
+    "media_id": "M000132",
+    "category": "People"
+  },
+  {
+    "file": "pauline_gravestone.jpg",
     "caption": "Pauline Gravestone",
-    "alt": "Pauline Vivian Hutchins"
+    "alt": "Pauline Vivian Hutchins",
+    "media_id": "M000022",
+    "category": "Gravestones"
   }
 ]

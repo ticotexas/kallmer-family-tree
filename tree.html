@@ -397,6 +397,65 @@
       border: 1px solid var(--brass);
     }
 
+    .media-accordion {
+      margin: 14px 0 18px;
+      border-top: 1px solid rgba(176, 141, 63, 0.55);
+      border-bottom: 1px solid rgba(176, 141, 63, 0.55);
+    }
+
+    .media-section + .media-section {
+      border-top: 1px solid rgba(176, 141, 63, 0.3);
+    }
+
+    .media-section-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 2px;
+      border: 0;
+      background: transparent;
+      color: var(--brass);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: 0.06em;
+      text-align: left;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .media-section-toggle:hover,
+    .media-section-toggle:focus {
+      color: var(--paper);
+      outline: none;
+    }
+
+    .media-section-triangle {
+      width: 0.9em;
+      flex: 0 0 0.9em;
+      color: var(--prairie-sage);
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+
+    .media-section-count {
+      margin-left: auto;
+      color: #b7c69f;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .media-section-content {
+      display: none;
+      padding: 2px 0 14px;
+    }
+
+    .media-section.open .media-section-content {
+      display: block;
+    }
+
     .photo-gallery {
       display: none;
     }
@@ -876,6 +935,7 @@
       <p id="detail-nickname" class="detail-birth-name"></p>
       <p id="detail-birth-name" class="detail-birth-name"></p>
       <p class="mono" id="detail-dates"></p>
+      <div id="detail-birth-place"></div>
       <div id="detail-photo"></div>
       <div id="detail-place"></div>
       <div id="detail-story"></div>
@@ -1778,7 +1838,9 @@
                 return {
                   file: entry,
                   caption: "",
-                  alt: ""
+                  alt: "",
+                  mediaId: "",
+                  category: "People"
                 };
               }
 
@@ -1795,10 +1857,52 @@
               return {
                 file,
                 caption: entry.caption || "",
-                alt: entry.alt || ""
+                alt: entry.alt || "",
+                mediaId: entry.media_id || "",
+                category: entry.category || "People"
               };
             })
             .filter(Boolean);
+        }
+
+        const MEDIA_CATEGORY_ORDER = [
+          "People",
+          "Documents",
+          "Gravestones",
+          "Artifacts",
+          "Places"
+        ];
+
+        const MEDIA_CATEGORY_LABELS = {
+          People: "Photos",
+          Documents: "Documents & Records",
+          Gravestones: "Gravestones",
+          Artifacts: "Artifacts",
+          Places: "Places"
+        };
+
+        function groupMediaByCategory(mediaItems) {
+          const groups = new Map();
+
+          mediaItems.forEach(item => {
+            const category = MEDIA_CATEGORY_LABELS[item.category]
+              ? item.category
+              : "People";
+
+            if (!groups.has(category)) {
+              groups.set(category, []);
+            }
+
+            groups.get(category).push(item);
+          });
+
+          return MEDIA_CATEGORY_ORDER
+            .filter(category => groups.has(category))
+            .map(category => ({
+              category,
+              label: MEDIA_CATEGORY_LABELS[category],
+              items: groups.get(category)
+            }));
         }
 
         async function loadPhotoGallery(person) {
@@ -1807,7 +1911,7 @@
 
           photoDiv.innerHTML = "";
 
-          let photos = [];
+          let mediaItems = [];
 
           try {
             const response = await fetch(
@@ -1815,10 +1919,10 @@
             );
 
             if (response.ok) {
-              photos = normalizePhotoEntries(await response.json());
+              mediaItems = normalizePhotoEntries(await response.json());
             }
           } catch {
-            photos = [];
+            mediaItems = [];
           }
 
           if (requestId !== photoGalleryRequest) {
@@ -1826,141 +1930,250 @@
           }
 
           // Existing portrait-only folders continue to work without index.json.
-          if (photos.length === 0) {
-            photos = [{
+          if (mediaItems.length === 0) {
+            mediaItems = [{
               file: "portrait.png",
               caption: "",
-              alt: person.name
+              alt: person.name,
+              mediaId: "",
+              category: "People"
             }];
           }
 
-          let currentIndex = 0;
+          const groups = groupMediaByCategory(mediaItems);
 
-          const gallery = document.createElement("div");
-          gallery.className = "photo-gallery";
-
-          const frame = document.createElement("div");
-          frame.className = "photo-frame";
-
-          const image = document.createElement("img");
-          image.className = "photo-gallery-image";
-
-          const controls = document.createElement("div");
-          controls.className = "photo-gallery-controls";
-
-          const previousButton = document.createElement("button");
-          previousButton.type = "button";
-          previousButton.className = "photo-gallery-button";
-          previousButton.setAttribute("aria-label", "Previous photo");
-          previousButton.textContent = "←";
-
-          const count = document.createElement("span");
-          count.className = "photo-gallery-count";
-
-          const nextButton = document.createElement("button");
-          nextButton.type = "button";
-          nextButton.className = "photo-gallery-button";
-          nextButton.setAttribute("aria-label", "Next photo");
-          nextButton.textContent = "→";
-
-          const caption = document.createElement("div");
-          caption.className = "photo-gallery-caption";
-
-          controls.append(previousButton, count, nextButton);
-          frame.appendChild(image);
-          gallery.append(frame, controls, caption);
-          photoDiv.appendChild(gallery);
-
-          function photoUrl(photo) {
-            const encodedFile = photo.file
-              .split("/")
-              .map(part => encodeURIComponent(part))
-              .join("/");
-
-            return `photos/${photoFolderFor(person.id)}/${encodedFile}`;
+          if (groups.length === 0) {
+            return;
           }
 
-          function renderPhoto() {
-            const photo = photos[currentIndex];
+          const accordion = document.createElement("div");
+          accordion.className = "media-accordion";
+          photoDiv.appendChild(accordion);
 
-            image.src = photoUrl(photo);
-            image.alt = photo.alt || photo.caption || person.name;
+          const categoryNouns = {
+            People: "Photo",
+            Documents: "Document",
+            Gravestones: "Gravestone",
+            Artifacts: "Artifact",
+            Places: "Place"
+          };
 
-            count.textContent = photos.length > 1
-              ? `Photo ${currentIndex + 1} of ${photos.length}`
-              : "Photo 1 of 1";
+          let openSection = null;
 
-            previousButton.disabled = photos.length < 2;
-            nextButton.disabled = photos.length < 2;
+          groups.forEach((group, groupIndex) => {
+            const section = document.createElement("section");
+            section.className = "media-section";
 
-            caption.textContent = photo.caption || "";
-            caption.style.display = photo.caption ? "block" : "none";
+            const toggle = document.createElement("button");
+            toggle.type = "button";
+            toggle.className = "media-section-toggle";
+            toggle.setAttribute("aria-expanded", "false");
 
-            if (
-              activeLightboxGallery
-              && activeLightboxGallery.personId === person.id
-            ) {
-              renderLightboxPhoto();
+            const triangle = document.createElement("span");
+            triangle.className = "media-section-triangle";
+            triangle.setAttribute("aria-hidden", "true");
+            triangle.textContent = "▸";
+
+            const label = document.createElement("span");
+            label.textContent = group.label;
+
+            const sectionCount = document.createElement("span");
+            sectionCount.className = "media-section-count";
+            sectionCount.textContent = group.items.length;
+
+            toggle.append(triangle, label, sectionCount);
+
+            const content = document.createElement("div");
+            content.className = "media-section-content";
+
+            const gallery = document.createElement("div");
+            gallery.className = "photo-gallery";
+
+            const frame = document.createElement("div");
+            frame.className = "photo-frame";
+
+            const image = document.createElement("img");
+            image.className = "photo-gallery-image";
+
+            const controls = document.createElement("div");
+            controls.className = "photo-gallery-controls";
+
+            const previousButton = document.createElement("button");
+            previousButton.type = "button";
+            previousButton.className = "photo-gallery-button";
+            previousButton.setAttribute(
+              "aria-label",
+              `Previous ${categoryNouns[group.category].toLowerCase()}`
+            );
+            previousButton.textContent = "←";
+
+            const count = document.createElement("span");
+            count.className = "photo-gallery-count";
+
+            const nextButton = document.createElement("button");
+            nextButton.type = "button";
+            nextButton.className = "photo-gallery-button";
+            nextButton.setAttribute(
+              "aria-label",
+              `Next ${categoryNouns[group.category].toLowerCase()}`
+            );
+            nextButton.textContent = "→";
+
+            const caption = document.createElement("div");
+            caption.className = "photo-gallery-caption";
+
+            controls.append(previousButton, count, nextButton);
+            frame.appendChild(image);
+            gallery.append(frame, controls, caption);
+            content.appendChild(gallery);
+            section.append(toggle, content);
+            accordion.appendChild(section);
+
+            let currentIndex = 0;
+            const items = group.items;
+
+            function mediaUrl(item) {
+              const encodedFile = item.file
+                .split("/")
+                .map(part => encodeURIComponent(part))
+                .join("/");
+
+              return `photos/${photoFolderFor(person.id)}/${encodedFile}`;
             }
-          }
 
-          function showPreviousPhoto() {
-            currentIndex = (currentIndex - 1 + photos.length) % photos.length;
-            renderPhoto();
-          }
+            function renderMedia() {
+              const item = items[currentIndex];
+              const noun = categoryNouns[group.category];
 
-          function showNextPhoto() {
-            currentIndex = (currentIndex + 1) % photos.length;
-            renderPhoto();
-          }
+              image.src = mediaUrl(item);
+              image.alt = item.alt || item.caption || person.name;
 
-          previousButton.onclick = showPreviousPhoto;
-          nextButton.onclick = showNextPhoto;
+              count.textContent =
+                `${noun} ${currentIndex + 1} of ${items.length}`;
 
-          image.tabIndex = 0;
-          image.setAttribute("role", "button");
-          image.setAttribute("aria-label", "Open full-size photo");
+              previousButton.disabled = items.length < 2;
+              nextButton.disabled = items.length < 2;
 
-          image.onclick = () => {
-            openPhotoLightbox({
-              personId: person.id,
-              personName: person.name,
-              photos,
-              getCurrentIndex: () => currentIndex,
-              previous: showPreviousPhoto,
-              next: showNextPhoto,
-              photoUrl
-            });
-          };
+              caption.textContent = item.caption || "";
+              caption.style.display = item.caption ? "block" : "none";
 
-          image.onkeydown = event => {
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              image.click();
+              if (
+                activeLightboxGallery
+                && activeLightboxGallery.personId === person.id
+              ) {
+                renderLightboxPhoto();
+              }
             }
-          };
 
-          image.onload = () => {
-            gallery.classList.add("has-photo");
-          };
+            function showPreviousMedia() {
+              currentIndex = (currentIndex - 1 + items.length) % items.length;
+              renderMedia();
+            }
 
-          image.onerror = () => {
-            // If a listed gallery image is missing, skip it when possible.
-            if (photos.length > 1) {
-              photos.splice(currentIndex, 1);
+            function showNextMedia() {
+              currentIndex = (currentIndex + 1) % items.length;
+              renderMedia();
+            }
 
-              if (currentIndex >= photos.length) {
-                currentIndex = 0;
+            function setSectionOpen(shouldOpen) {
+              if (shouldOpen) {
+                if (openSection && openSection !== section) {
+                  openSection.classList.remove("open");
+
+                  const otherToggle =
+                    openSection.querySelector(".media-section-toggle");
+                  const otherTriangle =
+                    openSection.querySelector(".media-section-triangle");
+
+                  if (otherToggle) {
+                    otherToggle.setAttribute("aria-expanded", "false");
+                  }
+
+                  if (otherTriangle) {
+                    otherTriangle.textContent = "▸";
+                  }
+                }
+
+                section.classList.add("open");
+                toggle.setAttribute("aria-expanded", "true");
+                triangle.textContent = "▾";
+                openSection = section;
+              } else {
+                section.classList.remove("open");
+                toggle.setAttribute("aria-expanded", "false");
+                triangle.textContent = "▸";
+
+                if (openSection === section) {
+                  openSection = null;
+                }
+              }
+            }
+
+            toggle.onclick = () => {
+              setSectionOpen(!section.classList.contains("open"));
+            };
+
+            previousButton.onclick = showPreviousMedia;
+            nextButton.onclick = showNextMedia;
+
+            image.tabIndex = 0;
+            image.setAttribute("role", "button");
+            image.setAttribute(
+              "aria-label",
+              `Open full-size ${categoryNouns[group.category].toLowerCase()}`
+            );
+
+            image.onclick = () => {
+              openPhotoLightbox({
+                personId: person.id,
+                personName: person.name,
+                photos: items,
+                getCurrentIndex: () => currentIndex,
+                previous: showPreviousMedia,
+                next: showNextMedia,
+                photoUrl: mediaUrl
+              });
+            };
+
+            image.onkeydown = event => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                image.click();
+              }
+            };
+
+            image.onload = () => {
+              gallery.classList.add("has-photo");
+            };
+
+            image.onerror = () => {
+              if (items.length > 1) {
+                items.splice(currentIndex, 1);
+
+                if (currentIndex >= items.length) {
+                  currentIndex = 0;
+                }
+
+                sectionCount.textContent = items.length;
+                renderMedia();
+                return;
               }
 
-              renderPhoto();
-              return;
+              section.remove();
+
+              if (openSection === section) {
+                openSection = null;
+              }
+            };
+
+            renderMedia();
+
+            // Photos are first in category order when present. Otherwise the
+            // first available media category opens automatically.
+            if (groupIndex === 0) {
+              setSectionOpen(true);
             }
-
-            gallery.remove();
-          };
-
-          renderPhoto();
+          });
         }
 
         function nicknameLabel(person) {
@@ -2044,9 +2257,10 @@
             document.getElementById("detail-dates").textContent = lifeDates(person);
             const place = displayPlace(birthPlace(person));
 
-            document.getElementById("detail-place").innerHTML = `
-              ${place ? `<p class="mono">Born: ${place}</p>` : ""}
+            document.getElementById("detail-birth-place").innerHTML =
+              place ? `<p class="mono">Born: ${place}</p>` : "";
 
+            document.getElementById("detail-place").innerHTML = `
               <h3>Parents</h3>
               <p>${namesFromIds(person.parents)}</p>
               ${exceptionalParentRelationshipLabel(person)

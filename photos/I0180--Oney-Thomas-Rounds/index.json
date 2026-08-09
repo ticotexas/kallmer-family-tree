@@ -2,16 +2,22 @@
   {
     "file": "Martha and Oney.png",
     "caption": "Martha and Oney",
-    "alt": "Oney Thomas Rounds"
+    "alt": "Oney Thomas Rounds",
+    "media_id": "M000193",
+    "category": "People"
   },
   {
     "file": "Oney seated.png",
     "caption": "Oney Seated",
-    "alt": "Oney Thomas Rounds"
+    "alt": "Oney Thomas Rounds",
+    "media_id": "M000063",
+    "category": "People"
   },
   {
     "file": "Oney with glasses.png",
     "caption": "Oney with Glasses",
-    "alt": "Oney Thomas Rounds"
+    "alt": "Oney Thomas Rounds",
+    "media_id": "M000129",
+    "category": "People"
   }
 ]
