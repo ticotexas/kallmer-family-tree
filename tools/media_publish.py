@@ -250,11 +250,29 @@ def build_publish_plan(
         record, people, website_root / "photos", filename
     )
 
+    publication = record.get("publication", {})
     tracked = tracked_generated_files(record)
-    if tracked:
+    legacy = publication.get("legacy_website_files", [])
+
+    covered_people = {
+        item.get("person_id")
+        for item in [*tracked, *legacy]
+        if isinstance(item, dict) and item.get("person_id")
+    }
+
+    already_published = [
+        target for target in targets
+        if target["person_id"] in covered_people
+    ]
+    targets = [
+        target for target in targets
+        if target["person_id"] not in covered_people
+    ]
+
+    if not targets:
         raise SystemExit(
-            f"ERROR: {record['id']} already has catalog-tracked generated website files. "
-            "Refusing a second publish."
+            f"ERROR: {record['id']} is already published for all associated people; "
+            "nothing to publish."
         )
 
     for item in targets:
@@ -268,6 +286,7 @@ def build_publish_plan(
         "record": record,
         "master": master,
         "targets": targets,
+        "already_published": already_published,
     }
 
 
@@ -338,6 +357,15 @@ def print_plan(plan: dict, apply: bool) -> None:
     if action == "publish":
         print("Master:", plan["master"])
         print()
+        already_published = plan.get("already_published", [])
+        if already_published:
+            print("Already published:")
+            for target in already_published:
+                print(
+                    f"  {target['person_id']}  {target['person_name']}"
+                )
+            print()
+
         print("Website copies to create:")
         for target in plan["targets"]:
             print(
@@ -392,8 +420,10 @@ def apply_publish(
         run_index_builder(website_root)
 
         publication = updated_record.setdefault("publication", {})
-        publication["state"] = publication_state_for_count(len(plan["targets"]))
-        publication["website_files"] = [
+        existing_generated = publication.get("website_files", [])
+        legacy = publication.setdefault("legacy_website_files", [])
+
+        new_generated = [
             {
                 "path": target["relative_path"],
                 "person_id": target["person_id"],
@@ -402,7 +432,15 @@ def apply_publish(
             }
             for target in plan["targets"]
         ]
-        publication.setdefault("legacy_website_files", [])
+
+        publication["website_files"] = existing_generated + new_generated
+
+        published_people = {
+            item.get("person_id")
+            for item in [*publication["website_files"], *legacy]
+            if isinstance(item, dict) and item.get("person_id")
+        }
+        publication["state"] = publication_state_for_count(len(published_people))
 
         atomic_write_json(catalog_path, updated)
 
