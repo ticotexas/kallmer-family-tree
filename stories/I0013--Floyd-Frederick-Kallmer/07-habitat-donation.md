@@ -1,10 +1,8 @@
-# Floyd Kallmer and Habitat for Humanity
-
 ## Doing His Part
 
 By the spring of 2000, Floyd Kallmer was 93 years old, long retired, and just over a year removed from selling the house at 427 Geneseo Street where he and two wives had raised a family and hosted the better part of a century's worth of Storm Lake gatherings. He and Dorcas were settled into independent living at Methodist Manor. He had, by any reasonable measure, earned the right to simply rest.
 
-Instead, the *Storm Lake Times* found him doing something else entirely — writing a check to Habitat for Humanity. The paper ran a short item on April 1, 2000, under a headline that could double as a description of the man himself:
+Instead, the _Storm Lake Times_ found him doing something else entirely — writing a check to Habitat for Humanity. The paper ran a short item on April 1, 2000, under a headline that could double as a description of the man himself:
 
 > "Kallmer donates to Habitat cause. Floyd Kallmer is doing his part to build a better world. Kallmer recently joined donors and volunteers who are... Now retired, Kallmer owned an appliance store called Kallmer Sales and is a long-time resident of Storm Lake. Kallmer is pleased with the good things Habitat [is doing]..."
 

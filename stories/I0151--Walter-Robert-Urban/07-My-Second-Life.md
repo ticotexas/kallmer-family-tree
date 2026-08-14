@@ -46,4 +46,6 @@ At the present time we are talking about downsizing, but talking about it is as 
 
 As of August 2026, we remain in pretty good health and will probably remain here at home until that changes.
 
+After a number of decades leaning toward vegetarianism, about three or four years ago I converted pretty much completely and admire those people who can eat vegan. I don't eat eggs and I'm trying to avoid dairy products but my god, cheese is everywhere.
+
 _Bob Urban_

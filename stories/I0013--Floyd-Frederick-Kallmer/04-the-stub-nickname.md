@@ -1,5 +1,3 @@
-# The Story Behind the Nickname
-
 ## A Misleading Stature
 
 If we were to ask you how Floyd Kallmer the appliance man, acquired his nickname of "Stub" you'd probably never guess. It wasn't because of his somewhat diminutive stature, although that would be a logical conclusion.

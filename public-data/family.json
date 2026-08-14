@@ -724,7 +724,7 @@
     {
       "id": "I0016",
       "name": "Robert Clyde Kallmer",
-      "nickname": "",
+      "nickname": "Bob",
       "birth_name": "Robert Clyde Kallmer",
       "alternate_names": [],
       "gender": "M",
@@ -765,7 +765,7 @@
     {
       "id": "I0017",
       "name": "James Steele Kallmer",
-      "nickname": "",
+      "nickname": "Jim",
       "birth_name": "James Steele Kallmer",
       "alternate_names": [],
       "gender": "M",
@@ -3484,12 +3484,12 @@
     },
     {
       "id": "I0075",
-      "name": "Gretta Jean Lockhart",
+      "name": "Greta Jean Lockhart",
       "nickname": "",
-      "birth_name": "Gretta Jean Huffey",
+      "birth_name": "Greta Jean Huffey",
       "alternate_names": [
         {
-          "name": "Gretta Jean Huffey",
+          "name": "Greta Jean Huffey",
           "type": "birth"
         }
       ],
@@ -9847,7 +9847,7 @@
       "id": "I0231",
       "name": "Lillian Bertha Huffey",
       "nickname": "",
-      "birth_name": "Lillian Bertha Huffey",
+      "birth_name": "Lillian Bertha Crouse",
       "alternate_names": [
         {
           "name": "Lillian Bertha Crouse",
@@ -16674,11 +16674,11 @@
       "alternate_names": [],
       "gender": "M",
       "living": false,
-      "birth": "1871",
-      "death": "1947",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
+      "birth": "5 MAR 1871",
+      "death": "5 DEC 1947",
+      "place": "Lexington, Dawson, Nebraska",
+      "birth_place": "Hermann, Gasconade, Missouri",
+      "death_place": "Lexington, Dawson, Nebraska",
       "parents": [],
       "spouses": [
         "I0411"
@@ -16731,22 +16731,26 @@
     },
     {
       "id": "I0411",
-      "name": "Dena Louisa Frederica Proett",
+      "name": "Dena Louise Proett",
       "nickname": "",
-      "birth_name": "Dena Louisa Frederica Frerking",
+      "birth_name": "Dena Louise Frederica Frerking",
       "alternate_names": [
         {
-          "name": "Dena Louisa Frederica Frerking",
+          "name": "Dena Louise Frederica Frerking",
           "type": "birth"
+        },
+        {
+          "name": "Dena Louisa Proett",
+          "type": "aka"
         }
       ],
       "gender": "F",
       "living": false,
-      "birth": "1884",
-      "death": "1981",
-      "place": "",
-      "birth_place": "",
-      "death_place": "",
+      "birth": "10 JAN 1884",
+      "death": "14 MAR 1981",
+      "place": "Pasadena, Los Angeles, California",
+      "birth_place": "Chicago, Cook, Illinois",
+      "death_place": "Pasadena, Los Angeles, California",
       "parents": [],
       "spouses": [
         "I0410"

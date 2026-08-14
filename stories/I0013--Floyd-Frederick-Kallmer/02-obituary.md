@@ -1,5 +1,3 @@
-# Obituary of Floyd F. "Stub" Kallmer
-
 Funeral services for Floyd F. Kallmer were held Friday, Feb. 2, 2001 at St. Mary's Catholic Church in Storm Lake with Father Robert J. Schimmer officiating. Prayer was given by Rev. Duane Queen.
 
 Music was provided by St. Mary's Choir and Jeanette Hinkeldey, organist. Maxine Zubradt and Maxine Lenz were in charge of flowers. Honorary attendants were Bill Roggow, Dr. Robert Mailliard, Bill Johnson, Claude Thompson, Rollin Sievers and Jerry Seiler. Active attendants were Tim Kallmer, Josh Kallmer, Brent Kallmer, Brent Humburg, Jim Faust and Bob Lovstad.

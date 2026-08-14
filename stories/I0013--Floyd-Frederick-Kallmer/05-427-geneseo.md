@@ -1,8 +1,6 @@
-# 427 Geneseo Street
-
 ## The House Floyd Bought
 
-In February 1936, Floyd F. "Stub" Kallmer and his young wife, Edith, bought a house from J.B. Prentice at 427 Geneseo Street in Storm Lake. The *Storm Lake Register* took note, as the paper did of most everything in those days:
+In February 1936, Floyd F. "Stub" Kallmer and his young wife, Edith, bought a house from J.B. Prentice at 427 Geneseo Street in Storm Lake. The _Storm Lake Register_ took note, as the paper did of most everything in those days:
 
 > "Floyd Kallmer, of the Kallmer Satterlee company, has purchased the [Prentice] house... Mr. and Mrs. Kallmer will move to that location March 1."
 
@@ -18,7 +16,7 @@ When Edith died of cancer in May 1957, Floyd stayed on at Geneseo Street. He rem
 
 ## The Anchor of the Archive
 
-Read enough of the *Pilot Tribune* and the *Register* across the twentieth century, and 427 Geneseo Street starts to feel less like an address and more like a character in its own right. It is where relatives from Baltimore, Seattle, Omaha, and later Thailand and the Middle East wrote home to. It is where grandchildren — including Tim, on his first solo bus ride from Omaha at age ten in the summer of 1979 — came to stay. It is the return address on the family's travels: the Alaska road trip of 1971, the two-month, 7,000-mile drive through Mexico in 1973, the winters in Tucson and Lake Havasu.
+Read enough of the _Pilot Tribune_ and the _Register_ across the twentieth century, and 427 Geneseo Street starts to feel less like an address and more like a character in its own right. It is where relatives from Baltimore, Seattle, Omaha, and later Thailand and the Middle East wrote home to. It is where grandchildren — including Tim, on his first solo bus ride from Omaha at age ten in the summer of 1979 — came to stay. It is the return address on the family's travels: the Alaska road trip of 1971, the two-month, 7,000-mile drive through Mexico in 1973, the winters in Tucson and Lake Havasu.
 
 ## Downsizing, Around 1999
 
@@ -26,6 +24,6 @@ Floyd and Dorcas finally sold the house around 1999, well into their nineties an
 
 ## The House's Last Chapter
 
-The house itself outlived the family's ownership of it by only about a decade. By the time of a January 2011 fire, 427 Geneseo had passed out of Kallmer hands and was owned by a lady of Fremont, Nebraska, rented to a local family. In the early hours of Saturday, January 1, 2011, an electrical short in the northwest corner of the second floor started a blaze while seven people — including four children between the ages of two and seven — were asleep inside. The mother woke to the smell of smoke and popping sounds and got everyone out safely; a Storm Lake firefighter was injured fighting the blaze and taken to Buena Vista Regional Medical Center. The *Pilot Tribune* put the damage at roughly $30,000.
+The house itself outlived the family's ownership of it by only about a decade. By the time of a January 2011 fire, 427 Geneseo had passed out of Kallmer hands and was owned by a lady of Fremont, Nebraska, rented to a local family. In the early hours of Saturday, January 1, 2011, an electrical short in the northwest corner of the second floor started a blaze while seven people — including four children between the ages of two and seven — were asleep inside. The mother woke to the smell of smoke and popping sounds and got everyone out safely; a Storm Lake firefighter was injured fighting the blaze and taken to Buena Vista Regional Medical Center. The _Pilot Tribune_ put the damage at roughly $30,000.
 
 It was a strange and quiet postscript to a house that had spent 63 years as the fixed point of the Kallmer family's story — the address on the letters, the return stop after every road trip, the place three sons left from and came home to. By the time it burned, none of that history was visible to anyone standing on Geneseo Street. But for the family, the house at 427 Geneseo remains, in every sense that matters to this record, the Kallmer home place.

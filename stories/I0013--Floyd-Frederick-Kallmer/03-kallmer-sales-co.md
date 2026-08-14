@@ -1,10 +1,8 @@
-# Kallmer Sales Co.
-
 ## From Firestone Tires to Frigidaires
 
 Before there was a Kallmer Sales Co., there was a young man learning the retail trade the hard way. Floyd "Stub" Kallmer graduated from Buena Vista College around 1930 and went to work for Firestone, running the tire company's retail store in Corpus Christi, Texas, before transferring to the service store in Sioux City. On January 1, 1934, he joined Frigidaire in Sioux City — and it was there that he decided to strike out on his own.
 
-The *Storm Lake Register* announced the new venture on March 13, 1934:
+The _Storm Lake Register_ announced the new venture on March 13, 1934:
 
 > "Stub Kallmer Takes Frigidaire Franchise Here. Floyd (Stub) Kallmer, former Buena Vista college athlete and graduate... known as Kallmer Dinges and will sell Frigidaires in Storm Lake. They will be located at 625 Erie street, four doors south of the Storm Lake library... Stub has been with Firestone since graduating from Buena Vista."
 
@@ -18,7 +16,7 @@ As his son, Jim, later put it, Floyd was a successful retailer of home appliance
 
 The business grew quickly through the 1930s. By June 1934 it was branching into furnace and heating equipment as a Delco dealer, and by the following year the shop had added Campbell furnaces to its Frigidaire line. Floyd bought out his aunt's share of the partnership in March 1935, and the operation was renamed simply **Kallmer Sales Company**, first at 521 Michigan Avenue and, by the late 1940s, at 109 West Fifth Street — the address most Storm Lake residents would remember for the next twenty years.
 
-For a small-city appliance dealer, the business had staying power. It weathered the Depression, World War II shortages, and the postwar appliance boom, becoming one of those fixtures — like the bank or the drugstore — that simply belonged to Storm Lake. Floyd advertised relentlessly in the *Pilot Tribune* and the *Register*, ran cooking-school demonstrations for new Frigidaires, and became a familiar face at Kiwanis and Elks Lodge functions around town.
+For a small-city appliance dealer, the business had staying power. It weathered the Depression, World War II shortages, and the postwar appliance boom, becoming one of those fixtures — like the bank or the drugstore — that simply belonged to Storm Lake. Floyd advertised relentlessly in the _Pilot Tribune_ and the _Register_, ran cooking-school demonstrations for new Frigidaires, and became a familiar face at Kiwanis and Elks Lodge functions around town.
 
 ## The 25th Anniversary
 
@@ -30,6 +28,6 @@ Twenty-five years earlier, Floyd had been a 27-year-old Firestone employee with 
 
 ## Passing It On
 
-Floyd kept the business going for nearly nine more years after the anniversary, but ill health eventually caught up with him. In the fall of 1967, at age 60, he sold Kallmer Sales Company to Carl G. Peterson. The *Pilot Tribune* reported the sale on September 28, 1967, noting that the store had been "established almost 34 years ago" and tracing Floyd's roots all the way back to his father's bakery, "operated then by his father Andy Kallmer and his uncle... C.L. Satterlee."
+Floyd kept the business going for nearly nine more years after the anniversary, but ill health eventually caught up with him. In the fall of 1967, at age 60, he sold Kallmer Sales Company to Carl G. Peterson. The _Pilot Tribune_ reported the sale on September 28, 1967, noting that the store had been "established almost 34 years ago" and tracing Floyd's roots all the way back to his father's bakery, "operated then by his father Andy Kallmer and his uncle... C.L. Satterlee."
 
 Retirement didn't take. By April 1968, Floyd had joined Bill's TV & Appliance as a salesman — still selling appliances to the town he'd sold them to for over three decades, just under someone else's sign. He worked there for years afterward, a familiar face behind a different counter, before finally settling into the golf courses, fishing trips, and winters in Arizona that filled his later years.
