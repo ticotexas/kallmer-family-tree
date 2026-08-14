@@ -7,3 +7,7 @@ These guides cover routine archive operations. Software architecture and enginee
 ## Media
 
 - [Associate and Publish Existing Media](media/associate-and-publish-existing-media.md)
+
+## Stories
+
+- [Install Finished Stories](stories/install-finished-stories.md)
