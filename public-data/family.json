@@ -989,7 +989,7 @@
           "divorce_place": "Apache Junction, Arizona"
         }
       ],
-      "age": 75
+      "age": 76
     },
     {
       "id": "I0021",
@@ -1418,7 +1418,12 @@
       "name": "Jöns Persson",
       "nickname": "",
       "birth_name": "Jöns Persson",
-      "alternate_names": [],
+      "alternate_names": [
+        {
+          "name": "Jens Lersson",
+          "type": "aka"
+        }
+      ],
       "gender": "M",
       "living": false,
       "birth": "?",
@@ -2821,19 +2826,23 @@
     },
     {
       "id": "I0059",
-      "name": "Nelly Steele",
+      "name": "Nellie Nystrom",
       "nickname": "",
       "birth_name": "Nelly Stål",
       "alternate_names": [
         {
           "name": "Nelly Stål",
           "type": "birth"
+        },
+        {
+          "name": "Nellie Steele",
+          "type": "aka"
         }
       ],
       "gender": "F",
       "living": false,
       "birth": "11 JAN 1900",
-      "death": "?",
+      "death": "18 JUN 1971",
       "place": "",
       "birth_place": "",
       "death_place": "",
@@ -2842,7 +2851,9 @@
         "I0048"
       ],
       "spouses": [],
-      "children": [],
+      "children": [
+        "I0570"
+      ],
       "siblings": [
         "I0014",
         "I0057",
@@ -2851,7 +2862,9 @@
         "I0061",
         "I0062"
       ],
-      "families_as_spouse": [],
+      "families_as_spouse": [
+        "F0186"
+      ],
       "marriages": []
     },
     {
@@ -2954,7 +2967,12 @@
       "name": "Ingrid Aronsdotter",
       "nickname": "",
       "birth_name": "Ingrid Aronsdotter",
-      "alternate_names": [],
+      "alternate_names": [
+        {
+          "name": "Ingrid Perssan",
+          "type": "aka"
+        }
+      ],
       "gender": "F",
       "living": false,
       "birth": "23 AUG 1823",
@@ -7667,7 +7685,7 @@
           "divorce_place": ""
         }
       ],
-      "age": 58
+      "age": 59
     },
     {
       "id": "I0175",
@@ -16101,7 +16119,7 @@
       ],
       "families_as_spouse": [],
       "marriages": [],
-      "age": 41
+      "age": 42
     },
     {
       "id": "I0395",
@@ -16392,7 +16410,7 @@
           "divorce_place": ""
         }
       ],
-      "age": 55
+      "age": 56
     },
     {
       "id": "I0403",
@@ -16485,7 +16503,7 @@
       ],
       "families_as_spouse": [],
       "marriages": [],
-      "age": 24
+      "age": 25
     },
     {
       "id": "I0406",
@@ -17770,7 +17788,12 @@
       "name": "Glenn M. Hanson",
       "nickname": "",
       "birth_name": "Glenn M. Hanson",
-      "alternate_names": [],
+      "alternate_names": [
+        {
+          "name": "Glen Hanson",
+          "type": "aka"
+        }
+      ],
       "gender": "M",
       "living": false,
       "birth": "1922",
@@ -22815,6 +22838,28 @@
           "divorce_place": ""
         }
       ]
+    },
+    {
+      "id": "I0570",
+      "name": "Ellsworth Nystrom",
+      "nickname": "",
+      "birth_name": "Ellsworth Nystrom",
+      "alternate_names": [],
+      "gender": "M",
+      "living": false,
+      "birth": "?",
+      "death": "?",
+      "place": "",
+      "birth_place": "",
+      "death_place": "",
+      "parents": [
+        "I0059"
+      ],
+      "spouses": [],
+      "children": [],
+      "siblings": [],
+      "families_as_spouse": [],
+      "marriages": []
     }
   ],
   "families": [
@@ -25314,6 +25359,19 @@
       "wife": "I0569",
       "children": [
         "I0277"
+      ],
+      "marriage_date": "",
+      "marriage_place": "",
+      "divorced": false,
+      "divorce_date": "",
+      "divorce_place": ""
+    },
+    {
+      "id": "F0186",
+      "husband": "",
+      "wife": "I0059",
+      "children": [
+        "I0570"
       ],
       "marriage_date": "",
       "marriage_place": "",
